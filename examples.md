@@ -31,9 +31,9 @@ Quick examples with source code
 
 This is a list of examples websites that are created with [MDwiki]. The full source of all the websites is available at [GitHub][githubrepo] and a got start for creating your own websites.
 
-* [Sample coffee place](http://dynalon.github.io/mdwiki-examples/cafe/) [[Markdown source]][cafe]
-* [Simple travel blog website](http://dynalon.github.io/mdwiki-examples/travel_blog/) [[Markdown source]][travelblog]
-* [Single-page fansite about Muscle Cars](http://dynalon.github.io/mdwiki-examples/muscle_cars/) [[Markdown source]][musclecars]
+* [Sample coffee place](http://QuectelWB.github.io/mdwiki-examples/cafe/) [[Markdown source]][cafe]
+* [Simple travel blog website](http://QuectelWB.github.io/mdwiki-examples/travel_blog/) [[Markdown source]][travelblog]
+* [Single-page fansite about Muscle Cars](http://QuectelWB.github.io/mdwiki-examples/muscle_cars/) [[Markdown source]][musclecars]
 
 All quick example websites may be freely modified and changed for your purposes. Note that some images are licensed under [CC-BY(-ND/-SA) 2.0][cc] terms and you have to respect the copyright of the images.
 
