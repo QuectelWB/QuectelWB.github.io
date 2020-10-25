@@ -1,10 +1,12 @@
 {
-	"useSideMenu": true,
-	"lineBreaks": "gfm",
-	"additionalFooterText": "By <a href='http://www.devalias.net/'>Glenn '/dev/alias' Grant</a><br />",
-	"anchorCharacter": "&para;",
-	"title": "My Shiny New MDwiki"
-
+    "pageMenu": {
+        "disable":  false,
+        "returnAnchor": "[top]",
+        "useHeadings": "h1,h2,h3"
+    },
+    "useSideMenu": true,
+    "lineBreaks": "gfm",
+    "additionalFooterText": "",
+    "anchorCharacter": "&#x2693;",
+    "title": "MDwiki - Markdown based wiki done 100% on the client via javascript"
 }
-
-
