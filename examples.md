@@ -6,7 +6,7 @@ Wiki
 
 This Wiki that you are viewing right now is made with MDwiki. Find the source to it [here][mdwikisrc].
 
-  [mdwikisrc]: https://github.com/Dynalon/mdwiki/tree/gh-pages
+  [mdwikisrc]: https://github.com/QuectelWB/mdwiki/tree/gh-pages
   [wiki]: http://mdwiki.info/
 
 
@@ -23,7 +23,7 @@ This is a lose collection of websites that are known to be realized with MDwiki.
 [help.caleydo.org](http://help.caleydo.org/) | Software documentation for biomolecular visualization project
 [fooirc.com](http://fooirc.com/)             | A windows IRC Client
 
-[mdwikisrc]: https://github.com/Dynalon/mdwiki/tree/gh-pages
+[mdwikisrc]: https://github.com/QuectelWB/mdwiki/tree/gh-pages
 
 
 Quick examples with source code
@@ -39,8 +39,8 @@ All quick example websites may be freely modified and changed for your purposes.
 
 [cc]: http://creativecommons.org/licenses/
 [MDwiki]: http://www.mdwiki.info
-[githubrepo]: http://github.com/Dynalon/mdwiki-examples/
-[cafe]: https://github.com/Dynalon/mdwiki-examples/tree/gh-pages/cafe
-[musclecars]: https://github.com/Dynalon/mdwiki-examples/tree/gh-pages/muscle_cars
-[travelblog]: https://github.com/Dynalon/mdwiki-examples/tree/gh-pages/travel_blog
+[githubrepo]: http://github.com/QuectelWB/mdwiki-examples/
+[cafe]: https://github.com/QuectelWB/mdwiki-examples/tree/gh-pages/cafe
+[musclecars]: https://github.com/QuectelWB/mdwiki-examples/tree/gh-pages/muscle_cars
+[travelblog]: https://github.com/QuectelWB/mdwiki-examples/tree/gh-pages/travel_blog
 
