@@ -31,14 +31,6 @@
   * # Advanced
   * [Customizing](customizing.md)
 
-[WinOS]()
-
-  * [winos](WinOs/winos.md)
-  * [winbat](WinOs/winbat.md)
-  * [FAQ](faq.md)
-  - - - -
-  * # Advanced
-  * [Customizing](customizing.md)
 
 [HardWare](hd.md)
 
@@ -60,10 +52,12 @@
   * [html](Web/HTML.md)
   * [CSS](Web/CSS.md)
   * [JS](Web/JS.md)
-  * [Jquery](Web/Jquery.md)
-  * [bootstrap](Web/Bootstrap.md)
+  * [JQuery](Web/JQuery.md)
+  * [bootstrap](Web/BootStrap.md)
   * [php](Web/PHP.md)
-
+  - - - -
+  * # Related
+  * [mdWiki](Web/mdWiki.md)
 
 [Release]()
 
@@ -76,6 +70,15 @@
   * # Advanced
   * [Android](NLinuxRelease/Android.md)
 
+
+[Others]()
+
+  * [Qt](Others/Qt.md)
+  * [winbat](Others/winbat.md)
+  * [](Others/)
+  - - - -
+  * # Advanced
+  * [Customizing](customizing.md)
 
 [gimmick:theme (inverse: false)](spacelab)
 
