@@ -5,8 +5,8 @@
 
 [LinuxKernel]()
 
-  * [winos](WinOs/winos.md)
-  * [winbat](WinOs/winbat.md)
+  * [PCB](WinOs/PCB.md)
+  * [slab](WinOs/slab.md)
   * [FAQ](faq.md)
   - - - -
   * # Advanced
@@ -24,8 +24,8 @@
 
 [LinuxUserSpace]()
 
-  * [winos](LinuxUserSpace/linuxshell.md)
-  * [winbat](LinuxUserSpace/.md)
+  * [Shell](LinuxUserSpace/linuxshell.md)
+  * [Signal](LinuxUserSpace/Signal.md)
   * [FAQ](faq.md)
   - - - -
   * # Advanced

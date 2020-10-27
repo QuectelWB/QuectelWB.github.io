@@ -8,7 +8,7 @@ I once worked as an mechanical design engineer in forklift axle factory.In my ch
 After seven months in the factory in AnQing City, I found that I didn't like the working environment there. The work of every day is the same. There is no innovation, no opportunity and no challenge at all.
 
 
-
+As an Application Engineer in Quectel is great experience.
 
 
 What does world need
