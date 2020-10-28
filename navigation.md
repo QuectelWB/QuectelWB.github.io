@@ -84,7 +84,7 @@
 
 [gimmick:ThemeChooser](Change theme)
 
-[gimmick:forkmeongithub](http://github.com/QuectelWB/mdwiki/)
+[gimmick:forkmeongithub](http://github.com/QuectelWB/myStudy/)
 
 <!-- counter pixel for counting visitors -->
 <!-- <img src="http://stats.markdown.io/mdwiki_info.gif" style="display:none;"/> -->
