@@ -4,6 +4,8 @@ Yes I am
 <span style="background-color: #D3D3D3"><font size=4 color=#DC143C>ÈIf you only do what you can do, you'll never be more than you are now. </font></span>
 
 
+<p style="background-image: url(Castle.jpeg)">123123</p>
+
 Learning is one of our instinct.
 Never give up learning something you don't know.
 
