@@ -1,9 +1,7 @@
 Yes I am
 =====
 
-<span style="background-color: #D3D3D3"><font size=4 color=#DC143C> 
-ÈIf ou only do what you can do, you'll never be more than you are now. </font></span>
-
+<span style="background-color: #D3D3D3"><font size=4 color=#DC143C>If ou only do what you can do, you'll never be more than you are now. </font></span>
 
 <p style="background-image: url(Castle.jpeg)">123123</p>
 
@@ -29,22 +27,24 @@ As an Application Engineer in Quectel is great experience.
 What does world need
 --------
 
-  * Built completely in Javascript/HTML5 and __does not require any local or remote installations__
-  * Uses [Markdown][markdown] as its input markup language
+  * None of my business
+  * Of no use to care about
 
 
 
 What I should be
 ------------
 
-* Webspace (or a web server that can serve static files)
-* Any modern Webbrowser
-* [mdwiki.html][download] file
+* What you want to be
+* Dream
+* No regrets
 
 
 What should I do
 -----------------
 
-  * [marked][marked]
-  * [jQuery][jQuery]
-  * [Bootstrap][bootstrap]
+Keep Going
+
+
+
+
