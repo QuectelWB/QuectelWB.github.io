@@ -1,6 +1,0 @@
-PCB
-=======
-
-Process Control Block
-
-
