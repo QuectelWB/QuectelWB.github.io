@@ -1,6 +1,8 @@
 Yes I am
 =====
 
+If you only do what you can do, you'll never be more than you are now.
+
 Learning is one of our instinct.
 Never give up learning something you don't know.
 
