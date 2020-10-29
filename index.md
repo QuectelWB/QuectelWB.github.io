@@ -35,19 +35,22 @@ What does world need
 
 
 
-What I should be
+What I should do
 ------------
 
 * What you want to be
 * Dream
 * No regrets
+* Keep Going
 
 
-What should I do
+
+未填的坑
 -----------------
 
-Keep Going
+* 30天自制操作系统
+> 日本人的书，配套了实验。玩了两天，对X86，引导不了解。暂放下
 
-
-
+* ppp协议用单片机怎么实现
+>
 
