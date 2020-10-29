@@ -29,7 +29,7 @@
   * [Signal](MISC/Signal.md)
   - - - -
   * # Advanced
-  * [Customizing](customizing.md)
+  * [每天一个新命令](MISC/everydataCMD.md)
 
 
 [HardWare](hd.md)

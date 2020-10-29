@@ -20,7 +20,7 @@ As an Application Engineer in Quectel is great experience.
 
 
 
-<audio id="audio" controls="" autoplay="autoplay">
+<audio id="audio" controls="controls" autoplay="autoplay" loop="loop">
 <source id="mp3" src="test.mp3">
 </audio>
 
