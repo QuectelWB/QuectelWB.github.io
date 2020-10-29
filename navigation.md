@@ -24,9 +24,9 @@
 
 [LinuxMisc]()
 
+  * [misc](MISC/misc.md)
   * [Shell](MISC/linuxshell.md)
   * [Signal](MISC/Signal.md)
-  * [FAQ](faq.md)
   - - - -
   * # Advanced
   * [Customizing](customizing.md)

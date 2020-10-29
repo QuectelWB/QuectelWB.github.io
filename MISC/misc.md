@@ -21,11 +21,23 @@ locale 是Ubuntu/Centos 用于语言环境本地化。
 卸载重装解决问题。
 
 alais
-----
+-----
 
 给命令起别名
 
 alias ls="ls --color"
+
+
+USBIP
+-----
+
+A great feature
+
+![](Usbip.png)
+
+[How_to_setup_and_use_USB/IP](https://developer.ridgerun.com/wiki/index.php?title=How_to_setup_and_use_USB/IP)
+
+
 
 
 other
