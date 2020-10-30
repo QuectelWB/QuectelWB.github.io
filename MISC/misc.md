@@ -21,6 +21,13 @@ locale 是Ubuntu/Centos 用于语言环境本地化。
 
 卸载重装解决问题。
 
+
+后来重启后，一切恢复了，中文又再次无法
+
+
+export LC_ALL=zh_CN.UTF-8
+
+
 alais
 -----
 

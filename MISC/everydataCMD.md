@@ -48,9 +48,26 @@ pstree: unrecognized option '--help'
 ```
 
 
-d
+pidof
 -------
 
+root@m:/usr/src/linux-headers-5.4.0-26-generic/include# ps -a
+    PID TTY          TIME CMD
+   2097 pts/0    00:00:00 sudo
+   2948 pts/1    00:00:00 bash
+   2969 pts/0    00:00:00 tmux: client
+  45805 pts/9    00:00:00 ps
+root@m:/usr/src/linux-headers-5.4.0-26-generic/include# pidof tmux
+2971 2969
+
+
+
+------
+
+
+
+
+-----
 
 
 
