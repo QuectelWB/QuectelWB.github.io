@@ -27,6 +27,10 @@ On Fedora, there is febootstrap.
 [利用debootstrap构建一个可单独运行的镜像文件。](https://latelee.blog.csdn.net/article/details/102810405)
 
 
+![](debootstrap1.png)
+
+
+![](debootstrap2.png)
 
 
 -----
