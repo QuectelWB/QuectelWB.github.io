@@ -61,8 +61,9 @@ root@m:/usr/src/linux-headers-5.4.0-26-generic/include# pidof tmux
 2971 2969
 
 
-
+chroot
 ------
+命令用于改变根目录
 
 
 
