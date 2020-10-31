@@ -78,3 +78,9 @@ License
 MDwiki is licensed under [GNU GPLv3 with additional terms applied][license].
 
   [license]: https://github.com/QuectelWB/mdwiki/blob/master/LICENSE.txt
+
+About More
+-----
+
+[盘点静态博客生成工具](https://www.jianshu.com/p/b59c245c1470)
+
