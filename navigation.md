@@ -7,7 +7,8 @@
 
   * [PCB](Kernel/PCB.md)
   * [slab](Kernel/slab.md)
-  * [FAQ](faq.md)
+  * [process](Kernel/process.md)
+  * [Sched](Kernel/Sched.md)
   - - - -
   * # Advanced
   * [Customizing](customizing.md)

@@ -27,6 +27,7 @@ locale 是Ubuntu/Centos 用于语言环境本地化。
 
 export LC_ALL=zh_CN.UTF-8
 
+世界宁静
 
 alais
 -----
