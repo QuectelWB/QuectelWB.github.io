@@ -1,8 +1,9 @@
-Yes I am
+说点什么
 =====
 
+Just to be looked cool.
 
-[I am](QuectelWB.github.io/myStudy)
+[HomePage](QuectelWB.github.io/myStudy)
 
 
 <span style="background-color: #D3D3D3"><font size=4 color=#DC143C>If ou only do what you can do, you'll never be more than you are now. </font></span>
@@ -26,9 +27,7 @@ As an Application Engineer in Quectel is great experience.
 </audio>
 
 
-
-
-What does world need
+深度的东西
 --------
 
   * None of my business
@@ -36,7 +35,7 @@ What does world need
 
 
 
-What I should do
+途径
 ------------
 
 * What you want to be
@@ -96,19 +95,22 @@ What I should do
 
 * <span style="background-color: #D3D3D3">udev ~</span>
 
-* tcpdump ~
+* <span style="background-color: #D3D3D3">usbmon ~</span>
 
-* usbmon ~
+* <span style="background-color: #D3D3D3">添加quectel-CM 到systemd ~ </span>
+
+* <span style="background-color: #D3D3D3">5G高通模组的rmnet_usb问题 ~ </span>
+
+* <span style="background-color: #D3D3D3">tcpdump ~ </span>
 
 * QT和USB，qt中有libusb库，接口
-
-* 5G高通模组的rmnet_usb问题 ~
-
-* 添加quectel-CM 到systemd ~
 
 * MAC OS驱动。黑苹果可以用。移远的驱动如何加进去？
 
 * 鸿蒙OS的移植
 
 * 5G Yocto,烧录和添加程序、驱动
+
+* 移远Open模组移植Python
+> 有反馈说有人尝试过未成功。自己也想试试
 
