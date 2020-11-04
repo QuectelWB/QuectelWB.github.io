@@ -133,3 +133,38 @@ element.appendChild(para);
 
 ```
 
+HTML5
+------
+
+![](structs_of_HTML5.jpeg)
+
+- **HTML5 的\<header\>和html4的\<head\>标签是完全不一样的**
+- article可以取代 div
+
+``` 获取位置信息
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">点击这个按钮，获得您的坐标：</p>
+<button onclick="getLocation()">试一下</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }
+</script>
+</body>
+</html>
+
+```
+
