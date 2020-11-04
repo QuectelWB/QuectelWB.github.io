@@ -1,126 +1,135 @@
 HTML
-=====
+======
 
-HTML 5
------
+[DOM](https://www.w3school.com.cn/htmldom/dom_events.asp)
 
-What is DOM
------
+DOM
+----
 
+DOM 
 
-¿¿¿DOM
+å®šä¹‰äº†è®¿é—® HTML å’Œ XML æ–‡æ¡£çš„æ ‡å‡†
 
-getElementById() ¿¿¿¿¿ ID ¿¿¿
-
-var element=document.getElementById("intro");
-
-
-``` HTML DOM
+```
 <!DOCTYPE html>
 <html>
 <body>
 
 <p id="intro">Helweelo World!</p>
-<p id="me">¿¿¿¿ <b>getElementById</b> ¿¿¿</p>
+<p id="me">æœ¬ä¾‹æ¼”ç¤º <b>getElementById</b> æ–¹æ³•ï¼</p>
 
 <script>
 x=document.getElementById("me");
-document.write("<p>¿¿ intro ¿¿¿¿¿¿" + x.innerHTML + "</p>");
+document.write("<p>æ¥è‡ª intro æ®µè½çš„æ–‡æœ¬ï¼š" + x.innerHTML + "</p>");
 </script>
 
 </body>
 </html>
+
 ```
 
-HTML DOM ¿¿ - ¿¿¿¿¿
+|æ–¹æ³•|æè¿°|
+|---|---|
+| getElementById() | è¿”å›å¸¦æœ‰æŒ‡å®š ID çš„å…ƒç´ ã€‚ |
+| getElementsByTagName() | è¿”å›åŒ…å«å¸¦æœ‰æŒ‡å®šæ ‡ç­¾åç§°çš„æ‰€æœ‰å…ƒç´ çš„èŠ‚ç‚¹åˆ—è¡¨ï¼ˆé›†åˆ/èŠ‚ç‚¹æ•°ç»„ï¼‰ã€‚ |
+| getElementsByClassName() |	è¿”å›åŒ…å«å¸¦æœ‰æŒ‡å®šç±»åçš„æ‰€æœ‰å…ƒç´ çš„èŠ‚ç‚¹åˆ—è¡¨ã€‚|
+| appendChild() |	æŠŠæ–°çš„å­èŠ‚ç‚¹æ·»åŠ åˆ°æŒ‡å®šèŠ‚ç‚¹ã€‚|
+| removeChild() |	åˆ é™¤å­èŠ‚ç‚¹ã€‚|
+| replaceChild() |	æ›¿æ¢å­èŠ‚ç‚¹ã€‚|
+| insertBefore() |	åœ¨æŒ‡å®šçš„å­èŠ‚ç‚¹å‰é¢æ’å…¥æ–°çš„å­èŠ‚ç‚¹ã€‚|
+| createAttribute() |	åˆ›å»ºå±æ€§èŠ‚ç‚¹ã€‚|
+| createElement() |	åˆ›å»ºå…ƒç´ èŠ‚ç‚¹ã€‚|
+| createTextNode() |	åˆ›å»ºæ–‡æœ¬èŠ‚ç‚¹ã€‚|
+| getAttribute() 	|	è¿”å›æŒ‡å®šçš„å±æ€§å€¼ã€‚|
+| setAttribute() 	|	æŠŠæŒ‡å®šå±æ€§è®¾ç½®æˆ–ä¿®æ”¹ä¸ºæŒ‡å®šçš„å€¼ã€‚|
 
-¿¿¿¿¿ HTML DOM ¿¿¿
+innerHTML å±æ€§
 
-    getElementById(id) - ¿¿¿¿¿¿ id ¿¿¿¿¿¿¿
-    appendChild(node) - ¿¿¿¿¿¿¿¿¿¿¿
-    removeChild(node) - ¿¿¿¿¿¿¿¿¿
+innerHTML å±æ€§å¯ç”¨äºè·å–æˆ–æ”¹å˜ä»»æ„ HTML å…ƒç´ ï¼ŒåŒ…æ‹¬ <html> å’Œ <body>ã€‚
 
-¿¿¿¿¿ HTML DOM ¿¿¿
+```
+<!DOCTYPE html>
+<html>
+<body>
 
-    innerHTML - ¿¿¿¿¿¿¿¿¿¿
-    parentNode - ¿¿¿¿¿¿¿¿¿¿
-    childNodes - ¿¿¿¿¿¿¿¿¿¿
-    attributes - ¿¿¿¿¿¿¿¿¿¿¿
+<p>Hello World!</p>
+<p>DOM å¾ˆæœ‰ç”¨ï¼</p>
+<p>æœ¬ä¾‹æ¼”ç¤º <b>getElementsByTagName</b> æ–¹æ³•ã€‚</p>
 
+<script>
+x=document.getElementsByTagName("p");
+document.write("ç¬¬ä¸€æ®µçš„æ–‡æœ¬: " + x[0].innerHTML);
 
-<table class="dataintable">
-<tr>
-<th>¿¿</th>
-<th>¿¿</th>
-</tr>
+document.write("ç¬¬ä¸€æ®µçš„æ–‡æœ¬: " + x[1].innerHTML);
 
-<tr>
-<td>getElementById()</td>
-<td>¿¿¿¿¿¿ ID ¿¿¿¿</td>
-</tr>
+document.write("ç¬¬ä¸€æ®µçš„æ–‡æœ¬: " + x[2].innerHTML);
+</script>
 
-<tr>
-<td>getElementsByTagName()</td>
-<td>¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿/¿¿¿¿¿¿</td>
-</tr>
+</body>
+</html>
 
-<tr>
-<td>getElementsByClassName()</td>
-<td>¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿</td>
-</tr>
+```
 
-<tr>
-<td>appendChild()</td>
-<td>¿¿¿¿¿¿¿¿¿¿¿¿¿¿</td>
-</tr>
+```
+<!DOCTYPE html>
+<html>
+<body>
 
-<tr>
-<td>removeChild()</td>
-<td>¿¿¿¿¿¿</td>
-</tr>
+<p>Hello World!</p>
 
-<tr>
-<td>replaceChild()</td>
-<td>¿¿¿¿¿¿</td>
-</tr>
+<div id="main">
+<p>DOM å¾ˆæœ‰ç”¨ï¼</p>
+<p>æœ¬ä¾‹æ¼”ç¤º <b>getElementsByTagName</b> æ–¹æ³•ã€‚</p>
+</div>
 
-<tr>
-<td>insertBefore()</td>
-<td>¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿</td>
-</tr>
+<script>
+x=document.getElementById("main").getElementsByTagName("p");
+document.write("div ä¸­çš„ç¬¬ä¸€æ®µçš„æ–‡æœ¬: " + x[0].innerHTML);
+</script>
 
-<tr>
-<td>createAttribute()</td>
-<td>¿¿¿¿¿¿¿</td>
-</tr>
+</body>
+</html>
 
-<tr>
-<td>createElement()</td>
-<td>¿¿¿¿¿¿¿</td>
-</tr>
+```
+ä¿®æ”¹
 
-<tr>
-<td>createTextNode()</td>
-<td>¿¿¿¿¿¿¿</td>
-</tr>
+```
+<!DOCTYPE html>
+<html>
+<body>
 
-<tr>
-<td>getAttribute()</td>
-<td>¿¿¿¿¿¿¿¿¿</td>
-</tr>
+<p id="p1">Hello World!</p>
+<p id="p2">Hello world!</p>
 
-<tr>
-<td>setAttribute()</td>
-<td>¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿</td>
-</tr>
-</table>
+<script>
+document.getElementById("p1").innerHTML="New text!";
+</script>
+<script>
+document.getElementById("p2").style.color="blue";
+</script>
 
+<script>
+var para=document.createElement("p");
+var node=document.createTextNode("This is new.");
+para.appendChild(node);
 
+var element=document.getElementById("d1");
+element.appendChild(para);
+</script>
 
------
+</body>
+</html>
 
-What is DOM
------
+```
+äº‹ä»¶
 
+```
 
+```
+
+å¯¼èˆª
+
+```
+
+```
 
