@@ -31,8 +31,6 @@
   * [每天一个新命令](MISC/everydataCMD.md)
 
 
-[HardWare](hd.md)
-
 [NetWork](network.md)
 
 [Quectel](quectel.md)
