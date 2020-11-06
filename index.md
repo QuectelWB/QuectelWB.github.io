@@ -3,7 +3,7 @@
 
 Just to be looked cool.
 
-[HomePage](QuectelWB.github.io/myStudy)
+[HomePage](http://QuectelWB.github.io/myStudy)
 
 
 <span style="background-color: #D3D3D3"><font size=4 color=#DC143C>If ou only do what you can do, you'll never be more than you are now. </font></span>
@@ -22,8 +22,7 @@ As an Application Engineer in Quectel is great experience.
 </p>
 
 
-<audio id="audio" controls="controls" autoplay="autoplay" loop="loop">
-<source id="mp3" src="_media/test.mp3">
+<audio id="audio" src="_media/test.mp3" controls="controls" autoplay="autoplay" loop="loop">
 </audio>
 
 
@@ -114,3 +113,4 @@ As an Application Engineer in Quectel is great experience.
 * 移远Open模组移植Python
 > 有反馈说有人尝试过未成功。自己也想试试
 
+* WIFI 和BLE 的驱动
