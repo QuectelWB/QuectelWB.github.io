@@ -21,9 +21,8 @@ As an Application Engineer in Quectel is great experience.
 
 </p>
 
+<embed autostart="true" hidden="true" loop="true" src="_media/test.mp3"></embed>
 
-<audio id="audio" src="_media/test.mp3" controls="" autoplay="autoplay" loop="loop">
-</audio>
 
 
 深度的东西
