@@ -21,7 +21,7 @@ As an Application Engineer in Quectel is great experience.
 
 </p>
 
-<embed autostart="true" hidden="true" loop="true" src="_media/test.mp3"></embed>
+<embed autostart="true" hidden="true" loop="true" src="_media/test.mp3"> Seems the audio not work well. </embed>
 
 
 
