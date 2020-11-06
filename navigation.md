@@ -20,6 +20,7 @@
   * [OverView](Driver/OverView.md)
   * [USB](Driver/USB.md)
   * [WIFI&BLE](Driver/WIFI_BT.md)
+  * [WIFI&BLE](Driver/PM.md)
 
 [LinuxMisc]()
 
@@ -34,14 +35,6 @@
 [NetWork](network.md)
 
 [Quectel](quectel.md)
-
-[Python]()
-
-  * [basic](Python/pybasic.md)
-  * [examples](Python/useful_example.md)
-  - - - -
-  * # Advanced
-  * [Notes](Notes.md)
 
 
 [Web]()
@@ -66,19 +59,22 @@
   * [OpenWrt](LinuxRelease/OpenWrt.md)
   * [Yocto](LinuxRelease/Yocto.md)
   * [Ubuntu](LinuxRelease/Ubuntu.md)
+  * [Android](NLinuxRelease/Android.md)
   - - - -
   * # Advanced
-  * [Android](NLinuxRelease/Android.md)
-
+  * [Lichee](NLinuxRelease/licheezero.md)
+  * [Khadas](NLinuxRelease/Khadas.md)
+  * [](NLinuxRelease/)
 
 [Others]()
 
   * [Qt](Others/Qt.md)
   * [winbat](Others/winbat.md)
-  * [](Others/)
   - - - -
-  * # Advanced
-  * [Customizing](customizing.md)
+   * # Pthon
+   * [basic](Others/Python/pybasic.md)
+   * [examples](Others/Python/useful_example.md)
+
 
 [gimmick:theme (inverse: false)](spacelab)
 
