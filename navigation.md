@@ -59,12 +59,14 @@
   * [OpenWrt](LinuxRelease/OpenWrt.md)
   * [Yocto](LinuxRelease/Yocto.md)
   * [Ubuntu](LinuxRelease/Ubuntu.md)
-  * [Android](NLinuxRelease/Android.md)
+  * [Android](LinuxRelease/Android.md)
   - - - -
   * # Advanced
-  * [Lichee](NLinuxRelease/licheezero.md)
-  * [Khadas](NLinuxRelease/Khadas.md)
-  * [](NLinuxRelease/)
+  * [Lichee](LinuxRelease/licheezero.md)
+  * [Khadas](LinuxRelease/Khadas.md)
+  * [210](LinuxRelease/210.md)
+  * [QEMU_Vexpress](LinuxRelease/Vexpress.md)
+  * [](LinuxRelease/)
 
 [Others]()
 
