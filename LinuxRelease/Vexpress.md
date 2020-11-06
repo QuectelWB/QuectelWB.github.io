@@ -21,32 +21,29 @@ Linux内核与设备树编译
 
 下载Linux内核：https://www.kernel.org/
 
-git clone https://mirrors.tuna.tsinghua.edu.cn/git/linux.git
+	git clone https://mirrors.tuna.tsinghua.edu.cn/git/linux.git
 
-https://mirror.bjtu.edu.cn/kernel/linux/kernel/
+	https://mirror.bjtu.edu.cn/kernel/linux/kernel/
 
 
-make vexpress_defconfig
+	make vexpress_defconfig
 
-make zImage 
+	make zImage 
 
-make modules
+	make modules
 
-make dtbs
+	make dtbs
 
 得到zImage、dtb
 
 尝试启动
 
-```
-qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append "console=ttyAMA0"
+	qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append "console=ttyAMA0"
 
-```
 
 看到
 
 
-```qemu log
 
 	rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)
 	ALSA device list:
@@ -70,7 +67,6 @@ qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/ar
 	[<804a440c>] (kernel_init) from [<8000f4f8>] (ret_from_fork+0x14/0x3c)
 	---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
 
-```
 
 busybox
 ------
@@ -176,24 +172,20 @@ vim include/configs/vexpress_common.h
 
 可以配置IP和netmask
 
-```
 	#define CONFIG_IPADDR   192.168.1.49
 	#define CONFIG_NETMASK  255.255.255.0
 	#define CONFIG_SERVERIP 192.168.1.88
-```
 
 在Quectel的台式机虚拟机里的桥接网卡，实际配置成
 
-```
 	#define CONFIG_IPADDR   192.168.1.49
 	#define CONFIG_NETMASK  255.255.254.0
 	#define CONFIG_SERVERIP 10.66.83.84
-```
 
 QEMU和主机如何ping通
 ----
 
-
+123
 
 
 
