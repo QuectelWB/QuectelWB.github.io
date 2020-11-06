@@ -350,28 +350,20 @@ e.find("a").attr("href",c),e.hide();var f=!1;b.mouseenter(function(){f=!0,a.md.u
     
 <script type="text/javascript" src="audioPlayPlugin.js"></script>
 	<script>
-	/**
-	*新建一个Audio对象并立即播放
-	*src设置为“file/test1.mp3”
-	*loop:true表示循环播放，volume:0.1设置音量为0.1（默认1）
-	*监听play事件（当音频已开始或不再暂停时触发）
-	*/
-            var bgAudio=new audioController({
-            		     src:"_media/test.mp3",
-            		     attr:{
-            		         loop:true,
-            		         volume:0.1
-            		     },
-            		     events:{
-                			 play:function(){
-                			       console.log("开始播放了")
-                			  }
-            		     }
-            		})
-            		.play();
+		
+		var bgAudio=new audioController();
+		bgAudio.supportAutoPlay({
+		    src:"file/test1.mp3",
+		    support:playAudio,
+		    nonsupport:function(){
+		        document.addEventListener("click",playAudio)
+		    }
+		})
+		function playAudio(){
+			bgAudio.play("file/test1.mp3");
+			document.removeEventListener("click",playAudio);
+		}
 	</script>
-
-
 
     <noscript>
         This website requires Javascript to be enabled. Please turn on Javascript
