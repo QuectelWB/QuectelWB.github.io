@@ -185,12 +185,82 @@ vim include/configs/vexpress_common.h
 QEMU和主机如何ping通
 ----
 
-123
+在Ubuntu下使用QEMU连网
+[https://blog.csdn.net/yang1111111112/article/details/107811796](https://blog.csdn.net/yang1111111112/article/details/107811796)
+
+
+写一个脚本
+
+	if test -z $1 ; then
+		echo need a argument: down/up
+		exit
+	fi 
+	
+	if [ "up" = $1  ] ; then
+		# 新建一个网桥，名称为br0
+		brctl addbr br0
+		# 将网络设备enp0s10添加到网桥br0 
+		ifconfig enp0s9 down
+		brctl addif br0 enp0s9
+	
+		# 关闭生成树协议
+		brctl stp br0 off
+	
+		ifconfig br0 192.168.1.1 netmask 255.255.255.0 promisc up
+		ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0 promisc up
+	
+	
+		 # 使用命令tunctl添加虚拟网卡tap
+		tunctl -t tap0 -u rlk
+	
+		ifconfig tap0 192.168.1.89 netmask 255.255.255.0 promisc up
+	
+		brctl addif br0 tap0
+	
+	else
+		ifconfig tap0 down
+		brctl delif br0 tap0
+	
+		ifconfig enp0s9 down
+		brctl delif br0 enp0s9
+		ifconfig br0 down
+		brctl delbr br0
+
+		ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0
+	fi
+
+其中enp0s9是VirtualBox里的一个Host Only添加的网卡。
+
+![](tap0.png)
+
+生成的这个tap0 就是serverip
+在qemu中可以ping 通该IP 
+
+
+	sudo qemu-system-arm -M vexpress-a9 -m 1024M -kernel u-boot -dtb /home/rlk/QEMU/tftpboot/vexpress-v2p-ca9.dtb  -nographic -net nic,macaddr=52:54:00:12:34:22 -net tap,ifname=tap0 -sd  vexpress.ext3
+
+在uboot里，
+setenv serverip xxx
+setenv ipaddr xxx
+ping ${serverip}
+
+网络能ping通的情况下
+
+tftp 0x60003000 uImage
+setenv bootargs 'root=/dev/mmcblk0 console=ttyAMA0'
+bootm 0x60003000
+
+
+NFS
+----
 
 
 
 
+RT Thread
+---
 
+Ubuntu 平台开发RT-Thread
 
 
 :)
