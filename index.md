@@ -113,3 +113,20 @@ As an Application Engineer in Quectel is great experience.
 > 有反馈说有人尝试过未成功。自己也想试试
 
 * WIFI 和BLE 的驱动
+
+Something else
+----
+
+意志不坚，所学只求点到为止。导致许多东西没弄明白
+譬如
+TAP/TUN ？
+usbmon 的内核源码
+
+QEMU 挂载NFS暂且放下，重点放在 Linux Kernel Feature和Device Driver 上。
+That determines what you will be.
+
+周易曰潜龙无用。
+
+2020.11.9
+
+
