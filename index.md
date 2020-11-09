@@ -21,29 +21,8 @@ As an Application Engineer in Quectel is great experience.
 
 </p>
 
-<embed autostart="true" hidden="true" loop="true" src="_media/test.mp3"> Seems the audio not work well. </embed>
 
-
-
-深度的东西
---------
-
-  * None of my business
-  * Of no use to care about
-
-
-
-途径
-------------
-
-* What you want to be
-* Dream
-* No regrets
-* Keep Going
-
-
-
-未填的坑
+The Future
 -----------------
 
 【~ 表示已经解决 over 】
@@ -125,8 +104,49 @@ usbmon 的内核源码
 QEMU 挂载NFS暂且放下，重点放在 Linux Kernel Feature和Device Driver 上。
 That determines what you will be.
 
-周易曰潜龙无用。
+周易曰潜龙无用。盖斯属。
+
 
 2020.11.9
 
+Task Ordered List
+-----
+
+眼下的生存现状（无妻子、无车房）决定了当前的要按照自己设计的框架走
+
+上
+
+	内核机制原理
+		INT
+		SLAB
+		PCB
+		Sched
+		TIMER
+		
+	Linux驱动
+		设备数
+		WIFI BT
+		SPI I2C
+		
+	易经
+
+中
+	OS搭建的基础
+		30天搭建一个OS
+		QEMU
+		Vexpress
+		RT-Thread
+	计算机网络
+		VLAN
+		TAP/TUN
+		RIP
+
+下
+	Web等前后端知识
+	QT、C++等
+	Python
+	Shell
+	单片机
+	LTE网络框架
+	Android
 
