@@ -65,8 +65,7 @@
   * [Khadas](LinuxRelease/Khadas.md)
   * [210](LinuxRelease/210.md)
   * [QEMU_Vexpress](LinuxRelease/Vexpress.md)
-  * [](LinuxRelease/)
-
+  * [QEMU_Vexpress_RT-Thread](LinuxRelease/Vexpress_RT-Thread.md)
 [Others]()
 
   * [Qt](Others/Qt.md)
