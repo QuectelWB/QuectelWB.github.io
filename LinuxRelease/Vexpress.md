@@ -263,4 +263,9 @@ RT Thread
 Ubuntu 平台开发RT-Thread
 
 
+qemu 模拟 ARM 从sd卡启动 uboot 内核
+-----
+
+[http://www.vjiot.net/typecho/index.php/archives/58/](http://www.vjiot.net/typecho/index.php/archives/58/)
+
 :)

@@ -99,4 +99,13 @@ VIM r
 
 
 
+列出ubuntu上所有的服务
+-------
+
+systemctl list-units --all --type=service
+
+
+
+
+:)
 
