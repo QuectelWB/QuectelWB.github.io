@@ -136,12 +136,22 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-bind_process_and_thread_with_assigned_CPU
+进程绑定CPU
 ----
 
 
 [linux下把进程/线程绑定到特定cpu核上运行](https://blog.csdn.net/guotianqing/article/details/80958281)
 
+CPU Core
 
+	cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l
+
+查看进程绑定在哪个CPU
+	
+	taskset -cp 进程PID
+
+绑定进程到CPU
+	
+	taskset -cp cpu核序号 进程PID
 
 
