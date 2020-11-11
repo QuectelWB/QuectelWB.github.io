@@ -8,7 +8,7 @@ Just to be looked cool.
 
 <span style="background-color: #D3D3D3"><font size=4 color=#DC143C>If ou only do what you can do, you'll never be more than you are now. </font></span>
 
-<p style="background-image: url(Castle.jpeg)" color=#00FF00>
+<p style="background-image: url(_media/Castle.jpeg)" color=#00FF00>
 
 Learning is one of our instinct.
 Never give up learning something you don't know.
