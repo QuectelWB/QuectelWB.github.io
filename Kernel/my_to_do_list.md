@@ -27,7 +27,11 @@ DESCRIPTION
        fined in cmsg(3) for auxiliary data.  The buffer passed to and from a netlink socket should be accessed using only these macros.
 
 
+
+RCU
 --------
+
+Read-Copy Update
 
 
 

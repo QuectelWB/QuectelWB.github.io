@@ -136,5 +136,12 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-other
+bind_process_and_thread_with_assigned_CPU
 ----
+
+
+[linux下把进程/线程绑定到特定cpu核上运行](https://blog.csdn.net/guotianqing/article/details/80958281)
+
+
+
+
