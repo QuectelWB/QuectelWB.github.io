@@ -105,7 +105,13 @@ VIM r
 systemctl list-units --all --type=service
 
 
+将当前文件中除了src目录全部移动到src目录
+-----
+mv `ls | grep -v src | xargs` src
 
+xargs 将ls 的结果作为一行
+
+grep -v 反向
 
 :)
 
