@@ -17,14 +17,18 @@ kernel malloc
 <table border="1">
 
 <tr> 
-        <td>头文件</td> 
-        <td> #include<linux/malloc.h> </td>
+<td>头文件</td> 
+<td> #include<linux/malloc.h> </td>
 </tr>
 <tr>
 
-        <td>函数原型</td>
-        <td> void*kmalloc(unsigned int len,int flags) </td>
+<td>函数原型</td>
+<td> void* kmalloc(unsigned int len,int flags) </td>
 
+</tr>
+<tr>
+<td>返回值</td>
+<td> 成功写入的数据长度，失败返回 -EFAULT </td>
 </tr>
 
 </table>
