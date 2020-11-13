@@ -12,6 +12,8 @@
   * # memory
   * [slab](Kernel/slab.md)
   * [min_free_kbytes](Kernel/min_free_kbytes.md)
+  * [malloc](Kernel/malloc.md)
+
 
 [Driver]()
 

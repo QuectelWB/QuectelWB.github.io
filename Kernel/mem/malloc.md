@@ -26,10 +26,27 @@ kernel malloc
 <td> void* kmalloc(unsigned int len,int flags) </td>
 
 </tr>
+
+<tr>
+
+<td>len</td> 
+<td> </td>
+
+</tr>
+
+<tr>
+
+<td>GFP_KERNEL 内核内存通常的分配方法，会引发睡眠 </td>
+<td>GFP_KERNEL 内核内存通常的分配方法，会引发睡眠 </td>
+
+</tr>
+
 <tr>
 <td>返回值</td>
 <td> 成功写入的数据长度，失败返回 -EFAULT </td>
 </tr>
+
+
 
 </table>
 
