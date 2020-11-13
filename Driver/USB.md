@@ -1012,3 +1012,8 @@ FrameNumber</TD>
 ----
 
 
+
+USB for Linux
+-------
+[USB Patch](https://www.spinics.net/lists/linux-usb/)
+

@@ -6,13 +6,12 @@
 
   * [OverView](Kernel/OverView.md)
   * [PCB](Kernel/PCB.md)
-  * [slab](Kernel/slab.md)
   * [process](Kernel/process.md)
   * [Sched](Kernel/Sched.md)
   - - - -
-  * # Advanced
-  * [Customizing](customizing.md)
-
+  * # memory
+  * [slab](Kernel/slab.md)
+  * [min_free_kbytes](Kernel/min_free_kbytes.md)
 
 [Driver]()
 

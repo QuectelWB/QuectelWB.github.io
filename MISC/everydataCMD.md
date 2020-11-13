@@ -113,5 +113,21 @@ xargs 将ls 的结果作为一行
 
 grep -v 反向
 
+
+nohup
+----
+不挂断地运行命令
+
+nohup cmd &
+
+当前shell关闭后，会将该进程的父进程指向init（PID 1）
+
+
+------
+
+
+
+
+
 :)
 
