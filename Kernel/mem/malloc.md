@@ -30,13 +30,13 @@ kernel malloc
 <tr>
 
 <td>len</td> 
-<td> </td>
+<td>希望申请的字节数</td>
 
 </tr>
 
 <tr>
 
-<td>GFP_KERNEL 内核内存通常的分配方法，会引发睡眠 </td>
+<td> flags </td>
 <td>GFP_KERNEL 内核内存通常的分配方法，会引发睡眠 </td>
 
 </tr>
