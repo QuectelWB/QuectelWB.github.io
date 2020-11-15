@@ -37,20 +37,6 @@
 [Quectel](quectel.md)
 
 
-[Web]()
-
-  * [OverView](Web/OverView.md)
-  * [html](Web/HTML.md)
-  * [CSS](Web/CSS.md)
-  * [JS](Web/JS.md)
-  * [JQuery](Web/JQuery.md)
-  * [bootstrap](Web/BootStrap.md)
-  * [php](Web/PHP.md)
-  - - - -
-  * # Related
-  * [httpServer](Web/pyHttpServer.md)
-  * [mdWiki](Web/mdWiki.md)
-
 [Release]()
 
   * [OverView](LinuxRelease/OverView.md)
@@ -77,6 +63,17 @@
    * # Pthon
    * [basic](Others/Python/pybasic.md)
    * [examples](Others/Python/useful_example.md)
+  - - - -
+  * # Web
+  * [Web](Otherss/Web/OverView.md)
+  * [html](Others/Web/HTML.md)
+  * [CSS](Others/Web/CSS.md)
+  * [JS](Others/Web/JS.md)
+  * [php](Others/Web/PHP.md)
+  - - - -
+  * # Related
+  * [httpServer](Others/Web/pyHttpServer.md)
+  * [mdWiki](Others/Web/mdWiki.md)
 
 
 [gimmick:theme (inverse: false)](spacelab)
