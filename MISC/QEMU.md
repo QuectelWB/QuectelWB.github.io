@@ -47,27 +47,27 @@ qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/ar
 
 ``` qemu log
 
-rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)
-ALSA device list:
-  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 33
-input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb/smb:motherboard/smb:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
-VFS: Cannot open root device "(null)" or unknown-block(0,0): error -6
-Please append a correct "root=" boot option; here are the available partitions:
-1f00          131072 mtdblock0  (driver?)
-1f01           32768 mtdblock1  (driver?)
-Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
-CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.99 #1
-Hardware name: ARM-Versatile Express
-[<80016454>] (unwind_backtrace) from [<80012ee0>] (show_stack+0x10/0x14)
-[<80012ee0>] (show_stack) from [<80243aac>] (dump_stack+0x94/0xa8)
-[<80243aac>] (dump_stack) from [<800a5638>] (panic+0x9c/0x200)
-[<800a5638>] (panic) from [<8062f250>] (mount_block_root+0x1c0/0x25c)
-[<8062f250>] (mount_block_root) from [<8062f408>] (mount_root+0x11c/0x124)
-[<8062f408>] (mount_root) from [<8062f568>] (prepare_namespace+0x158/0x1a0)
-[<8062f568>] (prepare_namespace) from [<8062eeec>] (kernel_init_freeable+0x268/0x278)
-[<8062eeec>] (kernel_init_freeable) from [<804a440c>] (kernel_init+0x8/0xe8)
-[<804a440c>] (kernel_init) from [<8000f4f8>] (ret_from_fork+0x14/0x3c)
----[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+	rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)
+	ALSA device list:
+	  #0: ARM AC'97 Interface PL041 rev0 at 0x10004000, irq 33
+	input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb/smb:motherboard/smb:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+	VFS: Cannot open root device "(null)" or unknown-block(0,0): error -6
+	Please append a correct "root=" boot option; here are the available partitions:
+	1f00          131072 mtdblock0  (driver?)
+	1f01           32768 mtdblock1  (driver?)
+	Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+	CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.99 #1
+	Hardware name: ARM-Versatile Express
+	[<80016454>] (unwind_backtrace) from [<80012ee0>] (show_stack+0x10/0x14)
+	[<80012ee0>] (show_stack) from [<80243aac>] (dump_stack+0x94/0xa8)
+	[<80243aac>] (dump_stack) from [<800a5638>] (panic+0x9c/0x200)
+	[<800a5638>] (panic) from [<8062f250>] (mount_block_root+0x1c0/0x25c)
+	[<8062f250>] (mount_block_root) from [<8062f408>] (mount_root+0x11c/0x124)
+	[<8062f408>] (mount_root) from [<8062f568>] (prepare_namespace+0x158/0x1a0)
+	[<8062f568>] (prepare_namespace) from [<8062eeec>] (kernel_init_freeable+0x268/0x278)
+	[<8062eeec>] (kernel_init_freeable) from [<804a440c>] (kernel_init+0x8/0xe8)
+	[<804a440c>] (kernel_init) from [<8000f4f8>] (ret_from_fork+0x14/0x3c)
+	---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
 ```
 
 busybox

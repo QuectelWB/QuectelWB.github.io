@@ -123,11 +123,56 @@ nohup cmd &
 当前shell关闭后，会将该进程的父进程指向init（PID 1）
 
 
+TC
 ------
 
+show / manipulate traffic control settings
+
+	Usage:  tc [ OPTIONS ] OBJECT { COMMAND | help }
+	        tc [-force] -batch filename
+	where  OBJECT := { qdisc | class | filter | chain |
+	                    action | monitor | exec }
+	       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[aw] |
+	                    -o[neline] | -j[son] | -p[retty] | -c[olor]
+	                    -b[atch] [filename] | -n[etns] name | -N[umeric] |
+	                     -nm | -nam[es] | { -cf | -conf } path }
 
 
+详细参考 man tc
 
+将 eth0 网卡的传输设置为延迟100毫秒发送。
+
+	$ tc  qdisc  add  dev  eth0  root  netem  delay  100ms  
+
+延迟值不会这么精确，会有一定的波动，下面命令模拟带有波动性的延迟值：
+
+	$ tc  qdisc  add  dev  eth0  root  netem  delay  100ms  10ms
+
+	root@m:/home/m/Smart210# tc  qdisc
+	qdisc noqueue 0: dev lo root refcnt 2
+	qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn
+	qdisc netem 8001: dev wlan0 root refcnt 2 limit 1000 delay 100.0ms
+	qdisc noqueue 0: dev docker0 root refcnt 2
+
+模拟网络丢包
+
+将 eth0 网卡的传输设置为随机丢掉 1% 的数据包。
+	
+	 $ tc  qdisc  add  dev  eth0  root  netem  loss  1%  
+
+[linux下的tc工具使用](https://blog.csdn.net/Hh20161314/article/details/81408037)
+
+模拟数据包损坏\模拟数据包乱序\
+
+设置延时
+
+	$ sudo tc qdisc add dev eth0 root netem delay 4s
+
+取消延时
+	
+	$ sudo tc qdisc del dev eth0 root netem delay 4s
+
+配合iptables 使用
 
 :)
 
