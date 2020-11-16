@@ -1017,3 +1017,15 @@ USB for Linux
 -------
 [USB Patch](https://www.spinics.net/lists/linux-usb/)
 
+
+
+参考资源
+------
+
+[http://www.linux-usb.org/](http://www.linux-usb.org/)
+
+[]()
+
+
+
+:)
