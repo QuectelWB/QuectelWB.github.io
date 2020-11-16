@@ -29,7 +29,7 @@
   * [Signal](MISC/Signal.md)
   - - - -
   * # Advanced
-  * [每天一个新命令](MISC/everydataCMD.md)
+  * [everyday_cmd](MISC/everydataCMD.md)
 
 
 [NetWork](network.md)
