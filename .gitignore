@@ -1,0 +1,7 @@
+target/
+
+*.swap
+*.project
+*.settings
+*.cache
+
