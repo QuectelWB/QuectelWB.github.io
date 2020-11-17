@@ -31,12 +31,6 @@
   * # Advanced
   * [everyday_cmd](MISC/everydataCMD.md)
 
-
-[NetWork](network.md)
-
-[Quectel](quectel.md)
-
-
 [Release]()
 
   * [OverView](LinuxRelease/OverView.md)
@@ -60,7 +54,7 @@
   * [winbat](Others/winbat.md)
   * [winbat](Others/SystemV.md)
   - - - -
-   * # Pthon
+   * # Python
    * [basic](Others/Python/pybasic.md)
    * [examples](Others/Python/useful_example.md)
   - - - -
@@ -75,6 +69,11 @@
   * [httpServer](Others/Web/pyHttpServer.md)
   * [mdWiki](Others/Web/mdWiki.md)
 
+
+[Links]()
+
+  * [NetWork](links/network.md)
+  * [Quectel](Others/quectel.md)
 
 [gimmick:theme (inverse: false)](spacelab)
 
