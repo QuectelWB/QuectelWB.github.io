@@ -6,39 +6,35 @@ Detailed please take look at :
 <a href="http://QuectelWB.github.io" target="_blank">Work in Quectel</a>
 
 
----------
 
-## Quectel ##
-
-Quectel Wireless Solutions is the leading global supplier of cellular and GNSS modules, with a broad product portfolio covering the most recent wireless technologies of 5G, LTE/LTE-A, NB-IoT/LTE-M, UMTS/HSPA(+), GSM/GPRS and GNSS. As a professional IoT (Internet of Things) technology developer and cellular module supplier, Quectel is able to provide one-stop services for IoT cellular modules. Quectel products have been widely applied in IoT/M2M fields including smart payment, telematics and transport, smart energy, smart cities, security, wireless gateways, industry, healthcare, agriculture, and environment monitoring.
-
-![](https://www.quectel.com/images/about/ban2.png)
-
-
-Quectel is committed to providing customers with good quality produles and services to meet their various demands, such as:
-
-- Power
-- TransmissionSpeed 
-- EasyToUse
-- Compatibility
-
-
-## What is Quectel Modules ##
-
-Quectel Modules is such a device that provides data communication for emmbeded devices with SIM cards and mobile network.
-From the perspective of embedded system, the Quectel Modules is actually the Minimum System Core Circuit Board that can help the customers to set up data commnuction.
-
-
-As the EMBEDDED operating system runs on AP and there are various peripherals interfaces (Uart/SPI/I2C/Audio/SDIO, etc.), the remote module can also be used as a processor. Customers can integrate and transplant peripherals and applications for some scenarios that do not require high processing performance and resources. The remote solution is called the Open solution.
-Generally speaking, remote module is connected to another embedded processor through USB/PCIe/Uart, which is called Host AP, OR EAP, or External AP. Remote communication module is used as a device, and the driver required by porting module on Host AP is used. This scheme is called standard module scheme.
-
-
-![Quectel_modules_stuff.png](https://i.loli.net/2020/09/29/bk4wJGADRZiYxst.png)
-
-----------
-Links:
-
+Links
+-----
 *[`Official Website`](https://www.quectel.com/ "Official Website")*
 
 *[`Forums`](https://Forums.quectel.com/ "Forums")*
+
+GobiNet Usb Staffs
+-----
+
+	
+	GobiUSBNetProbe
+			...
+			usb_control_msg(
+				interface_to_usbdev(pIntf),
+				usb_sndctrlpipe(interface_to_usbdev(pIntf), 0),
+				0x22, //USB_CDC_REQ_SET_CONTROL_LINE_STATE
+				0x21, //USB_DIR_OUT | USB_TYPE_CLASS | USB_RECIP_INTERFACE
+				1, //active CDC DTR
+				pIntf->cur_altsetting->desc.bInterfaceNumber,
+				NULL, 0, 100);
+
+pIntf->cur_altsetting->desc.bInterfaceNumber ---> 4
+
+usbmon log:
+
+	ffff8ff2d74da840 2154856978 C Co:2:005:0 0 13 >
+	ffff8ff49068b780 2154857014 S Co:2:005:0 s 21 22 0001 0004 0000 0
+	ffff8ff49068b780 2154857102 C Co:2:005:0 0 0
+
+
 
