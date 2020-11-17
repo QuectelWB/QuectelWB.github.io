@@ -158,6 +158,22 @@ CPU Core
 dd 命令的iflags
 -----
 
+xxx
+
+swap 分区
+-----
+
+swap 在windows PC上也有这个功能，就是把硬盘的一部分空间当作内存使用，用来应付内存不足的情况。
+
+该区域也不宜设置过大，否则OS就不会节约使用内存。
+
+/etc/fstab
+
+磁盘被手动挂载之后都必须把挂载信息写入/etc/fstab这个文件中，否则下次开机启动时仍然需要重新挂载。
+系统开机时会主动读取/etc/fstab这个文件中的内容，根据文件里面的配置挂载磁盘。
+
+https://blog.csdn.net/kepa520/article/details/81315430
+
 
 
 
