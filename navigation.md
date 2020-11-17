@@ -73,7 +73,7 @@
 [Links]()
 
   * [NetWork](links/network.md)
-  * [Quectel](Others/quectel.md)
+  * [Quectel](links/quectel.md)
 
 [gimmick:theme (inverse: false)](spacelab)
 
