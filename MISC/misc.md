@@ -207,6 +207,18 @@ access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (没有那个文件或目录
 
 [strace命令用法](https://blog.csdn.net/cs729298/article/details/81906375)
 
+strace也不是真正的万能。当目标进程卡死在用户态时，strace就没有输出了。
+
+这个时候我们需要其他的跟踪手段，比如gdb/perf/SystemTap等。
+
+备注：
+	
+	1、perf原因kernel支持
+	
+	2、ftrace  kernel支持可编程
+	
+	3、systemtap 功能强大，RedHat系统支持，对用户态，内核态逻辑都能探查，使用范围更广
+
 
 -------------------------
 
