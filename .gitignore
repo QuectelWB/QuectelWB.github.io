@@ -4,4 +4,4 @@ target/
 *.project
 *.settings
 *.cache
-
+*.out
