@@ -174,5 +174,11 @@ show / manipulate traffic control settings
 
 配合iptables 使用
 
+
+根据commit id生成patch
+------
+
+git format-patch -1 d9a64c74ff0244b96a44fa27abcdc411d29f4874
+
 :)
 
