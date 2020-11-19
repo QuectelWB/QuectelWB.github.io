@@ -40,6 +40,7 @@ int main()
 	printf("[%s]: p2 . %c \n",__func__,*(char*)p2 );
 	printf("[%s]: p2 . %c \n",__func__,*((char*)p2+1) );
 
+	printf("[%s]: p2 . %x \n",__func__,*((char*)p2+2) );
 #endif
 
 	return 0;
