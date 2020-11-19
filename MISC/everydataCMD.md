@@ -178,7 +178,16 @@ show / manipulate traffic control settings
 根据commit id生成patch
 ------
 
-git format-patch -1 d9a64c74ff0244b96a44fa27abcdc411d29f4874
+git format-patch -1 d9a64c74ff0244b96a44fa27abcdc411d29f487
+
+
+vim 批量tab
+-----
+
+shift+V 选中
+
+shift+> 
+
 
 :)
 
