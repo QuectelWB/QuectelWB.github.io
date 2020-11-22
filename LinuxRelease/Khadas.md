@@ -16,6 +16,18 @@ Web
 Android
 ----
 
+总之
+
+> 下载：
+
+- repo 的REPO_URL和default.xml 的aosp的地址，改成清华的；
+- repo start branch --all //branch 选 khadas-vims-pie
+
+> 编译：
+- 先编译uboot
+- 网上找Android编译需要的环境，可以解决所有问题
+- target是 out目录里update.img，1G大小不到
+
 > repo 工具
 	
 	export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
