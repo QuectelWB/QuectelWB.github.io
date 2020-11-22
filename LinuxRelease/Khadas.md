@@ -29,6 +29,14 @@ Android
 - 网上找Android编译需要的环境，可以解决所有问题
 - target是 out目录里update.img，1G大小不到
 
+	$ cd PATH_YOUR_PROJECT
+	$ cd bootloader/uboot
+	$ ./mk TARGET   //kvim3
+	$ cd PATH_YOUR_PROJECT
+	$ source build/envsetup.sh
+	$ lunch TARGET_LUNCH   //kvim3-userdebug
+	$ make -jN otapackage
+
 -------------
 
 > repo 工具
