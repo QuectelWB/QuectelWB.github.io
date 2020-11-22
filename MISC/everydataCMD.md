@@ -189,5 +189,20 @@ shift+V 选中
 shift+> 
 
 
+openwrt安装ipk
+----
+
+ssh连接路由命令安装
+或者用ssh软件PuTTY连接路由器
+
+	opkg update
+	opkg install 软件包网址
+
+或者用winscp连接路由 然后上传包到/tmp/下
+
+	opkg update
+	opkg install /tmp/xxx.ipk
+
+
 :)
 
