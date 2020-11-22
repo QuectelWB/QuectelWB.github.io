@@ -24,9 +24,12 @@ Android
 - repo start branch --all //branch 选 khadas-vims-pie
 
 > 编译：
+
 - 先编译uboot
 - 网上找Android编译需要的环境，可以解决所有问题
 - target是 out目录里update.img，1G大小不到
+
+-------------
 
 > repo 工具
 	
@@ -64,10 +67,12 @@ Android
 	done
 
 
-
 $?：获取函数返回值或者上一个命令的退出状态
 
 
 
+
+Ubuntu
+------
 
 :)
