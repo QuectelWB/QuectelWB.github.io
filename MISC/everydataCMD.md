@@ -107,12 +107,16 @@ systemctl list-units --all --type=service
 
 将当前文件中除了src目录全部移动到src目录
 -----
-mv `ls | grep -v src | xargs` src
-
+	
+	mv `ls | grep -v src | xargs` src
+	
 xargs 将ls 的结果作为一行
 
 grep -v 反向
 
+	mv `(ls | grep -v 'example[12]' | xargs)` example1
+
+	将除了 example1和example2剩下的所有文件全部移动到example1中去
 
 nohup
 ----
