@@ -24,6 +24,10 @@ WSL_X11_RemoteLogin
 
 	远程登录 $(IP):3389
 
+It works.
+
+![](remoteShell.png)
+
 -----------
 
 
