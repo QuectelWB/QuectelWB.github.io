@@ -45,8 +45,12 @@
   * [Lichee](LinuxRelease/licheezero.md)
   * [Khadas](LinuxRelease/Khadas.md)
   * [210](LinuxRelease/210.md)
+  - - - -
+  * # Virtual Machine
   * [QEMU_Vexpress](LinuxRelease/Vexpress.md)
   * [QEMU_Vexpress_RT-Thread](LinuxRelease/Vexpress_RT-Thread.md)
+  * [MenuOS](LinuxRelease/LinuxRelease/menu/MenuOS.md)
+  * [RunningLinuxKernel](LinuxRelease/running/RunningLinuxKernel.md)
 
 [Others]()
 
