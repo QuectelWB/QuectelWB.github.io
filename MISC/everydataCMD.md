@@ -207,6 +207,48 @@ ssh连接路由命令安装
 	opkg update
 	opkg install /tmp/xxx.ipk
 
+du和df
+----
+
+	
+	q@q-K501LB:~/Khadas$ du -d 1 -h Android_P/
+	6.5G    Android_P/external
+	350M    Android_P/toolchain
+	1.6G    Android_P/tools
+	22G     Android_P/prebuilts
+	144G    Android_P/.repo
+	84M     Android_P/libcore
+	912K    Android_P/pdk
+	329M    Android_P/bootloader
+	31M     Android_P/sdk
+	811M    Android_P/common
+	3.3M    Android_P/compatibility
+	5.8M    Android_P/platform_testing
+	124M    Android_P/test
+	14M     Android_P/build
+	22M     Android_P/bootable
+	34M     Android_P/bionic
+	436M    Android_P/developers
+	876K    Android_P/kernel
+	1.7G    Android_P/vendor
+	1.7G    Android_P/frameworks
+	404K    Android_P/libnativehelper
+	131M    Android_P/development
+	167M    Android_P/device
+	90M     Android_P/art
+	553M    Android_P/hardware
+	691M    Android_P/packages
+	470M    Android_P/system
+	779M    Android_P/cts
+	80G     Android_P/out
+	27M     Android_P/dalvik
+	261G    Android_P/
+
+-h 结尾以B K M G为单位，方便阅读。df 命令也一样，也有-h选项
+
+
+---------
+
 
 :)
 
