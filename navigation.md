@@ -20,7 +20,8 @@
   * [OverView](Driver/OverView.md)
   * [USB](Driver/USB.md)
   * [WIFI&BLE](Driver/WIFI_BT.md)
-  * [WIFI&BLE](Driver/PM.md)
+  * [PCIe](Driver/PCIe.md)
+  * [PM](Driver/PM.md)
 
 [LinuxMisc]()
 
