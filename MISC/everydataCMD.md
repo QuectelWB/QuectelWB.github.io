@@ -246,8 +246,16 @@ du和df
 
 -h 结尾以B K M G为单位，方便阅读。df 命令也一样，也有-h选项
 
-
+bash dash
 ---------
+
+	for i in {1..7}
+	do
+        	echo $i
+	done
+
+用bash 执行可以，但是dash 不行
+
 
 
 :)
