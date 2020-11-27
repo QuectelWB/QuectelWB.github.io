@@ -8,7 +8,7 @@ I wrote it in another page
 
 Detailed please take look at :
 
-<a href="http://QuectelWB.github.io" target="_blank">Work in Quectel</a>
+<a href="http://QuectelWB.github.io/STD_Modules" target="_blank">Work in Quectel</a>
 
 Open
 -----
