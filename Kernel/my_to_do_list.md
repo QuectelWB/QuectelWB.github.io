@@ -34,7 +34,14 @@ RCU
 Read-Copy Update
 
 
+kernel-per-CPU-kthreads
+------
 
+[kernel-per-CPU-kthreads](https://elixir.bootlin.com/linux/v4.14.181/source/Documentation/kernel-per-CPU-kthreads.txt)
+
+	
+	/proc/sys/kernel/watchdog_thresh
+	
 
 
 
