@@ -257,6 +257,23 @@ bash dash
 用bash 执行可以，但是dash 不行
 
 
+git 删除分支
+---------
+
+现在在zh分支上，想删除zh分支
+
+	　　1 先切换到别的分支: git checkout master
+
+	　　2 删除本地分支： git branch -d zh
+
+	　　3 如果删除不了可以强制删除，git branch -D zh
+
+	　　4 有必要的情况下，删除远程分支(慎用)：git push origin --delete zh
+
+
+
+
+
 
 :)
 
