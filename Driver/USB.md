@@ -1041,6 +1041,12 @@ usbmon log:
 	ffff8ff49068b780 2154857014 S Co:2:005:0 s 21 22 0001 0004 0000 0
 	ffff8ff49068b780 2154857102 C Co:2:005:0 0 0
 
+USB PM
+-----
+
+从3.10开始，CONFIG_USB_SUSPEND --> eliminated
+
+早期内核，USB的dynamic suspend 需要打开 CONFIG_USB_SUSPEND ，并且依赖于 CONFIG_PM_RUNTIME.
 
 
 
