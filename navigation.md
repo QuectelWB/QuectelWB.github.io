@@ -56,7 +56,7 @@
 
 [Others]()
 
-
+  * [HareWare](Others/Hardware.md)
   * [Something](Others/Something.md)
   * [Qt](Others/Qt.md)
   * [winbat](Others/winbat.md)
