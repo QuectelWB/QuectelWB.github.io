@@ -46,9 +46,9 @@ $ sudo eject /dev/sdX
 
 ### 检查
 
-确保串口连接正确，参考这里([VIM1](/zh-cn/vim1/SetupSerialTool.html)/[VIM2](/zh-cn/vim2/SetupSerialTool.html)/[VIM3](/zh-cn/vim3/SetupSerialTool.html))。
+确保串口连接正确，参考这里([VIM1](/vim3/SetupSerialTool.html)/[VIM2](/vim2/SetupSerialTool.html)/[VIM3](/vim3/SetupSerialTool.html))。
 
-为了确保U-boot从SD卡启动，你必须擦除eMMC([VIM1](/zh-cn/vim1/HowtoEraseEMMC.html)/[VIM2](/zh-cn/vim2/HowtoEraseEMMC.html)/[VIM3](/zh-cn/vim3/HowtoEraseEMMC.html))。
+为了确保U-boot从SD卡启动，你必须擦除eMMC([VIM1](/vim3/HowtoEraseEMMC.html)/[VIM2](/vim2/HowtoEraseEMMC.html)/[VIM3](/vim3/HowtoEraseEMMC.html))。
 
 打开终端，执行`kermit`命令:
 ```

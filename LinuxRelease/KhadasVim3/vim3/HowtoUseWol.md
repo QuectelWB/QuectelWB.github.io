@@ -81,4 +81,4 @@ terry@terry:~$ wakeonlan 98:aa:fc:60:46:de
 *<3> 在iPhone下, 你可以在应用商店搜索 **wake on lan** 工具。*
 
 ### 更多
-[KBI参考](/zh-cn/vim2/KbiGuidance.html)
+[KBI参考](/vim2/KbiGuidance.html)

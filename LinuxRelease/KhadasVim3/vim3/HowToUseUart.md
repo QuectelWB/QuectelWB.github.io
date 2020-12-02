@@ -5,7 +5,7 @@ title: 如何使用串口
 
 uart_c引出到40Pin的引脚是15脚以及16脚
 
-* [VIM1-GPIO-Pin-Out](/vim1/index.html#GPIO-Pin-Out)
+* [VIM1-GPIO-Pin-Out](/vim3/index.html#GPIO-Pin-Out)
 * [VIM2-GPIO-Pin-Out](/vim2/#GPIO-Pinout)
 * [VIM3-GPIO-Pin-Out](/vim3/#GPIO-Pinout)
 

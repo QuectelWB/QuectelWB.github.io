@@ -15,7 +15,7 @@ title: How To Boot Into Upgrade Mode
 4. 数2-3秒后松开`POWER`按键会进入升级模式，进入升级模式后系统led会点亮。
 
 ### 串口模式（针对开发者）
-1. 参考[文档](/zh-cn/vim3/SetupSerialTool.html)设置串口。
+1. 参考[文档](/vim3/SetupSerialTool.html)设置串口。
 2. 确保串口连线正确。
 3. 系统启动时按任意按键进入串口命令行模式。
 4. 执行`run update`命令进入升级模式，进入升级模式后系统led灯会点亮。

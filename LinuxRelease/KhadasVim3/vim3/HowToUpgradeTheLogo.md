@@ -2,7 +2,7 @@ title: 如何更新Logo
 ---
 
 
-我们使用 [Fenix](/zh-cn/vim1/FenixScript.html)来编译Ubuntu/Debian固件。默认logo文件为`archives/logo/bmp/logo.bmp`，所以你可以替换这个默认的logo文件。
+我们使用 [Fenix](/vim3/FenixScript.html)来编译Ubuntu/Debian固件。默认logo文件为`archives/logo/bmp/logo.bmp`，所以你可以替换这个默认的logo文件。
 
 *注意： BMP文件需要为24位位深。*
 

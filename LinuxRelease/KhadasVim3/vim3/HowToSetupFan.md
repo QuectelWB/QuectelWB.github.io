@@ -55,23 +55,23 @@ khadas@Khadas:~$ sudo reboot
 
 你可以在系统的应用列表中找到`FAN Setting`
 
-![FAN Setting](/images/vim1/gnome_application_fan.png)
+![FAN Setting](/images/vim3/gnome_application_fan.png)
 
 打开这个应用
 
 * Step2: 选择风扇工作模式
 
-![Fan Setting](/images/vim1/gnome_fan_setting.png)
+![Fan Setting](/images/vim3/gnome_fan_setting.png)
 
 可以选择你需要的工作模式,默认是`auto`.
 
 * Step3: 保存
 
-![Fan save](/images/vim1/gnome_fan_save.png)
+![Fan save](/images/vim3/gnome_fan_save.png)
 
 可以将你的选择保存为默认选项
 
-![Fan PSK](/images/vim1/gnome_fan_psk.png)
+![Fan PSK](/images/vim3/gnome_fan_psk.png)
 
 密码就是你的用户密码
 

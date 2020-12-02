@@ -41,17 +41,17 @@ hdmi=1080p60hz
 
 在系统应用列表中找到`HDMI Resolution`.
 
-![gnome-HDMI-application](/images/vim1/gnome-HDMI-application.png)
+![gnome-HDMI-application](/images/vim3/gnome-HDMI-application.png)
 
 打开这个应用
 
 ### 设置分辨率
 
-![gnome-HDMI-setting](/images/vim1/gnome-HDMI-setting.png)
+![gnome-HDMI-setting](/images/vim3/gnome-HDMI-setting.png)
 
 选择一个你需要的分辨率,然后选择保存,
 
-![gnome-HDMI-save](/images/vim1/gnome-HDMI-save.png)
+![gnome-HDMI-save](/images/vim3/gnome-HDMI-save.png)
 
 系统会自动注销,分辨率的设置就会生效
 

@@ -19,7 +19,7 @@ title: 如何擦除eMMC存储器
 5. 当eMMC数据擦除后，显示器会显示黑屏
 
 ### 串口模式(针对开发者)
-1. 参考这里([VIM1](/zh-cn/vim1/SetupSerialTool.html)/[VIM2](/zh-cn/vim2/SetupSerialTool.html)/[VIM3](/zh-cn/vim3/SetupSerialTool.html))设置串口
+1. 参考这里([VIM1](/vim3/SetupSerialTool.html)/[VIM2](/vim2/SetupSerialTool.html)/[VIM3](/vim3/SetupSerialTool.html))设置串口
 2. 确保串口线连接正确以及串口软件正确配置
 3. 在VIMs上电时按住任意键会进入U-boot命令行模式
 4. U-boot命令行执行`store init 3`会擦除整个eMMC
@@ -63,7 +63,7 @@ GXL:BL1:9ac50e:a1974b;FEAT:ADFC318C;POC:3;RCY:0;EMMC:0;READ:0;CHK:AA;SD:800;USB:
 ### 中断模式
 这种方法适用于所有Amlogic产品。
 
-1. 通过USB-C([VIM1](/zh-cn/vim1/UpgradeViaUSBCable.html)/[VIM2](/zh-cn/vim2/UpgradeViaUSBCable.html)/[VIM3](/zh-cn/vim3/UpgradeViaUSBCable.html)) 或TF卡([VIM1](/zh-cn/vim1/UpgradeViaTFBurningCard.html)/[VIM2](/zh-cn/vim2/UpgradeViaTFBurningCard.html)/[VIM3](/zh-cn/vim3/UpgradeViaTFBurningCard.html))升级固件.
+1. 通过USB-C([VIM1](/vim3/UpgradeViaUSBCable.html)/[VIM2](/vim2/UpgradeViaUSBCable.html)/[VIM3](/vim3/UpgradeViaUSBCable.html)) 或TF卡([VIM1](/vim3/UpgradeViaTFBurningCard.html)/[VIM2](/vim2/UpgradeViaTFBurningCard.html)/[VIM3](/vim3/UpgradeViaTFBurningCard.html))升级固件.
 2. 中断升级过程(建议进度条超过15%后中断), 例如, 拔掉USB数据线或TF卡
 3. 重新上电，你会发现eMMC被擦除
 

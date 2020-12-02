@@ -5,7 +5,7 @@ title: 快速打包安卓升级固件
 
 ### 准备:
 
-* [如何编译安卓](/zh-cn/vim3/BuildAndroid.html)。
+* [如何编译安卓](/vim3/BuildAndroid.html)。
 
 
 ### 仅仅修改U-boot
@@ -32,7 +32,7 @@ $ ./vendor/amlogic/common/tools/aml_upgrade/aml_image_v2_packer  -r out/target/p
 ```
 ### 仅仅修改开机logo
 
-* 重新编译Logo。参考[如何编译U-boot Logo](/zh-cn/vim1/BuildBootLogoForUboot.html)。
+* 重新编译Logo。参考[如何编译U-boot Logo](/vim3/BuildBootLogoForUboot.html)。
 ```sh
 $ cd PATH_YOUR_PROJECT
 $ source build/envsetup.sh

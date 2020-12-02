@@ -18,17 +18,17 @@ Krescue是一个非常小(21mb)的操作系统，您可以直接从micro SD卡�
 [Etcher](https://www.balena.io/etcher/)是一个兼容性较好同时操作界面简单易用的烧录工具，我们选用这个工具作为烧录Krescue到SD卡的工具。
 
 #### 下载Krescue镜像
-Krescue的镜像可以从[这里下载](/zh-cn/Firmware/Krescue/dump/),选择你相应的板子的固件。
-![Kerscure_downloads](/images/vim1/Krescue_downloads.png)
+Krescue的镜像可以从[这里下载](/Firmware/Krescue/dump/),选择你相应的板子的固件。
+![Kerscure_downloads](/images/vim3/Krescue_downloads.png)
 
 #### 制作启动盘
 将mircoSD卡插进PC上。将下载的镜像烧录进SD卡。
-![Make_Krescue](/images/vim1/HowtoUseEtcher.png)
+![Make_Krescue](/images/vim3/HowtoUseEtcher.png)
 
 
 ### 运行
-将制作好的SD卡插入板子,连接HDMI，进入[升级模式](/zh-cn/vim3/HowtoBootIntoUpgradeMode.html)，看到下图就是成功启动了kerscure
-![boot Krescue](/images/vim1/krescue_boot.jpg)
+将制作好的SD卡插入板子,连接HDMI，进入[升级模式](/vim3/HowtoBootIntoUpgradeMode.html)，看到下图就是成功启动了kerscure
+![boot Krescue](/images/vim3/krescue_boot.jpg)
 
 ## 通过网络使用安装Krescue
 
@@ -44,11 +44,11 @@ Krescue的镜像可以从[这里下载](/zh-cn/Firmware/Krescue/dump/),选择你
 $ curl -sfL dl.khadas.com/.mega | sh -s - -l
 ```
 你会看到可用的固件列表
-![krescue firmware list](/images/vim1/krescue_list.png)
+![krescue firmware list](/images/vim3/krescue_list.png)
 ```
 $ curl -sfL dl.khadas.com/.mega | sh -s - [BOARD_ID] > /dev/mmcblk0 (或者`/dev/mmcblk1`)
 ```
-等待烧录完成，镜像就被写入了SD卡里，此时就可以进入[升级模式](/zh-cn/vim3/HowtoBootIntoUpgradeMode.html)启动krescue了。
+等待烧录完成，镜像就被写入了SD卡里，此时就可以进入[升级模式](/vim3/HowtoBootIntoUpgradeMode.html)启动krescue了。
 
 ## 使用krescue
 
