@@ -87,6 +87,7 @@
 
   * [NetWork](links/network.md)
   * [Quectel](links/quectel.md)
+  * [Khadas](links/KhadasDoc.md)
 
 [gimmick:theme (inverse: false)](spacelab)
 
