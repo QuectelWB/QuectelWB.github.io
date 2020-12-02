@@ -18,11 +18,14 @@
 [Driver]()
 
   * [OverView](Driver/OverView.md)
-  * [USB](Driver/USB.md)
   * [WIFI&BLE](Driver/WIFI_BT.md)
   * [PCIe](Driver/PCIe.md)
   * [SDIO](Driver/SDIO.md)
   * [PM](Driver/PM.md)
+  - - - -
+  * # USB
+  * [USB](Driver/USB/USB.md)
+  * [USB_Serial](Driver/USB/USB_Serial.md)
 
 [LinuxMisc]()
 
