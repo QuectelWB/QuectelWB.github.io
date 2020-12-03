@@ -40,9 +40,26 @@ wakeup in suspend options.
 
 > Autosuspend
 
+指定时间内没有收到数据
 
 > RemoteWakeup
 
+Device发送给Host的resume信号
+
+主控如何开启远程唤醒支持
+-------
+
+Host 进休眠之前对remotewakeup setFeature，唤醒后clear Feature。
+
+Set_Feature
+	
+Clear_Feature
+	
+清除或禁用特定功能
+
+| bmRequestType | bRequest | wValue | wIndex | wLength | Data |
+| ---- |     ---- | ---- | ---- | ---- | ---- |
+| 00000000B <br>   00000001B <br> 00000010B | CLEAR_FEATURE | Feature <br> Seletor | Zero <br> Interface <br> Endpoint | Zero | None |
 
 
 
