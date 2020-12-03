@@ -26,6 +26,7 @@
   * # USB
   * [USB](Driver/USB/USB.md)
   * [USB_Serial](Driver/USB/USB_Serial.md)
+  * [USB标准请求](Driver/USB/UsbRequest.md)
 
 [LinuxMisc]()
 
@@ -35,6 +36,9 @@
   - - - -
   * # Advanced
   * [everyday_cmd](MISC/everydataCMD.md)
+
+
+
 
 [Release]()
 
