@@ -31,13 +31,10 @@
 [LinuxMisc]()
 
   * [misc](MISC/misc.md)
-  * [Shell](MISC/linuxshell.md)
   * [Signal](MISC/Signal.md)
   - - - -
   * # Advanced
   * [everyday_cmd](MISC/everydataCMD.md)
-
-
 
 
 [Release]()
@@ -61,12 +58,17 @@
   * [MenuOS](LinuxRelease/LinuxRelease/menu/MenuOS.md)
   * [RunningLinuxKernel](LinuxRelease/running/RunningLinuxKernel.md)
 
+
+[Shell]()
+
+  * [Shell](SHELL/linuxshell.md)
+  * [winbat](SHELL/winbat.md)
+
 [Others]()
 
   * [HareWare](Others/Hardware.md)
   * [Something](Others/Something.md)
   * [Qt](Others/Qt.md)
-  * [winbat](Others/winbat.md)
   * [winbat](Others/SystemV.md)
   - - - -
    * # Python

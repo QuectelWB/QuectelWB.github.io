@@ -1,5 +1,0 @@
-Linux Shell Study
-========================
-
-Wiki
-
