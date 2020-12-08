@@ -271,8 +271,15 @@ git 删除分支
 	　　4 有必要的情况下，删除远程分支(慎用)：git push origin --delete zh
 
 
+git 如何merge 分支
+----------
 
+xxx
 
+expect 的用法
+------
+
+当出现 username 的时候，自动输入 QuectelWB
 
 
 :)
