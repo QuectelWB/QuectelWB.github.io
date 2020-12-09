@@ -237,5 +237,36 @@ ps -o pid,psr,comm -p <pid>
 [判断Linux进程在哪个CPU核运行的方法](https://www.cnblogs.com/snooker/p/10942566.html)
 
 
+ping
+-----------
+
+TTL<br>
+
+当我们在使用 ping 命令时，返回结果里会带一个 TTL 值。这个东西的含义其实就是Time To Live，指的是报文在网络中能够存活的限制。以前这个限制方式是设定一个时间（Time To Live中的Time就是这样来的），当报文在网络中转发时，时间超过这个限制，最后一个收到报文的路由点就会把它扔掉，而不继续转发。后来把时间限制改为了跳数限制，就是当报文在网络中转发时，每经过一个路由点，就把预先设定的这个TTL数值减 1，直到最后 TTL=1 时报文就被扔掉，不向下转发。
+
+路由点：我这里是指完成路由功能的机器，因为并不是只有路由器才可以完成路由转发功能，比如主机可以配置路由转发。
+
+所以，回包中的 TTL 表示目标主机返回的报文到达本机后，从它预设的 TTL 值减小到现在的值。
+<br>
+
+临时开启 ping。
+
+	echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+临时禁用 ping。
+
+	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all 
+
+
+
+
+
+
+
+
+
+
+
 
 :)
+
