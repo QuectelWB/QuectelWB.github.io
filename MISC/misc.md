@@ -258,9 +258,31 @@ TTL<br>
 	echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all 
 
 
+epoll和/proc
+---------
 
+当创建好epoll句柄后，它就是会占用一个fd值，在linux下如果查看/proc/进程id/fd/，是能够看到这个fd的，所以在使用完epoll后，必须调用close()关闭，否则可能导致fd被耗尽。
 
+epoll创建的fd是：
 
+	lrwx------ 1 root root 64 Aug 20 11:04 3 -> anon_inode:[eventpoll]
+
+这种类型的inode，是epoll创建的。
+
+	lrwx------ 1 root root 64 Aug 20 11:04 4 -> socket:[1126425]
+<br>
+在相应进程的/proc/$pid/fd 目录下存放了此进程所有打开的fd
+<br>
+lrwx------ 1 root root 64 Nov 21 09:44 133 -> /dev/sda1
+lrwx------ 1 root root 64 Nov 21 09:44 134 -> /dev/sdb1
+lrwx------ 1 root root 64 Nov 21 09:44 136 -> /dev/sdb1
+lrwx------ 1 root root 64 Nov 21 09:44 137 -> socket:[22460]
+lrwx------ 1 root root 64 Nov 21 09:44 138 -> socket:[7326842]
+lrwx------ 1 root root 64 Nov 21 09:44 139 -> socket:[7341066]
+
+socket:后面的一串数字是什么呢？
+<br>其实是该socket的inode号
+<br>
 
 
 
