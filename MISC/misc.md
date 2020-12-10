@@ -228,12 +228,12 @@ dmesg -s 指定唤醒缓冲器大小
 ps top 查看进程运行在哪个cpu上
 -----
 
-ps -eo pid,args,psr
-
-psr 
-
-ps -o pid,psr,comm -p <pid>
-
+	ps -eo pid,args,psr
+	
+	psr 
+	
+	ps -o pid,psr,comm -p <pid>
+	
 [判断Linux进程在哪个CPU核运行的方法](https://www.cnblogs.com/snooker/p/10942566.html)
 
 
