@@ -18,9 +18,18 @@ sleep 2s
 echo "####### commit done, start git push #######"
 
 
-git push -u origin master
 
-sleep 1s
+spawn git push -u origin master
+
+set timeout 3
+
+expect "Username for 'https://github.com':"
+
+send "QuectelWB\n"
+
+set timeout 1
+
+send "wangbees09\n"
 
 #QuectelWB
 
