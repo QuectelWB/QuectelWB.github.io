@@ -273,12 +273,13 @@ epoll创建的fd是：
 <br>
 在相应进程的/proc/$pid/fd 目录下存放了此进程所有打开的fd
 <br>
-lrwx------ 1 root root 64 Nov 21 09:44 133 -> /dev/sda1
-lrwx------ 1 root root 64 Nov 21 09:44 134 -> /dev/sdb1
-lrwx------ 1 root root 64 Nov 21 09:44 136 -> /dev/sdb1
-lrwx------ 1 root root 64 Nov 21 09:44 137 -> socket:[22460]
-lrwx------ 1 root root 64 Nov 21 09:44 138 -> socket:[7326842]
-lrwx------ 1 root root 64 Nov 21 09:44 139 -> socket:[7341066]
+
+	lrwx------ 1 root root 64 Nov 21 09:44 133 -> /dev/sda1
+	lrwx------ 1 root root 64 Nov 21 09:44 134 -> /dev/sdb1
+	lrwx------ 1 root root 64 Nov 21 09:44 136 -> /dev/sdb1
+	lrwx------ 1 root root 64 Nov 21 09:44 137 -> socket:[22460]
+	lrwx------ 1 root root 64 Nov 21 09:44 138 -> socket:[7326842]
+	lrwx------ 1 root root 64 Nov 21 09:44 139 -> socket:[7341066]
 
 socket:后面的一串数字是什么呢？
 <br>其实是该socket的inode号
