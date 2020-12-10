@@ -279,7 +279,19 @@ xxx
 expect 的用法
 ------
 
-当出现 username 的时候，自动输入 QuectelWB
+当出现 username 的时候，自动输入 QuectelWB.
+
+自动ssh登录输入密码
+
+Shell 脚本如下
+
+	#!/usr/bin/expect
+	
+	spawn ssh m@10.66.125.234
+	expect "*password:"
+	send "m\r"
+	expect "*$"
+	interact
 
 
 :)
