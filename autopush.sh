@@ -18,8 +18,7 @@ sleep 2s
 echo "####### commit done, start git push #######"
 
 
-
-spawn git push -u origin master
+git push -u origin master
 
 set timeout 3
 
