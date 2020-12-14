@@ -1,5 +1,7 @@
 target/
 
+
+autopush.sh
 *.swap
 *.project
 *.settings
