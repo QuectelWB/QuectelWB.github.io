@@ -26,6 +26,18 @@ SDIO SD卡标准的，外设接口
 	Bluetooth card
 	Radio/TV card
 
+
+MMC 协议
+------
+
+[codingbelief eMMC 总线协议](https://linux.codingbelief.com/zh/storage/flash_memory/emmc/emmc_bus_protocol.html)
+
+![](multi_block_read.png)
+
+![](multi_block_write.png)
+
+
+
 SD Card Hardware
 --------
 
@@ -45,5 +57,23 @@ Core：driver/mmc/core
 Card：drver/mmc/card
 
 设备号179
+
+sysfs
+-------
+
+识别 SD 卡或者 EMMC 时，驱动已经将一些常用信息通过文件的形式创建在 sys 目录下。用户可以方
+便的通过 cat 等命令查看设备信息。如下为常用命令： 
+ 
+	ls /sys/block/mmcblk0-l 
+	cat /sys/block/mmcblk0/size 
+	cat /proc/self/mounts 
+	cat /sys/block/mmcblk0/device/cid, csd, date, fwrev, hwrev, manfid, name, oemid, serial, type, uevent 
+
+
+
+
+
+
+
 
 
