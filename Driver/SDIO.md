@@ -26,4 +26,24 @@ SDIO SD卡标准的，外设接口
 	Bluetooth card
 	Radio/TV card
 
+SD Card Hardware
+--------
+
+![](SDcardHardware.png)
+
+mmc/SD Linux framework
+-------
+
+![](mmcframework.png)
+
+内核里关于mmc部分代码由3部分组成
+
+Host：又称主控制器层驱动，driver/mmc/host/，譬如包括sdhci-msm.c. 涉及SD/MMC协议。
+
+Core：driver/mmc/core
+
+Card：drver/mmc/card
+
+设备号179
+
 
