@@ -294,5 +294,13 @@ Shell 脚本如下
 	interact
 
 
+find 的用法
+------
+查找/etc下的链接属性的文件，大小小于1kb的
+
+	find /etc -type l -o -size -1k
+
+
+
 :)
 
