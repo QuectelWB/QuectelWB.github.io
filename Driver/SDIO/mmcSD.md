@@ -70,10 +70,58 @@ sysfs
 	cat /sys/block/mmcblk0/device/cid, csd, date, fwrev, hwrev, manfid, name, oemid, serial, type, uevent 
 
 
+SDHCI 控制器
+
+	root@colibri-imx6ull:~# dmesg | egrep "(sdhci|mmc)"
+	[    1.880782] sdhci: Secure Digital Host Controller Interface driver
+	[    1.890679] sdhci: Copyright(c) Pierre Ossman
+	[    1.898540] sdhci-pltfm: SDHCI platform and OF driver helper
+	[    1.909980] sdhci-esdhc-imx 2190000.usdhc: Got CD GPIO
+	[    1.984346] mmc0: SDHCI controller on 2190000.usdhc [2190000.usdhc] using ADMA
+
+插入 SD卡之前
+
+	root@colibri-imx6ull:~# cat /proc/interrupts | egrep "(mmc|cd)"
+	 58:          0       GPC  22 Level     mmc0
+	200:          0  gpio-mxc   0 Edge      2190000.usdhc cd
+
+此时IOs调试信息空
+
+	root@colibri-imx6ull:~# cat /sys/kernel/debug/mmc0/ios
+	clock:          0 Hz
+	vdd:            0 (invalid)
+	bus mode:       2 (push-pull)
+	chip select:    0 (don't care)
+	power mode:     0 (off)
+	bus width:      0 (1 bits)
+	timing spec:    0 (legacy)
+	signal voltage: 0 (3.30 V)
+	driver type:    0 (driver type B)
+
+当SD卡插入的时候
+
+	root@colibri-imx6ull:~# cat /sys/kernel/debug/gpio | grep cd
+	gpio-128 (                    |cd                  ) in  hi IRQ
 
 
+	root@colibri-imx6ull:~# cat /sys/kernel/debug/mmc0/ios
+	clock:          50000000 Hz
+	actual clock:   49500000 Hz
+	vdd:            21 (3.3 ~ 3.4 V)
+	bus mode:       2 (push-pull)
+	chip select:    0 (don't care)
+	power mode:     2 (on)
+	bus width:      2 (4 bits)
+	timing spec:    2 (sd high-speed)
+	signal voltage: 0 (3.30 V)
+	driver type:    0 (driver type B)
+
+detect pin 拉低
+
+	root@colibri-imx6ull:~# cat /sys/kernel/debug/gpio | grep cd
+	gpio-128 (                    |cd                  ) in  lo IRQ
 
 
+[SD/MMC Card Linux](https://developer.toradex.com/knowledge-base/sd-mmc-card-linux)
 
-
-
+[MMC/SD/SDIO card support](https://www.kernel.org/doc/html/latest/driver-api/mmc/index.html)
