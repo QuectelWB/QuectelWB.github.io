@@ -6,12 +6,13 @@
 
 
 
-void SwapX(int& x,int& y)
+int& SwapX(int& x,int& y)	//引用作为返回值，不会产生副本中间变量
 {
 	printf("0x%p,0x%p\n",&x,&y);  // 内存地址和原来的其实一样的
 	x = x^y;
 	y = y^x;
 	x = x^y;
+	return x;
 }
 
 int main()
