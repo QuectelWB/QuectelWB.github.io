@@ -57,3 +57,17 @@ libusb
 [Kakadu's example](https://github.com/Kakadu/Qt_libusb.git)
 
 [libusb介绍](https://www.cs.unm.edu/~hjelmn/libusb_hotplug_api/annotated.html)
+
+[ManPage](https://nxmnpg.lemoda.net/3/libusb_open_device_with_vid_pid)
+
+
+
+
+
+
+
+
+
+
+
+:)
