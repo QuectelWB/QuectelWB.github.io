@@ -47,5 +47,5 @@ libusb
 
 [Example Codes of libusb](https://cpp.hotexamples.com/examples/-/-/libusb_open/cpp-libusb_open-function-examples.html)
 
-
+[Kakadu's example](https://github.com/Kakadu/Qt_libusb.git)
 
