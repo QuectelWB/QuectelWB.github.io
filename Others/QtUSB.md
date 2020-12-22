@@ -28,5 +28,24 @@ QMAKE_LIBS_OPENGL = -lGL
 sudo apt-get install libgl1-mesa-dev
 
 
+libusb
+------
+
+	sudo apt-get install libusb-dev
+	sudo apt-get install libusb-1.0-0-dev
+
+	#include <libusb-1.0/libusb.h>
+	libusb_get_device_descriptor(dev,descriptor)
+	printf("\tVENDOR(0x%x) PRODUCT(0x%x)\n", desc.idVendor, desc.idProduct);
+
+	
+	gcc test.c `pkg-config --libs --cflags libusb-1.0`
+
+
+参考
+[lbusb获取usb设备的idVendor(vid)，idProduct(pid)，以及Serial Number](https://blog.csdn.net/zhc10110011/article/details/46610701)
+
+[Example Codes of libusb](https://cpp.hotexamples.com/examples/-/-/libusb_open/cpp-libusb_open-function-examples.html)
+
 
 
