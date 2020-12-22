@@ -19,6 +19,11 @@ QT USB
 Qt cannot find -lGL
 ------
 
+安装Qt
+
+[http://download.qt.io/archive/qt/](http://download.qt.io/archive/qt/)
+
+
 删除 /opt/Qt5.X.X/5.X/gcc_64/mkspecs/common/linux.conf 的这一句，实际并没有用到OpenGL的情况
 
 QMAKE_LIBS_OPENGL = -lGL
@@ -46,6 +51,8 @@ libusb
 [lbusb获取usb设备的idVendor(vid)，idProduct(pid)，以及Serial Number](https://blog.csdn.net/zhc10110011/article/details/46610701)
 
 [Example Codes of libusb](https://cpp.hotexamples.com/examples/-/-/libusb_open/cpp-libusb_open-function-examples.html)
+
+[libusb_open_device_with_vid_pid](https://cpp.hotexamples.com/examples/-/-/libusb_open_device_with_vid_pid/cpp-libusb_open_device_with_vid_pid-function-examples.html)
 
 [Kakadu's example](https://github.com/Kakadu/Qt_libusb.git)
 
