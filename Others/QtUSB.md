@@ -60,8 +60,7 @@ libusb
 
 [ManPage](https://nxmnpg.lemoda.net/3/libusb_open_device_with_vid_pid)
 
-
-
+[Qt libusb](https://www.cnblogs.com/lvdongjie/p/7921389.html)
 
 
 
