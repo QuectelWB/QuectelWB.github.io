@@ -49,3 +49,4 @@ libusb
 
 [Kakadu's example](https://github.com/Kakadu/Qt_libusb.git)
 
+[libusb介绍](https://www.cs.unm.edu/~hjelmn/libusb_hotplug_api/annotated.html)
