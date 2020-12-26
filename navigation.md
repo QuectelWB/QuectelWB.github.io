@@ -27,6 +27,7 @@
   * [USB](Driver/USB/USB.md)
   * [USB_Serial](Driver/USB/USB_Serial.md)
   * [USB标准请求](Driver/USB/UsbRequest.md)
+  * [USB共享网络](Driver/USB/USB_Share_Net_With_Host.md)
   - - - -
   * # SDIO
   * [SDIO](Driver/SDIO/SDIO.md)
