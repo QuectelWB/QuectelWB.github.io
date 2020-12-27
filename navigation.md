@@ -82,6 +82,7 @@
    * [examples](Others/Python/useful_example.md)
   - - - -
   * # Web
+  * [myBlog](Otherss/Web/myBlog.md)
   * [Web](Otherss/Web/OverView.md)
   * [html](Others/Web/HTML.md)
   * [CSS](Others/Web/CSS.md)
