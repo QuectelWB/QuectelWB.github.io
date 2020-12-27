@@ -35,4 +35,8 @@ docker run --name my-nginx -v /home/m/gitbook/my/html:/usr/share/nginx/html -d -
 
 So open IP:8080 to start a Web page .
 
+How to make pdf 
+
+[make pdf]()
+
 
