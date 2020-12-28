@@ -285,9 +285,13 @@ socket:后面的一串数字是什么呢？
 <br>其实是该socket的inode号
 <br>
 
+设备树
+----
+
+alias 别名
 
 
-
+[dts学习](https://blog.csdn.net/qq_16777851/article/details/87291146)
 
 
 
