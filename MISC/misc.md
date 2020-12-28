@@ -294,6 +294,11 @@ alias 别名
 [dts学习](https://blog.csdn.net/qq_16777851/article/details/87291146)
 
 
+vfork
+-----
+
+vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。
+
 
 :)
 

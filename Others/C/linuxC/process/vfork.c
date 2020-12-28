@@ -3,8 +3,11 @@
 int main ()   
 {   
     pid_t fpid; //fpid表示fork函数返回的值  
-    int count=0;  
-    fpid=fork();   
+   
+    int count=0; 
+
+    fpid=vfork();   
+   
     if (fpid < 0)   
         printf("error in fork!");   
     else if (fpid == 0) {  // 返回0 子进程
@@ -16,6 +19,7 @@ int main ()
         count++;  
     }  
     printf("统计结果: %d\n",count);  
-    return 0;  
+    exit(0);
+ //   return 0;    //使用vfork 不能return 只能调用exit()或者exec族的函数，否则会出现段错误
 }  
 
