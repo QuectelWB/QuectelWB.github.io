@@ -301,6 +301,18 @@ find 的用法
 	find /etc -type l -o -size -1k
 
 
+chgrp
+-------
+
+修改文件所属组群chgrp
+
+修改文件所属组群很简单-chgrp命令，就是change group的缩写（我们可以利用这些来记忆命令）
+
+语法：
+	
+	chgrp  组群  文件名/目录 
+
+相比于chwon 更不常用
 
 :)
 
