@@ -6,6 +6,11 @@ Process
 
 ![](processes.png)
 
+TASK_UNINTERRUPTIBLE 的进程 在ps 的时候能看到标注为 D ，而TASK_INTERRUPTIBLE的进程处于 S状态。
+D 状态的程序，譬如 vfork创建子进程后，父进程就是D状态。
+D状态的进程，只能 重启操作系统或者等其资源满足后才能关闭。无法用信号操作kill掉。
+
+
 什么是僵尸进程
 -----
 
