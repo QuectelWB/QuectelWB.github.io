@@ -1,5 +1,8 @@
-
 #!/bin/bash
+var=quectel
+
+echo $var
+
 printf "Input a character: "
 read -n 1 char
 case $char in
@@ -18,4 +21,5 @@ case $char in
  *)
     printf "\nerror\n"
 esac
+
 
