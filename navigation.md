@@ -74,6 +74,7 @@
   * [HareWare](Others/Hardware.md)
   * [Something](Others/Something.md)
   * [Qt](Others/Qt.md)
+  * [QtUsb](Others/QtUSB.md)
   * [winbat](Others/SystemV.md)
   * [Docker](Others/docker.md)
   - - - -
