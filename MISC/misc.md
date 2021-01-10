@@ -300,5 +300,11 @@ vfork
 vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。
 
 
-:)
+git 同时传到两个仓库
+-----
+
+git remote set-url --add origin git@github.com.git
+
+
+
 
