@@ -42,6 +42,11 @@
   * [everyday_cmd](MISC/everydataCMD.md)
 
 
+[LinuxService]()
+
+  * [DBus](DebianLinux/DBus.md)
+  * [Supervisor](DebianLinux/Supervisor.md)
+
 [Release]()
 
   * [OverView](LinuxRelease/OverView.md)
@@ -56,6 +61,7 @@
   * [Lichee](LinuxRelease/licheezero.md)
   * [Khadas](LinuxRelease/Khadas.md)
   * [210](LinuxRelease/210.md)
+  * [CM4](LinuxRelease/Raspberry.CM4.md)
   - - - -
   * # Virtual Machine
   * [QEMU_Vexpress](LinuxRelease/Vexpress.md)
@@ -69,14 +75,24 @@
   * [Shell](SHELL/linuxshell.md)
   * [winbat](SHELL/winbat.md)
 
+[BringUp]()
+
+  * [VimIDE](BringUp/VimIDE.md)
+  * [VimIDE](BringUp/.md)
+  * [VimIDE](BringUp/.md)
+  * [Docker](BringUp/docker.md)
+
+[Qt]()
+
+  * [Qt](Qt/Qt.md)
+  * [QtUsb](Qt/QtUSB.md)
+  * [FAQ](Qt/FAQs.md)
+
 [Others]()
 
   * [HareWare](Others/Hardware.md)
   * [Something](Others/Something.md)
-  * [Qt](Others/Qt.md)
-  * [QtUsb](Others/QtUSB.md)
   * [winbat](Others/SystemV.md)
-  * [Docker](Others/docker.md)
   - - - -
    * # Python
    * [basic](Others/Python/pybasic.md)
