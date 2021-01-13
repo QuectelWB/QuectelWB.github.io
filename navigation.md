@@ -64,6 +64,7 @@
   * [Khadas](LinuxRelease/Khadas.md)
   * [210](LinuxRelease/210.md)
   * [CM4](LinuxRelease/Raspberry.CM4.md)
+  * [IMX8](LinuxRelease/IMX8_Android9_Bringup.md)
   - - - -
   * # Virtual Machine
   * [QEMU_Vexpress](LinuxRelease/Vexpress.md)
