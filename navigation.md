@@ -46,6 +46,8 @@
 
   * [DBus](DebianLinux/DBus.md)
   * [Supervisor](DebianLinux/Supervisor.md)
+  * [Systemd](DebianLinux/Systemd.md)
+  * [SystemAccount](DebianLinux/UserManagement.md)
 
 [Release]()
 
