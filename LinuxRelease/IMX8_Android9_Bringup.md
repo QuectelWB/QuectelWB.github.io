@@ -52,8 +52,8 @@ jdk 要求是1.8版本
 已经上传到docker.io
 
 下载
-
-
+	
+	docker pull quectel/imx8_android9:latest
 
 编译Android
 -----
@@ -74,7 +74,16 @@ jdk 要求是1.8版本
 
 SSH远程连接到
 
-	ssh -P 6666 ${IP}
+	ssh -P 6666 ${HOST_IP}
+
+	PS D:\BaiduNetdiskDownload\imx8-android> ssh -p 6666 imx8@10.66.83.84
+	The authenticity of host '[10.66.83.84]:6666 ([10.66.83.84]:6666)' can't be established.
+	ECDSA key fingerprint is SHA256:vhkbWtZEDaEjXzh6phneA4VSDB3hLSZdvOr8ZD/zYvw.
+	Are you sure you want to continue connecting (yes/no)? yes
+	Warning: Permanently added '[10.66.83.84]:6666' (ECDSA) to the list of known hosts.
+	imx8@10.66.83.84's password:
+	Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.4.0-58-generic x86_64)
+
 	
 在docker容器中编译		
 
