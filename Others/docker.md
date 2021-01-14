@@ -58,3 +58,27 @@ docker下各文件默认存放在/var/lib/docker下
 开启容器的ssh
 
 	docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
+
+push
+-----
+
+	android@q-OptiPlex-7070:~$ docker login
+	Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+	Username: quectel
+	Password:
+	WARNING! Your password will be stored unencrypted in /home/android/.docker/config.json.
+	Configure a credential helper to remove this warning. See
+	https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+	Login Succeeded
+
+
+	android@q-OptiPlex-7070:~$ docker images
+	REPOSITORY            TAG                 IMAGE ID       CREATED          SIZE
+	ubuntu                16_jdk1.8           0fc8046dc8e7   10 minutes ago   2.93GB
+
+	docker tag ubuntu:16_jdk1 quectel/imx8_android9
+
+	docker push quectel/imx8_android9
+
+

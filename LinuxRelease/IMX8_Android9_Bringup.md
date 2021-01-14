@@ -54,11 +54,26 @@ jdk 要求是1.8版本
 下载
 
 
+
 编译Android
 -----
 
+运行docker 环境
 
-	$ cd /home/forlinx/imx8mm/OK8MM-android-source 
+	android@q-OptiPlex-7070:~$ docker run -d --name imx8 -v /home/android/IMX8_Android9:/home/imx8/imx8_Android -v /etc/localtime:/etc/localtime:ro   -v
+	 /etc/timezone:/etc/timezone:ro --device=/dev/loop-control:/dev/loop-control --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN -p 6666:22  --privil
+	eged  ubuntu:16_jdk1.8  /usr/sbin/sshd -D
+	57c2bf9c7ccefaa4701f006c420d3d5ededfdf3f0ea0b0655772d42c21b566e7
+	android@q-OptiPlex-7070:~$
+	android@q-OptiPlex-7070:~$
+	android@q-OptiPlex-7070:~$ docker ps
+	CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                  NAMES
+	57c2bf9c7cce   ubuntu:16_jdk1.8   "/usr/sbin/sshd -D"   6 seconds ago   Up 3 seconds   0.0.0.0:6666->22/tcp   imx8
+	android@q-OptiPlex-7070:~$ ls
+	模板  camdroid  IMX8_Android9  Khadas  Tiny4412_android5.1  v3s_camdroid.zip
+
+
+	$ cd /home/imx8/imx8_Android/OK8MM-android-source 
 	$ source build/envsetup.sh 
 	$ lunch evk_8mm-userdebug
 	$ make -j8
