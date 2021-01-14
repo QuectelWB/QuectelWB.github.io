@@ -72,6 +72,11 @@ jdk 要求是1.8版本
 	android@q-OptiPlex-7070:~$ ls
 	模板  camdroid  IMX8_Android9  Khadas  Tiny4412_android5.1  v3s_camdroid.zip
 
+SSH远程连接到
+
+	ssh -P 6666 ${IP}
+	
+在docker容器中编译		
 
 	$ cd /home/imx8/imx8_Android/OK8MM-android-source 
 	$ source build/envsetup.sh 
