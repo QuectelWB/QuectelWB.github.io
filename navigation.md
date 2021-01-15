@@ -81,8 +81,8 @@
 [BringUp]()
 
   * [VimIDE](BringUp/VimIDE.md)
-  * [VimIDE](BringUp/.md)
-  * [VimIDE](BringUp/.md)
+  * [WindowsTerminal](BringUp/WindowsTerminal.md)
+  * [](BringUp/.md)
   * [Docker](BringUp/docker.md)
 
 [Qt]()
