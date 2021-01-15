@@ -149,7 +149,7 @@ RIL库移植
 烧录
 -----
 
-在Linux上烧录没成功。
+在Linux上烧录,用root账户，否则/tmp/目录没法写。
 
 	uuu_imx_android_flash.bat -f imx8mm -e -c 7
 
