@@ -146,8 +146,16 @@ RIL库移植
 
 
 
+烧录
+-----
 
+在Linux上烧录没成功。
 
+	uuu_imx_android_flash.bat -f imx8mm -e -c 7
+
+uuu.exe 放到环境变量路径中；管理员权限执行
+
+  
 
 
 
@@ -166,4 +174,11 @@ Android FAQs
 [A]kill掉其中一个
 
 [Q]hidl 
+[A]
+
+[Q]Android 怎么改router，修改默认DNS
+[A]
+
+
+[Q]Android 怎么修改网卡的优先顺序
 [A]
