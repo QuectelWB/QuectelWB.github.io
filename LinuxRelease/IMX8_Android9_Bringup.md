@@ -55,6 +55,8 @@ jdk 要求是1.8版本
 	
 	docker pull quectel/imx8_android9:latest
 
+用户名 imx8 密码 quectel123
+
 编译Android
 -----
 
@@ -120,5 +122,48 @@ SSH远程连接到
 ab分区方式
 
 
+内核驱动移植
+----
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+RIL库移植
+-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Android FAQs
+-----
+
+[Q]客户移植RIL驱动，发现有两个rild
+[A]kill掉其中一个
+
+[Q]hidl 
+[A]
