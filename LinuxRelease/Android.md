@@ -1,4 +1,4 @@
-Android
+AndroidBsp
 =====
 
 RIL
@@ -53,4 +53,13 @@ Lineage OS on RP3B
 -  复制out/target/product/rpi3/ramdisk.img 到 分区1:/
 
 还没尝试！！！
+
+Android
+-----
+
+
+
+
+
+
 :)

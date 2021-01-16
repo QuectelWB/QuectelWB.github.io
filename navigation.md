@@ -14,7 +14,6 @@
   * [min_free_kbytes](Kernel/mem/min_free_kbytes.md)
   * [malloc](Kernel/mem/malloc.md)
 
-
 [Driver]()
 
   * [OverView](Driver/OverView.md)
@@ -91,6 +90,12 @@
   * [QtUsb](Qt/QtUSB.md)
   * [FAQ](Qt/FAQs.md)
 
+ 
+[Android]()
+
+  * [Android](Android/AndroidTek.md)
+  * [RIL](Android/RIL.md)
+
 [Others]()
 
   * [HareWare](Others/Hardware.md)
@@ -104,10 +109,6 @@
   * # Web
   * [myBlog](Otherss/Web/myBlog.md)
   * [Web](Otherss/Web/OverView.md)
-  * [html](Others/Web/HTML.md)
-  * [CSS](Others/Web/CSS.md)
-  * [JS](Others/Web/JS.md)
-  * [php](Others/Web/PHP.md)
   - - - -
   * # Related
   * [httpServer](Others/Web/pyHttpServer.md)
@@ -116,12 +117,11 @@
   * # myBlogs
   * [gdb编译](Others/myBlogs/2020_11_29_QEMU_gdb.md)
   * [Wine](Others/Wine.md)
-
-[Links]()
-
-  * [NetWork](links/network.md)
-  * [Quectel](links/quectel.md)
-  * [Khadas](links/KhadasDoc.md)
+  - - - -
+  * # links
+  * [NetWork](Others/links/network.md)
+  * [Quectel](Others/links/quectel.md)
+  * [Khadas](Others/links/KhadasDoc.md)
 
 [gimmick:theme (inverse: false)](spacelab)
 
