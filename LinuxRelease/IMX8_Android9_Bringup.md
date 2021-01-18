@@ -160,8 +160,11 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 
 
 
+编译遇到的问题
+-----
 
-
+**[Q]** error: unmappable character for encoding ASCII （java编译过程中出现的错误）
+<br>**[A]**
 
 
 
@@ -169,12 +172,11 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 
 Android FAQs
 -----
+**[Q]**客户移植RIL驱动，发现有两个rild
+<br>**[A]**kill掉其中一个
 
-[Q]客户移植RIL驱动，发现有两个rild
-[A]kill掉其中一个
-
-[Q]hidl 
-[A]
+**[Q]**hidl 
+<br>**[A]**
 
 [Q]Android 怎么改router，修改默认DNS
 [A]
