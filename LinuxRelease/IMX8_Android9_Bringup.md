@@ -155,7 +155,7 @@ RIL库移植
 
 uuu.exe 放到环境变量路径中；管理员权限执行
 
-  
+ 
 
 
 
@@ -166,7 +166,7 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 **[Q]** error: unmappable character for encoding ASCII （java编译过程中出现的错误）
 <br>**[A]**
 
-
+	export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 
 
 
