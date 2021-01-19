@@ -314,5 +314,19 @@ chgrp
 
 相比于chwon 更不常用
 
+nslookup
+----
+
+	android@q-OptiPlex-7070:~/IMX8_Android9$ nslookup www.baidu.com 8.8.8.8
+	Server:         8.8.8.8
+	Address:        8.8.8.8#53
+
+	Non-authoritative answer:
+	www.baidu.com   canonical name = www.a.shifen.com.
+	Name:   www.a.shifen.com
+	Address: 14.215.177.39
+	Name:   www.a.shifen.com
+	Address: 14.215.177.38
+
 :)
 
