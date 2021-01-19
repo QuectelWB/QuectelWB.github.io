@@ -125,15 +125,7 @@ ab分区方式
 内核驱动移植
 ----
 
-
-
-
-
-
-
-
-
-
+从结果看，已经将Quectel模组的VID、PID加到option.c中，并且移植了GobiNet驱动和qmi_wwan驱动。使用 EC2X 模组没有问题。
 
 
 
