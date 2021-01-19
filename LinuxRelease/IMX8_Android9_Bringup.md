@@ -125,13 +125,24 @@ ab分区方式
 内核驱动移植
 ----
 
+vi  out/target/product/evk_8mm/obj/KERNEL_OBJ/.config  vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig  -O
+
+(或者vimdiff)
+
+判断得知内核的配置文件是
+
+	OK8MM-android-source/vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig
+
 从结果看，已经将Quectel模组的VID、PID加到option.c中，并且移植了GobiNet驱动和qmi_wwan驱动。使用 EC2X 模组没有问题。
+
+qmi_wwan 已经 build-in 编译
 
 
 
 
 RIL库移植
 -----
+
 
 
 
