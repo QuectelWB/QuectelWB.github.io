@@ -143,7 +143,8 @@ qmi_wwan 已经 build-in 编译
 RIL库移植
 -----
 
-
+	/vendor/lib/libreference-ril.so
+	/vendor/lib64/libreference-ril.so
 
 
 
