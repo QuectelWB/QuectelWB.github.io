@@ -6,7 +6,8 @@ public class HelloWorld {
 	String S;
 	System.out.println("Hello World");
 //	System.out.println(args.length);
-//
+//	
+//	int transto string
 	S = String.valueOf(args.length);
 	System.out.println("length is   "+ S);
 

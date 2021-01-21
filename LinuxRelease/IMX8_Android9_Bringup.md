@@ -185,5 +185,43 @@ Android FAQs
 [A]
 
 
-[Q]Android 怎么修改网卡的优先顺序
-[A]
+**[Q]**Android 怎么修改网卡的优先顺序
+<br>
+**[A]**
+
+
+
+**[Q]** 海外的板子寄回国发现图标显示不对
+<br>
+**[A]** frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java
+
+	    // Default configuration values for captive portal detection probes.
+	    // TODO: append a random length parameter to the default HTTPS url.
+	    // TODO: randomize browser version ids in the default User-Agent String.
+	    private static final String DEFAULT_HTTPS_URL     = "https://www.google.com/generate_204";
+	    private static final String DEFAULT_HTTP_URL      =
+		    "http://connectivitycheck.gstatic.com/generate_204";
+	    private static final String DEFAULT_FALLBACK_URL  = "http://www.google.com/gen_204";
+	    private static final String DEFAULT_OTHER_FALLBACK_URLS =
+		    "http://play.googleapis.com/generate_204";
+	    private static final String DEFAULT_USER_AGENT    = "Mozilla/5.0 (X11; Linux x86_64) "
+							      + "AppleWebKit/537.36 (KHTML, like Gecko) "
+							      + "Chrome/52.0.2743.82 Safari/537.36";
+
+
+[NetworkMonitor.java](http://androidos.net.cn/android/8.0.0_r4/xref/frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java)
+
+
+**[Q]**
+<br>
+**[A]**
+
+
+**[Q]**
+<br>
+**[A]**
+
+
+**[Q]**
+<br>
+**[A]**
