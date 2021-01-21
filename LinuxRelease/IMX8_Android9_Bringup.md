@@ -95,31 +95,7 @@ SSH远程连接到
 	$ make -j8
 
 
-烧录
-------
 
-分区表
-
-| 分区索引 	| 		名称 	| 		偏移 	| 	大小 	| 文件系统 			|  			内容 	|
-| ---- 		| ---- 			| ---- 			| ---- 		| ---- 				| ---- 				|
-| NA 		| Bootloader 		| 33KB 			| 4MB 		| NA				| bootloader 			|
-| 1 		| dtbo_a 		| 8MB 			| 4MB 		| NA 				| dtbo.img 			|
-| 2 		| dtbo_b 		| Follow dtbo_a 	| 4MB 		| NA				| dtbo.img 			|
-| 3 		| boot_a 		| Follow dtbo_b 	| 48MB 		| boot.img(kernel+ramdisk)	| boot.img 			|
-| 4 		| boot_b		| Follow boot_a		| 48MB 		| boot.img(kernel+ramdisk) 	| boot.img		 	|
-| 5 		| system_a		| Follow boot_b		| 1536MB 	| ext4 挂载在 	/system		| Android系统文件/system目录 	|
-| 6 		| system_b		| Follow system_a	| 1536MB 	| ext4 挂载在   /system 	| Android系统文件/system目录 	|
-| 7 		| misc			| Follow system_b	| 4MB 		| NA 				| 为了恢复保存bootloader信息	|
-| 8 		| metadata		| Follow misc		| 2MB 		| NA 				| For system slide show		|
-| 9 		| presistdata		| Follow metadata	| 1MB 		| NA 				| Option to operate unlock metadata |
-| 10 		| vendor_a		| Follow presistdata	| 256MB 	| ext4.挂载在/vendor		| vendor.img			|
-| 11 		| vendor_b		| Follow vendor_a	| 256MB 	| ext4.挂载在/vendor		| vendor.img			|
-| 12 		| userdata		| Follow vendor_b	| 剩余全部 	| ext4.挂载在/data		| 应用程序数据			|
-| 13 		| fbmisc 		| Follow userdata	| 1MB 		| NA 				| 保存lock/unlock状态		|
-| 14 		| vbmeta_a 		| Follow fbmisc 	| 1MB 		| NA 				| 保存verify boot's metadata 	|
-| 15 		| vbmeta_b 		| Follow vbmeta_a 	| 1MB 		| NA 				| 保存verify boot's metadata 	|
-
-ab分区方式
 
 
 内核驱动移植
@@ -147,6 +123,7 @@ RIL库移植
 	/vendor/lib64/libreference-ril.so
 
 
+	device/fsl/imx8m/evk_8mm/evk_8mm.mk:52:    device/fsl/imx8m/evk_8mm/lib/libreference-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libreference-ril.so 
 
 
 
@@ -160,6 +137,45 @@ RIL库移植
 uuu.exe 放到环境变量路径中；管理员权限执行
 
  
+
+
+
+
+
+
+
+
+
+烧录
+------
+
+分区表
+
+| 分区索引 	| 		名称 	| 		偏移 	| 	大小 	| 文件系统 			|  			内容 	|
+| ---- 		| ---- 			| ---- 			| ---- 		| ---- 				| ---- 				|
+| NA 		| Bootloader 		| 33KB 			| 4MB 		| NA				| bootloader 			|
+| 1 		| dtbo_a 		| 8MB 			| 4MB 		| NA 				| dtbo.img 			|
+| 2 		| dtbo_b 		| Follow dtbo_a 	| 4MB 		| NA				| dtbo.img 			|
+| 3 		| boot_a 		| Follow dtbo_b 	| 48MB 		| boot.img(kernel+ramdisk)	| boot.img 			|
+| 4 		| boot_b		| Follow boot_a		| 48MB 		| boot.img(kernel+ramdisk) 	| boot.img		 	|
+| 5 		| system_a		| Follow boot_b		| 1536MB 	| ext4 挂载在 	/system		| Android系统文件/system目录 	|
+| 6 		| system_b		| Follow system_a	| 1536MB 	| ext4 挂载在   /system 	| Android系统文件/system目录 	|
+| 7 		| misc			| Follow system_b	| 4MB 		| NA 				| 为了恢复保存bootloader信息	|
+| 8 		| metadata		| Follow misc		| 2MB 		| NA 				| For system slide show		|
+| 9 		| presistdata		| Follow metadata	| 1MB 		| NA 				| Option to operate unlock metadata |
+| 10 		| vendor_a		| Follow presistdata	| 256MB 	| ext4.挂载在/vendor		| vendor.img			|
+| 11 		| vendor_b		| Follow vendor_a	| 256MB 	| ext4.挂载在/vendor		| vendor.img			|
+| 12 		| userdata		| Follow vendor_b	| 剩余全部 	| ext4.挂载在/data		| 应用程序数据			|
+| 13 		| fbmisc 		| Follow userdata	| 1MB 		| NA 				| 保存lock/unlock状态		|
+| 14 		| vbmeta_a 		| Follow fbmisc 	| 1MB 		| NA 				| 保存verify boot's metadata 	|
+| 15 		| vbmeta_b 		| Follow vbmeta_a 	| 1MB 		| NA 				| 保存verify boot's metadata 	|
+
+
+
+
+
+
+
 
 
 
@@ -213,9 +229,21 @@ Android FAQs
 [NetworkMonitor.java](http://androidos.net.cn/android/8.0.0_r4/xref/frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java)
 
 
-**[Q]**
+**[Q]** 以太网和4G网卡共存
 <br>
 **[A]**
+	--- a/services/core/java/com/android/server/ConnectivityService.java
+	+++ b/services/core/java/com/android/server/ConnectivityService.java
+	@@ -4247,7 +4248,8 @@ public class ConnectivityService extends IConnectivityManager.Stub
+		     loge("Dead network still had at least " + nr);
+		     break;
+		 }
+	-        nai.asyncChannel.disconnect();
+	+        log("don't teardownUnneededNetwork " + nai);
+	+        //nai.asyncChannel.disconnect();
+	     }
+	 
+	     private void handleLingerComplete(NetworkAgentInfo oldNetwork) {
 
 
 **[Q]**
