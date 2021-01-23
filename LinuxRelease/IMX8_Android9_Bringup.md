@@ -190,6 +190,16 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 
 
 
+[Q]Device is locked. Please unlock the device first
+
+[A]开发者模式解锁
+
+
+[Q]
+
+[A]
+
+
 Android FAQs
 -----
 **[Q]**客户移植RIL驱动，发现有两个rild
