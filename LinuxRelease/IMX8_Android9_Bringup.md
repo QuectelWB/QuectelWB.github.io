@@ -95,6 +95,9 @@ SSH远程连接到
 	$ make -j8
 
 
+**Notes**
+<br>
+	export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 
 
 
