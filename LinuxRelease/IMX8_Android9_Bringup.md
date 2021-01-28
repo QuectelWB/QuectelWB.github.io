@@ -150,10 +150,10 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 
 
 
-烧录
-------
 
-分区表
+
+
+> 分区表
 
 | 分区索引 	| 		名称 	| 		偏移 	| 	大小 	| 文件系统 			|  			内容 	|
 | ---- 		| ---- 			| ---- 			| ---- 		| ---- 				| ---- 				|
@@ -175,8 +175,30 @@ uuu.exe 放到环境变量路径中；管理员权限执行
 | 15 		| vbmeta_b 		| Follow vbmeta_a 	| 1MB 		| NA 				| 保存verify boot's metadata 	|
 
 
+> fastboot
+
+关闭 DM 验证
 
 
+	设置-》系统-》开发者选项-》OEM 解锁 
+
+在uboot阶段
+
+	fastboot 0
+
+烧录vbmeta.img 
+
+	fastboot oem unlock
+	fastboot --disable-verity flash vbmeta vbmeta.img
+
+然后就可以直接用fastboot烧录了
+	
+	fastboot flash system_a system.img
+
+
+
+OTA
+----
 
 
 
