@@ -43,10 +43,10 @@
 
 [LinuxService]()
 
-  * [DBus](DebianLinux/DBus.md)
-  * [Supervisor](DebianLinux/Supervisor.md)
-  * [Systemd](DebianLinux/Systemd.md)
-  * [SystemAccount](DebianLinux/UserManagement.md)
+  * [DBus](DebianService/DBus.md)
+  * [Supervisor](DebianService/Supervisor.md)
+  * [Systemd](DebianService/Systemd.md)
+  * [SystemAccount](DebianService/UserManagement.md)
 
 [Release]()
 
