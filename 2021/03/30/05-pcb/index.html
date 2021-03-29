@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PCB | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Process Control Block 它放在RAM(运行内存)里并包含着进程的信息。每个进程都把自己的信息放在task_struct数据结构里。 Take kernel 4.14 as example. 从这时候发现，还是Chinese更亲切 task_struct 结构体定义在 sched.h 5.X的内核又改了，task_struct 位置不在这个头文件里 ##调度数据成员## 1234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PCB">
+<meta property="og:url" content="http://example.com/2021/03/30/05-pcb/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Process Control Block 它放在RAM(运行内存)里并包含着进程的信息。每个进程都把自己的信息放在task_struct数据结构里。 Take kernel 4.14 as example. 从这时候发现，还是Chinese更亲切 task_struct 结构体定义在 sched.h 5.X的内核又改了，task_struct 位置不在这个头文件里 ##调度数据成员## 1234">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-29T22:43:12.431Z">
+<meta property="article:modified_time" content="2021-03-29T22:43:12.431Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-05-pcb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/05-pcb/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:43:12.431Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      PCB
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Process Control Block</p>
+<p>它放在RAM(运行内存)里并包含着进程的信息。每个进程都把自己的信息放在task_struct数据结构里。</p>
+<p>Take kernel 4.14 as example.</p>
+<p><strong>从这时候发现，还是Chinese更亲切</strong></p>
+<p>task_struct 结构体定义在</p>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v4.14.181/source/include/linux/sched.h">sched.h</a></p>
+<p>5.X的内核又改了，task_struct 位置不在这个头文件里</p>
+<p>##调度数据成员##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">(1) volatile long states;</span><br><span class="line">表示进程的当前状态:</span><br><span class="line"> TASK_RUNNING:正在运行或在就绪队列run-queue中准备运行的进程，实际参与进程调度。</span><br><span class="line"> TASK_INTERRUPTIBLE:处于等待队列中的进程，待资源有效时唤醒，也可由其它进程通过信号(signal)或定时中断唤醒后进入就绪队列run-queue。</span><br><span class="line"> TASK_UNINTERRUPTIBLE:处于等待队列中的进程，待资源有效时唤醒，不可由其它进程通过信号(signal)或定时中断唤醒。</span><br><span class="line"> TASK_ZOMBIE:表示进程结束但尚未消亡的一种状态(僵死状态)。此时，进程已经结束运行且释放大部分资源，但尚未释放进程控制块。</span><br><span class="line">TASK_STOPPED:进程被暂停，通过其它进程的信号才能唤醒。导致这种状态的原因有二，或者是对收到SIGSTOP、SIGSTP、SIGTTIN或SIGTTOU信号的反应，或者是受其它进程的ptrace系统调用的控制而暂时将CPU交给控制进程。</span><br><span class="line"> TASK_SWAPPING: 进程页面被交换出内存的进程。</span><br><span class="line"></span><br><span class="line">Said by Kernel </span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line"> * Task state bitmask. NOTE! These bits are also</span><br><span class="line"> * encoded in fs&#x2F;proc&#x2F;array.c: get_task_state().</span><br><span class="line"> *</span><br><span class="line"> * We have two separate sets of flags: task-&gt;state</span><br><span class="line"> * is about runnability, while task-&gt;exit_state are</span><br><span class="line"> * about the task exiting. Confusing, but this way</span><br><span class="line"> * modifying one set can&#39;t modify the other one by</span><br><span class="line"> * mistake.</span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">(2) unsigned long flags;</span><br><span class="line">进程标志:</span><br><span class="line">?PF_ALIGNWARN 打印对齐警告信息。</span><br><span class="line">?PF_PTRACED 被ptrace系统调用监控。</span><br><span class="line">?PF_TRACESYS 正在跟踪。</span><br><span class="line">?PF_FORKNOEXEC 进程刚创建，但还没执行。</span><br><span class="line">?PF_SUPERPRIV 超级用户特权。</span><br><span class="line">?PF_DUMPCORE dumped core。</span><br><span class="line">?PF_SIGNALED 进程被信号(signal)杀出。</span><br><span class="line">?PF_STARTING 进程正被创建。</span><br><span class="line">?PF_EXITING 进程开始关闭。</span><br><span class="line">?PF_USEDFPU 该进程使用FPU(SMP only)。</span><br><span class="line">?PF_DTRACE delayed trace (used on m68k)。</span><br><span class="line"></span><br><span class="line">(3) long priority;</span><br><span class="line">进程优先级。 Priority的值给出进程每次获取CPU后可使用的时间(按jiffies计)。优先级可通过系统调用sys_setpriorty改变(在kernel&#x2F;sys.c中)。</span><br><span class="line"></span><br><span class="line">(4) unsigned long rt_priority;</span><br><span class="line">rt_priority 给出实时进程的优先级，rt_priority+1000给出进程每次获取CPU后可使用的时间(同样按jiffies计)。实时进程的优先级可通过系统 调用sys_sched_setscheduler()改变(见kernel&#x2F;sched.c)。</span><br><span class="line"></span><br><span class="line">(5) long counter;</span><br><span class="line">在 轮转法调度时表示进程当前还可运行多久。在进程开始运行是被赋为priority的值，以后每隔一个tick(时钟中断)递减1，减到0时引起新一轮调 度。重新调度将从run_queue队列选出counter值最大的就绪进程并给予CPU使用权，因此counter起到了进程的动态优先级的作用 (priority则是静态优先级)。</span><br><span class="line"></span><br><span class="line">(6) unsigned long policy;</span><br><span class="line">该进程的进程调度策略，可以通过系统调用sys_sched_setscheduler()更改(见kernel&#x2F;sched.c)。调度策略有:</span><br><span class="line">SCHED_OTHER 0 非实时进程，基于优先权的轮转法(round robin)。</span><br><span class="line">SCHED_FIFO 1 实时进程，用先进先出算法。</span><br><span class="line">SCHED_RR 2 实时进程，用基于优先权的轮转法。</span><br><span class="line"></span><br><span class="line">	#define SCHED_NORMAL		0</span><br><span class="line">	#define SCHED_FIFO		1</span><br><span class="line">	#define SCHED_RR		2</span><br><span class="line">	#define SCHED_BATCH		3</span><br><span class="line">	&#x2F;* SCHED_ISO: reserved but not implemented yet *&#x2F;</span><br><span class="line">	#define SCHED_IDLE		5</span><br><span class="line">	#define SCHED_DEADLINE		6</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><a href="/codes/list_PCBs.c">list_PCBs.c</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/30/05-pcb/" data-id="ckmv6hacy0004835b41up6wbr" data-title="PCB" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/30/04-web/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/30/05-pcb/">PCB</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/30/04-web/">Web</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/30/02-docker/">Docker</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/30/03-shell/">Shell</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/30/01-misc/">MISC</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

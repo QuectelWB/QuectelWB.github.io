@@ -71,9 +71,59 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-05-pcb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/Web/" class="article-date">
+    <a href="/2021/03/30/05-pcb/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:43:12.431Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/05-pcb/">PCB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Process Control Block</p>
+<p>它放在RAM(运行内存)里并包含着进程的信息。每个进程都把自己的信息放在task_struct数据结构里。</p>
+<p>Take kernel 4.14 as example.</p>
+<p><strong>从这时候发现，还是Chinese更亲切</strong></p>
+<p>task_struct 结构体定义在</p>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v4.14.181/source/include/linux/sched.h">sched.h</a></p>
+<p>5.X的内核又改了，task_struct 位置不在这个头文件里</p>
+<p>##调度数据成员##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">(1) volatile long states;</span><br><span class="line">表示进程的当前状态:</span><br><span class="line"> TASK_RUNNING:正在运行或在就绪队列run-queue中准备运行的进程，实际参与进程调度。</span><br><span class="line"> TASK_INTERRUPTIBLE:处于等待队列中的进程，待资源有效时唤醒，也可由其它进程通过信号(signal)或定时中断唤醒后进入就绪队列run-queue。</span><br><span class="line"> TASK_UNINTERRUPTIBLE:处于等待队列中的进程，待资源有效时唤醒，不可由其它进程通过信号(signal)或定时中断唤醒。</span><br><span class="line"> TASK_ZOMBIE:表示进程结束但尚未消亡的一种状态(僵死状态)。此时，进程已经结束运行且释放大部分资源，但尚未释放进程控制块。</span><br><span class="line">TASK_STOPPED:进程被暂停，通过其它进程的信号才能唤醒。导致这种状态的原因有二，或者是对收到SIGSTOP、SIGSTP、SIGTTIN或SIGTTOU信号的反应，或者是受其它进程的ptrace系统调用的控制而暂时将CPU交给控制进程。</span><br><span class="line"> TASK_SWAPPING: 进程页面被交换出内存的进程。</span><br><span class="line"></span><br><span class="line">Said by Kernel </span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line"> * Task state bitmask. NOTE! These bits are also</span><br><span class="line"> * encoded in fs&#x2F;proc&#x2F;array.c: get_task_state().</span><br><span class="line"> *</span><br><span class="line"> * We have two separate sets of flags: task-&gt;state</span><br><span class="line"> * is about runnability, while task-&gt;exit_state are</span><br><span class="line"> * about the task exiting. Confusing, but this way</span><br><span class="line"> * modifying one set can&#39;t modify the other one by</span><br><span class="line"> * mistake.</span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">(2) unsigned long flags;</span><br><span class="line">进程标志:</span><br><span class="line">?PF_ALIGNWARN 打印对齐警告信息。</span><br><span class="line">?PF_PTRACED 被ptrace系统调用监控。</span><br><span class="line">?PF_TRACESYS 正在跟踪。</span><br><span class="line">?PF_FORKNOEXEC 进程刚创建，但还没执行。</span><br><span class="line">?PF_SUPERPRIV 超级用户特权。</span><br><span class="line">?PF_DUMPCORE dumped core。</span><br><span class="line">?PF_SIGNALED 进程被信号(signal)杀出。</span><br><span class="line">?PF_STARTING 进程正被创建。</span><br><span class="line">?PF_EXITING 进程开始关闭。</span><br><span class="line">?PF_USEDFPU 该进程使用FPU(SMP only)。</span><br><span class="line">?PF_DTRACE delayed trace (used on m68k)。</span><br><span class="line"></span><br><span class="line">(3) long priority;</span><br><span class="line">进程优先级。 Priority的值给出进程每次获取CPU后可使用的时间(按jiffies计)。优先级可通过系统调用sys_setpriorty改变(在kernel&#x2F;sys.c中)。</span><br><span class="line"></span><br><span class="line">(4) unsigned long rt_priority;</span><br><span class="line">rt_priority 给出实时进程的优先级，rt_priority+1000给出进程每次获取CPU后可使用的时间(同样按jiffies计)。实时进程的优先级可通过系统 调用sys_sched_setscheduler()改变(见kernel&#x2F;sched.c)。</span><br><span class="line"></span><br><span class="line">(5) long counter;</span><br><span class="line">在 轮转法调度时表示进程当前还可运行多久。在进程开始运行是被赋为priority的值，以后每隔一个tick(时钟中断)递减1，减到0时引起新一轮调 度。重新调度将从run_queue队列选出counter值最大的就绪进程并给予CPU使用权，因此counter起到了进程的动态优先级的作用 (priority则是静态优先级)。</span><br><span class="line"></span><br><span class="line">(6) unsigned long policy;</span><br><span class="line">该进程的进程调度策略，可以通过系统调用sys_sched_setscheduler()更改(见kernel&#x2F;sched.c)。调度策略有:</span><br><span class="line">SCHED_OTHER 0 非实时进程，基于优先权的轮转法(round robin)。</span><br><span class="line">SCHED_FIFO 1 实时进程，用先进先出算法。</span><br><span class="line">SCHED_RR 2 实时进程，用基于优先权的轮转法。</span><br><span class="line"></span><br><span class="line">	#define SCHED_NORMAL		0</span><br><span class="line">	#define SCHED_FIFO		1</span><br><span class="line">	#define SCHED_RR		2</span><br><span class="line">	#define SCHED_BATCH		3</span><br><span class="line">	&#x2F;* SCHED_ISO: reserved but not implemented yet *&#x2F;</span><br><span class="line">	#define SCHED_IDLE		5</span><br><span class="line">	#define SCHED_DEADLINE		6</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><a href="/codes/list_PCBs.c">list_PCBs.c</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/30/05-pcb/" data-id="ckmv6hacy0004835b41up6wbr" data-title="PCB" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-04-web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/04-web/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:38:33.711Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -85,7 +135,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/30/Web/">Web</a>
+      <a class="p-name article-title" href="/2021/03/30/04-web/">Web</a>
     </h1>
   
 
@@ -300,7 +350,7 @@ gitbook
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/Web/" data-id="ckmv685he0003x85bah0p2fwh" data-title="Web" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/04-web/" data-id="ckmv6hacx0003835bfc6m13z4" data-title="Web" class="article-share-link">Share</a>
       
       
       
@@ -312,9 +362,9 @@ gitbook
 
 
   
-    <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-02-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/docker/" class="article-date">
+    <a href="/2021/03/30/02-docker/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:38:22.435Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -326,7 +376,7 @@ gitbook
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/30/docker/">Docker</a>
+      <a class="p-name article-title" href="/2021/03/30/02-docker/">Docker</a>
     </h1>
   
 
@@ -409,7 +459,7 @@ docker push quectel/imx8_android9
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/docker/" data-id="ckmv685ha0001x85b483c4mmg" data-title="Docker" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/02-docker/" data-id="ckmv6hacu0001835b2tpn4qgr" data-title="Docker" class="article-share-link">Share</a>
       
       
       
@@ -421,9 +471,9 @@ docker push quectel/imx8_android9
 
 
   
-    <article id="post-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-03-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/shell/" class="article-date">
+    <a href="/2021/03/30/03-shell/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:38:13.703Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -435,7 +485,7 @@ docker push quectel/imx8_android9
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/30/shell/">Shell</a>
+      <a class="p-name article-title" href="/2021/03/30/03-shell/">Shell</a>
     </h1>
   
 
@@ -522,7 +572,7 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/shell/" data-id="ckmv685hj0005x85bcuiq2yhc" data-title="Shell" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/03-shell/" data-id="ckmv6hacw0002835bfseze70p" data-title="Shell" class="article-share-link">Share</a>
       
       
       
@@ -534,9 +584,9 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
 
 
   
-    <article id="post-misc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-01-misc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/misc/" class="article-date">
+    <a href="/2021/03/30/01-misc/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T20:38:40.670Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -548,7 +598,7 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/30/misc/">MISC</a>
+      <a class="p-name article-title" href="/2021/03/30/01-misc/">MISC</a>
     </h1>
   
 
@@ -666,7 +716,7 @@ lrwx------ 1 root root 64 Nov 21 09:44 139 -&gt; socket:[7341066]
 <h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><p>alias 别名</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_16777851/article/details/87291146">dts学习</a></p>
 <h2 id="vfork"><a href="#vfork" class="headerlink" title="vfork"></a>vfork</h2><p>vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。</p>
-<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;&#x2e;&#103;&#x69;&#x74;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;&#x2e;&#103;&#x69;&#x74;</a></p>
+<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;&#46;&#103;&#x69;&#116;">&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#109;&#46;&#103;&#x69;&#116;</a></p>
 <h2 id="使用qemu搭建arm嵌入式linux开发环境"><a href="#使用qemu搭建arm嵌入式linux开发环境" class="headerlink" title="使用qemu搭建arm嵌入式linux开发环境"></a>使用qemu搭建arm嵌入式linux开发环境</h2><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
 <pre><code>制作bootloader；
 编译linux内核、linux内核模块、linux设备树；
@@ -1437,7 +1487,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/misc/" data-id="ckmv685hz0006x85b9dkchn7n" data-title="MISC" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/01-misc/" data-id="ckmv6had60005835b2ns6d0rb" data-title="MISC" class="article-share-link">Share</a>
       
       
       
@@ -1449,9 +1499,9 @@ sudo service xrdp restart
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-00-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/hello-world/" class="article-date">
+    <a href="/2021/03/30/00-hello-world/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T20:20:53.225Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -1463,7 +1513,7 @@ sudo service xrdp restart
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/30/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2021/03/30/00-hello-world/">Hello World</a>
     </h1>
   
 
@@ -1488,7 +1538,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/hello-world/" data-id="ckmv685hg0004x85b2k60auum" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/00-hello-world/" data-id="ckmv6haco0000835ba5lo7dxj" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -1531,23 +1581,23 @@ sudo service xrdp restart
       <ul>
         
           <li>
-            <a href="/2021/03/30/Web/">Web</a>
+            <a href="/2021/03/30/05-pcb/">PCB</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/docker/">Docker</a>
+            <a href="/2021/03/30/04-web/">Web</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/shell/">Shell</a>
+            <a href="/2021/03/30/02-docker/">Docker</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/misc/">MISC</a>
+            <a href="/2021/03/30/03-shell/">Shell</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/hello-world/">Hello World</a>
+            <a href="/2021/03/30/01-misc/">MISC</a>
           </li>
         
       </ul>
