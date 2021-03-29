@@ -71,6 +71,109 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/shell/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T19:59:28.853Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>========================</p>
+<h2 id="case-结构"><a href="#case-结构" class="headerlink" title="case 结构"></a>case 结构</h2><pre><code>e 值 in
+模式1)
+    command1
+    command2
+    command3
+;;
+模式2）
+    command1
+    command2
+    command3
+;;
+*)
+    command1
+    command2
+    command3
+;;
+esac
+</code></pre>
+<p>例子</p>
+<pre><code>#!/bin/bash
+var=quectel
+
+echo $var
+
+printf &quot;Input a character: &quot;
+read -n 1 char
+case $char in
+   [a-zA-Z])
+       printf &quot;\nletter\n&quot;
+       ;;
+   [0-9])
+    printf &quot;\nDigit\n&quot;
+       ;;
+   [0-9])
+       printf &quot;\nDigit\n&quot;
+       ;;
+   [,.?!])
+       printf &quot;\nPunctuation\n&quot;
+       ;;
+ *)
+    printf &quot;\nerror\n&quot;
+esac
+
+------------
+
+#!/bin/bash
+var=quectel
+
+echo $(ls)
+
+echo `pwd`
+
+
+v2=hello&quot;quectel&quot;!
+
+echo $v2
+
+
+arr=(1 2 3)
+
+echo $&#123;arr[2]&#125;
+echo $&#123;arr[@]&#125;
+echo $&#123;#arr[*]&#125;
+</code></pre>
+<h2 id="autologin-vbs"><a href="#autologin-vbs" class="headerlink" title="autologin.vbs"></a>autologin.vbs</h2><pre><code>Dim WshShell 
+Set WshShell=WScript.CreateObject(&quot;WScript.Shell&quot;) 
+WshShell.Run &quot;cmd.exe&quot;
+WScript.Sleep 1500 
+WshShell.SendKeys  &quot;ssh m@10.66.125.234&quot;
+WshShell.SendKeys  &quot;&#123;ENTER&#125;&quot;
+WScript.Sleep 1500 
+WshShell.SendKeys &quot;m&quot;
+WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/30/shell/" data-id="ckmv0m4ao0001ny5bhap33akd" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-misc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/30/misc/" class="article-date">
@@ -196,7 +299,7 @@ lrwx------ 1 root root 64 Nov 21 09:44 139 -&gt; socket:[7341066]
 <h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><p>alias 别名</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_16777851/article/details/87291146">dts学习</a></p>
 <h2 id="vfork"><a href="#vfork" class="headerlink" title="vfork"></a>vfork</h2><p>vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。</p>
-<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;&#46;&#103;&#105;&#x74;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;&#46;&#103;&#105;&#x74;</a></p>
+<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;&#46;&#103;&#105;&#116;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;&#46;&#103;&#105;&#116;</a></p>
 <h2 id="使用qemu搭建arm嵌入式linux开发环境"><a href="#使用qemu搭建arm嵌入式linux开发环境" class="headerlink" title="使用qemu搭建arm嵌入式linux开发环境"></a>使用qemu搭建arm嵌入式linux开发环境</h2><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
 <pre><code>制作bootloader；
 编译linux内核、linux内核模块、linux设备树；
@@ -981,7 +1084,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/misc/" data-id="ckmv0jxd30002kh5bfa7ngoih" data-title="MISC" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/misc/" data-id="ckmv0m4b10002ny5bbflbazp4" data-title="MISC" class="article-share-link">Share</a>
       
       
       
@@ -1032,109 +1135,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/hello-world/" data-id="ckmv0jxce0000kh5bb8qq0yno" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/shell/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T17:53:27.491Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="case-结构"><a href="#case-结构" class="headerlink" title="case 结构"></a>case 结构</h2><pre><code>e 值 in
-模式1)
-    command1
-    command2
-    command3
-;;
-模式2）
-    command1
-    command2
-    command3
-;;
-*)
-    command1
-    command2
-    command3
-;;
-esac
-</code></pre>
-<p>例子</p>
-<pre><code>#!/bin/bash
-var=quectel
-
-echo $var
-
-printf &quot;Input a character: &quot;
-read -n 1 char
-case $char in
-   [a-zA-Z])
-       printf &quot;\nletter\n&quot;
-       ;;
-   [0-9])
-    printf &quot;\nDigit\n&quot;
-       ;;
-   [0-9])
-       printf &quot;\nDigit\n&quot;
-       ;;
-   [,.?!])
-       printf &quot;\nPunctuation\n&quot;
-       ;;
- *)
-    printf &quot;\nerror\n&quot;
-esac
-
-------------
-
-#!/bin/bash
-var=quectel
-
-echo $(ls)
-
-echo `pwd`
-
-
-v2=hello&quot;quectel&quot;!
-
-echo $v2
-
-
-arr=(1 2 3)
-
-echo $&#123;arr[2]&#125;
-echo $&#123;arr[@]&#125;
-echo $&#123;#arr[*]&#125;
-</code></pre>
-<h2 id="autologin-vbs"><a href="#autologin-vbs" class="headerlink" title="autologin.vbs"></a>autologin.vbs</h2><pre><code>Dim WshShell 
-Set WshShell=WScript.CreateObject(&quot;WScript.Shell&quot;) 
-WshShell.Run &quot;cmd.exe&quot;
-WScript.Sleep 1500 
-WshShell.SendKeys  &quot;ssh m@10.66.125.234&quot;
-WshShell.SendKeys  &quot;&#123;ENTER&#125;&quot;
-WScript.Sleep 1500 
-WshShell.SendKeys &quot;m&quot;
-WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/shell/" data-id="ckmv0jxco0001kh5bdtlybng2" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/hello-world/" data-id="ckmv0m4ad0000ny5b7jw8f68y" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -1177,15 +1178,15 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
       <ul>
         
           <li>
+            <a href="/2021/03/30/shell/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/03/30/misc/">MISC</a>
           </li>
         
           <li>
             <a href="/2021/03/30/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/30/shell/">(no title)</a>
           </li>
         
       </ul>
