@@ -71,6 +71,116 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/docker-1/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T20:01:43.000Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/docker-1/">docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="titile-Docker"><a href="#titile-Docker" class="headerlink" title="titile: Docker"></a>titile: Docker</h2><pre><code>sudo apt-get install docker.io
+sudo gpasswd -a your_user_name docker               #加入用户组
+sudo service docker restart
+newgrp - docker             #使用新用户组，或者也可以断开终端重连生效
+docker version              #查看docker版本信息
+</code></pre>
+<p>docker下各文件默认存放在/var/lib/docker下</p>
+<pre><code>du -h --max-depth=1 /var/lib/docker                #查看docker目录大小
+
+docker search licheepi               #搜索镜像
+docker pull zepan/licheepi           #下载镜像
+docker run zepan/licheepi apt-get install -y xxx             #在镜像中执行命令，安装某软件
+docker commit -m=&quot;install something&quot; -a=&quot;zepan&quot;  container_id zepan/licheepi
+docker login
+docker push  zepan/licheepi
+</code></pre>
+<p>交互式启动</p>
+<pre><code>docker run -i -t learn/tutorial /bin/bash        //开启一个交互式虚拟终端
+    -i    交互式
+    -t     虚拟终端
+    -d    后台
+    -P    端口映射
+
+docker port  id    //查看端口映射情况
+
+docker inspect  id    //查看容器详细状态
+</code></pre>
+<p>后台启动</p>
+<pre><code>docker run -d learn/tutorial /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
+返回容器id：350807154a3dd17309b23bb9a9a9897dd3fc91667a7d176aca42f390808e3019
+
+
+docker logs 3508 或 blissful_lamport
+docker logs -f    xxxx        //类似tail -f
+
+docker stop 3508        //通过发送信号方式停止
+docker kill 3508           //kill方式停止
+docker start 3508        //start -i  交互式执行
+docker restart 3508
+
+
+docker remove 3508
+docker rm `docker ps -a -q`        //删除所有容器
+</code></pre>
+<p>主机容器互拷数据</p>
+<pre><code>docker cp id:/xxx/xx   /yyy/yy/
+docker cp  /yyy/yy/    id:/xxx/xx
+</code></pre>
+<p>开启容器的ssh</p>
+<pre><code>docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
+</code></pre>
+<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><pre><code>android@q-OptiPlex-7070:~$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don&#39;t have a Docker ID, head over to https://hub.docker.com to create one.
+Username: quectel
+Password:
+WARNING! Your password will be stored unencrypted in /home/android/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+
+
+android@q-OptiPlex-7070:~$ docker images
+REPOSITORY            TAG                 IMAGE ID       CREATED          SIZE
+ubuntu                16_jdk1.8           0fc8046dc8e7   10 minutes ago   2.93GB
+
+docker tag ubuntu:16_jdk1 quectel/imx8_android9
+
+docker push quectel/imx8_android9
+</code></pre>
+<p><img src="/.com//dockerhub.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/30/docker-1/" data-id="ckmv0rm3k0000vp5b3r54a6zt" data-title="docker" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-shell" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/30/shell/" class="article-date">
@@ -162,7 +272,7 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/shell/" data-id="ckmv0m4ao0001ny5bhap33akd" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/shell/" data-id="ckmv0rm3u0002vp5b80tfchau" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -299,7 +409,7 @@ lrwx------ 1 root root 64 Nov 21 09:44 139 -&gt; socket:[7341066]
 <h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><p>alias 别名</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_16777851/article/details/87291146">dts学习</a></p>
 <h2 id="vfork"><a href="#vfork" class="headerlink" title="vfork"></a>vfork</h2><p>vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。</p>
-<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;&#46;&#103;&#105;&#116;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;&#46;&#103;&#105;&#116;</a></p>
+<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;&#46;&#103;&#x69;&#116;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;&#46;&#103;&#x69;&#116;</a></p>
 <h2 id="使用qemu搭建arm嵌入式linux开发环境"><a href="#使用qemu搭建arm嵌入式linux开发环境" class="headerlink" title="使用qemu搭建arm嵌入式linux开发环境"></a>使用qemu搭建arm嵌入式linux开发环境</h2><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
 <pre><code>制作bootloader；
 编译linux内核、linux内核模块、linux设备树；
@@ -1084,7 +1194,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/misc/" data-id="ckmv0m4b10002ny5bbflbazp4" data-title="MISC" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/misc/" data-id="ckmv0rm480003vp5b3pef3xox" data-title="MISC" class="article-share-link">Share</a>
       
       
       
@@ -1135,7 +1245,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/hello-world/" data-id="ckmv0m4ad0000ny5b7jw8f68y" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/30/hello-world/" data-id="ckmv0rm3q0001vp5b7wdzhow7" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -1176,6 +1286,10 @@ sudo service xrdp restart
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/30/docker-1/">docker</a>
+          </li>
         
           <li>
             <a href="/2021/03/30/shell/">(no title)</a>
