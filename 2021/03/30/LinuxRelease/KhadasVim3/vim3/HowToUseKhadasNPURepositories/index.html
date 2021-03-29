@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>如何使用Khadas NPU预编译demo | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToUseKhadasNPURepositories/" class="shake shake-little" title="如何使用Khadas NPU预编译demo">
+            
+            如何使用Khadas NPU预编译demo
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h1 id="NPU预编译demo仓库"><a href="#NPU预编译demo仓库" class="headerlink" title="NPU预编译demo仓库"></a>NPU预编译demo仓库</h1><p><code>aml_npu_demo_binaries仓库</code>是可执行文件仓库,此仓库用于在<strong>khadas VIM3/VIM3L上运行NPU demo</strong>使用</p>
+<h2 id="仓库信息"><a href="#仓库信息" class="headerlink" title="仓库信息"></a>仓库信息</h2><ul>
+<li><p>仓库地址: <a target="_blank" rel="noopener" href="https://gitlab.com/khadas/aml_npu_demo_binaries">gitlab.com/khadas/aml_npu_demo_binaries</a></p>
+</li>
+<li><p>仓库结构</p>
+<ol>
+<li>detect_demo/detect_demo_khadas : 这两个demo是使用摄像头识别物体进行分类的demo</li>
+<li>detect_demo_picture : 此demo是识别分类多物体图片的demo</li>
+<li>inceptionv3 : 此demo是识别图片并做出top5预测的demo</li>
+</ol>
+</li>
+</ul>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
+<li><p><strong>请在VIM3上运行ubuntu固件,并通过<code>sudo apt update &amp;&amp; sudo apt upgrade</code>升级系统</strong></p>
+</li>
+<li><p><code>detect_demo_picture</code>/<code>detect_demo</code>/<code>detect_demo_khadas</code>需要在<code>framebuffer</code>模式下使用,使用<code>Ctrl</code>+<code>Alt</code>+<code>F1</code>切换到<code>framebuffer</code>模式</p>
+</li>
+<li><p>clone仓库到VIM3/VIM3L上.</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://gitlab.com/khadas/aml_npu_demo_binaries</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用detect-demo或detect-demo-khadas或detect-demo-picture"><a href="#使用detect-demo或detect-demo-khadas或detect-demo-picture" class="headerlink" title="使用detect_demo或detect_demo_khadas或detect_demo_picture"></a>使用<code>detect_demo</code>或<code>detect_demo_khadas</code>或<code>detect_demo_picture</code></h3><p>安装demo:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span>/aml_npu_demo_binaries</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo ./INSTALL</span></span><br></pre></td></tr></table></figure>
+<p>安装以后安装<code>README</code>文件的指示就可以运行demo了</p>
+<p><code>detect_demo_uvc</code>是USB摄像头的运行文件<br><code>detect_demo_mipi</code>是mipi摄像头的运行文件</p>
+<p>卸载demo:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo ./UNINSTALL</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用inceptionv3"><a href="#使用inceptionv3" class="headerlink" title="使用inceptionv3"></a>使用inceptionv3</h3><p>如果是VIM3</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span>/aml_npu_demo_binaries/inceptionv3/vim3</span></span><br></pre></td></tr></table></figure>
+
+<p>如果是VIM3L</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span>/aml_npu_demo_binaries/inceptionv3/vim3l</span></span><br></pre></td></tr></table></figure>
+
+<p>使用demo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./inceptionv3 inception_v3.nb /path/to/picture</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>图片格式需要使用jpg格式</strong></p>
+<h1 id="aml-npu-app仓库"><a href="#aml-npu-app仓库" class="headerlink" title="aml_npu_app仓库"></a>aml_npu_app仓库</h1><p>aml_npu_app仓库是用来编译demo的仓库,<strong>此仓库在PC上运行</strong></p>
+<h2 id="仓库信息-1"><a href="#仓库信息-1" class="headerlink" title="仓库信息"></a>仓库信息</h2><ul>
+<li><p>仓库地址: <a target="_blank" rel="noopener" href="https://gitlab.com/khadas/aml_npu_app">gitlab.com/khadas/aml_npu_app</a> </p>
+</li>
+<li><p>仓库结构</p>
+<ol>
+<li><code>DDK_6.3.2</code>/<code>DDK_6.3.2.3</code>/<code>DDK_6.3.2.5</code>/<code>DDK_6.3.3.4</code>是不同版本的库文件的源码</li>
+<li><code>detect_library/model_code</code> 指向最新版本的库文件源码</li>
+<li><code>detect_library/source_code</code>生成detect.so</li>
+<li><code>detect_library/yolo_demo_gst_uvc</code>或者<code>detect_library/yolo_demo_mipi</code>生成USB或者MIPI的demo</li>
+<li><code>detect_library/sample_demo</code>生成识别图片的demo</li>
+</ol>
+</li>
+</ul>
+<h2 id="如何使用-1"><a href="#如何使用-1" class="headerlink" title="如何使用"></a>如何使用</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.khadas.com/npu-toolkit-vim3">申请sdk</a>,并解压.</p>
+</li>
+<li><p>clone仓库到你的PC上</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://gitlab.com/khadas/aml_npu_app</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>进入你需要编译的位置,这里以<code>yolov3</code>为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> <span class="variable">$&#123;workspace&#125;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> aml_npu_app/detect_library/model_code/detect_yolo_v3</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./build_vx.sh /path/to/sdk/linux_sdk/linux_sdk</span></span><br></pre></td></tr></table></figure>
+
+<p>编译完以后,在<code>bin_r</code>目录下的文件就是编译生成的文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls bin_r/</span></span><br><span class="line">libnn_yolo_v3.so  vnn_yolov3.o  yolo_v3.o  yolov3_process.o</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToUseKhadasNPURepositories/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NPU%E9%A2%84%E7%BC%96%E8%AF%91demo%E4%BB%93%E5%BA%93"><span class="toc-text">NPU预编译demo仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="toc-text">仓库信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-text">如何使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8detect-demo%E6%88%96detect-demo-khadas%E6%88%96detect-demo-picture"><span class="toc-text">使用detect_demo或detect_demo_khadas或detect_demo_picture</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8inceptionv3"><span class="toc-text">使用inceptionv3</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#aml-npu-app%E4%BB%93%E5%BA%93"><span class="toc-text">aml_npu_app仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF-1"><span class="toc-text">仓库信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-1"><span class="toc-text">如何使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">编译</span></a></li></ol></li></ol></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>VIM3 相关文档 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/index/" class="shake shake-little" title="VIM3 相关文档">
+            
+            VIM3 相关文档
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h1 id="VIM3"><a href="#VIM3" class="headerlink" title="VIM3"></a>VIM3</h1><p><img src="/images/vim3/docs_vim3.jpg" alt="image"></p>
+<h2 id="正面-蓝色标识"><a href="#正面-蓝色标识" class="headerlink" title="正面(蓝色标识)"></a>正面(蓝色标识)</h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">设备名称</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="left">USB-A</td>
+<td align="left">USB 3.0接口,最大输出电流900mA,PCIE被激活时,这个口降为2.0</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">RJ-45</td>
+<td align="left">有<a href="/vim3/HowtoUseWol.html">WOL功能</a>的Gigabit网口</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">HDMI</td>
+<td align="left">支持3D,HDR,CEC以及HDCP2.2的HDMI接口</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">USB-C</td>
+<td align="left">USB2.0 OTG接口,接受<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/power-adapter">5V</a>到<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/usb-c-24w-adapter">20V</a>的输入,<a href="/vim3/UpgradeViaUSBCable.html">可用于升级固件</a></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">USB-A</td>
+<td align="left">USB 2.0接口,最大输出电流500mA</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">风扇座子</td>
+<td align="left">PWM控制的4线制<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/3705-cooling-fan">风扇</a></td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">reset按键</td>
+<td align="left">用于强制重启板子,按下会直接复位</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left">function按键</td>
+<td align="left">快速短按3下进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a>或从外部介质启动</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="left">power按键</td>
+<td align="left">用于关机或者配合其他按键使用</td>
+</tr>
+<tr>
+<td align="right">A</td>
+<td align="left">4个M2插孔</td>
+<td align="left">用于使用<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/new-vim-heatsink">散热器</a>和<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/diy-case">DIY外壳</a>时的固定</td>
+</tr>
+<tr>
+<td align="right">B</td>
+<td align="left">G-Sensor</td>
+<td align="left">三轴加速传感器</td>
+</tr>
+<tr>
+<td align="right">C</td>
+<td align="left">RTC电池接口</td>
+<td align="left">硬件时钟电池的接口</td>
+</tr>
+<tr>
+<td align="right">D</td>
+<td align="left"><a href="/vim3/GPIOPinout.html">40脚的GPIO</a></td>
+<td align="left">可用于控制<a href="vim3/HowToAccessGpio.html">GPIO</a>或者与<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/tone-board">toneboard</a>连接</td>
+</tr>
+<tr>
+<td align="right">E</td>
+<td align="left">GPIO扩展芯片</td>
+<td align="left">为VIM3拓展可用的GPIO</td>
+</tr>
+<tr>
+<td align="right">F</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://docs.khadas.com/vim3/KbiGuidance.html">MCU</a></td>
+<td align="left">可编程的EEPROM阵列的STM8S003微控制器</td>
+</tr>
+<tr>
+<td align="right">G</td>
+<td align="left">WOL选择开关</td>
+<td align="left">WOL功能的电源开关</td>
+</tr>
+<tr>
+<td align="right">H</td>
+<td align="left">红外模块</td>
+<td align="left">可用于与<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ir-remote">khadas遥控器</a>通信</td>
+</tr>
+<tr>
+<td align="right">I</td>
+<td align="left">LED灯</td>
+<td align="left">用于指示板子的状态</td>
+</tr>
+<tr>
+<td align="right">J</td>
+<td align="left">IPEX天线</td>
+<td align="left">用于插<a href="/vim3/HowToConnectWifi.html">wifi</a>和<a href="/vim3/HowToSetupBluetooth.html">蓝牙</a>的天线</td>
+</tr>
+<tr>
+<td align="right">k</td>
+<td align="left">IPEX天线</td>
+<td align="left">用于插<a href="/vim3/HowToConnectWifi.html">wifi</a>和<a href="/vim3/HowToSetupBluetooth.html">蓝牙</a>的天线</td>
+</tr>
+</tbody></table>
+<h2 id="背面-红色"><a href="#背面-红色" class="headerlink" title="背面(红色)"></a>背面(红色)</h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">设备名称</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/vin-to-vin-cable">VIN</a></td>
+<td align="left">5V电压输出</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left"><a href="/vim3/BootFromExtMedia.html">SD卡插座</a></td>
+<td align="left">用于从外部介质启动SD卡系统或者作为外部存储器</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">限流开关</td>
+<td align="left">防止在负载不均衡的情况下损坏VIM3</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">M.2接口</td>
+<td align="left">PCIE2.0接口(x1 lane),支持<a href="/vim3/ListOfCompatibleNVMeSSDs.html">M.2 2280 NVME固态硬盘</a></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">TP</td>
+<td align="left">10脚0.5mm间距FTP接口</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left"><a href="/vim3/ConnectLcd.html">MIPI-DSI接口</a></td>
+<td align="left">30脚0.5mm间距的FPC接口,可用于连接<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ts050-touchscreen">TS050触控屏</a></td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">MIPI-CSI接口</td>
+<td align="left">30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left"><a href="/vim3/BootFromSpiFlash.html">SPI Flash</a></td>
+<td align="left">通过SPI控制的Flash模块</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="left">XPWR焊盘</td>
+<td align="left">用于连接使用外部电源</td>
+</tr>
+<tr>
+<td align="right">A</td>
+<td align="left">M寄存器</td>
+<td align="left">可在任何情况下,强制EMMC进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a></td>
+</tr>
+<tr>
+<td align="right">B</td>
+<td align="left">S寄存器</td>
+<td align="left">可在任何情况下,强制Flash进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a></td>
+</tr>
+<tr>
+<td align="right">C</td>
+<td align="left">限流开关</td>
+<td align="left">防止在负载不均衡的情况下损坏VIM3</td>
+</tr>
+</tbody></table>
+<h2 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h2><table>
+<thead>
+<tr>
+<th align="center">Reset</th>
+<th align="center">Function</th>
+<th align="center">Power</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">强制重启VIM3</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="left"><a href="/vim3/HowtoBootIntoUpgradeMode.html">进入升级模式(TST模式)</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="left">开机或者唤醒VIM3</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="left"><a href="/vim3/HowtoBootIntoUpgradeMode.html">进入升级模式(按键模式)</a></td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="left"><a href="/vim3/HowtoEraseEMMC.html">清除EMMC</a></td>
+</tr>
+</tbody></table>
+<h2 id="LED灯指示"><a href="#LED灯指示" class="headerlink" title="LED灯指示"></a>LED灯指示</h2><table>
+<thead>
+<tr>
+<th align="right">颜色</th>
+<th align="center">状态</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">蓝色</td>
+<td align="center">关闭</td>
+<td align="left">电源关闭</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="center">常亮</td>
+<td align="left">已连接电源,板子处于关机状态</td>
+</tr>
+<tr>
+<td align="right">白色</td>
+<td align="center">关闭</td>
+<td align="left">板子已关机</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="center">常亮</td>
+<td align="left">板子处于开机状态</td>
+</tr>
+<tr>
+<td align="right">红灯</td>
+<td align="center">None</td>
+<td align="left">None</td>
+</tr>
+</tbody></table>
+<p>上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系&gt;统都不同）编程的更多信息可通过<a href="forum.khadas">forum.khadas.com</a>咨询。</p>
+<h1 id="VIM3L"><a href="#VIM3L" class="headerlink" title="VIM3L"></a>VIM3L</h1><p><img src="/images/vim3/docs_vim3l.jpg" alt="image"></p>
+<h2 id="正面-蓝色标识-1"><a href="#正面-蓝色标识-1" class="headerlink" title="正面(蓝色标识)"></a>正面(蓝色标识)</h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">设备名称</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="left">USB-A</td>
+<td align="left">USB 3.0接口,最大输出电流900mA,PCIE被激活时,这个口降为2.0</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">RJ-45</td>
+<td align="left">有<a href="/vim3/HowtoUseWol.html">WOL功能</a>的Gigabit网口</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">HDMI</td>
+<td align="left">支持3D,HDR,CEC以及HDCP2.2的HDMI接口</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">USB-C</td>
+<td align="left">USB2.0 OTG接口,接受<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/power-adapter">5V</a>到<a href="(https://www.khadas.com/product-page/usb-c-24w-adapter)%E7%9A%84%E8%BE%93%E5%85%A5,%5B%E5%8F%AF%E7%94%A8%E4%BA%8E%E5%8D%87%E7%BA%A7%E5%9B%BA%E4%BB%B6%5D(/vim3/UpgradeViaUSBCable.html">20V</a></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">USB-A</td>
+<td align="left">USB 2.0接口,最大输出电流500mA</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">风扇座子</td>
+<td align="left">PWM控制的4线制<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/3705-cooling-fan">风扇</a></td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">reset按键</td>
+<td align="left">用于强制重启板子,按下会直接复位</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left">function按键</td>
+<td align="left">快速短按3下进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a>或从外部介质启动</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="left">power按键</td>
+<td align="left">用于关机或者配合其他按键使用</td>
+</tr>
+<tr>
+<td align="right">A</td>
+<td align="left">4个M2插孔</td>
+<td align="left">用于使用<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/new-vim-heatsink">散热器</a>和<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/diy-case">DIY外壳</a>时的固定</td>
+</tr>
+<tr>
+<td align="right">B</td>
+<td align="left">G-Sensor</td>
+<td align="left">三轴加速传感器</td>
+</tr>
+<tr>
+<td align="right">C</td>
+<td align="left">RTC电池接口</td>
+<td align="left">硬件时钟电池的接口</td>
+</tr>
+<tr>
+<td align="right">D</td>
+<td align="left"><a href="/vim3/GPIOPinout.html">40脚的GPIO</a></td>
+<td align="left">可用于控制GPIO(vim3/HowToAccessGpio.html)或者与<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/tone-board">toneboard</a>连接</td>
+</tr>
+<tr>
+<td align="right">E</td>
+<td align="left">GPIO扩展芯片</td>
+<td align="left">为VIM3拓展可用的GPIO</td>
+</tr>
+<tr>
+<td align="right">F</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://docs.khadas.com/vim3/KbiGuidance.html">MCU</a></td>
+<td align="left">可编程的EEPROM阵列的STM8S003微控制器</td>
+</tr>
+<tr>
+<td align="right">G</td>
+<td align="left">WOL选择开关</td>
+<td align="left">WOL功能的电源开关</td>
+</tr>
+<tr>
+<td align="right">H</td>
+<td align="left">红外模块</td>
+<td align="left">可用于与<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ir-remote">khadas遥控器</a>通信</td>
+</tr>
+<tr>
+<td align="right">I</td>
+<td align="left">LED灯</td>
+<td align="left">用于指示板子的状态</td>
+</tr>
+<tr>
+<td align="right">J</td>
+<td align="left">IPEX天线</td>
+<td align="left">用于插<a href="/vim3/HowToConnectWifi.html">wifi</a>和<a href="/vim3/HowToSetupBluetooth.html">蓝牙</a>的天线</td>
+</tr>
+<tr>
+<td align="right">k</td>
+<td align="left">IPEX天线</td>
+<td align="left">用于插<a href="/vim3/HowToConnectWifi.html">wifi</a>和<a href="/vim3/HowToSetupBluetooth.html">蓝牙</a>的天线</td>
+</tr>
+</tbody></table>
+<h2 id="背面-红色-1"><a href="#背面-红色-1" class="headerlink" title="背面(红色)"></a>背面(红色)</h2><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">设备名称</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/vin-to-vin-cable">VIN</a></td>
+<td align="left">5V电压输出</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left"><a href="/vim3/BootFromExtMedia.html">SD卡插座</a></td>
+<td align="left">用于从外部介质启动SD卡系统或者作为外部存储器</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">限流开关</td>
+<td align="left">防止在负载不均衡的情况下损坏VIM3</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">M.2接口</td>
+<td align="left">PCIE2.0接口(x1 lane),支持<a href="/vim3/ListOfCompatibleNVMeSSDs.html">M.2 2280 NVME固态硬盘</a></td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">TP</td>
+<td align="left">10脚0.5mm间距FTP接口</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left"><a href="/vim3/ConnectLcd.html">MIPI-DSI接口</a></td>
+<td align="left">30脚0.5mm间距的FPC接口,可用于连接<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ts050-touchscreen">TS050触控屏</a></td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">MIPI-CSI接口</td>
+<td align="left">30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td align="left"><a href="/vim3/BootFromSpiFlash.html">SPI Flash</a></td>
+<td align="left">通过SPI控制的Flash模块</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td align="left">XPWR焊盘</td>
+<td align="left">用于连接使用外部电源</td>
+</tr>
+<tr>
+<td align="right">A</td>
+<td align="left">M寄存器</td>
+<td align="left">可在任何情况下,强制EMMC进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a></td>
+</tr>
+<tr>
+<td align="right">B</td>
+<td align="left">S寄存器</td>
+<td align="left">可在任何情况下,强制Flash进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">MaskROM模式</a></td>
+</tr>
+<tr>
+<td align="right">C</td>
+<td align="left">限流开关</td>
+<td align="left">防止在负载不均衡的情况下损坏VIM3</td>
+</tr>
+</tbody></table>
+<h2 id="按键-1"><a href="#按键-1" class="headerlink" title="按键"></a>按键</h2><table>
+<thead>
+<tr>
+<th align="center">Reset</th>
+<th align="center">Function</th>
+<th align="center">Power</th>
+<th align="left">描述说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">强制重启VIM3</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="left"><a href="/vim3/HowtoBootIntoUpgradeMode.html">进入升级模式(TST模式)</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="left">开机或者唤醒VIM3</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="center">x</td>
+<td align="left"><a href="/vim3/HowtoBootIntoUpgradeMode.html">进入升级模式(按键模式)</a></td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="center">x</td>
+<td align="left"><a href="/vim3/HowtoEraseEMMC.html">清除EMMC</a></td>
+</tr>
+</tbody></table>
+<h2 id="LED灯指示-1"><a href="#LED灯指示-1" class="headerlink" title="LED灯指示"></a>LED灯指示</h2><table>
+<thead>
+<tr>
+<th align="right">颜色</th>
+<th align="center">状态</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">蓝色</td>
+<td align="center">关闭</td>
+<td align="left">电源关闭</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="center">常亮</td>
+<td align="left">已连接电源,板子处于关机状态</td>
+</tr>
+<tr>
+<td align="right">白色</td>
+<td align="center">关闭</td>
+<td align="left">板子已关机</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="center">常亮</td>
+<td align="left">板子处于开机状态</td>
+</tr>
+<tr>
+<td align="right">红灯</td>
+<td align="center">None</td>
+<td align="left">None</td>
+</tr>
+</tbody></table>
+<p>上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系&gt;统都不同）编程的更多信息可通过<a href="forum.khadas">forum.khadas.com</a>咨询。</p>
+<h2 id="GPIO管脚映射"><a href="#GPIO管脚映射" class="headerlink" title="GPIO管脚映射"></a>GPIO管脚映射</h2><table>
+<thead>
+<tr>
+<th>SIGNAL</th>
+<th align="left">PIN</th>
+<th align="left">PIN</th>
+<th align="left">SIGNAL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5V</td>
+<td align="left">1</td>
+<td align="left">21</td>
+<td align="left">GND</td>
+</tr>
+<tr>
+<td>5V</td>
+<td align="left">2</td>
+<td align="left">22</td>
+<td align="left">I2C_M3_SCL</td>
+</tr>
+<tr>
+<td>USB_DM</td>
+<td align="left">3</td>
+<td align="left">23</td>
+<td align="left">I2C_M3_SDA</td>
+</tr>
+<tr>
+<td>USB_DP</td>
+<td align="left">4</td>
+<td align="left">24</td>
+<td align="left">GND</td>
+</tr>
+<tr>
+<td>GND</td>
+<td align="left">5</td>
+<td align="left">25</td>
+<td align="left">I2C_AO_SCK</td>
+</tr>
+<tr>
+<td>VCC_MCU</td>
+<td align="left">6</td>
+<td align="left">26</td>
+<td align="left">I2C_AO_SDA</td>
+</tr>
+<tr>
+<td>MCU_NRST</td>
+<td align="left">7</td>
+<td align="left">27</td>
+<td align="left">3.3V</td>
+</tr>
+<tr>
+<td>MCU_SWIM</td>
+<td align="left">8</td>
+<td align="left">28</td>
+<td align="left">GND</td>
+</tr>
+<tr>
+<td>GND</td>
+<td align="left">9</td>
+<td align="left">29</td>
+<td align="left">I2SB_SCLK</td>
+</tr>
+<tr>
+<td>ADC_CH0</td>
+<td align="left">10</td>
+<td align="left">30</td>
+<td align="left">I2S_MCLK0</td>
+</tr>
+<tr>
+<td>1.8V</td>
+<td align="left">11</td>
+<td align="left">31</td>
+<td align="left">I2SB_SDO</td>
+</tr>
+<tr>
+<td>ADC_CH3</td>
+<td align="left">12</td>
+<td align="left">32</td>
+<td align="left">I2SB_LRCK</td>
+</tr>
+<tr>
+<td>SPDIF_OUT</td>
+<td align="left">13</td>
+<td align="left">33</td>
+<td align="left">I2SB_SDI</td>
+</tr>
+<tr>
+<td>GND</td>
+<td align="left">14</td>
+<td align="left">34</td>
+<td align="left">GND</td>
+</tr>
+<tr>
+<td>UARTC_RX</td>
+<td align="left">15</td>
+<td align="left">35</td>
+<td align="left">PWM_F</td>
+</tr>
+<tr>
+<td>UARTC_TX</td>
+<td align="left">16</td>
+<td align="left">36</td>
+<td align="left">RTC_CLK</td>
+</tr>
+<tr>
+<td>GND</td>
+<td align="left">17</td>
+<td align="left">37</td>
+<td align="left">GPIOH_4</td>
+</tr>
+<tr>
+<td>Linux_RX</td>
+<td align="left">18</td>
+<td align="left">38</td>
+<td align="left">MCU_PA1</td>
+</tr>
+<tr>
+<td>Linux_TX</td>
+<td align="left">19</td>
+<td align="left">39</td>
+<td align="left">GPIODZ_15</td>
+</tr>
+<tr>
+<td>3.3V</td>
+<td align="left">20</td>
+<td align="left">40</td>
+<td align="left">GND</td>
+</tr>
+</tbody></table>
+<h1 id="Krescue-Khadas-Rescue-OS"><a href="#Krescue-Khadas-Rescue-OS" class="headerlink" title="Krescue (Khadas-Rescue-OS)"></a>Krescue (Khadas-Rescue-OS)</h1><p><img src="/images/docs_krescue_online_install.jpg" alt="image"></p>
+<p><a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue.txt">Krescue</a> 是一个非常小（21MB）的操作系统，您可以直接从micro-SD卡或EMMC启动。它就像是一把”瑞士军刀”，你可以用它来执行各种低级的SBC维修任务。其中最值得注意的是通过转储一个原始压缩的.img.gz来备份EMMC，并通过将.img.gz刷新回EMMC来快速安装新操作系统。从2020年1月起，Krescue可以通过有线以太网直接从网络下载和安装操作系统映像。</p>
+<p><strong>主要特性:</strong></p>
+<ul>
+<li>将EMMC的中的内容通过<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/image2sd.readme.txt">SD卡</a>,<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-usb-otg-mode-disks.txt">USB存储设备</a>或者<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-http-disks.txt">网络</a>备份。</li>
+<li>从其他设备或者网络覆写img.gz格式的固件到EMMC</li>
+<li>通过网络直接安装系统</li>
+<li>查看硬件设备信息</li>
+<li>给有专业知识的用户准备的应急shell</li>
+<li>通过串口，USB网络接口或者网络接口使用<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-access.txt">shell访问</a>系统。</li>
+</ul>
+<p><strong>启动Krescue的<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-begin.txt">步骤</a></strong></p>
+<ol>
+<li>从<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/">dl.khadas.com</a>上下载合适你板子使用的VIM3/VIM3L的镜像。</li>
+<li>使用启动盘制作工具(<a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">Etcher</a>，<a target="_blank" rel="noopener" href="https://rufus.ie/">rufus</a>)将下载的镜像烧录到SD中。</li>
+<li>将SD卡插到板子上，同时插上HDMI，用USB-C供电</li>
+<li>启动板子进入<a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-boot.txt">MaskROM模式</a>(请仔细阅读这个谅解的文档！！！)</li>
+<li>使用<a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ir-remote">khadas遥控器</a>和USB的键盘就可以操作UI界面了。</li>
+</ol>
+<p><strong>通过shell命令在线安装</strong></p>
+<p>获取帮助信息:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL dl.khadas.com&#x2F;.mega | sh -s - --help</span><br><span class="line">wget -O-  dl.khadas.com&#x2F;.mega | sh -s - --help</span><br></pre></td></tr></table></figure>
+
+<p>通过web将Krescue目录下载到EMMC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL dl.khadas.com&#x2F;.mega | sh -s - VIM1  &gt; &#x2F;dev&#x2F;mmcblk? &lt;tab auto-complete&gt;</span><br><span class="line">curl -sfL dl.khadas.com&#x2F;.mega | sh -s - VIM2  &gt; &#x2F;dev&#x2F;mmcblk? &lt;tab auto-complete&gt;</span><br><span class="line">curl -sfL dl.khadas.com&#x2F;.mega | sh -s - VIM3  &gt; &#x2F;dev&#x2F;mmcblk? &lt;tab auto-complete&gt;</span><br><span class="line">curl -sfL dl.khadas.com&#x2F;.mega | sh -s - VIM3L &gt; &#x2F;dev&#x2F;mmcblk? &lt;tab auto-complete&gt;</span><br></pre></td></tr></table></figure>
+
+<p>更多shell命令和示例:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dl.khadas.com/Firmware/Krescue/mega/README.megaimage_online.txt">README.megaimage_online.txt</a></li>
+</ul>
+<p><strong>更多:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://youtu.be/ER4BOJUhoYU">YouTube - Krescue Introduction</a></li>
+<li><a target="_blank" rel="noopener" href="https://youtu.be/vvpkbhnyhZY">YouTube - Krescue Online OS Installation</a></li>
+<li><a target="_blank" rel="noopener" href="https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945">Khadas Forum - Krescue Help &amp; Discussion</a></li>
+</ul>
+<h1 id="Amlogic-A311D-NPU使用指南"><a href="#Amlogic-A311D-NPU使用指南" class="headerlink" title="Amlogic A311D, NPU使用指南"></a>Amlogic A311D, NPU使用指南</h1><p>以下文档链接将帮助您开始使用VIM3的5.0tops神经处理单元。</p>
+<ol>
+<li><a href="/vim3/HowToUseNpu.html">How to Use NPU</a></li>
+<li><a href="/vim3/HowToInstallDarknet.html">Install Darknet</a></li>
+<li><a href="/vim3/HowToTrainYolo.html">Train Yolo</a></li>
+<li><a href="/vim3/HowToTransformYolo.html">Transform Yolo</a></li>
+<li><a href="/vim3/HowToTrainInception.html">Train Inception</a></li>
+</ol>
+<p><strong>更多:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=aQ-g_CBrzEU">YouTube: VIM3 - Realtime Object Detection Using Yolo v3</a></li>
+</ul>
+<h1 id="VIM3-电源选择"><a href="#VIM3-电源选择" class="headerlink" title="VIM3 电源选择"></a>VIM3 电源选择</h1><p>尽管您的VIM3 SBC与各种类型的电源兼容，但这些是最佳性能输出和稳定性的推荐规格。</p>
+<ol>
+<li>5V,2A 电源适配器</li>
+<li>Type-C数据线</li>
+</ol>
+<p><strong>更多：</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/power-adapter">Khadas Shop - 电源适配器</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/usb-c-cable">Khadas Shop - Type-C数据线</a></li>
+<li><a href="/vim3/ExtraPowerInput.html">Khadas VIMs 外部供电接口</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.khadas.com/vim">Khadas VIM 规格</a></li>
+</ul>
+<h1 id="显示器-amp-amp-用户输入"><a href="#显示器-amp-amp-用户输入" class="headerlink" title="显示器　&amp;&amp; 用户输入"></a>显示器　&amp;&amp; 用户输入</h1><p>当您需要将VIM3 SBC连接到外部显示器+键盘鼠标+遥控器，以用作台式计算机或媒体中心时，这些选项非常有用</p>
+<ol>
+<li>4K HDMI 2.0 的数据线</li>
+<li>兼容1080P和4K的显示器</li>
+<li>无线的鼠标和键盘</li>
+<li>兼容CEC的遥控器</li>
+</ol>
+<p><strong>更多：</strong><br><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/hdmi-cable">Khadas Shop - HDMI数据线</a><br><a target="_blank" rel="noopener" href="https://www.khadas.com/product-page/ir-remote">Khadas Shop - 遥控器</a><br><a target="_blank" rel="noopener" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=electronics&field-keywords=wireless+keyboard+and+mouse&rh=n:172282,k:wireless+keyboard+and+mouse">亚马逊－无线鼠标和键盘</a></p>
+<h1 id="制作可引导-烧录的SD卡-U盘驱动器"><a href="#制作可引导-烧录的SD卡-U盘驱动器" class="headerlink" title="制作可引导/烧录的SD卡/U盘驱动器"></a>制作可引导/烧录的SD卡/U盘驱动器</h1><p>当您想通过SD卡或U盘驱动器（烧录卡）升级VIM3 SBC的操作系统时，这些项目非常有用。或者，如果您想运行只能从外部Medi A（烧录卡）运行的操作系统，如LibreELEC。</p>
+<ol>
+<li>不小于8GB的SD卡。</li>
+<li>读卡器。</li>
+<li>笔记本电脑、台式电脑。</li>
+<li>不小于8GB的U盘。</li>
+</ol>
+<p><strong>更多：</strong><br><a href="/vim3/BootingCardVsBurningCard.html">启动卡与烧录卡的比较</a><br><a href="/vim3/UpgradeViaTFBurningCard.html">通过TF卡升级安卓</a><br><a href="/vim3/BootFromExtMedia.html">从外部媒体介质启动系统</a><br><a href="/vim3/HowtoBootIntoUpgradeMode.html">如何进入升级模式</a></p>
+<p><strong>提示:</strong></p>
+<ul>
+<li>应使用USB-C数据线从Ubuntu或Windows主机直接将<strong>emmc固件</strong>刻录到<code>emmc</code>。不能将其烧录到SD卡中。例如：android和ubuntu发行版包含“emmc”标记。</li>
+<li><strong>sd/usb固件</strong>应复制到一张sd卡中，然后使用该卡用新操作系统重新格式化emmc存储。例如：Armbian、Ubuntu发行版包含到’sd_usb’标记，以及LibELEC。</li>
+<li>为了从<strong>sd/usb images</strong>启动，您需要在您的emmc上运行android或ubuntu，并激活多启动。</li>
+</ul>
+<h1 id="使用Type-C升级EMMC系统"><a href="#使用Type-C升级EMMC系统" class="headerlink" title="使用Type-C升级EMMC系统"></a>使用Type-C升级EMMC系统</h1><p>如果您想使用笔记本电脑或台式电脑升级存储在EMMC存储器中的VIM3 SBC操作系统，则需要这些项目。例如，将启动操作系统从android改为ubuntu，或者安装更具特色的第三方操作系统。</p>
+<ol>
+<li>常见Tpye-C数据线 (传统PC) </li>
+<li>两头Type-C的数据线 (现代PC)</li>
+</ol>
+<p><strong>更多：</strong></p>
+<ul>
+<li><a href="/vim3/UpgradeViaUSBCable.html">通过USB升级固件</a></li>
+<li><a href="/vim3/HowtoBootIntoUpgradeMode.html">进入升级模式</a></li>
+</ul>
+<p><strong>固件</strong></p>
+<ul>
+<li><a href="/vim3/FirmwareAndroid.html">安卓固件</a></li>
+<li><a href="/vim3/FirmwareUbuntu.html">Ubuntu固件</a></li>
+<li><a href="/vim3/FirmwareLibreelec.html">LibreELEC</a></li>
+<li><a href="/vim3/FirmwareDualos.html">Dual</a></li>
+<li><a href="/vim3/FirmwareUboot.html">U-Boot</a></li>
+<li><a href="/vim3/FirmwareThirdparty.html">Third Party OSes</a></li>
+</ul>
+<h1 id="观看电影，扩展内部emmc存储"><a href="#观看电影，扩展内部emmc存储" class="headerlink" title="观看电影，扩展内部emmc存储"></a>观看电影，扩展内部emmc存储</h1><p>如果您希望将VIM3 SBC用作媒体中心，用于存储/下载大型电影文件，这些项目非常有用。一个microDXC的UHS-I卡很贵，但它的速度也足以支持4K视频播放。此外，您还可以连接外部USB-2.0/3.0 SSD或HDD以存储整个媒体库。</p>
+<ol>
+<li>不小于64GB的USB-2.0/3.0 HDD/SSD</li>
+<li>不小于64GB的<em>microSDXC UHS-I</em> SD-Card</li>
+</ol>
+<p><strong>更多:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA1T0B/dp/B073H552FJ/ref=sr_1_1_sspa?ie=UTF8&qid=1543995277&sr=8-1-spons&keywords=external+usb+ssd&psc=1">Amazon - Samsung T5 Portable SSD</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=aps&field-keywords=microSDXC+UHS-I&rh=i:aps,k:microSDXC+UHS-I">Amzon - microSDXC UHS-I SD-Card</a></li>
+</ul>
+<p><strong>提示:</strong> 如今，大多数人都通过流媒体使用，可以参考<a href="/vim3/InstallLibreELEC.html">如何安装LibreELEC</a></p>
+<h1 id="软件开发-高级CRACH恢复"><a href="#软件开发-高级CRACH恢复" class="headerlink" title="软件开发/高级CRACH恢复"></a>软件开发/高级CRACH恢复</h1><p>在系统完全崩溃需要手动恢复的极端情况下，需要使用mregister重置VIM3 SBC。USB串行调试工具对于开发人员调试复杂软件问题也很有用。</p>
+<ol>
+<li>可导电的金属镊子（用于通过mregister重置死掉的sbc）</li>
+<li>USB串行调试工具（用于诊断软件/硬件问题）</li>
+</ol>
+<p><strong>更多:</strong></p>
+<ul>
+<li><a href="/vim3/HowtoBootIntoUpgradeMode.html">升级模式</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias=aps&field-keywords=metal+tweezers">亚马逊－金属镊子</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias=aps&field-keywords=usb+serial+debug+tool&rh=i:aps,k:usb+serial+debug+tool">亚马逊-USB调试工具</a></li>
+</ul>
+<h1 id="VIM3相关网页"><a href="#VIM3相关网页" class="headerlink" title="VIM3相关网页"></a>VIM3相关网页</h1><p>更多的相关信息，请查看我们的网页，阅读文档，或者到论坛浏览以及提问。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.khadas.com/vim">VIM3网站首页</a></li>
+<li><a target="_blank" rel="noopener" href="https://forum.khadas.com/c/Khadas-VIM3">VIM3论坛页</a></li>
+</ul>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/index/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VIM3"><span class="toc-text">VIM3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E9%9D%A2-%E8%93%9D%E8%89%B2%E6%A0%87%E8%AF%86"><span class="toc-text">正面(蓝色标识)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E9%9D%A2-%E7%BA%A2%E8%89%B2"><span class="toc-text">背面(红色)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%94%AE"><span class="toc-text">按键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LED%E7%81%AF%E6%8C%87%E7%A4%BA"><span class="toc-text">LED灯指示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VIM3L"><span class="toc-text">VIM3L</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E9%9D%A2-%E8%93%9D%E8%89%B2%E6%A0%87%E8%AF%86-1"><span class="toc-text">正面(蓝色标识)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E9%9D%A2-%E7%BA%A2%E8%89%B2-1"><span class="toc-text">背面(红色)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%94%AE-1"><span class="toc-text">按键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LED%E7%81%AF%E6%8C%87%E7%A4%BA-1"><span class="toc-text">LED灯指示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPIO%E7%AE%A1%E8%84%9A%E6%98%A0%E5%B0%84"><span class="toc-text">GPIO管脚映射</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Krescue-Khadas-Rescue-OS"><span class="toc-text">Krescue (Khadas-Rescue-OS)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amlogic-A311D-NPU%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-text">Amlogic A311D, NPU使用指南</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VIM3-%E7%94%B5%E6%BA%90%E9%80%89%E6%8B%A9"><span class="toc-text">VIM3 电源选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%99%A8-amp-amp-%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="toc-text">显示器　&amp;&amp; 用户输入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%BC%95%E5%AF%BC-%E7%83%A7%E5%BD%95%E7%9A%84SD%E5%8D%A1-U%E7%9B%98%E9%A9%B1%E5%8A%A8%E5%99%A8"><span class="toc-text">制作可引导&#x2F;烧录的SD卡&#x2F;U盘驱动器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Type-C%E5%8D%87%E7%BA%A7EMMC%E7%B3%BB%E7%BB%9F"><span class="toc-text">使用Type-C升级EMMC系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%82%E7%9C%8B%E7%94%B5%E5%BD%B1%EF%BC%8C%E6%89%A9%E5%B1%95%E5%86%85%E9%83%A8emmc%E5%AD%98%E5%82%A8"><span class="toc-text">观看电影，扩展内部emmc存储</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91-%E9%AB%98%E7%BA%A7CRACH%E6%81%A2%E5%A4%8D"><span class="toc-text">软件开发&#x2F;高级CRACH恢复</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VIM3%E7%9B%B8%E5%85%B3%E7%BD%91%E9%A1%B5"><span class="toc-text">VIM3相关网页</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

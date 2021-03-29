@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>通过USB升级固件 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/UpgradeViaUSBCable/" class="shake shake-little" title="通过USB升级固件">
+            
+            通过USB升级固件
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <p><strong>注意：由于VIM1、VIM2和VIM3操作方式基本上是一样的，所以本文档以VIM1为例进行说明。</strong></p>
+<h2 id="通过Windows升级固件"><a href="#通过Windows升级固件" class="headerlink" title="通过Windows升级固件"></a>通过Windows升级固件</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>下载升级工具<a target="_blank" rel="noopener" href="https://dl.khadas.com/Tools/USB_Burning_Tool_v2.2.0.zip">USB Upgrade Tool</a>并解压。</li>
+<li>运行<code>setup_v2.x.x.exe</code>程序进行安装。<br><img src="/images/vim3/usb_upgrade_tool_setup_v217_zh.png" alt="image"></li>
+</ul>
+<h3 id="固件升级操作步骤"><a href="#固件升级操作步骤" class="headerlink" title="固件升级操作步骤"></a>固件升级操作步骤</h3><p>确保已经正确安装好升级工具，按照下面步骤进行升级：</p>
+<ol>
+<li>打开升级工具<code>USB_Burning_Tool_v2.x.x.exe</code>，点击”File–&gt;Import image”选择要升级的固件。</li>
+<li>用USB-C线连接VIMs和PC电脑（默认VIMs上电会自动开机）。</li>
+<li>进入固件更新模式<ul>
+<li>长按Power键不要松开</li>
+<li>短按Rest键并松开</li>
+<li>大概10秒后松开Power键进入固件升级模式</li>
+</ul>
+</li>
+<li>如果上面操作已正确执行，电脑端会发现VIMs升级设备，点击升级工具上的start按钮开始固件升级,升级进度条100%时完成升级。<br><img src="/images/vim3/usb_upgrade_tool_interface_v217_zh.png" alt="image"></li>
+</ol>
+<p>提示：</p>
+<ul>
+<li>先点击”stop”按钮再关闭升级工具。</li>
+<li>外部供电要求(<a href="/vim3/ExtraPowerInput.html">VIM1</a>/<a href="/vim2/ExtraPowerInput.html">VIM2</a>/<a href="/vim3/ExtraPowerInput.html">VIM3</a>)，部分电脑供电比较弱会导致升级失败。</li>
+</ul>
+<h2 id="通过Ubuntu升级固件"><a href="#通过Ubuntu升级固件" class="headerlink" title="通过Ubuntu升级固件"></a>通过Ubuntu升级固件</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libusb-dev git parted</span><br></pre></td></tr></table></figure>
+<h3 id="获取ubuntu烧录工具"><a href="#获取ubuntu烧录工具" class="headerlink" title="获取ubuntu烧录工具"></a>获取ubuntu烧录工具</h3><p>烧录工具在仓库<a target="_blank" rel="noopener" href="https://github.com/khadas/utils">utils</a>中.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;khadas&#x2F;utils</span><br></pre></td></tr></table></figure>
+<p>如果你之前已经下载过<code>utils</code>仓库，那么你只需要更新到最新版本即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd &#x2F;path&#x2F;to&#x2F;utils</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+<h3 id="安装烧录工具"><a href="#安装烧录工具" class="headerlink" title="安装烧录工具"></a>安装烧录工具</h3><p>需要安装usb规则以及创建链接文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd &#x2F;path&#x2F;to&#x2F;utils</span><br><span class="line">$ .&#x2F;INSTALL</span><br></pre></td></tr></table></figure>
+<p>如果成功安装你会看到如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Installing Amlogic flash-tool...</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line"> Host PC: Ubuntu 16.04</span><br><span class="line"> </span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> </span><br><span class="line"> Installing USB rules...</span><br><span class="line"> [sudo] password for nick:</span><br><span class="line"> Installing flash-tool...</span><br><span class="line"> Done!</span><br><span class="line"> </span><br><span class="line"> Installing Rockchip flash-tool...</span><br><span class="line"> </span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">		 </span><br><span class="line"> Host PC: Ubuntu 16.04</span><br><span class="line">				 </span><br><span class="line"> &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">				   </span><br><span class="line"> Installing USB rules...</span><br><span class="line"> Installing flash-tool...</span><br><span class="line"> Done!</span><br><span class="line"> Installing Khadas burn</span><br><span class="line"> Done!</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong> 安装过程中需要root权限。</p>
+<h3 id="检查USB驱动"><a href="#检查USB驱动" class="headerlink" title="检查USB驱动"></a>检查USB驱动</h3><p>首先设置VIMs进入升级模式(<a href="/vim3/HowtoBootIntoUpgradeMode.html">VIM1</a>/<a href="/vim2/HowtoBootIntoUpgradeMode.html">VIM2</a>/<a href="/vim3/HowtoBootIntoUpgradeMode.html">VIM3</a>)，然后检查USB驱动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ lsusb | grep Amlogic</span><br><span class="line">Bus 002 Devices 036: ID 1b8e:c003 Amlogic, Inc.</span><br></pre></td></tr></table></figure>
+<p>以上信息说明PC已经识别到了VIM3</p>
+<h3 id="如何在Ubuntu下烧录固件"><a href="#如何在Ubuntu下烧录固件" class="headerlink" title="如何在Ubuntu下烧录固件"></a>如何在Ubuntu下烧录固件</h3><p>有2个命令可以用于烧录固件：<code>burn-tool</code>和<code>aml-burn-tool</code>。</p>
+<p>以烧录VIM3为例：</p>
+<ul>
+<li>通过烧录命令<code>burn-tool</code>：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ burn-tool -v aml -b VIM3 -i &#x2F;path&#x2F;to&#x2F;image</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Amlogic平台专用烧录命令<code>aml-burn-tool</code>：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aml-burn-tool -b VIM3 -i &#x2F;path&#x2F;to&#x2F;image</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：烧录VIM3一定要指定<code>-b VIM3</code>参数，否则会失败。对于VIM1或VIM2，可以指定，也可以不指定。</strong></p>
+<p>如果烧录成功你会看到如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Rebooting the board ........[OK]</span><br><span class="line">Unpacking image [OK]</span><br><span class="line">Initializing ddr ........[OK]</span><br><span class="line">Running u-boot ........[OK]</span><br><span class="line">Create partitions [OK]</span><br><span class="line">Writing device tree [OK]</span><br><span class="line">Writing bootloader [OK]</span><br><span class="line">Wiping  data partition [OK]</span><br><span class="line">Wiping  cache partition [OK]</span><br><span class="line">Writing boot partition [OK]</span><br><span class="line">Writing data partition [OK]</span><br><span class="line">Writing logo partition [OK]</span><br><span class="line">Writing system partition [OK]</span><br><span class="line">Do you want to reset the board? y&#x2F;n [n]? y</span><br><span class="line">Resetting board [OK]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>更多请参考<a target="_blank" rel="noopener" href="https://github.com/khadas/utils/tree/master/aml-flash-tool/docs">文档</a>。</p>
+<h3 id="卸载烧录工具"><a href="#卸载烧录工具" class="headerlink" title="卸载烧录工具"></a>卸载烧录工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd &#x2F;path&#x2F;to&#x2F;utils</span><br><span class="line">$ .&#x2F;UNINSTALL</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/UpgradeViaUSBCable/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Windows%E5%8D%87%E7%BA%A7%E5%9B%BA%E4%BB%B6"><span class="toc-text">通过Windows升级固件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">固件升级操作步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Ubuntu%E5%8D%87%E7%BA%A7%E5%9B%BA%E4%BB%B6"><span class="toc-text">通过Ubuntu升级固件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96ubuntu%E7%83%A7%E5%BD%95%E5%B7%A5%E5%85%B7"><span class="toc-text">获取ubuntu烧录工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%83%A7%E5%BD%95%E5%B7%A5%E5%85%B7"><span class="toc-text">安装烧录工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5USB%E9%A9%B1%E5%8A%A8"><span class="toc-text">检查USB驱动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8Ubuntu%E4%B8%8B%E7%83%A7%E5%BD%95%E5%9B%BA%E4%BB%B6"><span class="toc-text">如何在Ubuntu下烧录固件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E7%83%A7%E5%BD%95%E5%B7%A5%E5%85%B7"><span class="toc-text">卸载烧录工具</span></a></li></ol></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

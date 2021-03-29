@@ -1,106 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>MISC | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Hard to clarify… localeslocale 是Ubuntu&#x2F;Centos 用于语言环境本地化。 远程SSH 连了自己平板电脑上的WSL环境，Ubuntu环境的工作OK，但是Debian的WSL环境却出现了输入中文字符，VIM里出现无法识别的情况，出现了各种方块。和locale有关。 之前在EC25E上移植TMUX，没成功，最后也是这个问题需要配置。 实际上Debian上支持loc">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MISC">
-<meta property="og:url" content="http://example.com/2021/03/30/01-misc/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hard to clarify… localeslocale 是Ubuntu&#x2F;Centos 用于语言环境本地化。 远程SSH 连了自己平板电脑上的WSL环境，Ubuntu环境的工作OK，但是Debian的WSL环境却出现了输入中文字符，VIM里出现无法识别的情况，出现了各种方块。和locale有关。 之前在EC25E上移植TMUX，没成功，最后也是这个问题需要配置。 实际上Debian上支持loc">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/Usbip.png">
-<meta property="og:image" content="http://example.com/images/pstree.png">
-<meta property="og:image" content="http://example.com/images/processes.png">
-<meta property="og:image" content="http://example.com/images/remoteShell.png">
-<meta property="article:published_time" content="2021-03-29T20:38:40.670Z">
-<meta property="article:modified_time" content="2021-03-29T20:38:40.670Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/Usbip.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="utf-8">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <title>MISC | Hexo</title>
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
 
-  
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
       </h1>
-      
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <div class="inner">
+      <nav class="main-nav">
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a href="/">首页</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
         
       </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
     </div>
   </div>
 </header>
-
-      <div class="outer">
-        <section id="main"><article id="post-01-misc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/01-misc/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T20:38:40.670Z" itemprop="datePublished">2021-03-30</time>
-</a>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/01-misc/" class="shake shake-little" title="MISC">
+            
+            MISC
+        </a>
+    </h2>
+    <div class="meta_box">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      MISC
-    </h1>
-  
-
-      </header>
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Hard to clarify…</p>
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <p>Hard to clarify…</p>
 <h2 id="locales"><a href="#locales" class="headerlink" title="locales"></a>locales</h2><p>locale 是Ubuntu/Centos 用于语言环境本地化。</p>
 <p>远程SSH 连了自己平板电脑上的WSL环境，Ubuntu环境的工作OK，但是Debian的WSL环境却出现了输入中文字符，VIM里出现无法识别的情况，出现了各种方块。<br>和locale有关。</p>
 <p>之前在EC25E上移植TMUX，没成功，最后也是这个问题需要配置。</p>
@@ -978,134 +995,102 @@ sudo service xrdp restart
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/344185d97476?tdsourcetag=s_pcqq_aiomsg">window10 玩转unbuntu 子系统安装WSL 图形界面，远程桌面</a></p>
 <p>:)</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/30/01-misc/" data-id="ckmv6had60005835b2ns6d0rb" data-title="MISC" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/01-misc/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
     
-<nav id="article-nav">
-  
-    <a href="/2021/03/30/03-shell/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Shell
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/03/30/00-hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
 
-  
-</article>
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#locales"><span class="toc-text">locales</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alais"><span class="toc-text">alais</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UsbIp"><span class="toc-text">UsbIp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%BB%91%E5%AE%9ACPU"><span class="toc-text">进程绑定CPU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swap-%E5%88%86%E5%8C%BA"><span class="toc-text">swap 分区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#strace"><span class="toc-text">strace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dmesg-%E7%9A%84ring-buffer"><span class="toc-text">dmesg 的ring buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps-top-%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E8%BF%90%E8%A1%8C%E5%9C%A8%E5%93%AA%E4%B8%AAcpu%E4%B8%8A"><span class="toc-text">ps top 查看进程运行在哪个cpu上</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#epoll%E5%92%8C-proc"><span class="toc-text">epoll和&#x2F;proc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E6%A0%91"><span class="toc-text">设备树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vfork"><span class="toc-text">vfork</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E5%90%8C%E6%97%B6%E4%BC%A0%E5%88%B0%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="toc-text">git 同时传到两个仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8qemu%E6%90%AD%E5%BB%BAarm%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">使用qemu搭建arm嵌入式linux开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-Create-a-Deamon-Service"><span class="toc-text">How to Create a Deamon Service</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="toc-text">信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wifi-adb"><span class="toc-text">Wifi adb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pstree"><span class="toc-text">pstree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pidof"><span class="toc-text">pidof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chroot"><span class="toc-text">chroot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xargs"><span class="toc-text">xargs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM-r"><span class="toc-text">VIM r</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E5%87%BAubuntu%E4%B8%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-text">列出ubuntu上所有的服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E4%B8%AD%E9%99%A4%E4%BA%86src%E7%9B%AE%E5%BD%95%E5%85%A8%E9%83%A8%E7%A7%BB%E5%8A%A8%E5%88%B0src%E7%9B%AE%E5%BD%95"><span class="toc-text">将当前文件中除了src目录全部移动到src目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nohup"><span class="toc-text">nohup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TC"><span class="toc-text">TC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AEcommit-id%E7%94%9F%E6%88%90patch"><span class="toc-text">根据commit id生成patch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-%E6%89%B9%E9%87%8Ftab"><span class="toc-text">vim 批量tab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#openwrt%E5%AE%89%E8%A3%85ipk"><span class="toc-text">openwrt安装ipk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du%E5%92%8Cdf"><span class="toc-text">du和df</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash-dash"><span class="toc-text">bash dash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="toc-text">git 删除分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E5%A6%82%E4%BD%95merge-%E5%88%86%E6%94%AF"><span class="toc-text">git 如何merge 分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#expect-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">expect 的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">find 的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chgrp"><span class="toc-text">chgrp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nslookup"><span class="toc-text">nslookup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="toc-text">孤儿进程和僵尸进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WSL-%E6%9C%8D%E5%8A%A1%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E6%B3%95"><span class="toc-text">WSL 服务自动启动的正确方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WindowsTerminal"><span class="toc-text">WindowsTerminal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ctags"><span class="toc-text">ctags</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89ctags%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90tags"><span class="toc-text">对当前目录下所有ctags支持的语言格式文件生成tags</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AA%E5%AF%B9%E7%89%B9%E5%AE%9A%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90tags"><span class="toc-text">只对特定文件生成tags</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8tags"><span class="toc-text">使用tags</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E6%97%B6%E5%90%AF%E5%8A%A8%E5%88%86%E5%B1%8F"><span class="toc-text">打开文件时启动分屏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vim%E5%86%85%E9%83%A8%E5%90%AF%E5%8A%A8%E5%88%86%E5%B1%8F"><span class="toc-text">Vim内部启动分屏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B1%8F%E5%A4%A7%E5%B0%8F"><span class="toc-text">分屏大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%97%ADVim%E5%88%86%E5%B1%8F"><span class="toc-text">关闭Vim分屏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">执行命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WSL-X11-RemoteLogin"><span class="toc-text">WSL_X11_RemoteLogin</span></a>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
 
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
 
 </section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/03/30/05-pcb/">PCB</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/30/04-web/">Web</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/30/02-docker/">Docker</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/30/03-shell/">Shell</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/30/01-misc/">MISC</a>
-          </li>
-        
-      </ul>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
     </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+<script src="/js/custom.js"></script>
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    <script>onload_content();</script>
 
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
 </html>

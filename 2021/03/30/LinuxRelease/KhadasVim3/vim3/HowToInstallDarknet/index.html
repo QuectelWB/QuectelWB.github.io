@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>安装配置darknet环境 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToInstallDarknet/" class="shake shake-little" title="安装配置darknet环境">
+            
+            安装配置darknet环境
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <p>darknet是基于ｃ语言设计的一个主要用于物体检测训练的框架</p>
+<h2 id="基本环境配置"><a href="#基本环境配置" class="headerlink" title="基本环境配置"></a>基本环境配置</h2><h3 id="基础工具安装"><a href="#基础工具安装" class="headerlink" title="基础工具安装"></a>基础工具安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br><span class="line">$ sudo apt upgrade</span><br><span class="line">$ sudo apt install git wget build-essential　python3-dev python3-pip</span><br></pre></td></tr></table></figure>
+<h3 id="opencv安装"><a href="#opencv安装" class="headerlink" title="opencv安装"></a>opencv安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install libopencv-dev</span><br><span class="line">$ sudo pip3 install opencv-python</span><br></pre></td></tr></table></figure>
+<p>最新已经更新到了4.1.x,要安装3.4.x的版本可以指定版本号</p>
+<h3 id="cuda和cudnn安装-不使用GPU跳过"><a href="#cuda和cudnn安装-不使用GPU跳过" class="headerlink" title="cuda和cudnn安装(不使用GPU跳过)"></a>cuda和cudnn安装(不使用GPU跳过)</h3><p>参考这里安装<a target="_blank" rel="noopener" href="https://www.tensorflow.org/install/gpu">配置和安装cuda&amp;cudnn</a></p>
+<h2 id="darknet安装"><a href="#darknet安装" class="headerlink" title="darknet安装"></a>darknet安装</h2><h3 id="下载darknet"><a href="#下载darknet" class="headerlink" title="下载darknet"></a>下载darknet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir ~/git</span><br><span class="line">$ <span class="built_in">cd</span> ~/git</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/pjreddie/darknet.git</span><br><span class="line">$ <span class="built_in">cd</span> darknet</span><br></pre></td></tr></table></figure>
+<h3 id="配置darknet"><a href="#配置darknet" class="headerlink" title="配置darknet"></a>配置darknet</h3><p>编译darknet之前需要配置darknet已适配你的PC,修改Makefile文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim Makefile</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用GPU"><a href="#使用GPU" class="headerlink" title="使用GPU"></a>使用GPU</h4><p>使用GPU将GPU和cudnn打开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPU&#x3D;0</span><br><span class="line">CUDNN&#x3D;0</span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPU&#x3D;1</span><br><span class="line">CUDNN&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>使用cpu的这里不需要更改</p>
+<h4 id="打开opencv"><a href="#打开opencv" class="headerlink" title="打开opencv"></a>打开opencv</h4><p>darknet的大部分物体检测都需要使用opencv</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPENCV&#x3D;0</span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OPENCV&#x3D;1</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>在根目录下执行make</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<h2 id="darknet验证和使用"><a href="#darknet验证和使用" class="headerlink" title="darknet验证和使用"></a>darknet验证和使用</h2><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./darknet imtest data/eagle.jpg</span><br></pre></td></tr></table></figure>
+<p>如果看到类似下面的图案即使安装成功<br><img src="/images/vim3/darknet_install_success.png" alt="ai-basic0002-1"></p>
+<h3 id="使用yolo模型"><a href="#使用yolo模型" class="headerlink" title="使用yolo模型"></a>使用yolo模型</h3><h4 id="获取训练好的模型文件"><a href="#获取训练好的模型文件" class="headerlink" title="获取训练好的模型文件"></a>获取训练好的模型文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://pjreddie.com/media/files/yolov3.weights</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="通过图片检测"><a href="#通过图片检测" class="headerlink" title="通过图片检测"></a>通过图片检测</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<p><img src="/images/vim3/darknet_install_check.png" alt="ai-basic0002-2"></p>
+<h4 id="使用摄像头"><a href="#使用摄像头" class="headerlink" title="使用摄像头"></a>使用摄像头</h4><p>使用摄像头必须使用opencv和gpu，指令如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./darknet detector demo cfg/coco.data cfg/yolov3.cfg yolov3.weights</span><br></pre></td></tr></table></figure>
+<p>从摄像头里就可以看到效果</p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h4 id="出现Not-compiled-with-OpenCV"><a href="#出现Not-compiled-with-OpenCV" class="headerlink" title="出现Not compiled with OpenCV"></a>出现<code>Not compiled with OpenCV</code></h4><ol>
+<li>opencv未成功安装，卸载原先的opencv，按照上面的方法重新安装一遍。</li>
+<li>opencv版本不对，确保opencv版本&gt;=3.0</li>
+</ol>
+<h4 id="显示nvcc或者cudnn相关的-h未找到"><a href="#显示nvcc或者cudnn相关的-h未找到" class="headerlink" title="显示nvcc或者cudnn相关的.h未找到"></a>显示nvcc或者cudnn相关的.h未找到</h4><p>cuda和cudnn安装未成功，安装这里的配置，重新检查一遍。<a target="_blank" rel="noopener" href="https://www.tensorflow.org/install/gpu">配置和安装cuda&amp;cudnn</a></p>
+<h4 id="GPU报错"><a href="#GPU报错" class="headerlink" title="GPU报错"></a>GPU报错</h4><p>有可能是gpu的显存不够，darknet对gpu要求比较高。</p>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToInstallDarknet/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">基本环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-text">基础工具安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opencv%E5%AE%89%E8%A3%85"><span class="toc-text">opencv安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cuda%E5%92%8Ccudnn%E5%AE%89%E8%A3%85-%E4%B8%8D%E4%BD%BF%E7%94%A8GPU%E8%B7%B3%E8%BF%87"><span class="toc-text">cuda和cudnn安装(不使用GPU跳过)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#darknet%E5%AE%89%E8%A3%85"><span class="toc-text">darknet安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDdarknet"><span class="toc-text">下载darknet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdarknet"><span class="toc-text">配置darknet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8GPU"><span class="toc-text">使用GPU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%93%E5%BC%80opencv"><span class="toc-text">打开opencv</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#darknet%E9%AA%8C%E8%AF%81%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">darknet验证和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8yolo%E6%A8%A1%E5%9E%8B"><span class="toc-text">使用yolo模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%96%87%E4%BB%B6"><span class="toc-text">获取训练好的模型文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%9B%BE%E7%89%87%E6%A3%80%E6%B5%8B"><span class="toc-text">通过图片检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4"><span class="toc-text">使用摄像头</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0Not-compiled-with-OpenCV"><span class="toc-text">出现Not compiled with OpenCV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BAnvcc%E6%88%96%E8%80%85cudnn%E7%9B%B8%E5%85%B3%E7%9A%84-h%E6%9C%AA%E6%89%BE%E5%88%B0"><span class="toc-text">显示nvcc或者cudnn相关的.h未找到</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GPU%E6%8A%A5%E9%94%99"><span class="toc-text">GPU报错</span></a></li></ol></li></ol></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

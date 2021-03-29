@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>从SPI启动系统 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/BootFromSpiFlash/" class="shake shake-little" title="从SPI启动系统">
+            
+            从SPI启动系统
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <p>Khadas VIM3以及VIM3L板载了 一块存储空间为16MB的SPI-falsh芯片,可用于从SPI启动系统,这篇文档将说明如何从SPI启动.</p>
+<h3 id="编译可用于SPI启动的Uboot"><a href="#编译可用于SPI启动的Uboot" class="headerlink" title="编译可用于SPI启动的Uboot"></a>编译可用于SPI启动的Uboot</h3><p>从SPI启动的Uboot和从EMMC启动的Uboot,编译方法是一样的,通过<a target="_blank" rel="noopener" href="https://github.com/khadas/fenix">fenix</a>就可以轻松的编译出用于SPI启动的脚本.</p>
+<p><strong>这意味着你要有一个可以用于编译的fenix的环境.如果没有,请参照 <a href="/vim3/FenixScript.html">fenix使用说明</a> 搭建编译的环境</strong></p>
+<ul>
+<li>选择编译的环境</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> fenix</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> env/setenv.sh</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你的板子是VIM3,请选择VIM3选项,是VIM3L,请选择VIM3L</p>
+<ul>
+<li>编译uboot</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make uboot</span></span><br></pre></td></tr></table></figure>
+
+<p>如果编译成功了,你将会在<code>fenix/u-boot/build</code>下找到一个可以烧录进SPI的Uboot固件<code>uboot.bin</code>.</p>
+<h3 id="烧录uboot进SPI-Flash"><a href="#烧录uboot进SPI-Flash" class="headerlink" title="烧录uboot进SPI Flash"></a>烧录uboot进SPI Flash</h3><p>将上一步编译得到的uboot放进SD卡,u盘,或者通过TFTP直接加载进内存中.</p>
+<p><a href="/vim3/SetupSerialTool.html">设置串口工具</a> 并且进入Uboot命令行</p>
+<h4 id="加载固件到DDR中"><a href="#加载固件到DDR中" class="headerlink" title="加载固件到DDR中"></a>加载固件到DDR中</h4><ul>
+<li>从SD卡加载的方式:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">load mmc 0 1080000 u-boot.bin</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从U盘加载的方式:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">usb start</span></span><br><span class="line"><span class="meta">kvim3#</span><span class="bash">load usb 0 1080000 u-boot.bin</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过TFTP的方式:</li>
+</ul>
+<p>Please refer <a href="/vim3/SetupTFTPServer.html">here</a> about how to setup the TFTP.<br>设置TFTP的方法在<a href="/vim3/SetupTFTPServer.html">如何设TFTP服务器</a>的文档里有详细的说明.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">tftp 1080000 u-boot.bin</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">sf probe</span></span><br><span class="line"><span class="meta">kvim3#</span><span class="bash">sf erase 0 +<span class="variable">$filesize</span></span></span><br><span class="line"><span class="meta">kvim3#</span><span class="bash">sf write 1080000 0 <span class="variable">$filesize</span></span></span><br></pre></td></tr></table></figure>
+
+<p><em>说明: 这一步需要一些时间,请耐心的等待</em></p>
+<h3 id="修改启动方式为SPI"><a href="#修改启动方式为SPI" class="headerlink" title="修改启动方式为SPI"></a>修改启动方式为SPI</h3><p>如果你想要从SPI启动系统,首先需要将启动方式设置为SPI.默认的启动方式是从eMMC启动的</p>
+<ul>
+<li>确认当前的启动方式:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">kbi bootmode r</span></span><br><span class="line">bootmode: emmc</span><br></pre></td></tr></table></figure>
+
+<p>当前启动方式为eMMC</p>
+<ul>
+<li>设置为SPI启动:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">kbi bootmode w spi</span></span><br></pre></td></tr></table></figure>
+
+<p>关机已使新设置的启动方式的参数生效:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">kbi poweroff</span></span><br></pre></td></tr></table></figure>
+
+<p>此时,再次按下power按键,就会从SPI启动了</p>
+<h3 id="不再需要从SPI启动时清除SPI"><a href="#不再需要从SPI启动时清除SPI" class="headerlink" title="不再需要从SPI启动时清除SPI"></a>不再需要从SPI启动时清除SPI</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">kvim3#</span><span class="bash">sf probe</span></span><br><span class="line"><span class="meta">kvim3#</span><span class="bash">sf erase 0 1000</span></span><br><span class="line"><span class="meta">kvim3#</span><span class="bash">reset</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查</h3><ol>
+<li>如果启动方式已经设置为从SPI启动,同时SPI的uboot损坏了是无法进入uboot的命令行的<ol>
+<li>如果uboot损坏了,你可以尝试使用<a href="/vim3/HowtoBootIntoUpgradeMode.html#TST-Mode-Recommended">TST模式</a>从emmc启动,然后进入命令行,清除你的SPI或者从新烧录uboot进SPI</li>
+</ol>
+ <strong>注意:此时不能使用PC的USB口给板子供电,会直接进入升级模式,而不是从EMMC启动</strong><ol start="2">
+<li>如果EMMC的Uboot损坏了,你可以尝试使用<a href="/vim3/HowtoBootIntoUpgradeMode.html#TST-Mode-Recommended">TST模式</a>进入升级模式,烧录一个固件到EMMC上,再重复步骤1.</li>
+</ol>
+ <strong>注意: 此时板子需要通过type-C的线连接到PC</strong></li>
+</ol>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/BootFromSpiFlash/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%8F%AF%E7%94%A8%E4%BA%8ESPI%E5%90%AF%E5%8A%A8%E7%9A%84Uboot"><span class="toc-text">编译可用于SPI启动的Uboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%A7%E5%BD%95uboot%E8%BF%9BSPI-Flash"><span class="toc-text">烧录uboot进SPI Flash</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E5%9B%BA%E4%BB%B6%E5%88%B0DDR%E4%B8%AD"><span class="toc-text">加载固件到DDR中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%A7%E5%BD%95"><span class="toc-text">烧录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F%E4%B8%BASPI"><span class="toc-text">修改启动方式为SPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%86%8D%E9%9C%80%E8%A6%81%E4%BB%8ESPI%E5%90%AF%E5%8A%A8%E6%97%B6%E6%B8%85%E9%99%A4SPI"><span class="toc-text">不再需要从SPI启动时清除SPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span class="toc-text">故障排查</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

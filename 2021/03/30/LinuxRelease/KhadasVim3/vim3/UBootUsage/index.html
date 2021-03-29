@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>U-boot使用说明 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/UBootUsage/" class="shake shake-little" title="U-boot使用说明">
+            
+            U-boot使用说明
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h3 id="通过U盘烧录boot-img"><a href="#通过U盘烧录boot-img" class="headerlink" title="通过U盘烧录boot.img"></a>通过U盘烧录<code>boot.img</code></h3><p>拷贝 <code>boot.img</code> 到U盘, 然后插入到VIM USB，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kvim# usb_update boot boot.img</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过SD卡烧录boot-img"><a href="#通过SD卡烧录boot-img" class="headerlink" title="通过SD卡烧录boot.img"></a>通过SD卡烧录<code>boot.img</code></h3><p>拷贝 <code>boot.img</code> SD卡, 然后插入到VIM SD卡插槽，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kvim# sdc_update boot boot.img</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除分区"><a href="#擦除分区" class="headerlink" title="擦除分区"></a>擦除分区</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kvim# store erase partition boot</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kvim# amlmmc erase rootfs</span><br></pre></td></tr></table></figure>
+
+<h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><p>执行<code>help cmd</code>获取具体命令的使用方式，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">kvim# help store</span><br><span class="line">store - STORE sub-system</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">store store init flag</span><br><span class="line">store read name addr off|partition size</span><br><span class="line">    read &#39;size&#39; bytes starting at offset &#39;off&#39;</span><br><span class="line">    to&#x2F;from memory address &#39;addr&#39;, skipping bad blocks.</span><br><span class="line">store write name addr off|partition size</span><br><span class="line">    write &#39;size&#39; bytes starting at offset &#39;off&#39;</span><br><span class="line">    to&#x2F;from memory address &#39;addr&#39;, skipping bad blocks.</span><br><span class="line">store rom_write add off size.</span><br><span class="line">	write uboot to the boot device</span><br><span class="line">store erase boot&#x2F;data: </span><br><span class="line">	erase the area which is uboot or data </span><br><span class="line">store erase partition &lt;partition_name&gt;: </span><br><span class="line">	erase the area which partition in u-boot </span><br><span class="line">store erase dtb </span><br><span class="line">store erase key </span><br><span class="line">store disprotect key </span><br><span class="line">store rom_protect on&#x2F;off </span><br><span class="line">store scrub off|partition size</span><br><span class="line">	scrub the area from offset and size </span><br><span class="line">store dtb iread&#x2F;read&#x2F;write addr &lt;size&gt;</span><br><span class="line">	read&#x2F;write dtb, size is optional </span><br><span class="line">store key read&#x2F;write addr &lt;size&gt;</span><br><span class="line">	read&#x2F;write key, size is optional </span><br><span class="line"></span><br><span class="line">kvim#</span><br></pre></td></tr></table></figure>
+
+<p>在U-boot命令行下执行<code>help</code>可以获取全部支持的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">kvim# help</span><br><span class="line">?       - alias for &#39;help&#39;</span><br><span class="line">aml_sysrecovery- Burning with amlogic format package from partition sysrecovery</span><br><span class="line">amlmmc  - AMLMMC sub system</span><br><span class="line">amlnf   - aml nand sub-system</span><br><span class="line">amlnf_test- AMLPHYNAND sub-system</span><br><span class="line">autoscr - run script from memory</span><br><span class="line">base    - print or set address offset</span><br><span class="line">bmp     - manipulate BMP image data</span><br><span class="line">booti   - boot arm64 Linux Image image from memory</span><br><span class="line">bootm   - boot application image from memory</span><br><span class="line">bootp   - boot image via network using BOOTP&#x2F;TFTP protocol</span><br><span class="line">cbusreg - cbus register read&#x2F;write</span><br><span class="line">clkmsr  - measure PLL clock</span><br><span class="line">cmp     - memory compare</span><br><span class="line">cp      - memory copy</span><br><span class="line">crc32   - checksum calculation</span><br><span class="line">dcache  - enable or disable data cache</span><br><span class="line">defenv_reserv- reserve some specified envs after defaulting env</span><br><span class="line">dhcp    - boot image via network using DHCP&#x2F;TFTP protocol</span><br><span class="line">echo    - echo args to console</span><br><span class="line">efuse   - efuse read&#x2F;write data commands</span><br><span class="line">efuse_user- efuse user space read write ops</span><br><span class="line">emmc    - EMMC sub system</span><br><span class="line">env     - environment handling commands</span><br><span class="line">exit    - exit script</span><br><span class="line">ext2load- load binary file from a Ext2 filesystem</span><br><span class="line">ext2ls  - list files in a directory (default &#x2F;)</span><br><span class="line">ext4load- load binary file from a Ext4 filesystem</span><br><span class="line">ext4ls  - list files in a directory (default &#x2F;)</span><br><span class="line">ext4size- determine a file&#39;s size</span><br><span class="line">false   - do nothing, unsuccessfully</span><br><span class="line">fatinfo - print information about filesystem</span><br><span class="line">fatload - load binary file from a dos filesystem</span><br><span class="line">fatls   - list files in a directory (default &#x2F;)</span><br><span class="line">fatsize - determine a file&#39;s size</span><br><span class="line">fdt     - flattened device tree utility commands</span><br><span class="line">get_rebootmode- get reboot mode</span><br><span class="line">go      - start application at address &#39;addr&#39;</span><br><span class="line">gpio    - query and control gpio pins</span><br><span class="line">hdmitx  - HDMITX sub-system</span><br><span class="line">help    - print command description&#x2F;usage</span><br><span class="line">i2c     - I2C sub-system</span><br><span class="line">icache  - enable or disable instruction cache</span><br><span class="line">imgread - Read the image from internal flash with actual size</span><br><span class="line">itest   - return true&#x2F;false on integer compare</span><br><span class="line">jtagoff - disable jtag</span><br><span class="line">jtagon  - enable jtag</span><br><span class="line">keyman  - Unify key ops interfaces based dts cfg</span><br><span class="line">keyunify- key unify sub-system</span><br><span class="line">loop    - infinite loop on address range</span><br><span class="line">macreg  - ethernet mac register read&#x2F;write&#x2F;dump</span><br><span class="line">md      - memory display</span><br><span class="line">mm      - memory modify (auto-incrementing address)</span><br><span class="line">mmc     - MMC sub system</span><br><span class="line">mmcinfo - display MMC info</span><br><span class="line">mw      - memory write (fill)</span><br><span class="line">mwm     - mw mask function</span><br><span class="line">nm      - memory modify (constant address)</span><br><span class="line">open_scp_log- print SCP messgage</span><br><span class="line">osd     - osd sub-system</span><br><span class="line">phyreg  - ethernet phy register read&#x2F;write&#x2F;dump</span><br><span class="line">ping    - send ICMP ECHO_REQUEST to network host</span><br><span class="line">printenv- print environment variables</span><br><span class="line">rarpboot- boot image via network using RARP&#x2F;TFTP protocol</span><br><span class="line">read_temp- cpu temp-system</span><br><span class="line">reboot  - set reboot mode and reboot system</span><br><span class="line">reset   - Perform RESET of the CPU</span><br><span class="line">rsvmem  - reserve memory</span><br><span class="line">run     - run commands in an environment variable</span><br><span class="line">saveenv - save environment variables to persistent storage</span><br><span class="line">sdc_burn- Burning with amlogic format package in sdmmc </span><br><span class="line">sdc_update- Burning a partition with image file in sdmmc card</span><br><span class="line">set_trim_base- cpu temp-system</span><br><span class="line">set_usb_boot- set usb boot mode</span><br><span class="line">setenv  - set environment variables</span><br><span class="line">showvar - print local hushshell variables</span><br><span class="line">silent  - silent</span><br><span class="line">sleep   - delay execution for some time</span><br><span class="line">store   - STORE sub-system</span><br><span class="line">systemoff- system off </span><br><span class="line">temp_triming- cpu temp-system</span><br><span class="line">test    - minimal test like &#x2F;bin&#x2F;sh</span><br><span class="line">tftpboot- boot image via network using TFTP protocol</span><br><span class="line">true    - do nothing, successfully</span><br><span class="line">unpackimg- un pack logo image into pictures</span><br><span class="line">update  - Enter v2 usbburning mode</span><br><span class="line">usb     - USB sub-system</span><br><span class="line">usb_burn- Burning with amlogic format package in usb </span><br><span class="line">usb_update- Burning a partition with image file in usb host</span><br><span class="line">usbboot - boot from USB device</span><br><span class="line">version - print monitor, compiler and linker version</span><br><span class="line">vout    - VOUT sub-system</span><br><span class="line">vpu     - vpu sub-system</span><br><span class="line">write_trim- cpu temp-system</span><br><span class="line">write_version- cpu temp-system</span><br><span class="line">kvim#</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://www.denx.de/wiki/view/DULG/UBoot">U-Boot Offical Guidance</a></li>
+</ul>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/UBootUsage/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87U%E7%9B%98%E7%83%A7%E5%BD%95boot-img"><span class="toc-text">通过U盘烧录boot.img</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87SD%E5%8D%A1%E7%83%A7%E5%BD%95boot-img"><span class="toc-text">通过SD卡烧录boot.img</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%A6%E9%99%A4%E5%88%86%E5%8C%BA"><span class="toc-text">擦除分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9"><span class="toc-text">帮助</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A"><span class="toc-text">更多</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

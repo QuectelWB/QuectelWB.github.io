@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>如何使用WiringPi | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToUseWiringPi/" class="shake shake-little" title="如何使用WiringPi">
+            
+            如何使用WiringPi
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h3 id="什么是-WiringPi"><a href="#什么是-WiringPi" class="headerlink" title="什么是 WiringPi"></a>什么是 WiringPi</h3><p>WiringPi 是一个基于C语言的GPIO引脚控制库。原本是开发被运用于树莓派上，现在我们移植到了VIMs上。可以通过WiringPi控制板子上40pin的引脚。</p>
+<h3 id="开始使用wiringPi"><a href="#开始使用wiringPi" class="headerlink" title="开始使用wiringPi"></a>开始使用wiringPi</h3><h4 id="控制命令"><a href="#控制命令" class="headerlink" title="控制命令"></a>控制命令</h4><ul>
+<li>运行 <code>gpio -h</code>, 你可以看到所有可以关于WiringPi的相关的命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">gpio: Usage: gpio -v</span><br><span class="line">gpio -h</span><br><span class="line">gpio [-g|-1] ...</span><br><span class="line">gpio [-d] ...</span><br><span class="line">[-x extension:params] [[ -x ...]] ...</span><br><span class="line">gpio [-p] &lt;read&#x2F;write&#x2F;wb&gt; ...</span><br><span class="line">gpio &lt;mode&#x2F;read&#x2F;write&#x2F;aread&#x2F;awritewb&#x2F;pwm&#x2F;pwmTone&#x2F;clock&gt; ...</span><br><span class="line">gpio &lt;toggle&#x2F;blink&gt; &lt;pin&gt;</span><br><span class="line">gpio readall</span><br><span class="line">gpio unexportall&#x2F;exports</span><br><span class="line">gpio export&#x2F;edge&#x2F;unexport ...</span><br><span class="line">gpio wfi &lt;pin&gt; &lt;mode&gt;</span><br><span class="line">gpio drive &lt;group&gt; &lt;value&gt;</span><br><span class="line">gpio pwm-bal&#x2F;pwm-ms </span><br><span class="line">gpio pwmr &lt;range&gt; </span><br><span class="line">gpio pwmc &lt;divider&gt; </span><br><span class="line">gpio load spi&#x2F;i2c</span><br><span class="line">gpio unload spi&#x2F;i2c</span><br><span class="line">gpio i2cd&#x2F;i2cdetect</span><br><span class="line">gpio rbx&#x2F;rbd</span><br><span class="line">gpio wb &lt;value&gt;</span><br><span class="line">gpio usbp high&#x2F;low</span><br><span class="line">gpio gbr &lt;channel&gt;</span><br><span class="line">gpio gbw &lt;channel&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure></li>
+<li>运行 <code>gpio readall</code>, 可以看到所有引脚相关的状态和信息<br>你会看到一个有很多栏目的表格，下面是主要栏目的注解<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GPIO  --&gt; GPIO的实际引脚</span><br><span class="line">wPi   --&gt; WiringPi引脚值</span><br><span class="line">Mode  --&gt; 引脚的模式 ,&#96;ALT&#96;说明引脚已经被配置成特殊的功能</span><br><span class="line">V     --&gt; 1表示引脚是高电平，0表示引脚是低电平</span><br><span class="line">PU&#x2F;PD --&gt; PU:上拉 PD:下拉 DSBLD:已关闭上下拉</span><br></pre></td></tr></table></figure>
+<h4 id="通过命令行控制"><a href="#通过命令行控制" class="headerlink" title="通过命令行控制"></a>通过命令行控制</h4>这里的简单例子是通过wpi的1号引脚实现的。</li>
+<li>运行 <code>gpio mode 1 out</code><br>wpi的1号引脚被设置成了输出模式。</li>
+<li>运行 <code>gpio read 1</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@Khadas:~# gpio read 1</span><br><span class="line">1</span><br></pre></td></tr></table></figure></li>
+<li>运行 <code>gpio write 1 0</code> 改变引脚的输出值</li>
+<li>再次运行 <code>gpio read 1</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@Khadas:~# gpio read 1   </span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+你可看到将引脚设置成输出后，就可以通过写命令改变引脚的电平值了。</li>
+</ul>
+<h4 id="通过编写linuxC程序控制GPIO"><a href="#通过编写linuxC程序控制GPIO" class="headerlink" title="通过编写linuxC程序控制GPIO"></a>通过编写linuxC程序控制GPIO</h4><ul>
+<li>这里同样是一个控制GPIO1的简单程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;wiringPi.h&gt;</span><br><span class="line"></span><br><span class="line">const int gpio_pin &#x3D; 1;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	if(-1 &#x3D;&#x3D; wiringPiSetup())&#123;</span><br><span class="line">		printf(&quot;set up error&quot;);</span><br><span class="line">		exit(1);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	pinMode(gpio_pin,OUTPUT);</span><br><span class="line"></span><br><span class="line">	while(1)&#123;</span><br><span class="line">		digitalWrite(gpio_pin,HIGH);</span><br><span class="line">		printf(&quot;wPi Pin %d now is GIGH\n&quot;,gpio_pin);</span><br><span class="line">		delay(5000);</span><br><span class="line">		digitalWrite(gpio_pin,LOW);</span><br><span class="line">		printf(&quot;wPi Pin %d now is LOW\n&quot;,gpio_pin);</span><br><span class="line">		delay(5000);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	exit(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>通过gcc可以编译成可执行的程序。编译的命令是 <code>gcc -o test test.c -lwiringPi -lpthread -lrt -lm -lcrypt</code>.</li>
+<li>运行 <code>./test</code> 就可以控制wpi的1号引脚了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wPi Pin 1 now is GIGH</span><br><span class="line">wPi Pin 1 now is LOW</span><br><span class="line">wPi Pin 1 now is GIGH</span><br><span class="line">wPi Pin 1 now is LOW</span><br></pre></td></tr></table></figure>
+你可以通过命令<code>gpio read 1</code>观察引脚的电平变化是否正确。</li>
+</ul>
+<h3 id="WiringPi特殊功能引脚"><a href="#WiringPi特殊功能引脚" class="headerlink" title="WiringPi特殊功能引脚"></a>WiringPi特殊功能引脚</h3><p>wiringPi的特殊引脚功能包括<code>SPI,i2C,ADC,SoftPWM</code></p>
+<h4 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h4><p>由于<code>VIM1</code>,<code>VIM2</code>没有将<code>SPI</code>引出到GPIO的Pin40上，所以<code>SPI</code>只支持<code>VIM3</code>,物理引脚与SPI功能的对应引脚</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PIN37 &lt;---&gt; MOSI</span><br><span class="line">PIN35 &lt;---&gt; MISO</span><br><span class="line">PIN15 &lt;---&gt; SS</span><br><span class="line">PIN16 &lt;---&gt; SCLK</span><br></pre></td></tr></table></figure>
+
+<h4 id="I2C"><a href="#I2C" class="headerlink" title="I2C"></a>I2C</h4><p><code>VIM1</code>,<code>VIM2</code>使用的是<code>i2c0</code>,<code>VIM3</code>使用<code>i2c3</code>,物理引脚连接如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PIN22 &lt;---&gt; SCK</span><br><span class="line">PIN23 &lt;---&gt; SDA</span><br></pre></td></tr></table></figure>
+<h4 id="ADC"><a href="#ADC" class="headerlink" title="ADC"></a>ADC</h4><p><code>VIM1</code>,<code>VIM2</code>使用<code>ADC</code>的<code>通道0</code>和<code>通道2</code>,<code>VIM3</code>使用<code>通道0</code>和<code>通道3</code>,物理引脚连接如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PIN10 &lt;---&gt; ADC_CH0</span><br><span class="line">PIN12 &lt;---&gt; ADC_CH2后者ADC_CH3</span><br></pre></td></tr></table></figure>
+<h4 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h4><p>使用之前请先确认串口节点名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PIN15 &lt;---&gt; RX</span><br><span class="line">PIN16 &lt;---&gt; TX</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="wiringPi函数列表"><a href="#wiringPi函数列表" class="headerlink" title="wiringPi函数列表"></a>wiringPi函数列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">int  wiringPiSetup       (void) ;</span><br><span class="line">int  wiringPiSetupSys    (void) ;</span><br><span class="line">int  wiringPiSetupGpio   (void) ;</span><br><span class="line">int  wiringPiSetupPhys   (void) ;</span><br><span class="line">void pinModeAlt          (int pin, int mode) ;</span><br><span class="line">void pinMode             (int pin, int mode) ;</span><br><span class="line">void pullUpDnControl     (int pin, int pud) ;</span><br><span class="line">int  digitalRead         (int pin) ;</span><br><span class="line">void digitalWrite        (int pin, int value) ;</span><br><span class="line">void pwmWrite            (int pin, int value) ;</span><br><span class="line">int  analogRead          (int pin) ;</span><br><span class="line">void analogWrite         (int pin, int value) ;</span><br><span class="line">int  piGpioLayout        (void) ;</span><br><span class="line">int  piBoardRev          (void) ;   &#x2F;&#x2F; Deprecated</span><br><span class="line">void piBoardId           (int *model, int *rev, int *mem, int *maker, int *overVolted) ;</span><br><span class="line">int  wpiPinToGpio        (int wpiPin) ;</span><br><span class="line">int  physPinToGpio       (int physPin) ;</span><br><span class="line">void setPadDrive         (int group, int value) ;</span><br><span class="line">int  getAlt              (int pin) ;</span><br><span class="line">void pwmToneWrite        (int pin, int freq) ;</span><br><span class="line">void pwmSetMode          (int mode) ;</span><br><span class="line">void pwmSetRange         (unsigned int range) ;</span><br><span class="line">void pwmSetClock         (int divisor) ;</span><br><span class="line">void gpioClockSet        (int pin, int freq) ;</span><br><span class="line">void delay               (unsigned int howLong) ;</span><br><span class="line">void delayMicroseconds   (unsigned int howLong) ;</span><br><span class="line"></span><br><span class="line">I2C:</span><br><span class="line">int wiringPiI2CRead           (int fd) ;</span><br><span class="line">int wiringPiI2CReadReg8       (int fd, int reg) ;</span><br><span class="line">int wiringPiI2CReadReg16      (int fd, int reg) ;</span><br><span class="line">int wiringPiI2CWrite          (int fd, int data) ;</span><br><span class="line">int wiringPiI2CWriteReg8      (int fd, int reg, int data) ;</span><br><span class="line">int wiringPiI2CWriteReg16     (int fd, int reg, int data) ;</span><br><span class="line">int wiringPiI2CSetupInterface (const char *device, int devId) ;</span><br><span class="line">int wiringPiI2CSetup          (const int devId) ;</span><br><span class="line"></span><br><span class="line">SPI:</span><br><span class="line">int wiringPiSPIGetFd     (int channel) ;</span><br><span class="line">int wiringPiSPIDataRW    (int channel, unsigned char *data, int len) ;</span><br><span class="line">int wiringPiSPISetupMode (int channel, int speed, int mode) ;</span><br><span class="line">int wiringPiSPISetup     (int channel, int speed) ;</span><br><span class="line"></span><br><span class="line">Serial:</span><br><span class="line">int   serialOpen      (const char *device, const int baud) ;</span><br><span class="line">void  serialClose     (const int fd) ;</span><br><span class="line">void  serialFlush     (const int fd) ;</span><br><span class="line">void  serialPutchar   (const int fd, const unsigned char c) ;</span><br><span class="line">void  serialPuts      (const int fd, const char *s) ;</span><br><span class="line">void  serialPrintf    (const int fd, const char *message, ...) ;</span><br><span class="line">int   serialDataAvail (const int fd) ;</span><br><span class="line">int   serialGetchar   (const int fd) ;</span><br><span class="line"></span><br><span class="line">softPwm:</span><br><span class="line">int  softPwmCreate (int pin, int value, int range) ;</span><br><span class="line">void softPwmWrite  (int pin, int value) ;</span><br><span class="line">void softPwmStop   (int pin) ;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果需要使用wiringPi的特殊功能引脚，需要先确认dtb里面打开了相应的配置<br>wiringPi本身包括很多功能，不仅仅只是控制GPIO引脚的输出和读取引脚电平值。这里只是一个简单的介绍和使用，更多的用法需要使用者自己去探索。</p>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToUseWiringPi/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-WiringPi"><span class="toc-text">什么是 WiringPi</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8wiringPi"><span class="toc-text">开始使用wiringPi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%91%BD%E4%BB%A4"><span class="toc-text">控制命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8E%A7%E5%88%B6"><span class="toc-text">通过命令行控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%BC%96%E5%86%99linuxC%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6GPIO"><span class="toc-text">通过编写linuxC程序控制GPIO</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WiringPi%E7%89%B9%E6%AE%8A%E5%8A%9F%E8%83%BD%E5%BC%95%E8%84%9A"><span class="toc-text">WiringPi特殊功能引脚</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SPI"><span class="toc-text">SPI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#I2C"><span class="toc-text">I2C</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ADC"><span class="toc-text">ADC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Serial"><span class="toc-text">Serial</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wiringPi%E5%87%BD%E6%95%B0%E5%88%97%E8%A1%A8"><span class="toc-text">wiringPi函数列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>如何自定义以太网MAC地址 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToCustomMac/" class="shake shake-little" title="如何自定义以太网MAC地址">
+            
+            如何自定义以太网MAC地址
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h1 id="查看以太网MAC地址"><a href="#查看以太网MAC地址" class="headerlink" title="查看以太网MAC地址"></a>查看以太网MAC地址</h1><ul>
+<li>通过<code>cmdline</code>查看</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">khadas@Khadas:~$ cat /proc/cmdline</span><br><span class="line">root=UUID=be7fd8e4-c575-444f-832f-00bf27631d9f rootfstype=ext4 rootflags=data=writeback rw ubootpart=NULL console=ttyS0,115200n8 console=tty0 no_console_suspend consoleblank=0 loglevel=7 logo=osd0,loaded,0x3d800000,1080p60hz vout=1080p60hz,enable hdmimode=1080p60hz  fsck.repair=yes net.ifnames=0 ddr_size= wol_enable=0 max_freq_a53=2208 max_freq_a73=2400 jtag=disable mac=c8:63:14:70:43:e4 androidboot.mac=c8:63:14:70:43:e4  fan=auto khadas_board=VIM3 hwver=VIM3.V12 coherent_pool=2M reboot_mode=normal imagetype=EMMC uboottype=vendor</span><br></pre></td></tr></table></figure>
+
+<p>可以从<code>mac</code>和<code>androidboot.mac</code>字段看到地址为<code>c8:63:14:70:43:e4</code></p>
+<ul>
+<li>通过<code>ifconfig</code>命令查看</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.1.118  netmask 255.255.255.0  broadcast 192.168.1.255</span><br><span class="line">        inet6 fe80::17e7:5b1e:c841:a035  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether c8:63:14:70:43:e4  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 210  bytes 20318 (20.3 KB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 236  bytes 23009 (23.0 KB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line">        device interrupt 14</span><br></pre></td></tr></table></figure>
+
+<p>从<code>ether</code>字段可以看到MAC地址为<code>c8:63:14:70:43:e4</code></p>
+<h1 id="自定义以太网MAC地址"><a href="#自定义以太网MAC地址" class="headerlink" title="自定义以太网MAC地址"></a>自定义以太网MAC地址</h1><ul>
+<li>打开<code>/boot/env.txt</code>文件,</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">khadas@Khadas:~$ sudo vim /boot/env.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>custom_ethmac</code>,自定义为你想要的MAC地址,格式为<code>xx:xx:xx:xx:xx:xx</code>,例如<code>c8:63:14:70:43:e6</code>,</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">custom_ethmac=c8:63:14:70:43:e6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启生效</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">khadas@Khadas:~$ sync</span><br><span class="line">khadas@Khadas:~$ sudo reboot</span><br></pre></td></tr></table></figure>
+
+<h1 id="确认修改是否生效"><a href="#确认修改是否生效" class="headerlink" title="确认修改是否生效"></a>确认修改是否生效</h1><ul>
+<li>通过<code>cmdline</code>查看</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cmdline</span><br><span class="line">root=UUID=be7fd8e4-c575-444f-832f-00bf27631d9f rootfstype=ext4 rootflags=data=writeback rw ubootpart=NULL console=ttyS0,115200n8 console=tty0 no_console_suspend consoleblank=0 loglevel=7 logo=osd0,loaded,0x3d800000,1080p60hz vout=1080p60hz,enable hdmimode=1080p60hz  fsck.repair=yes net.ifnames=0 ddr_size= wol_enable=0 max_freq_a53=2208 max_freq_a73=2400 jtag=disable mac=c8:63:14:70:43:e6 androidboot.mac=c8:63:14:70:43:e6  fan=auto khadas_board=VIM3 hwver=VIM3.V12 coherent_pool=2M reboot_mode=normal imagetype=EMMC uboottype=vendor</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过<code>ifconfig</code>命令查看</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">khadas@Khadas:~$ ifconfig</span><br><span class="line">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500</span><br><span class="line">        inet 192.168.1.120  netmask 255.255.255.0  broadcast 192.168.1.255</span><br><span class="line">        inet6 fe80::17e7:5b1e:c841:a035  prefixlen 64  scopeid 0x20&lt;link&gt;</span><br><span class="line">        ether c8:63:14:70:43:e6  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 100  bytes 10737 (10.7 KB)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 151  bytes 16279 (16.2 KB)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line">        device interrupt 14</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意</strong>:</p>
+<ol>
+<li>如果在<code>boot/env.txt</code>里面没有<code>custom_ethmac</code>字段,可以在末尾添加</li>
+<li>自定义的以太网要符合规则,如果你自定义的网址不符合规则,在<code>ifconfig</code>命令查看时,会显示和你的自定义地址不一样的结果</li>
+</ol>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/HowToCustomMac/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BB%A5%E5%A4%AA%E7%BD%91MAC%E5%9C%B0%E5%9D%80"><span class="toc-text">查看以太网MAC地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A5%E5%A4%AA%E7%BD%91MAC%E5%9C%B0%E5%9D%80"><span class="toc-text">自定义以太网MAC地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E4%BF%AE%E6%94%B9%E6%98%AF%E5%90%A6%E7%94%9F%E6%95%88"><span class="toc-text">确认修改是否生效</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>通过TF卡升级固件 | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/UpgradeViaTFBurningCard/" class="shake shake-little" title="通过TF卡升级固件">
+            
+            通过TF卡升级固件
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <p>这里以安卓为例，Ubuntu的升级与安卓一致。</p>
+<p><strong>注意：由于VIM1、VIM2和VIM3操作方式基本上是一样的，所以本文档以VIM1为例进行说明。</strong></p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>下载<a target="_blank" rel="noopener" href="https://dl.khadas.com/Tools/Burn_card_maker_V2.0.2_20150617_en.7z">Burn Card Maker Tool</a> 并解压。</li>
+<li>准备好TF卡的读卡器。</li>
+<li>一台高清显示器（带HDMI接口）。</li>
+</ul>
+<p>注意：若是TF卡里面有数据要提前备份出来，制作过程会格式化整个TF卡。</p>
+<h3 id="固件升级操作步骤"><a href="#固件升级操作步骤" class="headerlink" title="固件升级操作步骤"></a>固件升级操作步骤</h3><ol>
+<li><p>插入TF卡到电脑上，系统有识别到TF的盘符<br><img src="/images/vim3/tfcard_pc_zh.png" alt="image"></p>
+</li>
+<li><p>识别到TF卡后双击运行工具“<strong>Burn_Card_Maker.exe</strong>”<br><img src="/images/vim3/BurnCardMaker_Tool_zh.png" alt="image|646x86"></p>
+</li>
+<li><p>选择工具设置项</p>
+<ul>
+<li>在工具的下拉框“<strong>选中SD卡</strong>”里选择TF卡设备。</li>
+<li>选择”<strong>分区和格式化</strong>“(第一次制作TF升级卡时要选上此项)</li>
+<li>点击”<strong>打开</strong>“按钮选择要升级的固件</li>
+<li>点击”<strong>制作</strong>“按钮制作TF升级卡</li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/vim3/BurnCardMaker_Tool_Interface_zh.png" alt="image|520x372"></p>
+<ol start="4">
+<li><p>当所有都完成了之后，会弹出”<strong>Success</strong>“消息，点击“<strong>确定</strong>”按钮完成当前操作。<br><img src="/images/vim3/BurnCardMaker_Tool_success_zh.png" alt="image|519x385"></p>
+</li>
+<li><p>从电脑上安全移除TF卡，然后插入到VIM/ VIM2的TF卡槽里面。</p>
+</li>
+<li><p>连接好HDMI和USB-C线，然后给VIM/ VIM2上电。</p>
+</li>
+<li><p>让VIM/ VIM2进入升级模式</p>
+<ul>
+<li>长按Power键不要松开</li>
+<li>短按Rest键并松开</li>
+<li>大概3秒后松开Power键进入固件升级模式</li>
+</ul>
+</li>
+</ol>
+<p>正常操作后，显示器上会显示以下内容：<br><img src="/images/vim3/Upgrading_interface.png" alt="image|690x465"></p>
+<h3 id="更多资料"><a href="#更多资料" class="headerlink" title="更多资料"></a>更多资料</h3><ul>
+<li><a href="/vim3/UpgradeViaUSBCable.html">通过USB-C数据线</a></li>
+<li><a href="/vim3/HowtoBootIntoUpgradeMode.html">VIM1怎样进入升级模式</a></li>
+<li><a href="/vim2/HowtoBootIntoUpgradeMode.html">VIM2怎样进入升级模式</a></li>
+<li><a href="/vim3/HowtoBootIntoUpgradeMode.html">VIM3怎样进入升级模式</a></li>
+</ul>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/UpgradeViaTFBurningCard/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">固件升级操作步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E8%B5%84%E6%96%99"><span class="toc-text">更多资料</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

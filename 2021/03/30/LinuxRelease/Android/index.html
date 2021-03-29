@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/Android/" class="shake shake-little" title="">
+            
+            
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h1 id="AndroidBsp"><a href="#AndroidBsp" class="headerlink" title="AndroidBsp"></a>AndroidBsp</h1><h2 id="RIL"><a href="#RIL" class="headerlink" title="RIL"></a>RIL</h2><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxNjU5MzAxMw==&mid=2247484836&idx=2&sn=88eecc283690db180f7f5646d6a6831c&chksm=9787e2bea0f06ba8f78999080a81942984f75b8db86e4845a6671044e613b41433d10bda71f3&mpshare=1&scene=24&srcid=1111nKtRvQyiG8zwkUUr68Aa&sharer_sharetime=1605052874338&sharer_shareid=ecace1467fd81ffbadc2260cf4ccea17#rd">Android RIL的Java 框架</a></p>
+<p>java部分<br>    RIL模<br>    Phone模块</p>
+<h2 id="Lineage-OS-on-RP3B"><a href="#Lineage-OS-on-RP3B" class="headerlink" title="Lineage OS on RP3B"></a>Lineage OS on RP3B</h2><p>参考</p>
+<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi3/LineageOS17.1/">LineageOS 17.1 (Android 10) for Raspberry Pi 3</a></p>
+<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi4/LineageOS17.1/">LineageOS 17.1 (Android 10) for for Raspberry Pi 4</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babyshan1/article/details/78894600">Ubuntu下为树莓派3B编译Android（Lineage OS）7.1.2系统</a></p>
+<pre><code>repo init -u git://github.com/LineageOS/android.git -b cm-14.1
+
+curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi3.xml -O -L https://raw.githubusercontent.com/lineage-rpi/android_local_manifest/cm-14.1/manifest_brcm_rpi3.xml
+
+repo sync
+</code></pre>
+<p>编译kernel</p>
+<pre><code>source build/envsetup.sh
+lunch lineage_rpi3-userdebug
+make ramdisk systemimage
+</code></pre>
+<p>分区1 128MB 分配给 BOOT : 用 fdisk : W95 FAT32(LBA) &amp; Bootable, mkfs.vfat<br>分区2 1024MB 分配给 /system : 用 fdisk, 新建主分区<br>分区3 分配给  /data : 用 fdisk, mkfs.ex4</p>
+<p>七、写入编译好的文件<br>1.写入系统分区</p>
+<p>假设system分区挂载在/dev/sdb2下：</p>
+<pre><code>$ cd out/target/product/rpi3
+$ sudo dd if=system.img of=/dev/sdb2 bs=1M
+</code></pre>
+<p>2.复制内核文件到boot分区</p>
+<ul>
+<li> 复制device/brcm/rpi3/boot/* 到 分区1:/</li>
+<li> 复制kernel/rpi/arch/arm/boot/zImage 到 分区1:/</li>
+<li> 复制kernel/rpi/arch/arm/boot/dts/bcm2710-rpi-3-b.dtb 到 分区1:/</li>
+<li> 复制kernel/rpi/arch/arm/boot/dts/overlays/vc4-kms-v3d.dtbo 到 分区1:/overlays/vc4-kms-v3d.dtbo</li>
+<li> 复制out/target/product/rpi3/ramdisk.img 到 分区1:/</li>
+</ul>
+<p>还没尝试！！！</p>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>:)</p>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/Android/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AndroidBsp"><span class="toc-text">AndroidBsp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RIL"><span class="toc-text">RIL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lineage-OS-on-RP3B"><span class="toc-text">Lineage OS on RP3B</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-text">Android</span></a></li></ol></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

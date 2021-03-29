@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Krescue - 助你玩转khadas | Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/KhadasVim3/vim3/Krescue/" class="shake shake-little" title="Krescue - 助你玩转khadas">
+            
+            Krescue - 助你玩转khadas
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h2 id="什么是krescue"><a href="#什么是krescue" class="headerlink" title="什么是krescue"></a>什么是krescue</h2><p>Krescue是一个非常小(21mb)的操作系统，您可以直接从micro SD卡或EMMC启动。它是一把“瑞士军刀”，你可以用它来执行各种低级的SBC维修任务。其中最值得注意的是，通过转储一个原始压缩的.img.gz文件来备份EMMC，并通过将.img.gz文件刷新回EMMC文件来快速安装新的操作系统。Krescue也可以通过有线以太网直接从网络下载和安装操作系统映像。</p>
+<h2 id="通过SD卡安装Krescue"><a href="#通过SD卡安装Krescue" class="headerlink" title="通过SD卡安装Krescue"></a>通过SD卡安装Krescue</h2><h3 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h3><ol>
+<li>mirco SD卡一个</li>
+<li>HDMI显示器，键盘或者khadas遥控器一个</li>
+<li>VIM1/2/3或者Edge-V一个</li>
+<li>一个可以制作启动盘的PC</li>
+</ol>
+<h3 id="制作Krescue启动盘"><a href="#制作Krescue启动盘" class="headerlink" title="制作Krescue启动盘"></a>制作Krescue启动盘</h3><h4 id="烧录工具Etcher"><a href="#烧录工具Etcher" class="headerlink" title="烧录工具Etcher"></a>烧录工具Etcher</h4><p><a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">Etcher</a>是一个兼容性较好同时操作界面简单易用的烧录工具，我们选用这个工具作为烧录Krescue到SD卡的工具。</p>
+<h4 id="下载Krescue镜像"><a href="#下载Krescue镜像" class="headerlink" title="下载Krescue镜像"></a>下载Krescue镜像</h4><p>Krescue的镜像可以从<a href="/Firmware/Krescue/dump/">这里下载</a>,选择你相应的板子的固件。<br><img src="/images/vim3/Krescue_downloads.png" alt="Kerscure_downloads"></p>
+<h4 id="制作启动盘"><a href="#制作启动盘" class="headerlink" title="制作启动盘"></a>制作启动盘</h4><p>将mircoSD卡插进PC上。将下载的镜像烧录进SD卡。<br><img src="/images/vim3/HowtoUseEtcher.png" alt="Make_Krescue"></p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>将制作好的SD卡插入板子,连接HDMI，进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">升级模式</a>，看到下图就是成功启动了kerscure<br><img src="/images/vim3/krescue_boot.jpg" alt="boot Krescue"></p>
+<h2 id="通过网络使用安装Krescue"><a href="#通过网络使用安装Krescue" class="headerlink" title="通过网络使用安装Krescue"></a>通过网络使用安装Krescue</h2><h3 id="准备工具-1"><a href="#准备工具-1" class="headerlink" title="准备工具"></a>准备工具</h3><ol>
+<li>mirco SD卡一个</li>
+<li>HDMI显示器，键盘或者khadas遥控器一个</li>
+<li>使用ubuntu固件的VIM1/2/3或者Edge-V一个</li>
+</ol>
+<h3 id="通过网络安装"><a href="#通过网络安装" class="headerlink" title="通过网络安装"></a>通过网络安装</h3><ol>
+<li>插入SD卡到板子上，确认SD卡的节点，一般是<code>/dev/mmcblk0</code>或者<code>/dev/mmcblk1</code>.记住节点的名称</li>
+<li>打开终端，运行命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sfL dl.khadas.com&#x2F;.mega | sh -s - -l</span><br></pre></td></tr></table></figure>
+你会看到可用的固件列表<br><img src="/images/vim3/krescue_list.png" alt="krescue firmware list"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -sfL dl.khadas.com&#x2F;.mega | sh -s - [BOARD_ID] &gt; &#x2F;dev&#x2F;mmcblk0 (或者&#96;&#x2F;dev&#x2F;mmcblk1&#96;)</span><br></pre></td></tr></table></figure>
+等待烧录完成，镜像就被写入了SD卡里，此时就可以进入<a href="/vim3/HowtoBootIntoUpgradeMode.html">升级模式</a>启动krescue了。</li>
+</ol>
+<h2 id="使用krescue"><a href="#使用krescue" class="headerlink" title="使用krescue"></a>使用krescue</h2><ol>
+<li><p>备份以及还原<br>通过选项3，可以将板子上EMMC的固件打包存放到SD卡中。通过选项2可以将SD卡中的系统还原到EMMC上。SD卡可以保存不止一个系统。</p>
+</li>
+<li><p>查看板子信息<br>通过选项2中的 device info，可以查看板子的配置等相关信息。</p>
+</li>
+<li><p>KBI<br>通过选项7，可以控制板子的kbi。</p>
+</li>
+<li><p>shell终端<br>选中选项b，就会启动shell终端。</p>
+</li>
+<li><p>游戏<br>选中选项9，可以在镜像备份或者还原时打发时间。</p>
+</li>
+<li><p>其他<br>通过选项1，可以进入向导模式；<br>选中选项a，可以关机或重启；<br>其他功能可以通过选项2中的 readme docs 查看相关的帮助。</p>
+</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>在烧录注意选择对应自己板子型号的固件。VIM3和VIM3L是不同的板子</li>
+<li>通过网络安装使用krescue，板子上的固件要求是ubuntu固件</li>
+</ol>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>krescue能做的事情，不止文档所提及的部分，文档中提及的部分只是基础功能。更多的功能可以参考以下的内容<br><a target="_blank" rel="noopener" href="https://youtu.be/ER4BOJUhoYU">https://youtu.be/ER4BOJUhoYU</a><br><a target="_blank" rel="noopener" href="https://youtu.be/vvpkbhnyhZY">https://youtu.be/vvpkbhnyhZY</a><br><a target="_blank" rel="noopener" href="https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945">https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945</a></p>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/KhadasVim3/vim3/Krescue/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFkrescue"><span class="toc-text">什么是krescue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87SD%E5%8D%A1%E5%AE%89%E8%A3%85Krescue"><span class="toc-text">通过SD卡安装Krescue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="toc-text">准备工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9CKrescue%E5%90%AF%E5%8A%A8%E7%9B%98"><span class="toc-text">制作Krescue启动盘</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%A7%E5%BD%95%E5%B7%A5%E5%85%B7Etcher"><span class="toc-text">烧录工具Etcher</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDKrescue%E9%95%9C%E5%83%8F"><span class="toc-text">下载Krescue镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E5%90%AF%E5%8A%A8%E7%9B%98"><span class="toc-text">制作启动盘</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85Krescue"><span class="toc-text">通过网络使用安装Krescue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7-1"><span class="toc-text">准备工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E5%AE%89%E8%A3%85"><span class="toc-text">通过网络安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8krescue"><span class="toc-text">使用krescue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A"><span class="toc-text">更多</span></a></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>

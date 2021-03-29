@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Hexo</title>
+    
+    
+        <meta property="og:site_name" content="Hexo">
+    
+    
+        <meta property="article:author" content="John Doe">
+    
+    
+        <link rel="icon" href="/img/favicon.ico">
+    
+    
+<link rel="stylesheet" href="/css/minireset.min.css">
+
+    
+<link rel="stylesheet" href="/css/all.min.css">
+
+    
+<link rel="stylesheet" href="/css/csshake.min.css">
+
+    
+<link rel="stylesheet" href="/css/hljs/lioshi.css">
+
+    
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+
+    
+<link rel="stylesheet" href="/styl/main.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/highlight.min.js"></script>
+
+    
+<script src="/js/jquery.fancybox.min.js"></script>
+
+    
+<script src="/js/clipboard.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <header>
+  <div class="outer">
+    <div class="inner">
+      <h1 class="logo-wrap">
+        <a>Hexo<b><sup>1.1</sup></b></a>
+      </h1>
+    </div>
+    <div class="inner">
+      <nav class="main-nav">
+        
+          <a href="/">首页</a>
+        
+          <a href="/archives">归档</a>
+        
+          <a href="/categories">分类</a>
+        
+          <a href="/tags">标签</a>
+        
+          <a href="/friends">友链</a>
+        
+          <a href="/about">关于</a>
+        
+          <a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+    <div class="content">
+        <section class="outer">
+    <article>
+        <div class="article-title">
+    <h2>
+        <a href="/2021/03/30/LinuxRelease/Vexpress/" class="shake shake-little" title="">
+            
+            
+        </a>
+    </h2>
+    <div class="meta_box">
+    
+        
+        
+            
+                
+        
+        <div class="meta meta_auth">
+            <img src="/img/default.png" alt="head" />
+            <p>anonymous</p>
+        </div>
+    
+        
+        
+        <div class="meta meta_date">
+            <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+            <p>发布于：2021年03月30日</p>
+        </div>
+    
+        <div class="meta meta_update">
+            <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+            <p>更新于：2021年03月30日</p>
+        </div>
+    </div>
+    
+
+</div>
+
+        <hr>
+        <div class="article-entry">
+            
+            
+            
+            <h1 id="使用qemu搭建ARM-Vexpress嵌入式linux开发环境"><a href="#使用qemu搭建ARM-Vexpress嵌入式linux开发环境" class="headerlink" title="使用qemu搭建ARM Vexpress嵌入式linux开发环境"></a>使用qemu搭建ARM Vexpress嵌入式linux开发环境</h1><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
+<pre><code>制作bootloader；
+编译linux内核、linux内核模块、linux设备树；
+制作根文件系统。
+</code></pre>
+<p>我们使用qemu虚拟机来上手嵌入式linux的开发。</p>
+<h2 id="安装qemu与arm交叉编译工具"><a href="#安装qemu与arm交叉编译工具" class="headerlink" title="安装qemu与arm交叉编译工具"></a>安装qemu与arm交叉编译工具</h2><p>略</p>
+<h2 id="Linux内核与设备树编译"><a href="#Linux内核与设备树编译" class="headerlink" title="Linux内核与设备树编译"></a>Linux内核与设备树编译</h2><p>下载Linux内核：<a target="_blank" rel="noopener" href="https://www.kernel.org/">https://www.kernel.org/</a></p>
+<pre><code>git clone https://mirrors.tuna.tsinghua.edu.cn/git/linux.git
+
+https://mirror.bjtu.edu.cn/kernel/linux/kernel/
+
+
+make vexpress_defconfig
+
+make zImage 
+
+make modules
+
+make dtbs
+</code></pre>
+<p>得到zImage、dtb</p>
+<p>尝试启动</p>
+<pre><code>qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
+</code></pre>
+<p>看到</p>
+<pre><code>rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)
+ALSA device list:
+  #0: ARM AC&#39;97 Interface PL041 rev0 at 0x10004000, irq 33
+input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb/smb:motherboard/smb:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
+VFS: Cannot open root device &quot;(null)&quot; or unknown-block(0,0): error -6
+Please append a correct &quot;root=&quot; boot option; here are the available partitions:
+1f00          131072 mtdblock0  (driver?)
+1f01           32768 mtdblock1  (driver?)
+Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.99 #1
+Hardware name: ARM-Versatile Express
+[&lt;80016454&gt;] (unwind_backtrace) from [&lt;80012ee0&gt;] (show_stack+0x10/0x14)
+[&lt;80012ee0&gt;] (show_stack) from [&lt;80243aac&gt;] (dump_stack+0x94/0xa8)
+[&lt;80243aac&gt;] (dump_stack) from [&lt;800a5638&gt;] (panic+0x9c/0x200)
+[&lt;800a5638&gt;] (panic) from [&lt;8062f250&gt;] (mount_block_root+0x1c0/0x25c)
+[&lt;8062f250&gt;] (mount_block_root) from [&lt;8062f408&gt;] (mount_root+0x11c/0x124)
+[&lt;8062f408&gt;] (mount_root) from [&lt;8062f568&gt;] (prepare_namespace+0x158/0x1a0)
+[&lt;8062f568&gt;] (prepare_namespace) from [&lt;8062eeec&gt;] (kernel_init_freeable+0x268/0x278)
+[&lt;8062eeec&gt;] (kernel_init_freeable) from [&lt;804a440c&gt;] (kernel_init+0x8/0xe8)
+[&lt;804a440c&gt;] (kernel_init) from [&lt;8000f4f8&gt;] (ret_from_fork+0x14/0x3c)
+---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+</code></pre>
+<h2 id="busybox"><a href="#busybox" class="headerlink" title="busybox"></a>busybox</h2><p><a target="_blank" rel="noopener" href="https://busybox.net/downloads/">https://busybox.net/downloads/</a></p>
+<p>编译生成一个 __install 文件夹</p>
+<h2 id="制作根文件系统"><a href="#制作根文件系统" class="headerlink" title="制作根文件系统"></a>制作根文件系统</h2><p>mkdir rootfs</p>
+<p>将_install 目录里的内容拷贝到rootfs目录中</p>
+<p>新建目录 mkdir lib</p>
+<p>将arm交叉编译器的库复制过来：cp -r /usr/arm-linux-gnueabi/lib/* lib/</p>
+<p>在rootfs目录下新建目录mkdir dev/，进入该目录cd dev/，创建节点sudo mknod -m 666 tty1 c 4 1（串口字符设备，主设备号为4，从设备号为1）</p>
+<p>重复创建多个串口设备，注意分配好从设备号：</p>
+<p>创建一个控制台节点：mknod -m 666 console c 5 1</p>
+<p>创建一个空节点：mknod -m 666 null c 1 3</p>
+<p>回到home目录，输入命令dd if=/dev/zero of=rootfs.ext3 bs=1M count=32生成虚拟SD卡系统镜像，可以得到一个rootfs.ext3文件。<br>格式化该镜像：mkfs.ext3 rootfs.ext3<br>挂载该镜像到本地：mount -t ext3 rootfs.ext3 /mnt -o loop</p>
+<p>将之前准备的rootfs目录下的所有文件都拷贝到该镜像挂载点：cp -r /home/zvcv/rootfs/* /mnt/</p>
+<p>卸载：umount /mnt/<br>进入linux源码目录： cd linux/</p>
+<p>使用qemu启动内核：qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append “root=/dev/mmcblk0 rw console=ttyAMA0” -sd /home/zvcv/rootfs.ext3，这里比之前多指定了一个sd镜像。</p>
+<p>点击回车，进入命令行，linux启动完毕。</p>
+<p><strong>我遇到了无法启动，原因是内核编译选项选的是ext4 ，所以格式化的时候选mkfs.ext4</strong></p>
+<h2 id="uboot"><a href="#uboot" class="headerlink" title="uboot"></a>uboot</h2><p><a target="_blank" rel="noopener" href="https://ftp.denx.de/pub/u-boot/">https://ftp.denx.de/pub/u-boot/</a></p>
+<p>不要用最新版本</p>
+<pre><code>scripts/kconfig/conf  --syncconfig Kconfig
+  UPD     include/config.h
+  GEN     include/autoconf.mk.dep
+  CFG     u-boot.cfg
+  GEN     include/autoconf.mk
+  UPD     include/generated/dt.h
+  UPD     include/generated/timestamp_autogenerated.h
+  UPD     include/config/uboot.release
+*** Your GCC is older than 6.0 and is not supported
+arch/arm/config.mk:66: recipe for target &#39;checkgcc6&#39; failed
+make: *** [checkgcc6] Error 1
+</code></pre>
+<p>我的arm-linux-gnuebi-gcc 是5.5</p>
+<p>换2015年的uboot才能build pass</p>
+<h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2><blockquote>
+<p>   sudo apt-get install uml-utilities bridge-utils</p>
+</blockquote>
+<blockquote>
+<p>cd linux-4.4.232/</p>
+</blockquote>
+<blockquote>
+<p>make LOADADDR=0x60003000 uImage -j4</p>
+</blockquote>
+<p>mkimage command not found  U-Boot images will not be built —&gt;</p>
+<p><strong>sudo apt-get install u-boot-tools</strong> </p>
+<blockquote>
+<p>sudo apt-get install tftp-hpa tftpd-hpa xinetd</p>
+</blockquote>
+<p>u-boot 要能加载uImage，需要修改</p>
+<p>默认的bootcmd，变成tftp加载tftp server上的uImage</p>
+<p>vim include/configs/vexpress_common.h</p>
+<p>注释默认的 CONFIG_BOOTCOMMAND</p>
+<p>添加 </p>
+<pre><code>#define CONFIG_BOOTCOMMAND  &quot;tftp 0x60003000 uImage; setenv bootargs&#39;root=/dev/mmcblk0 console=ttyAMA0&#39;; bootm 0x60003000&quot;
+</code></pre>
+<p>另外一个说法是</p>
+<pre><code>#define CONFIG_BOOTCOMMAND  &quot;tftp 0x60003000 uImage; tftp 0x60500000 vexpress-v2p-ca9.dtb; setenv bootargs &#39;root=/dev/mmcblk0 console=ttyAMA0&#39;; bootm 0x60003000 - 0x60500000&quot;
+</code></pre>
+<p>可以配置IP和netmask</p>
+<pre><code>#define CONFIG_IPADDR   192.168.1.49
+#define CONFIG_NETMASK  255.255.255.0
+#define CONFIG_SERVERIP 192.168.1.88
+</code></pre>
+<p>在Quectel的台式机虚拟机里的桥接网卡，实际配置成</p>
+<pre><code>#define CONFIG_IPADDR   192.168.1.49
+#define CONFIG_NETMASK  255.255.254.0
+#define CONFIG_SERVERIP 10.66.83.84
+</code></pre>
+<h2 id="QEMU和主机如何ping通"><a href="#QEMU和主机如何ping通" class="headerlink" title="QEMU和主机如何ping通"></a>QEMU和主机如何ping通</h2><p>在Ubuntu下使用QEMU连网<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yang1111111112/article/details/107811796">https://blog.csdn.net/yang1111111112/article/details/107811796</a></p>
+<p>写一个脚本</p>
+<pre><code>if test -z $1 ; then
+    echo need a argument: down/up
+    exit
+fi 
+
+if [ &quot;up&quot; = $1  ] ; then
+    # 新建一个网桥，名称为br0
+    brctl addbr br0
+    # 将网络设备enp0s10添加到网桥br0 
+    ifconfig enp0s9 down
+    brctl addif br0 enp0s9
+
+    # 关闭生成树协议
+    brctl stp br0 off
+
+    ifconfig br0 192.168.1.1 netmask 255.255.255.0 promisc up
+    ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0 promisc up
+
+
+     # 使用命令tunctl添加虚拟网卡tap
+    tunctl -t tap0 -u rlk
+
+    ifconfig tap0 192.168.1.89 netmask 255.255.255.0 promisc up
+
+    brctl addif br0 tap0
+
+else
+    ifconfig tap0 down
+    brctl delif br0 tap0
+
+    ifconfig enp0s9 down
+    brctl delif br0 enp0s9
+    ifconfig br0 down
+    brctl delbr br0
+
+    ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0
+fi
+</code></pre>
+<p>其中enp0s9是VirtualBox里的一个Host Only添加的网卡。</p>
+<p><img src="/.com//tap0.png"></p>
+<p>生成的这个tap0 就是serverip<br>在qemu中可以ping 通该IP </p>
+<pre><code>sudo qemu-system-arm -M vexpress-a9 -m 1024M -kernel u-boot -dtb /home/rlk/QEMU/tftpboot/vexpress-v2p-ca9.dtb  -nographic -net nic,macaddr=52:54:00:12:34:22 -net tap,ifname=tap0 -sd  vexpress.ext3
+</code></pre>
+<p>在uboot里，<br>setenv serverip xxx<br>setenv ipaddr xxx<br>ping ${serverip}</p>
+<p>网络能ping通的情况下</p>
+<p>tftp 0x60003000 uImage<br>setenv bootargs ‘root=/dev/mmcblk0 console=ttyAMA0’<br>bootm 0x60003000</p>
+<h2 id="NFS-1"><a href="#NFS-1" class="headerlink" title="NFS"></a>NFS</h2><h2 id="RT-Thread"><a href="#RT-Thread" class="headerlink" title="RT Thread"></a>RT Thread</h2><p>Ubuntu 平台开发RT-Thread</p>
+<h2 id="qemu-模拟-ARM-从sd卡启动-uboot-内核"><a href="#qemu-模拟-ARM-从sd卡启动-uboot-内核" class="headerlink" title="qemu 模拟 ARM 从sd卡启动 uboot 内核"></a>qemu 模拟 ARM 从sd卡启动 uboot 内核</h2><p><a target="_blank" rel="noopener" href="http://www.vjiot.net/typecho/index.php/archives/58/">http://www.vjiot.net/typecho/index.php/archives/58/</a></p>
+<p>:)</p>
+
+        </div>
+        <div class="article-copyright">
+            
+    <blockquote>
+        <p>
+            版权声明：本文为「河东小伍」的原创文章，博客内容遵循 署名-非商业性使用-相同方式共享 协议。<br>本文永久链接是：http://example.com/2021/03/30/LinuxRelease/Vexpress/
+        </p>
+    </blockquote>
+
+
+        </div>
+    </article>
+    
+
+    <section id="toc-div" >
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8qemu%E6%90%AD%E5%BB%BAARM-Vexpress%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">使用qemu搭建ARM Vexpress嵌入式linux开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85qemu%E4%B8%8Earm%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7"><span class="toc-text">安装qemu与arm交叉编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B8%E4%B8%8E%E8%AE%BE%E5%A4%87%E6%A0%91%E7%BC%96%E8%AF%91"><span class="toc-text">Linux内核与设备树编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#busybox"><span class="toc-text">busybox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">制作根文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uboot"><span class="toc-text">uboot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFS"><span class="toc-text">NFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QEMU%E5%92%8C%E4%B8%BB%E6%9C%BA%E5%A6%82%E4%BD%95ping%E9%80%9A"><span class="toc-text">QEMU和主机如何ping通</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFS-1"><span class="toc-text">NFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RT-Thread"><span class="toc-text">RT Thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qemu-%E6%A8%A1%E6%8B%9F-ARM-%E4%BB%8Esd%E5%8D%A1%E5%90%AF%E5%8A%A8-uboot-%E5%86%85%E6%A0%B8"><span class="toc-text">qemu 模拟 ARM 从sd卡启动 uboot 内核</span></a></li></ol></li></ol>
+    </section>
+    <section id="gohome" style="display: none;"><a>顶</a></section>
+
+    <script>
+        function get_top_by_link(link){
+            var hnid = "#" + $(link).attr("data");
+            if ($(hnid).length > 0){
+                return $(hnid).offset().top;
+            }else{
+                return 0;
+            }
+        }
+        //go to hn
+        function gotohn(link){
+            $("html,body").animate({scrollTop: get_top_by_link(link) }, 300);
+        }
+        //页面滚动
+        function update(){
+            var scrollH = $(window).scrollTop();
+            if($(".toc-link")){
+                $(".toc-link").each(function(i,link){
+                    var mdHeight = get_top_by_link(link);
+                    if(mdHeight <= scrollH + 40){
+                        //高亮导航菜单
+                        $('.toc-link').removeClass('on');
+                        $(link).addClass('on');
+                    }
+                });
+            }
+            //返回顶部显隐
+            if(scrollH < 200){
+                $("#gohome").css("display","none");
+            }else{
+                $("#gohome").css("display","block");
+            }
+        }
+        $(function(){
+            //修复部分锚点从属关系
+            if($("#toc-div >li").length > 0){
+                $("#toc-div >li").appendTo($("#toc-div >ol:first"));
+            }
+            //返回顶部
+            $('#gohome').click(function(){
+                $("html,body").animate({scrollTop: 0}, 300);
+                return false;
+            })
+            //遍历锚点
+            $(".toc-link").each(function(i,link){
+                $(link).attr("data",$(link).attr('href').substring(1));
+                $(link).attr("href","javascript:void(0);");
+                $(link).attr("onclick","gotohn(this);");
+            })
+            //绑定滚动事件
+            $(window).bind('scroll', update);
+            //初始化toc
+            var first_toc = $(".toc-link")[0];
+            var first_scroll = get_top_by_link(first_toc);
+            var window_scroll = $(window).scrollTop();
+            if(window_scroll <= first_scroll){
+                $(first_toc).addClass('on');
+            }
+        })
+    </script>
+
+</section>
+    </div>
+    <footer>
+    <div class="outer">
+        <div class="inner">
+            Powered by <a href="http://prowiki.demopage.icu/" target="_blank">ProWiki</a>
+            &copy;2021 河东小伍<br>
+            <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">冀ICP备00000000号</a>
+        </div>
+    </div>
+</footer>
+
+<script src="/js/custom.js"></script>
+
+
+    <script>onload_content();</script>
+
+</body>
+</html>
