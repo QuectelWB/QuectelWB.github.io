@@ -71,85 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Android/AddAPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/Android/AddAPN/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AddAPN/" data-id="ckmw4ddfy0000ss5b6nw1auak" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-docs/07-ftrace" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/docs/07-ftrace/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Ftrace"><a href="#Ftrace" class="headerlink" title="Ftrace"></a>Ftrace</h1><p>内核源码位置 src/kernel/trace:</p>
-<p>/sys/kernel/debug/tracing</p>
-<pre><code>root@v:/sys/kernel/debug/tracing# ls
-available_events            events                    per_cpu              set_ftrace_notrace  trace                tracing_on
-available_filter_functions  free_buffer               printk_formats       set_ftrace_pid      trace_clock          tracing_thresh
-available_tracers           function_profile_enabled  README               set_graph_function  trace_marker         uprobe_events
-buffer_size_kb              instances                 saved_cmdlines       set_graph_notrace   trace_options        uprobe_profile
-buffer_total_size_kb        kprobe_events             saved_cmdlines_size  snapshot            trace_pipe
-current_tracer              kprobe_profile            set_event            stack_max_size      trace_stat
-dyn_ftrace_total_info       max_graph_depth           set_event_pid        stack_trace         tracing_cpumask
-enabled_functions           options                   set_ftrace_filter    stack_trace_filter  tracing_max_latency
-
-
-
-buffer_size_kb：这个属性比較重要，也是使用中须要注意的，这是设置启动的CPU的缓存大小。取决于追踪log的大小，超出会反复利用覆盖，可是一次性分配又须要考虑内存。
-buffer_total_size_kb：这个就是总和buffer size 了，启用了多少个cpu去trace就乘以buffer_size_kb.
-current_tracer: 当前的追踪器。有哪几种能够查看available_tracers ,用echo * &gt; 重定向 设置改变，详细tracer的不同需另行參考 ，默觉得nop
-events：文件夹下就是加入在kernel源代码中已经存在的各个event集合。
-free_buffer：顾名思义，可是这个使用方法比較特殊，有仅仅要open之后。等处理完buffer之后 close这个文件就可以释放buffer，有兴趣能够去trace.c里面看看这个节点的file_operation，不手动去close这个节点的话，上面设置的buffer是不会free的。
-trace:用于追踪操作的文件节点，就是读取该节点获取trace log
-tracing_cpumask：用到的cpu标记。以数值bit位表示多少个cpu，这个尤为注意。比方四核 cat显示就是 f 也就是1111。
-tracing_on：开关
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/07-ftrace/" data-id="ckmw4ddhk0014ss5b2pjacdzi" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-docs/05-pcb" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/30/docs/05-pcb/" class="article-date">
@@ -188,7 +109,7 @@ tracing_on：开关
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/05-pcb/" data-id="ckmw4ddhi0012ss5bhyd244hh" data-title="PCB" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/05-pcb/" data-id="ckmwdf3ni0010ig5bfw6lerd1" data-title="PCB" class="article-share-link">Share</a>
       
       
       
@@ -429,7 +350,7 @@ gitbook
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/04-web/" data-id="ckmw4ddhh0011ss5bc2ije3jm" data-title="Web" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/04-web/" data-id="ckmwdf3nh000zig5bfa5xg8xc" data-title="Web" class="article-share-link">Share</a>
       
       
       
@@ -538,7 +459,7 @@ docker push quectel/imx8_android9
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/02-docker/" data-id="ckmw4ddhg000zss5b9l46g3vu" data-title="Docker" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/02-docker/" data-id="ckmwdf3nf000xig5b0qr6ecob" data-title="Docker" class="article-share-link">Share</a>
       
       
       
@@ -651,7 +572,7 @@ WshShell.SendKeys &quot;&#123;ENTER&#125;&quot;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/03-shell/" data-id="ckmw4ddhg0010ss5b3gsyftbn" data-title="Shell" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/03-shell/" data-id="ckmwdf3ng000yig5bb2lhhpod" data-title="Shell" class="article-share-link">Share</a>
       
       
       
@@ -795,7 +716,7 @@ lrwx------ 1 root root 64 Nov 21 09:44 139 -&gt; socket:[7341066]
 <h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><p>alias 别名</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_16777851/article/details/87291146">dts学习</a></p>
 <h2 id="vfork"><a href="#vfork" class="headerlink" title="vfork"></a>vfork</h2><p>vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。</p>
-<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;&#46;&#103;&#x69;&#116;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;&#46;&#103;&#x69;&#116;</a></p>
+<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;&#46;&#103;&#x69;&#x74;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;&#46;&#103;&#x69;&#x74;</a></p>
 <h2 id="使用qemu搭建arm嵌入式linux开发环境"><a href="#使用qemu搭建arm嵌入式linux开发环境" class="headerlink" title="使用qemu搭建arm嵌入式linux开发环境"></a>使用qemu搭建arm嵌入式linux开发环境</h2><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
 <pre><code>制作bootloader；
 编译linux内核、linux内核模块、linux设备树；
@@ -1566,7 +1487,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/01-misc/" data-id="ckmw4ddht001bss5be7xl34m4" data-title="MISC" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/01-misc/" data-id="ckmwdf3o10019ig5b93cq239n" data-title="MISC" class="article-share-link">Share</a>
       
       
       
@@ -1617,7 +1538,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/00-hello-world/" data-id="ckmw4ddhf000yss5b3l9saw2v" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/00-hello-world/" data-id="ckmwdf3ne000wig5bdx010z6k" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -1629,9 +1550,9 @@ sudo service xrdp restart
 
 
   
-    <article id="post-LinuxRelease/OPENWRT编译之树莓派4B" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LinuxRelease/1004-openwrt-for-raspberrypi" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2019/11/24/LinuxRelease/OPENWRT%E7%BC%96%E8%AF%91%E4%B9%8B%E6%A0%91%E8%8E%93%E6%B4%BE4B/" class="article-date">
+    <a href="/2019/11/24/LinuxRelease/1004-openwrt-for-raspberrypi/" class="article-date">
   <time class="dt-published" datetime="2019-11-23T16:00:00.000Z" itemprop="datePublished">2019-11-24</time>
 </a>
     
@@ -1647,7 +1568,7 @@ sudo service xrdp restart
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/11/24/LinuxRelease/OPENWRT%E7%BC%96%E8%AF%91%E4%B9%8B%E6%A0%91%E8%8E%93%E6%B4%BE4B/">OPENWRT编译之树莓派4B</a>
+      <a class="p-name article-title" href="/2019/11/24/LinuxRelease/1004-openwrt-for-raspberrypi/">OPENWRT编译之树莓派4B</a>
     </h1>
   
 
@@ -1738,7 +1659,7 @@ sudo service xrdp restart
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2019/11/24/LinuxRelease/OPENWRT%E7%BC%96%E8%AF%91%E4%B9%8B%E6%A0%91%E8%8E%93%E6%B4%BE4B/" data-id="ckmw4ddgy000lss5b7v1s5v90" data-title="OPENWRT编译之树莓派4B" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2019/11/24/LinuxRelease/1004-openwrt-for-raspberrypi/" data-id="ckmwdf3mw000iig5b1m9u2057" data-title="OPENWRT编译之树莓派4B" class="article-share-link">Share</a>
       
       
       
@@ -1809,23 +1730,23 @@ sudo service xrdp restart
       <ul>
         
           <li>
-            <a href="/2021/03/30/mem/min_free_kbytes/">vm.min_free_kbytes</a>
+            <a href="/2021/03/31/mem/malloc/">malloc</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/mem_cmd/">内存管理有关的命令</a>
+            <a href="/2021/03/31/DebianService/Systemd/">Systemd</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/malloc/">malloc</a>
+            <a href="/2021/03/31/DebianService/UserManagement/">Ubuntu账户管理</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/UserManagement/">Ubuntu账户管理</a>
+            <a href="/2021/03/31/DebianService/DBus/">dbus-daemon</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/Systemd/">Systemd</a>
+            <a href="/2021/03/31/LinuxRelease/1011-ubuntu/">(no title)</a>
           </li>
         
       </ul>

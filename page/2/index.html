@@ -71,24 +71,67 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-docs/06-sched" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LinuxRelease/1001-210" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/docs/06-sched/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
+    <a href="/2021/03/30/LinuxRelease/1001-210/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T14:43:15.260Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/LinuxRelease/1001-210/">210开发板</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><h2 id="nice"><a href="#nice" class="headerlink" title="nice"></a>nice</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babybabyup/article/details/79839734">添加一个系统调用，实现对指定进程的nice值的修改或读取功能，并返回系统最新的nice值即优先级prio</a></p>
+        <p>=========</p>
+<p>手上有两块210开发板，15年和16年分别购买的，一块是友善之臂Smart210，一块是九鼎X210V3s.<br>很早以前玩的时候，还能从NoOS的裸机程序，到完整的BootUp，Linux和Android都能编译安装运行。<br>现在Android由于版本（JDK、make等）的问题，Android版本只有2.3和4.0，需要重新搭建环境，意义不大。暂且搁置。<br>Linux，当初提供的是Kernel 2.6，并且已经找不到源码了，网上有3.10的别人移植好的内核源码，一切从头开始！<br>几乎所有资料都要从网络上重新找。</p>
+<h2 id="Smart210-Linux-BSP"><a href="#Smart210-Linux-BSP" class="headerlink" title="Smart210_Linux_BSP"></a>Smart210_Linux_BSP</h2><p>安装Uboot通过tftp加载kernel，再挂载NFS的方式。</p>
+<p>准备跑kernel 2.6，装个老的</p>
+<p>对友善之臂的,提供了一个Supperboot的bootloader，将<br>整个images目录拷贝到SD卡中</p>
+<pre><code>Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       2020/11/11     10:06                Android
+d-----       2020/11/11     10:06                Android2.3.1
+d-----       2020/11/11     10:06                Linux
+d-----       2020/11/11     10:06                WindowsCE6
+-a----        2013/6/18     11:37           1442 FriendlyARM-电容触摸.ini
+-a----       2020/11/11     18:21           1393 FriendlyARM.ini
+-a----        2013/7/30     10:00            559 readme.txt
+-a----         2015/7/7     11:31         540672 Superboot210.bin
+</code></pre>
+<p>FriendlyARM.ini 是Superboot启动会从中读取的配置文件。包括是Android还是Linux、WinCE</p>
+<pre><code>Booting from SD
+Bad or missing configure file &#39;/images/FriendlyARM.ini&#39;
+Booting from SD
+
+Superboot-210
+Ver: 1.27a(20150707a)
+// 烧录ing
+...
+</code></pre>
+<div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+<a href="Khadas.md" class="btn btn-neutral float-right" title="Khadas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+<a href="vexpress.md" class="btn btn-neutral" title="Vexpress" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+</div>
+
+<p>:)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/06-sched/" data-id="ckmw4ddhj0013ss5b4ws5bvj5" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1001-210/" data-id="ckmwdf3mt000fig5bf0dlco9p" data-title="210开发板" class="article-share-link">Share</a>
       
       
       
@@ -100,9 +143,391 @@
 
 
   
-    <article id="post-LinuxRelease/Android_X86" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LinuxRelease/1002-licheezero" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Android_X86/" class="article-date">
+    <a href="/2021/03/30/LinuxRelease/1002-licheezero/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T14:38:00.098Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/LinuxRelease/1002-licheezero/">LicheePiZero</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>======</p>
+<table>
+<thead>
+<tr>
+<th>Referrence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="http://zero.lichee.pro/">http://zero.lichee.pro/</a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/Lichee-Pi">https://github.com/Lichee-Pi</a></td>
+</tr>
+</tbody></table>
+<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><pre><code>sudo groupadd docker
+sudo gpasswd -a $&#123;your_user_name&#125; docker
+sudo service docker restart
+newgrp - docker
+docker pull zepan/licheepi
+docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
+</code></pre>
+<h2 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h2><p>:)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1002-licheezero/" data-id="ckmwdf3mu000gig5b9xkk218q" data-title="LicheePiZero" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LinuxRelease/1009-vexpress_rt-thread" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/LinuxRelease/1009-vexpress_rt-thread/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T14:37:11.236Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/LinuxRelease/1009-vexpress_rt-thread/">Vexpress-A9 RT-Rthread BSP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>========</p>
+<p><a target="_blank" rel="noopener" href="https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/">https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/</a></p>
+<h2 id="Ready"><a href="#Ready" class="headerlink" title="Ready"></a>Ready</h2><p>git clone <a target="_blank" rel="noopener" href="https://github.com/RT-Thread/rt-thread.git">https://github.com/RT-Thread/rt-thread.git</a></p>
+<p>sudo apt-get install scons qemu cross_compile</p>
+<p>tom@laptop:~$ cd /tmp/<br>tom@laptop:/tmp$ wget <a target="_blank" rel="noopener" href="https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2">https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2</a><br>tom@laptop:/tmp$ tar xf ./gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2<br>tom@laptop:/tmp$ mv gcc-arm-none-eabi-6_2-2016q4/ /opt/<br>tom@laptop:/tmp$ /opt/gcc-arm-none-eabi-6_2-2016q4/bin/arm-none-eabi-gcc –version</p>
+<p>sudo apt-get install libncurses5-dev</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1009-vexpress_rt-thread/" data-id="ckmwdf3n9000qig5bd4w80fu2" data-title="Vexpress-A9 RT-Rthread BSP" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LinuxRelease/1003-runninglinux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/LinuxRelease/1003-runninglinux/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T14:36:46.377Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/LinuxRelease/1003-runninglinux/">RunningLinuxKernel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>=======</p>
+<p>RunningLinuxKernel is a great Linux Kernel totorial authorized by Figo Zhang.</p>
+<p><a target="_blank" rel="noopener" href="https://www.xuetangx.com/">学堂在线</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1003-runninglinux/" data-id="ckmwdf3mv000hig5b38g0ha3q" data-title="RunningLinuxKernel" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mem/min_free_kbytes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/mem/min_free_kbytes/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T13:31:56.717Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/mem/min_free_kbytes/">vm.min_free_kbytes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>内存最安全的阈值</p>
+<p>当请求分配内存时，如果有足够的内存，则分配成功。如果没有，则要阻塞，释放内存，再来分配内存。原子请求不能被阻塞，如果分配不到，则失败。内核为了尽量避免原子请求失败，预留了一个页池框，在内存不足时使用。这个页池框的大小就是min_free_kbytes。</p>
+<p>echo 500000 &gt; /proc/sys/vm/min_free_bytes</p>
+<p>具体含义：保留500M的内存空间，但是由于系统的内存才256MB，导致系统出现kernel panic，系统崩溃了</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/20a627abe05e">vm.min_free_kbytes 设置过高，导致 kswapd0 消耗大量 CPU</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/762292">LINUX tmpfs 空间使用未达到100% , 内存也未占满。 执行任何命令提示 bash: fork: Cannot allocate memory 过几秒时间系统会自动重启。</a></p>
+<pre><code>1.首先判断客户是否内存不足导致，每次执行测试操作后，free 结果显示可用内存是有的
+
+2.当进程Process 比较多，导致无法分配pid，也会提示Cannot allocate memory，执行命令pstree -a | wc -l 统计下进程数，排除进程数过多导致的内存无法分配
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/mem/min_free_kbytes/" data-id="ckmwdf3ns0018ig5beh8uhafq" data-title="vm.min_free_kbytes" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mem/mem_cmd" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/mem/mem_cmd/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T13:31:28.478Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/mem/mem_cmd/">内存管理有关的命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>vmstat CPU、内存、IO的使用情况，单位KB</p>
+<p>t@m:/sys/bus/usb/devices/1-4# vmstat 2 5<br>procs ———–memory———- —swap– —–io—- -system– ——cpu—–<br> r  b 交换 空闲 缓冲 缓存   si   so    bi    bo   in   cs us sy id wa st<br> 0  0      0 9870572  23212 918968    0    0     2     3   16   25  0  0 99  0  0<br> 3  0      0 9870308  23212 919008    0    0     0     0  639 1201  1  1 98  0  0<br> 0  0      0 9870244  23212 919008    0    0     0     0  606 1182  1  1 98  0  0<br> 0  0      0 9870148  23212 919008    0    0     0     0  551 1181  1  1 97  0  0<br> 0  0      0 9870244  23220 919008    0    0     0     8  520 1135  1  1 98  0  0</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/mem/mem_cmd/" data-id="ckmwdf3no0017ig5bbhp124sq" data-title="内存管理有关的命令" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-DebianService/Supervisor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/DebianService/Supervisor/" class="article-date">
+  <time class="dt-published" datetime="2021-03-30T13:09:26.570Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/30/DebianService/Supervisor/">Supervisor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Supervisor是一个Python编写的进程管理工具，支持Linux/Unix系统（不支持Windows），可以很方便的启动、停止、重启多个进程，可以在程序意外退出后自动重启，记录并输出所有控制台日志，免去了自己编写shell脚本的麻烦</p>
+<pre><code>apt install supervisor #安装
+systemctl enable supervisor #设置开机自启
+supervisord #初始化
+</code></pre>
+<h2 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h2><p>Supervisor的默认配置目录在/etc/supervisor/conf.d/下</p>
+<pre><code>vim /etc/supervisor/conf.d/slimchat.conf #slimchat为自定义名称，下同
+
+[program:slimchat]
+command=npm start 启动命令
+directory=/home/wwwroot/www.slimchat.ml/SlimChat/ 目录
+autostart=true 是否自启
+autorestart=true 进程退出后是否自动重启
+stderr_logfile=/var/log/slimchat.err.log 错误日志
+stdout_logfile=/var/log/slimchat.out.log 输出日志
+user=www 用户身份
+stopsignal=INT
+</code></pre>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><pre><code>supervisorctl status slimchat #查看进程状态（使用自定义的名称）
+
+supervisorctl stop slimchat #停止
+
+supervisorctl start slimchat #启动
+
+supervisorctl restart slimchat #重启
+
+supervisorctl reload #重启整个服务（注意！此命令会重启所有进程，不推荐）
+
+更新配置后的正确方法：
+
+supervisorctl reread
+
+supervisorctl update
+</code></pre>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><p>Error: Another program is already listening on a port that one of our HTTP servers is configured to use. Shut this program down first before starting supervisord.</p>
+<p>解决</p>
+<pre><code>find / -name supervisor.sock
+unlink /run/supervisor.sock
+supervisord
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/DebianService/Supervisor/" data-id="ckmwdf3mq000cig5bau36gdrw" data-title="Supervisor" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-docs/09-timer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/docs/09-timer/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.272Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h1><h2 id="内核时间"><a href="#内核时间" class="headerlink" title="内核时间"></a>内核时间</h2><p>HZ 是一个和平台相关的全局变量。</p>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5">https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5</a></p>
+<pre><code>#ifndef HZ
+#define HZ 100
+#endif
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4">https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4</a></p>
+<pre><code>#define HZ        1024
+</code></pre>
+<p>一般情况</p>
+<pre><code>#define HZ 1000
+</code></pre>
+<p>表示1秒时钟中断产生1000次。</p>
+<p>jiffies记录了自系统启动后产生的节拍的总数。jiffies一秒内增加的数量等于HZ</p>
+<p>短时间延时用ndekay、udelay、mdelay<br>长时间延时，用当前jiffies和目标jiffies值比较</p>
+<pre><code>unsigned long timeout = jiffies +2 * HZ;
+while(time_before(jiffies,timeout));
+</code></pre>
+<h2 id="time-list"><a href="#time-list" class="headerlink" title="time_list"></a>time_list</h2><pre><code>struct timer_list &#123;
+    /*
+     * All fields that change during normal runtime grouped to the same cacheline
+     */
+    struct list_head entry;
+    unsigned long expires;        //超时的Jiffies
+    struct tvec_base *base;
+
+    void (*function)(unsigned long); //超时的时候处理的函数
+    unsigned long data;
+
+    int slack;
+
+#ifdef CONFIG_TIMER_STATS
+    int start_pid;
+    void *start_site;
+    char start_comm[16];
+#endif
+#ifdef CONFIG_LOCKDEP
+    struct lockdep_map lockdep_map;
+#endif
+&#125;;
+</code></pre>
+<p>操作函数</p>
+<p>init_timer<br>add_timer<br>mod_timer<br>del_timer</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/09-timer/" data-id="ckmwdf3nl0014ig5b4ufk203n" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LinuxRelease/1010-android-x86" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/LinuxRelease/1010-android-x86/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -134,37 +559,7 @@ m -jX iso_img  2&gt;&amp;1 | tee build.log
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Android_X86/" data-id="ckmw4ddgv000hss5bhv8ketfc" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-docs/10-process" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/docs/10-process/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><h2 id="NI"><a href="#NI" class="headerlink" title="NI"></a>NI</h2><p>nice 值<br>进程调度，影响进程调度的优先级</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lenomirei/p/5516872.html">https://www.cnblogs.com/lenomirei/p/5516872.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/10-process/" data-id="ckmw4ddhm0017ss5bbkzy8l1n" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1010-android-x86/" data-id="ckmwdf3na000rig5b4bjq08zo" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -192,220 +587,7 @@ m -jX iso_img  2&gt;&amp;1 | tee build.log
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/11-rcu_list/" data-id="ckmw4ddg60002ss5b7vyh763a" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-docs/08-slab" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/docs/08-slab/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Slab"><a href="#Slab" class="headerlink" title="Slab"></a>Slab</h1><h2 id="slabtop"><a href="#slabtop" class="headerlink" title="slabtop"></a>slabtop</h2><p>Linux内核需要为临时对象如任务或者设备结构和节点分配内存，缓存分配器管理着这些类型对象的缓存。现代Linux内核部署了该缓存分配器以持有缓存，称之为片。不同类型的片缓存由片分配器维护。<br>slabtop命令的作用就是显示实时内核片缓存信息。</p>
-<h2 id="my-Ubuntu"><a href="#my-Ubuntu" class="headerlink" title="my Ubuntu"></a>my Ubuntu</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@m:&#x2F;boot# ack SLUB</span><br><span class="line">config-5.4.0-26-generic</span><br><span class="line">247:CONFIG_SLUB_DEBUG&#x3D;y</span><br><span class="line">248:CONFIG_SLUB_MEMCG_SYSFS_ON&#x3D;y</span><br><span class="line">251:CONFIG_SLUB&#x3D;y</span><br><span class="line">257:CONFIG_SLUB_CPU_PARTIAL&#x3D;y</span><br><span class="line">10222:# CONFIG_SLUB_DEBUG_ON is not set</span><br><span class="line">10223:# CONFIG_SLUB_STATS is not set</span><br><span class="line">root@m:&#x2F;boot#</span><br><span class="line">root@m:&#x2F;boot# ack SLAB</span><br><span class="line">config-5.4.0-26-generic</span><br><span class="line">250:# CONFIG_SLAB is not set</span><br><span class="line">253:CONFIG_SLAB_MERGE_DEFAULT&#x3D;y</span><br><span class="line">254:CONFIG_SLAB_FREELIST_RANDOM&#x3D;y</span><br><span class="line">255:CONFIG_SLAB_FREELIST_HARDENED&#x3D;y</span><br></pre></td></tr></table></figure>
-
-<h2 id="difference-between-SLAB-and-SLUB"><a href="#difference-between-SLAB-and-SLUB" class="headerlink" title="difference between SLAB and SLUB"></a>difference between SLAB and SLUB</h2><p>LAB 分配器多年以来一直位于 Linux 内核的内存管理部分的核心地带，内核黑客们一般不愿意主动去更改它的代码，因为它实在是非常复杂，而且在大多数情况下，它的工作完成的相当不错。但是，随着大规模多处理器系统和 NUMA系统的广泛应用，SLAB 分配器逐渐暴露出自身的严重不足：</p>
-<ul>
-<li><p>较多复杂的队列管理。在 SLAB 分配器中存在众多的队列，例如针对处理器的本地对象缓存队列，slab 中空闲对象队列，每个 slab 处于一个特定状态的队列中，甚至缓冲区控制结构也处于一个队列之中。有效地管理这些不同的队列是一件费力且复杂的工作。</p>
-</li>
-<li><p>slab 管理数据和队列的存储开销比较大。每个 slab 需要一个 struct slab 数据结构和一个管理所有空闲对象的 kmem_bufctl_t（4 字节的无符号整数）的数组。当对象体积较少时，kmem_bufctl_t 数组将造成较大的开销（比如对象大小为32字节时，将浪费 1/8 的空间）。为了使得对象在硬件高速缓存中对齐和使用着色策略，还必须浪费额外的内存。同时，缓冲区针对节点和处理器的队列也会浪费不少内存。测试表明在一个 1000 节点/处理器的大规模 NUMA 系统中，数 GB 内存被用来维护队列和对象的引用。</p>
-</li>
-<li><p>缓冲区内存回收比较复杂。</p>
-</li>
-<li><p>对 NUMA 的支持非常复杂。SLAB 对 NUMA 的支持基于物理页框分配器，无法细粒度地使用对象，因此不能保证处理器级缓存的对象来自同一节点。<br>冗余的 Partial 队列。SLAB 分配器针对每个节点都有一个 Partial 队列，随着时间流逝，将有大量的 Partial slab 产生，不利于内存的合理使用。</p>
-</li>
-<li><p>性能调优比较困难。针对每个 slab 可以调整的参数比较复杂，而且分配处理器本地缓存时，不得不使用自旋锁。<br>调试功能比较难于使用。</p>
-</li>
-</ul>
-<p>为了解决以上 SLAB 分配器的不足之处，内核开发人员 Christoph Lameter 在 Linux 内核 2.6.22 版本中引入一种新的解决方案：SLUB 分配器。SLUB 分配器特点是简化设计理念，同时保留 SLAB 分配器的基本思想：每个缓冲区由多个小的 slab 组成，每个 slab 包含固定数目的对象。SLUB 分配器简化了kmem_cache，slab 等相关的管理数据结构，摒弃了SLAB 分配器中众多的队列概念，并针对多处理器、NUMA 系统进行优化，从而提高了性能和可扩展性并降低了内存的浪费。为了保证内核其它模块能够无缝迁移到 SLUB 分配器，SLUB 还保留了原有 SLAB 分配器所有的接口 API 函数。</p>
-<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61457076">知乎.谈slab</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhongbeida_xue/article/details/78830468">Cache占用过多内存导致Linux系统内存不足问题排查</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/docs/08-slab/" data-id="ckmw4ddhk0015ss5b94w2f4wd" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/OverView" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/OverView/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="OverView"><a href="#OverView" class="headerlink" title="OverView"></a>OverView</h1><hr>
-<h2 id="Else"><a href="#Else" class="headerlink" title="Else"></a>Else</h2><p>Fedora 14</p>
-<p>打算严格按照友善之臂Smart210，编译Android 4.0的文档编译Android。Host 推荐环境是Fedora 14. 不明白为什么用Fedora作为嵌入式开发的Host机器。</p>
-<p>早在15年的时候，是装过Fedora 14的，现在（2020年）装Fedora 14，遇到yum 源不可用的情况。网络上关于Fedora的较少，而且都停留在15年以前。</p>
-<p>阿里云和搜狐、网易的源，关于Fedora、Centos的yum源已经变成了一个文件链接指向<br>譬如 <a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/fedora-altarch/releases%E9%87%8C%E5%B0%B1%E4%B8%80%E4%B8%AAREADME%E6%8C%87%E5%90%91http://archives.fedoraproject.org/pub/archive/fedora/">https://mirrors.aliyun.com/fedora-altarch/releases里就一个README指向http://archives.fedoraproject.org/pub/archive/fedora/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/OverView/" data-id="ckmw4ddgz000mss5b2fmxb0j7" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Linux_BSP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Linux_BSP/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Ubuntu 64位机器上运行32位程序<br>10.04之后系统是</p>
-<p>$ sudo apt-get install lib32z1<br>$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Linux_BSP/" data-id="ckmw4ddgx000jss5bf6rghf65" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Ubuntu/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><p>和Debian、Raspberry Pi系统没什么本质区别。问题是</p>
-<blockquote>
-<p>debian 文件系统如何搭建<br>如何构建一个完整的Ubuntu系统的SDK或者源码</p>
-</blockquote>
-<h2 id="debootstrap"><a href="#debootstrap" class="headerlink" title="debootstrap"></a>debootstrap</h2><p>什么是FHS?</p>
-<p>What to do？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install debootstrap</span><br><span class="line"></span><br><span class="line">sudo debootstrap --arch [平台] [发行版本代号] [目录]</span><br><span class="line"></span><br><span class="line">for example: sudo debootstrap --arch i386 trusty &#x2F;mnt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>On Fedora, there is febootstrap.</p>
-<p><a target="_blank" rel="noopener" href="https://latelee.blog.csdn.net/article/details/102810405">利用debootstrap构建一个可单独运行的镜像文件。</a></p>
-<p><img src="/.io//debootstrap1.png"></p>
-<p><img src="/.io//debootstrap2.png"></p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Ubuntu/" data-id="ckmw4ddh9000qss5bh3rn0e7l" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Vexpress_RT-Thread" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Vexpress_RT-Thread/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Vexpress-A9-RT-Rthread-BSP"><a href="#Vexpress-A9-RT-Rthread-BSP" class="headerlink" title="Vexpress-A9 RT-Rthread BSP"></a>Vexpress-A9 RT-Rthread BSP</h1><p><a target="_blank" rel="noopener" href="https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/">https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/</a></p>
-<h2 id="Ready"><a href="#Ready" class="headerlink" title="Ready"></a>Ready</h2><p>git clone <a target="_blank" rel="noopener" href="https://github.com/RT-Thread/rt-thread.git">https://github.com/RT-Thread/rt-thread.git</a></p>
-<p>sudo apt-get install scons qemu cross_compile</p>
-<p>tom@laptop:~$ cd /tmp/<br>tom@laptop:/tmp$ wget <a target="_blank" rel="noopener" href="https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2">https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2</a><br>tom@laptop:/tmp$ tar xf ./gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2<br>tom@laptop:/tmp$ mv gcc-arm-none-eabi-6_2-2016q4/ /opt/<br>tom@laptop:/tmp$ /opt/gcc-arm-none-eabi-6_2-2016q4/bin/arm-none-eabi-gcc –version</p>
-<p>sudo apt-get install libncurses5-dev</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Vexpress_RT-Thread/" data-id="ckmw4ddhb000tss5b5up585rc" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Yocto" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Yocto/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Yocto</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Yocto/" data-id="ckmw4ddhc000uss5bh9ot6xio" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/11-rcu_list/" data-id="ckmwdf3m80002ig5b6mus4e4m" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -474,23 +656,23 @@ m -jX iso_img  2&gt;&amp;1 | tee build.log
       <ul>
         
           <li>
-            <a href="/2021/03/30/mem/min_free_kbytes/">vm.min_free_kbytes</a>
+            <a href="/2021/03/31/mem/malloc/">malloc</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/mem_cmd/">内存管理有关的命令</a>
+            <a href="/2021/03/31/DebianService/Systemd/">Systemd</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/malloc/">malloc</a>
+            <a href="/2021/03/31/DebianService/UserManagement/">Ubuntu账户管理</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/UserManagement/">Ubuntu账户管理</a>
+            <a href="/2021/03/31/DebianService/DBus/">dbus-daemon</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/Systemd/">Systemd</a>
+            <a href="/2021/03/31/LinuxRelease/1011-ubuntu/">(no title)</a>
           </li>
         
       </ul>

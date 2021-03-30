@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-LinuxRelease/licheezero" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-docs/10-process" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/licheezero/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
+    <a href="/2021/03/30/docs/10-process/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
   </div>
@@ -83,32 +83,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="LicheePiZero"><a href="#LicheePiZero" class="headerlink" title="LicheePiZero"></a>LicheePiZero</h1><table>
-<thead>
-<tr>
-<th>Referrence</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="http://zero.lichee.pro/">http://zero.lichee.pro/</a></td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://github.com/Lichee-Pi">https://github.com/Lichee-Pi</a></td>
-</tr>
-</tbody></table>
-<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><pre><code>sudo groupadd docker
-sudo gpasswd -a $&#123;your_user_name&#125; docker
-sudo service docker restart
-newgrp - docker
-docker pull zepan/licheepi
-docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
-</code></pre>
-<h2 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h2><p>:)</p>
+        <h1 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h1><h2 id="NI"><a href="#NI" class="headerlink" title="NI"></a>NI</h2><p>nice 值<br>进程调度，影响进程调度的优先级</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lenomirei/p/5516872.html">https://www.cnblogs.com/lenomirei/p/5516872.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/licheezero/" data-id="ckmw4ddhd000wss5b7xj950sc" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/10-process/" data-id="ckmwdf3nm0015ig5b41wy9cjy" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -120,10 +101,10 @@ docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
 
 
   
-    <article id="post-LinuxRelease/Vexpress" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LinuxRelease/1099-uboot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Vexpress/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
+    <a href="/2021/03/30/LinuxRelease/1099-uboot/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
   </div>
@@ -132,176 +113,13 @@ docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="使用qemu搭建ARM-Vexpress嵌入式linux开发环境"><a href="#使用qemu搭建ARM-Vexpress嵌入式linux开发环境" class="headerlink" title="使用qemu搭建ARM Vexpress嵌入式linux开发环境"></a>使用qemu搭建ARM Vexpress嵌入式linux开发环境</h1><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
-<pre><code>制作bootloader；
-编译linux内核、linux内核模块、linux设备树；
-制作根文件系统。
-</code></pre>
-<p>我们使用qemu虚拟机来上手嵌入式linux的开发。</p>
-<h2 id="安装qemu与arm交叉编译工具"><a href="#安装qemu与arm交叉编译工具" class="headerlink" title="安装qemu与arm交叉编译工具"></a>安装qemu与arm交叉编译工具</h2><p>略</p>
-<h2 id="Linux内核与设备树编译"><a href="#Linux内核与设备树编译" class="headerlink" title="Linux内核与设备树编译"></a>Linux内核与设备树编译</h2><p>下载Linux内核：<a target="_blank" rel="noopener" href="https://www.kernel.org/">https://www.kernel.org/</a></p>
-<pre><code>git clone https://mirrors.tuna.tsinghua.edu.cn/git/linux.git
-
-https://mirror.bjtu.edu.cn/kernel/linux/kernel/
-
-
-make vexpress_defconfig
-
-make zImage 
-
-make modules
-
-make dtbs
-</code></pre>
-<p>得到zImage、dtb</p>
-<p>尝试启动</p>
-<pre><code>qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append &quot;console=ttyAMA0&quot;
-</code></pre>
-<p>看到</p>
-<pre><code>rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)
-ALSA device list:
-  #0: ARM AC&#39;97 Interface PL041 rev0 at 0x10004000, irq 33
-input: ImExPS/2 Generic Explorer Mouse as /devices/platform/smb/smb:motherboard/smb:motherboard:iofpga@7,00000000/10007000.kmi/serio1/input/input2
-VFS: Cannot open root device &quot;(null)&quot; or unknown-block(0,0): error -6
-Please append a correct &quot;root=&quot; boot option; here are the available partitions:
-1f00          131072 mtdblock0  (driver?)
-1f01           32768 mtdblock1  (driver?)
-Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
-CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.99 #1
-Hardware name: ARM-Versatile Express
-[&lt;80016454&gt;] (unwind_backtrace) from [&lt;80012ee0&gt;] (show_stack+0x10/0x14)
-[&lt;80012ee0&gt;] (show_stack) from [&lt;80243aac&gt;] (dump_stack+0x94/0xa8)
-[&lt;80243aac&gt;] (dump_stack) from [&lt;800a5638&gt;] (panic+0x9c/0x200)
-[&lt;800a5638&gt;] (panic) from [&lt;8062f250&gt;] (mount_block_root+0x1c0/0x25c)
-[&lt;8062f250&gt;] (mount_block_root) from [&lt;8062f408&gt;] (mount_root+0x11c/0x124)
-[&lt;8062f408&gt;] (mount_root) from [&lt;8062f568&gt;] (prepare_namespace+0x158/0x1a0)
-[&lt;8062f568&gt;] (prepare_namespace) from [&lt;8062eeec&gt;] (kernel_init_freeable+0x268/0x278)
-[&lt;8062eeec&gt;] (kernel_init_freeable) from [&lt;804a440c&gt;] (kernel_init+0x8/0xe8)
-[&lt;804a440c&gt;] (kernel_init) from [&lt;8000f4f8&gt;] (ret_from_fork+0x14/0x3c)
----[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
-</code></pre>
-<h2 id="busybox"><a href="#busybox" class="headerlink" title="busybox"></a>busybox</h2><p><a target="_blank" rel="noopener" href="https://busybox.net/downloads/">https://busybox.net/downloads/</a></p>
-<p>编译生成一个 __install 文件夹</p>
-<h2 id="制作根文件系统"><a href="#制作根文件系统" class="headerlink" title="制作根文件系统"></a>制作根文件系统</h2><p>mkdir rootfs</p>
-<p>将_install 目录里的内容拷贝到rootfs目录中</p>
-<p>新建目录 mkdir lib</p>
-<p>将arm交叉编译器的库复制过来：cp -r /usr/arm-linux-gnueabi/lib/* lib/</p>
-<p>在rootfs目录下新建目录mkdir dev/，进入该目录cd dev/，创建节点sudo mknod -m 666 tty1 c 4 1（串口字符设备，主设备号为4，从设备号为1）</p>
-<p>重复创建多个串口设备，注意分配好从设备号：</p>
-<p>创建一个控制台节点：mknod -m 666 console c 5 1</p>
-<p>创建一个空节点：mknod -m 666 null c 1 3</p>
-<p>回到home目录，输入命令dd if=/dev/zero of=rootfs.ext3 bs=1M count=32生成虚拟SD卡系统镜像，可以得到一个rootfs.ext3文件。<br>格式化该镜像：mkfs.ext3 rootfs.ext3<br>挂载该镜像到本地：mount -t ext3 rootfs.ext3 /mnt -o loop</p>
-<p>将之前准备的rootfs目录下的所有文件都拷贝到该镜像挂载点：cp -r /home/zvcv/rootfs/* /mnt/</p>
-<p>卸载：umount /mnt/<br>进入linux源码目录： cd linux/</p>
-<p>使用qemu启动内核：qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append “root=/dev/mmcblk0 rw console=ttyAMA0” -sd /home/zvcv/rootfs.ext3，这里比之前多指定了一个sd镜像。</p>
-<p>点击回车，进入命令行，linux启动完毕。</p>
-<p><strong>我遇到了无法启动，原因是内核编译选项选的是ext4 ，所以格式化的时候选mkfs.ext4</strong></p>
-<h2 id="uboot"><a href="#uboot" class="headerlink" title="uboot"></a>uboot</h2><p><a target="_blank" rel="noopener" href="https://ftp.denx.de/pub/u-boot/">https://ftp.denx.de/pub/u-boot/</a></p>
-<p>不要用最新版本</p>
-<pre><code>scripts/kconfig/conf  --syncconfig Kconfig
-  UPD     include/config.h
-  GEN     include/autoconf.mk.dep
-  CFG     u-boot.cfg
-  GEN     include/autoconf.mk
-  UPD     include/generated/dt.h
-  UPD     include/generated/timestamp_autogenerated.h
-  UPD     include/config/uboot.release
-*** Your GCC is older than 6.0 and is not supported
-arch/arm/config.mk:66: recipe for target &#39;checkgcc6&#39; failed
-make: *** [checkgcc6] Error 1
-</code></pre>
-<p>我的arm-linux-gnuebi-gcc 是5.5</p>
-<p>换2015年的uboot才能build pass</p>
-<h2 id="NFS"><a href="#NFS" class="headerlink" title="NFS"></a>NFS</h2><blockquote>
-<p>   sudo apt-get install uml-utilities bridge-utils</p>
-</blockquote>
-<blockquote>
-<p>cd linux-4.4.232/</p>
-</blockquote>
-<blockquote>
-<p>make LOADADDR=0x60003000 uImage -j4</p>
-</blockquote>
-<p>mkimage command not found  U-Boot images will not be built —&gt;</p>
-<p><strong>sudo apt-get install u-boot-tools</strong> </p>
-<blockquote>
-<p>sudo apt-get install tftp-hpa tftpd-hpa xinetd</p>
-</blockquote>
-<p>u-boot 要能加载uImage，需要修改</p>
-<p>默认的bootcmd，变成tftp加载tftp server上的uImage</p>
-<p>vim include/configs/vexpress_common.h</p>
-<p>注释默认的 CONFIG_BOOTCOMMAND</p>
-<p>添加 </p>
-<pre><code>#define CONFIG_BOOTCOMMAND  &quot;tftp 0x60003000 uImage; setenv bootargs&#39;root=/dev/mmcblk0 console=ttyAMA0&#39;; bootm 0x60003000&quot;
-</code></pre>
-<p>另外一个说法是</p>
-<pre><code>#define CONFIG_BOOTCOMMAND  &quot;tftp 0x60003000 uImage; tftp 0x60500000 vexpress-v2p-ca9.dtb; setenv bootargs &#39;root=/dev/mmcblk0 console=ttyAMA0&#39;; bootm 0x60003000 - 0x60500000&quot;
-</code></pre>
-<p>可以配置IP和netmask</p>
-<pre><code>#define CONFIG_IPADDR   192.168.1.49
-#define CONFIG_NETMASK  255.255.255.0
-#define CONFIG_SERVERIP 192.168.1.88
-</code></pre>
-<p>在Quectel的台式机虚拟机里的桥接网卡，实际配置成</p>
-<pre><code>#define CONFIG_IPADDR   192.168.1.49
-#define CONFIG_NETMASK  255.255.254.0
-#define CONFIG_SERVERIP 10.66.83.84
-</code></pre>
-<h2 id="QEMU和主机如何ping通"><a href="#QEMU和主机如何ping通" class="headerlink" title="QEMU和主机如何ping通"></a>QEMU和主机如何ping通</h2><p>在Ubuntu下使用QEMU连网<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yang1111111112/article/details/107811796">https://blog.csdn.net/yang1111111112/article/details/107811796</a></p>
-<p>写一个脚本</p>
-<pre><code>if test -z $1 ; then
-    echo need a argument: down/up
-    exit
-fi 
-
-if [ &quot;up&quot; = $1  ] ; then
-    # 新建一个网桥，名称为br0
-    brctl addbr br0
-    # 将网络设备enp0s10添加到网桥br0 
-    ifconfig enp0s9 down
-    brctl addif br0 enp0s9
-
-    # 关闭生成树协议
-    brctl stp br0 off
-
-    ifconfig br0 192.168.1.1 netmask 255.255.255.0 promisc up
-    ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0 promisc up
-
-
-     # 使用命令tunctl添加虚拟网卡tap
-    tunctl -t tap0 -u rlk
-
-    ifconfig tap0 192.168.1.89 netmask 255.255.255.0 promisc up
-
-    brctl addif br0 tap0
-
-else
-    ifconfig tap0 down
-    brctl delif br0 tap0
-
-    ifconfig enp0s9 down
-    brctl delif br0 enp0s9
-    ifconfig br0 down
-    brctl delbr br0
-
-    ifconfig enp0s9 192.168.1.88 netmask 255.255.255.0
-fi
-</code></pre>
-<p>其中enp0s9是VirtualBox里的一个Host Only添加的网卡。</p>
-<p><img src="/.io//tap0.png"></p>
-<p>生成的这个tap0 就是serverip<br>在qemu中可以ping 通该IP </p>
-<pre><code>sudo qemu-system-arm -M vexpress-a9 -m 1024M -kernel u-boot -dtb /home/rlk/QEMU/tftpboot/vexpress-v2p-ca9.dtb  -nographic -net nic,macaddr=52:54:00:12:34:22 -net tap,ifname=tap0 -sd  vexpress.ext3
-</code></pre>
-<p>在uboot里，<br>setenv serverip xxx<br>setenv ipaddr xxx<br>ping ${serverip}</p>
-<p>网络能ping通的情况下</p>
-<p>tftp 0x60003000 uImage<br>setenv bootargs ‘root=/dev/mmcblk0 console=ttyAMA0’<br>bootm 0x60003000</p>
-<h2 id="NFS-1"><a href="#NFS-1" class="headerlink" title="NFS"></a>NFS</h2><h2 id="RT-Thread"><a href="#RT-Thread" class="headerlink" title="RT Thread"></a>RT Thread</h2><p>Ubuntu 平台开发RT-Thread</p>
-<h2 id="qemu-模拟-ARM-从sd卡启动-uboot-内核"><a href="#qemu-模拟-ARM-从sd卡启动-uboot-内核" class="headerlink" title="qemu 模拟 ARM 从sd卡启动 uboot 内核"></a>qemu 模拟 ARM 从sd卡启动 uboot 内核</h2><p><a target="_blank" rel="noopener" href="http://www.vjiot.net/typecho/index.php/archives/58/">http://www.vjiot.net/typecho/index.php/archives/58/</a></p>
+        <h1 id="uboot"><a href="#uboot" class="headerlink" title="uboot"></a>uboot</h1><h2 id="U-Boot-Offical-Guidance"><a href="#U-Boot-Offical-Guidance" class="headerlink" title="U-Boot Offical Guidance"></a>U-Boot Offical Guidance</h2><p><a target="_blank" rel="noopener" href="http://www.denx.de/wiki/view/DULG/UBoot">http://www.denx.de/wiki/view/DULG/UBoot</a></p>
 <p>:)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Vexpress/" data-id="ckmw4ddha000rss5b9jm9gex1" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1099-uboot/" data-id="ckmwdf3nd000vig5b09sd84sn" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -313,9 +131,85 @@ fi
 
 
   
-    <article id="post-LinuxRelease/IMX8_Android9_Bringup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-docs/08-slab" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/IMX8_Android9_Bringup/" class="article-date">
+    <a href="/2021/03/30/docs/08-slab/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Slab"><a href="#Slab" class="headerlink" title="Slab"></a>Slab</h1><h2 id="slabtop"><a href="#slabtop" class="headerlink" title="slabtop"></a>slabtop</h2><p>Linux内核需要为临时对象如任务或者设备结构和节点分配内存，缓存分配器管理着这些类型对象的缓存。现代Linux内核部署了该缓存分配器以持有缓存，称之为片。不同类型的片缓存由片分配器维护。<br>slabtop命令的作用就是显示实时内核片缓存信息。</p>
+<h2 id="my-Ubuntu"><a href="#my-Ubuntu" class="headerlink" title="my Ubuntu"></a>my Ubuntu</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root@m:&#x2F;boot# ack SLUB</span><br><span class="line">config-5.4.0-26-generic</span><br><span class="line">247:CONFIG_SLUB_DEBUG&#x3D;y</span><br><span class="line">248:CONFIG_SLUB_MEMCG_SYSFS_ON&#x3D;y</span><br><span class="line">251:CONFIG_SLUB&#x3D;y</span><br><span class="line">257:CONFIG_SLUB_CPU_PARTIAL&#x3D;y</span><br><span class="line">10222:# CONFIG_SLUB_DEBUG_ON is not set</span><br><span class="line">10223:# CONFIG_SLUB_STATS is not set</span><br><span class="line">root@m:&#x2F;boot#</span><br><span class="line">root@m:&#x2F;boot# ack SLAB</span><br><span class="line">config-5.4.0-26-generic</span><br><span class="line">250:# CONFIG_SLAB is not set</span><br><span class="line">253:CONFIG_SLAB_MERGE_DEFAULT&#x3D;y</span><br><span class="line">254:CONFIG_SLAB_FREELIST_RANDOM&#x3D;y</span><br><span class="line">255:CONFIG_SLAB_FREELIST_HARDENED&#x3D;y</span><br></pre></td></tr></table></figure>
+
+<h2 id="difference-between-SLAB-and-SLUB"><a href="#difference-between-SLAB-and-SLUB" class="headerlink" title="difference between SLAB and SLUB"></a>difference between SLAB and SLUB</h2><p>LAB 分配器多年以来一直位于 Linux 内核的内存管理部分的核心地带，内核黑客们一般不愿意主动去更改它的代码，因为它实在是非常复杂，而且在大多数情况下，它的工作完成的相当不错。但是，随着大规模多处理器系统和 NUMA系统的广泛应用，SLAB 分配器逐渐暴露出自身的严重不足：</p>
+<ul>
+<li><p>较多复杂的队列管理。在 SLAB 分配器中存在众多的队列，例如针对处理器的本地对象缓存队列，slab 中空闲对象队列，每个 slab 处于一个特定状态的队列中，甚至缓冲区控制结构也处于一个队列之中。有效地管理这些不同的队列是一件费力且复杂的工作。</p>
+</li>
+<li><p>slab 管理数据和队列的存储开销比较大。每个 slab 需要一个 struct slab 数据结构和一个管理所有空闲对象的 kmem_bufctl_t（4 字节的无符号整数）的数组。当对象体积较少时，kmem_bufctl_t 数组将造成较大的开销（比如对象大小为32字节时，将浪费 1/8 的空间）。为了使得对象在硬件高速缓存中对齐和使用着色策略，还必须浪费额外的内存。同时，缓冲区针对节点和处理器的队列也会浪费不少内存。测试表明在一个 1000 节点/处理器的大规模 NUMA 系统中，数 GB 内存被用来维护队列和对象的引用。</p>
+</li>
+<li><p>缓冲区内存回收比较复杂。</p>
+</li>
+<li><p>对 NUMA 的支持非常复杂。SLAB 对 NUMA 的支持基于物理页框分配器，无法细粒度地使用对象，因此不能保证处理器级缓存的对象来自同一节点。<br>冗余的 Partial 队列。SLAB 分配器针对每个节点都有一个 Partial 队列，随着时间流逝，将有大量的 Partial slab 产生，不利于内存的合理使用。</p>
+</li>
+<li><p>性能调优比较困难。针对每个 slab 可以调整的参数比较复杂，而且分配处理器本地缓存时，不得不使用自旋锁。<br>调试功能比较难于使用。</p>
+</li>
+</ul>
+<p>为了解决以上 SLAB 分配器的不足之处，内核开发人员 Christoph Lameter 在 Linux 内核 2.6.22 版本中引入一种新的解决方案：SLUB 分配器。SLUB 分配器特点是简化设计理念，同时保留 SLAB 分配器的基本思想：每个缓冲区由多个小的 slab 组成，每个 slab 包含固定数目的对象。SLUB 分配器简化了kmem_cache，slab 等相关的管理数据结构，摒弃了SLAB 分配器中众多的队列概念，并针对多处理器、NUMA 系统进行优化，从而提高了性能和可扩展性并降低了内存的浪费。为了保证内核其它模块能够无缝迁移到 SLUB 分配器，SLUB 还保留了原有 SLAB 分配器所有的接口 API 函数。</p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61457076">知乎.谈slab</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhongbeida_xue/article/details/78830468">Cache占用过多内存导致Linux系统内存不足问题排查</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/08-slab/" data-id="ckmwdf3nk0013ig5bf77g9kq0" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-docs/06-sched" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/docs/06-sched/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.268Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><h2 id="nice"><a href="#nice" class="headerlink" title="nice"></a>nice</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babybabyup/article/details/79839734">添加一个系统调用，实现对指定进程的nice值的修改或读取功能，并返回系统最新的nice值即优先级prio</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/06-sched/" data-id="ckmwdf3nj0011ig5b4iu734fz" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Android/AddAPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/Android/AddAPN/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -325,286 +219,11 @@ fi
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Android-10-On-IMX8"><a href="#Android-10-On-IMX8" class="headerlink" title="Android 10 On IMX8"></a>Android 10 On IMX8</h1><p>Source Code from</p>
-<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ldI06aZYT1E2BrBoba7Dqg">https://pan.baidu.com/s/1ldI06aZYT1E2BrBoba7Dqg</a> 提取码 </p>
-<h2 id="编译环境-2021-1-14"><a href="#编译环境-2021-1-14" class="headerlink" title="编译环境 2021.1.14"></a>编译环境 2021.1.14</h2><p>参考<br><br><strong>OKMX8MM-C（Android）用户资料-20200302\原厂资料\Android_User’s_Guide.pdf</strong><br><br><strong>OKMX8MM-C（Android）用户资料-20200302\原厂资料\Android_Quick_Start_Guide.pdf</strong><br><br><strong>OKMX8MM-C（Android）用户资料-20200302\手册\OKMX8MM-C_Android_用户手册_V1.1_2020.03.02.pdf</strong></p>
-<h3 id="Ubuntu-环境"><a href="#Ubuntu-环境" class="headerlink" title="Ubuntu 环境"></a>Ubuntu 环境</h3><p>官方文档要求 Ubuntu 16.04 X64</p>
-<pre><code>$ sudo add-apt-repository ppa:openjdk-r/ppa 
-$ sudo apt-get update 
-$ sudo apt-get install uuid \ 
-uuid-dev \ 
-zlib1g-dev \ 
-liblz-dev \ 
-liblzo2-2 \ 
-liblzo2-dev \ 
-lzop \ 
-git-core curl \ 
-u-boot-tools \ 
-mtd-utils \ 
-android-tools-fsutils \ 
-openjdk-8-jdk \ 
-device-tree-compiler \ 
-gdisk \ 
-m4 \ 
-libz-dev
-</code></pre>
-<p>jdk 要求是1.8版本</p>
-<p>解压源码</p>
-<pre><code>$ cd /home/forlinx/imx8mm/ 
-$cat OK8MM-android-source.tar.bz2_a* &gt; OK8MM-android-source.tar.bz2 
-$ tar -xvf OK8MM-android-source.tar.bz2 
-</code></pre>
-<h3 id="自定义docker环境"><a href="#自定义docker环境" class="headerlink" title="自定义docker环境"></a>自定义docker环境</h3><p>按照Ubuntu 环境，自定义docker环境，并且支持ssh 登录docker 容器中的ubuntu</p>
-<p>已经上传到docker.io</p>
-<p>下载</p>
-<pre><code>docker pull quectel/imx8_android9:latest
-</code></pre>
-<p>用户名 imx8 密码 quectel123</p>
-<h2 id="编译Android"><a href="#编译Android" class="headerlink" title="编译Android"></a>编译Android</h2><p>运行docker 环境</p>
-<pre><code>android@q-OptiPlex-7070:~$ docker run -d --name imx8 -v /home/android/IMX8_Android9:/home/imx8/imx8_Android -v /etc/localtime:/etc/localtime:ro   -v
- /etc/timezone:/etc/timezone:ro --device=/dev/loop-control:/dev/loop-control --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN -p 6666:22  --privil
-eged  ubuntu:16_jdk1.8  /usr/sbin/sshd -D
-57c2bf9c7ccefaa4701f006c420d3d5ededfdf3f0ea0b0655772d42c21b566e7
-android@q-OptiPlex-7070:~$
-android@q-OptiPlex-7070:~$
-android@q-OptiPlex-7070:~$ docker ps
-CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                  NAMES
-57c2bf9c7cce   ubuntu:16_jdk1.8   &quot;/usr/sbin/sshd -D&quot;   6 seconds ago   Up 3 seconds   0.0.0.0:6666-&gt;22/tcp   imx8
-android@q-OptiPlex-7070:~$ ls
-模板  camdroid  IMX8_Android9  Khadas  Tiny4412_android5.1  v3s_camdroid.zip
-</code></pre>
-<p>SSH远程连接到</p>
-<pre><code>ssh -P 6666 $&#123;HOST_IP&#125;
-
-PS D:\BaiduNetdiskDownload\imx8-android&gt; ssh -p 6666 imx8@10.66.83.84
-The authenticity of host &#39;[10.66.83.84]:6666 ([10.66.83.84]:6666)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:vhkbWtZEDaEjXzh6phneA4VSDB3hLSZdvOr8ZD/zYvw.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added &#39;[10.66.83.84]:6666&#39; (ECDSA) to the list of known hosts.
-imx8@10.66.83.84&#39;s password:
-Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.4.0-58-generic x86_64)
-</code></pre>
-<p>在docker容器中编译        </p>
-<pre><code>$ cd /home/imx8/imx8_Android/OK8MM-android-source 
-$ source build/envsetup.sh 
-$ lunch evk_8mm-userdebug
-$ make -j8
-</code></pre>
-<p><strong>Notes</strong><br><br></p>
-<pre><code>export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-</code></pre>
-<h2 id="内核驱动移植"><a href="#内核驱动移植" class="headerlink" title="内核驱动移植"></a>内核驱动移植</h2><p>vi  out/target/product/evk_8mm/obj/KERNEL_OBJ/.config  vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig  -O</p>
-<p>(或者vimdiff)</p>
-<p>判断得知内核的配置文件是</p>
-<pre><code>OK8MM-android-source/vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig
-</code></pre>
-<p>从结果看，已经将Quectel模组的VID、PID加到option.c中，并且移植了GobiNet驱动和qmi_wwan驱动。使用 EC2X 模组没有问题。</p>
-<p>qmi_wwan 已经 build-in 编译</p>
-<h2 id="RIL库移植"><a href="#RIL库移植" class="headerlink" title="RIL库移植"></a>RIL库移植</h2><pre><code>/vendor/lib/libreference-ril.so
-/vendor/lib64/libreference-ril.so
-
-
-device/fsl/imx8m/evk_8mm/evk_8mm.mk:52:    device/fsl/imx8m/evk_8mm/lib/libreference-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libreference-ril.so 
-</code></pre>
-<h2 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h2><p>在Linux上烧录,用root账户，否则/tmp/目录没法写。</p>
-<pre><code>uuu_imx_android_flash.bat -f imx8mm -e -c 7
-</code></pre>
-<p>uuu.exe 放到环境变量路径中；管理员权限执行</p>
-<blockquote>
-<p>分区表</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>分区索引</th>
-<th>名称</th>
-<th>偏移</th>
-<th>大小</th>
-<th>文件系统</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NA</td>
-<td>Bootloader</td>
-<td>33KB</td>
-<td>4MB</td>
-<td>NA</td>
-<td>bootloader</td>
-</tr>
-<tr>
-<td>1</td>
-<td>dtbo_a</td>
-<td>8MB</td>
-<td>4MB</td>
-<td>NA</td>
-<td>dtbo.img</td>
-</tr>
-<tr>
-<td>2</td>
-<td>dtbo_b</td>
-<td>Follow dtbo_a</td>
-<td>4MB</td>
-<td>NA</td>
-<td>dtbo.img</td>
-</tr>
-<tr>
-<td>3</td>
-<td>boot_a</td>
-<td>Follow dtbo_b</td>
-<td>48MB</td>
-<td>boot.img(kernel+ramdisk)</td>
-<td>boot.img</td>
-</tr>
-<tr>
-<td>4</td>
-<td>boot_b</td>
-<td>Follow boot_a</td>
-<td>48MB</td>
-<td>boot.img(kernel+ramdisk)</td>
-<td>boot.img</td>
-</tr>
-<tr>
-<td>5</td>
-<td>system_a</td>
-<td>Follow boot_b</td>
-<td>1536MB</td>
-<td>ext4 挂载在     /system</td>
-<td>Android系统文件/system目录</td>
-</tr>
-<tr>
-<td>6</td>
-<td>system_b</td>
-<td>Follow system_a</td>
-<td>1536MB</td>
-<td>ext4 挂载在   /system</td>
-<td>Android系统文件/system目录</td>
-</tr>
-<tr>
-<td>7</td>
-<td>misc</td>
-<td>Follow system_b</td>
-<td>4MB</td>
-<td>NA</td>
-<td>为了恢复保存bootloader信息</td>
-</tr>
-<tr>
-<td>8</td>
-<td>metadata</td>
-<td>Follow misc</td>
-<td>2MB</td>
-<td>NA</td>
-<td>For system slide show</td>
-</tr>
-<tr>
-<td>9</td>
-<td>presistdata</td>
-<td>Follow metadata</td>
-<td>1MB</td>
-<td>NA</td>
-<td>Option to operate unlock metadata</td>
-</tr>
-<tr>
-<td>10</td>
-<td>vendor_a</td>
-<td>Follow presistdata</td>
-<td>256MB</td>
-<td>ext4.挂载在/vendor</td>
-<td>vendor.img</td>
-</tr>
-<tr>
-<td>11</td>
-<td>vendor_b</td>
-<td>Follow vendor_a</td>
-<td>256MB</td>
-<td>ext4.挂载在/vendor</td>
-<td>vendor.img</td>
-</tr>
-<tr>
-<td>12</td>
-<td>userdata</td>
-<td>Follow vendor_b</td>
-<td>剩余全部</td>
-<td>ext4.挂载在/data</td>
-<td>应用程序数据</td>
-</tr>
-<tr>
-<td>13</td>
-<td>fbmisc</td>
-<td>Follow userdata</td>
-<td>1MB</td>
-<td>NA</td>
-<td>保存lock/unlock状态</td>
-</tr>
-<tr>
-<td>14</td>
-<td>vbmeta_a</td>
-<td>Follow fbmisc</td>
-<td>1MB</td>
-<td>NA</td>
-<td>保存verify boot’s metadata</td>
-</tr>
-<tr>
-<td>15</td>
-<td>vbmeta_b</td>
-<td>Follow vbmeta_a</td>
-<td>1MB</td>
-<td>NA</td>
-<td>保存verify boot’s metadata</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>fastboot</p>
-</blockquote>
-<p>关闭 DM 验证</p>
-<pre><code>设置-》系统-》开发者选项-》OEM 解锁 
-</code></pre>
-<p>在uboot阶段</p>
-<pre><code>fastboot 0
-</code></pre>
-<p>烧录vbmeta.img </p>
-<pre><code>fastboot oem unlock
-fastboot --disable-verity flash vbmeta vbmeta.img
-</code></pre>
-<p>然后就可以直接用fastboot烧录了</p>
-<pre><code>fastboot flash system_a system.img
-</code></pre>
-<h2 id="OTA"><a href="#OTA" class="headerlink" title="OTA"></a>OTA</h2><h2 id="编译遇到的问题"><a href="#编译遇到的问题" class="headerlink" title="编译遇到的问题"></a>编译遇到的问题</h2><p><strong>[Q]</strong> error: unmappable character for encoding ASCII （java编译过程中出现的错误）<br><br><strong>[A]</strong></p>
-<pre><code>export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-</code></pre>
-<p>[Q]Device is locked. Please unlock the device first</p>
-<p>[A]开发者模式解锁</p>
-<p>[Q]</p>
-<p>[A]</p>
-<h2 id="Android-FAQs"><a href="#Android-FAQs" class="headerlink" title="Android FAQs"></a>Android FAQs</h2><p>**[Q]<strong>客户移植RIL驱动，发现有两个rild<br><br></strong>[A]**kill掉其中一个</p>
-<p><strong>[Q]<strong>hidl<br><br></strong>[A]</strong></p>
-<p>[Q]Android 怎么改router，修改默认DNS<br>[A]</p>
-<p>**[Q]**Android 怎么修改网卡的优先顺序<br><br><br><strong>[A]</strong></p>
-<p><strong>[Q]</strong> 海外的板子寄回国发现图标显示不对<br><br><br><strong>[A]</strong> frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java</p>
-<pre><code>    // Default configuration values for captive portal detection probes.
-    // TODO: append a random length parameter to the default HTTPS url.
-    // TODO: randomize browser version ids in the default User-Agent String.
-    private static final String DEFAULT_HTTPS_URL     = &quot;https://www.google.com/generate_204&quot;;
-    private static final String DEFAULT_HTTP_URL      =
-        &quot;http://connectivitycheck.gstatic.com/generate_204&quot;;
-    private static final String DEFAULT_FALLBACK_URL  = &quot;http://www.google.com/gen_204&quot;;
-    private static final String DEFAULT_OTHER_FALLBACK_URLS =
-        &quot;http://play.googleapis.com/generate_204&quot;;
-    private static final String DEFAULT_USER_AGENT    = &quot;Mozilla/5.0 (X11; Linux x86_64) &quot;
-                              + &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot;
-                              + &quot;Chrome/52.0.2743.82 Safari/537.36&quot;;
-</code></pre>
-<p><a target="_blank" rel="noopener" href="http://androidos.net.cn/android/8.0.0_r4/xref/frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java">NetworkMonitor.java</a></p>
-<p><strong>[Q]</strong> 以太网和4G网卡共存<br><br><br><strong>[A]</strong><br>    — a/services/core/java/com/android/server/ConnectivityService.java<br>    +++ b/services/core/java/com/android/server/ConnectivityService.java<br>    @@ -4247,7 +4248,8 @@ public class ConnectivityService extends IConnectivityManager.Stub<br>             loge(“Dead network still had at least “ + nr);<br>             break;<br>         }<br>    -        nai.asyncChannel.disconnect();<br>    +        log(“don’t teardownUnneededNetwork “ + nai);<br>    +        //nai.asyncChannel.disconnect();<br>         }</p>
-<pre><code>     private void handleLingerComplete(NetworkAgentInfo oldNetwork) &#123;
-</code></pre>
-<p><strong>[Q]</strong><br><br><br><strong>[A]</strong></p>
-<p><strong>[Q]</strong><br><br><br><strong>[A]</strong></p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/IMX8_Android9_Bringup/" data-id="ckmw4ddgw000iss5bbra2h9v9" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AddAPN/" data-id="ckmwdf3lz0000ig5b331lfipa" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -636,93 +255,7 @@ fastboot --disable-verity flash vbmeta vbmeta.img
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidStudio/" data-id="ckmw4ddgg0004ss5bcblv2nw4" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Khadas" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Khadas/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Khadas"><a href="#Khadas" class="headerlink" title="Khadas"></a>Khadas</h1><h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><p><a target="_blank" rel="noopener" href="https://docs.khadas.com/">DOCs</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.khadas.com/zh-cn/vim3/index.html">KVim3</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/khadas">Github</a></p>
-<p><a target="_blank" rel="noopener" href="https://forum.khadas.com/">Forum</a></p>
-<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>总之</p>
-<blockquote>
-<p>下载：</p>
-</blockquote>
-<ul>
-<li>repo 的REPO_URL和default.xml 的aosp的地址，改成清华的；</li>
-<li>repo start branch –all //branch 选 khadas-vims-pie</li>
-</ul>
-<blockquote>
-<p>编译：</p>
-</blockquote>
-<ul>
-<li><p>先编译uboot</p>
-</li>
-<li><p>网上找Android编译需要的环境，可以解决所有问题</p>
-</li>
-<li><p>target是 out目录里update.img，1G大小不到</p>
-<p>  $ cd PATH_YOUR_PROJECT<br>  $ cd bootloader/uboot<br>  $ ./mk TARGET   //kvim3<br>  $ cd PATH_YOUR_PROJECT<br>  $ source build/envsetup.sh<br>  $ lunch TARGET_LUNCH   //kvim3-userdebug<br>  $ make -jN otapackage</p>
-</li>
-</ul>
-<hr>
-<blockquote>
-<p>repo 工具</p>
-</blockquote>
-<pre><code>export REPO_URL=&#39;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#39;
-</code></pre>
-<blockquote>
-<p>官方推荐的是按照<a target="_blank" rel="noopener" href="https://docs.khadas.com/vim3/DownloadAndroidSourceCode.html">Android</a></p>
-</blockquote>
-<pre><code>repo init -u https://github.com/khadas/android_manifest.git -b khadas-vims-pie
-</code></pre>
-<p>实际上不可行。因为国内访问不了谷歌。AOSP无法下载。</p>
-<p>办法是修改.repo/manifests/default.xml,按照清华大学镜像网站的方法</p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/">清华大学 Android 镜像使用帮助</a></p>
-<p>将 <a target="_blank" rel="noopener" href="https://android.googlesource.com/">https://android.googlesource.com/</a> 全部使用 <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/">https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/</a> 代替即可。</p>
-<p>但是，由于直接修改xml会导致第一次repo sync失败后第二次失败。将<a target="_blank" rel="noopener" href="https://github.com/khadas/android_manifest.git">https://github.com/khadas/android_manifest.git</a> fork一份到自己的github空间，并修改khadas-vims-pi分支对应的default.script</p>
-<p>后续尝试，可以直接使用自己的git仓库里的</p>
-<pre><code>repo init -u https://github.com/MrVW/android_manifest.git -b khadas-vims-pie
-</code></pre>
-<blockquote>
-<p>防止sync 失败，失败后不断重试</p>
-</blockquote>
-<pre><code>#!/bin/bash   
-
-
-repo sync   -j1 --fail-fast
-while [ $? = 1 ]; do   
-        echo &quot;================sync failed, re-sync again =====&quot;   
-    sleep 3   
-    repo sync   -j1 --fail-fast
-done
-</code></pre>
-<p>$?：获取函数返回值或者上一个命令的退出状态</p>
-<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>:)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Khadas/" data-id="ckmw4ddgx000kss5b2ksb01rs" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidStudio/" data-id="ckmwdf3mi0004ig5befke8nk7" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -751,7 +284,7 @@ done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidTek/" data-id="ckmw4ddgi0006ss5b30a5fwpn" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidTek/" data-id="ckmwdf3mk0006ig5bgn0eh0nq" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -781,7 +314,7 @@ done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/Telephony/" data-id="ckmw4ddgj0008ss5b2xk01u69" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/Telephony/" data-id="ckmwdf3ml0008ig5begp9ggq5" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -793,70 +326,9 @@ done
 
 
   
-    <article id="post-LinuxRelease/210" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-LinuxRelease/1002-buildroot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/210/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="210开发板"><a href="#210开发板" class="headerlink" title="210开发板"></a>210开发板</h1><p>手上有两块210开发板，15年和16年分别购买的，一块是友善之臂Smart210，一块是九鼎X210V3s.<br>很早以前玩的时候，还能从NoOS的裸机程序，到完整的BootUp，Linux和Android都能编译安装运行。<br>现在Android由于版本（JDK、make等）的问题，Android版本只有2.3和4.0，需要重新搭建环境，意义不大。暂且搁置。<br>Linux，当初提供的是Kernel 2.6，并且已经找不到源码了，网上有3.10的别人移植好的内核源码，一切从头开始！<br>几乎所有资料都要从网络上重新找。</p>
-<h2 id="Smart210-Linux-BSP"><a href="#Smart210-Linux-BSP" class="headerlink" title="Smart210_Linux_BSP"></a>Smart210_Linux_BSP</h2><p>安装Uboot通过tftp加载kernel，再挂载NFS的方式。</p>
-<p>准备跑kernel 2.6，装个老的</p>
-<p>对友善之臂的,提供了一个Supperboot的bootloader，将<br>整个images目录拷贝到SD卡中</p>
-<pre><code>Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       2020/11/11     10:06                Android
-d-----       2020/11/11     10:06                Android2.3.1
-d-----       2020/11/11     10:06                Linux
-d-----       2020/11/11     10:06                WindowsCE6
--a----        2013/6/18     11:37           1442 FriendlyARM-电容触摸.ini
--a----       2020/11/11     18:21           1393 FriendlyARM.ini
--a----        2013/7/30     10:00            559 readme.txt
--a----         2015/7/7     11:31         540672 Superboot210.bin
-</code></pre>
-<p>FriendlyARM.ini 是Superboot启动会从中读取的配置文件。包括是Android还是Linux、WinCE</p>
-<pre><code>Booting from SD
-Bad or missing configure file &#39;/images/FriendlyARM.ini&#39;
-Booting from SD
-
-Superboot-210
-Ver: 1.27a(20150707a)
-// 烧录ing
-...
-</code></pre>
-<div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-<a href="Khadas.md" class="btn btn-neutral float-right" title="Khadas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-<a href="vexpress.md" class="btn btn-neutral" title="Vexpress" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-</div>
-
-<p>:)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/210/" data-id="ckmw4ddgt000fss5b8wtwbwhk" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/BuildRoot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/BuildRoot/" class="article-date">
+    <a href="/2021/03/30/LinuxRelease/1002-buildroot/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -870,7 +342,7 @@ Ver: 1.27a(20150707a)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/BuildRoot/" data-id="ckmw4ddg40001ss5b5yqd2ak9" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/1002-buildroot/" data-id="ckmwdf3m60001ig5b2eju28f8" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -882,9 +354,9 @@ Ver: 1.27a(20150707a)
 
 
   
-    <article id="post-LinuxRelease/Android" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-docs/07-ftrace" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Android/" class="article-date">
+    <a href="/2021/03/30/docs/07-ftrace/" class="article-date">
   <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
 </a>
     
@@ -894,44 +366,34 @@ Ver: 1.27a(20150707a)
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="AndroidBsp"><a href="#AndroidBsp" class="headerlink" title="AndroidBsp"></a>AndroidBsp</h1><h2 id="RIL"><a href="#RIL" class="headerlink" title="RIL"></a>RIL</h2><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxNjU5MzAxMw==&mid=2247484836&idx=2&sn=88eecc283690db180f7f5646d6a6831c&chksm=9787e2bea0f06ba8f78999080a81942984f75b8db86e4845a6671044e613b41433d10bda71f3&mpshare=1&scene=24&srcid=1111nKtRvQyiG8zwkUUr68Aa&sharer_sharetime=1605052874338&sharer_shareid=ecace1467fd81ffbadc2260cf4ccea17#rd">Android RIL的Java 框架</a></p>
-<p>java部分<br>    RIL模<br>    Phone模块</p>
-<h2 id="Lineage-OS-on-RP3B"><a href="#Lineage-OS-on-RP3B" class="headerlink" title="Lineage OS on RP3B"></a>Lineage OS on RP3B</h2><p>参考</p>
-<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi3/LineageOS17.1/">LineageOS 17.1 (Android 10) for Raspberry Pi 3</a></p>
-<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi4/LineageOS17.1/">LineageOS 17.1 (Android 10) for for Raspberry Pi 4</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babyshan1/article/details/78894600">Ubuntu下为树莓派3B编译Android（Lineage OS）7.1.2系统</a></p>
-<pre><code>repo init -u git://github.com/LineageOS/android.git -b cm-14.1
+        <h1 id="Ftrace"><a href="#Ftrace" class="headerlink" title="Ftrace"></a>Ftrace</h1><p>内核源码位置 src/kernel/trace:</p>
+<p>/sys/kernel/debug/tracing</p>
+<pre><code>root@v:/sys/kernel/debug/tracing# ls
+available_events            events                    per_cpu              set_ftrace_notrace  trace                tracing_on
+available_filter_functions  free_buffer               printk_formats       set_ftrace_pid      trace_clock          tracing_thresh
+available_tracers           function_profile_enabled  README               set_graph_function  trace_marker         uprobe_events
+buffer_size_kb              instances                 saved_cmdlines       set_graph_notrace   trace_options        uprobe_profile
+buffer_total_size_kb        kprobe_events             saved_cmdlines_size  snapshot            trace_pipe
+current_tracer              kprobe_profile            set_event            stack_max_size      trace_stat
+dyn_ftrace_total_info       max_graph_depth           set_event_pid        stack_trace         tracing_cpumask
+enabled_functions           options                   set_ftrace_filter    stack_trace_filter  tracing_max_latency
 
-curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi3.xml -O -L https://raw.githubusercontent.com/lineage-rpi/android_local_manifest/cm-14.1/manifest_brcm_rpi3.xml
 
-repo sync
+
+buffer_size_kb：这个属性比較重要，也是使用中须要注意的，这是设置启动的CPU的缓存大小。取决于追踪log的大小，超出会反复利用覆盖，可是一次性分配又须要考虑内存。
+buffer_total_size_kb：这个就是总和buffer size 了，启用了多少个cpu去trace就乘以buffer_size_kb.
+current_tracer: 当前的追踪器。有哪几种能够查看available_tracers ,用echo * &gt; 重定向 设置改变，详细tracer的不同需另行參考 ，默觉得nop
+events：文件夹下就是加入在kernel源代码中已经存在的各个event集合。
+free_buffer：顾名思义，可是这个使用方法比較特殊，有仅仅要open之后。等处理完buffer之后 close这个文件就可以释放buffer，有兴趣能够去trace.c里面看看这个节点的file_operation，不手动去close这个节点的话，上面设置的buffer是不会free的。
+trace:用于追踪操作的文件节点，就是读取该节点获取trace log
+tracing_cpumask：用到的cpu标记。以数值bit位表示多少个cpu，这个尤为注意。比方四核 cat显示就是 f 也就是1111。
+tracing_on：开关
 </code></pre>
-<p>编译kernel</p>
-<pre><code>source build/envsetup.sh
-lunch lineage_rpi3-userdebug
-make ramdisk systemimage
-</code></pre>
-<p>分区1 128MB 分配给 BOOT : 用 fdisk : W95 FAT32(LBA) &amp; Bootable, mkfs.vfat<br>分区2 1024MB 分配给 /system : 用 fdisk, 新建主分区<br>分区3 分配给  /data : 用 fdisk, mkfs.ex4</p>
-<p>七、写入编译好的文件<br>1.写入系统分区</p>
-<p>假设system分区挂载在/dev/sdb2下：</p>
-<pre><code>$ cd out/target/product/rpi3
-$ sudo dd if=system.img of=/dev/sdb2 bs=1M
-</code></pre>
-<p>2.复制内核文件到boot分区</p>
-<ul>
-<li> 复制device/brcm/rpi3/boot/* 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/zImage 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/dts/bcm2710-rpi-3-b.dtb 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/dts/overlays/vc4-kms-v3d.dtbo 到 分区1:/overlays/vc4-kms-v3d.dtbo</li>
-<li> 复制out/target/product/rpi3/ramdisk.img 到 分区1:/</li>
-</ul>
-<p>还没尝试！！！</p>
-<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>:)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Android/" data-id="ckmw4ddgu000gss5bh6tjfdjj" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/07-ftrace/" data-id="ckmwdf3nj0012ig5bgmsl4qr9" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -1000,23 +462,23 @@ $ sudo dd if=system.img of=/dev/sdb2 bs=1M
       <ul>
         
           <li>
-            <a href="/2021/03/30/mem/min_free_kbytes/">vm.min_free_kbytes</a>
+            <a href="/2021/03/31/mem/malloc/">malloc</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/mem_cmd/">内存管理有关的命令</a>
+            <a href="/2021/03/31/DebianService/Systemd/">Systemd</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/mem/malloc/">malloc</a>
+            <a href="/2021/03/31/DebianService/UserManagement/">Ubuntu账户管理</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/UserManagement/">Ubuntu账户管理</a>
+            <a href="/2021/03/31/DebianService/DBus/">dbus-daemon</a>
           </li>
         
           <li>
-            <a href="/2021/03/30/DebianService/Systemd/">Systemd</a>
+            <a href="/2021/03/31/LinuxRelease/1011-ubuntu/">(no title)</a>
           </li>
         
       </ul>
