@@ -8,11 +8,11 @@
     <meta name="baidu-site-verification" content="5EmnBCPDrY" />
     
 
-    <title> - Hexo</title>
+    <title>malloc - Hexo</title>
 
     <meta property="og:url" content="http://example.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content=" - Hexo | Hexo">
+    <meta property="og:title" content="malloc - Hexo | Hexo">
     
     
 
@@ -182,7 +182,7 @@
         <ul class="mdui-menu" id="share_menu">
             
                 <li class="mdui-menu-item">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/SUMMARY.html" target="_blank" class="mdui-ripple">
                         facebook
                     </a>
                 </li>
@@ -190,7 +190,7 @@
             
             
                 <li class="mdui-menu-item">
-                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/SUMMARY.html" target="_blank" class="mdui-ripple">
                         QQ
                     </a>
                 </li>
@@ -198,7 +198,7 @@
 
             
                 <li class="mdui-menu-item">
-                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/SUMMARY.html&via=John Doe" target="_blank" class="mdui-ripple">
                         twitter
                     </a>
                 </li>
@@ -206,7 +206,7 @@
         
             
                 <li class="mdui-menu-item">
-                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/SUMMARY.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
                         weibo
                     </a>
                 </li>
@@ -214,7 +214,7 @@
 
             
                 <li class="mdui-menu-item">
-                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/SUMMARY.html&text=" target="_blank" class="mdui-ripple">
                         telegram
                     </a>
                 </li>
@@ -222,7 +222,7 @@
 
             
                 <li class="mdui-menu-item">
-                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/SUMMARY.html" target="_blank" class="mdui-ripple">
                         googleplus
                     </a>
                 </li>
@@ -230,7 +230,7 @@
         
               
                 <li class="mdui-menu-item">
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/SUMMARY.html&title=" target="_blank" class="mdui-ripple">
                         linkedin
                     </a>
                 </li>
@@ -248,7 +248,7 @@
         
             <div class="header-content">
                 
-                <span class="header_title"></span></br>
+                <span class="header_title">malloc</span></br>
                 
                 <p id="hitokoto">一言加载中...</p>
             </div>
@@ -264,7 +264,7 @@
 <div>
   <div class="">
     <article class="article-content mdui-container mdui-center mdui-shadow-12">
-      <h1 id="malloc"><a href="#malloc" class="headerlink" title="malloc"></a>malloc</h1><h2 id="kernel-malloc"><a href="#kernel-malloc" class="headerlink" title="kernel malloc"></a>kernel malloc</h2><p>在应用程序中获取内存通常使用函数malloc()，但在设备驱动程序中动态开辟内存可以以字节或页面为单位。其中，以字节为单位分配内存的函数有kmalloc()，注意的是，kmalloc()函数返回的是物理地址，而malloc()等返回的是线性虚拟地址，因此在驱动程序中不能使用malloc()函数。与malloc()不同，kmalloc()申请空间有大小限制。长度是2的整次方，并且不会对所获取的内存空间清零。<br>以页为单位分配内存的函数如下所示：</p>
+      <h2 id="kernel-malloc"><a href="#kernel-malloc" class="headerlink" title="kernel malloc"></a>kernel malloc</h2><p>在应用程序中获取内存通常使用函数malloc()，但在设备驱动程序中动态开辟内存可以以字节或页面为单位。其中，以字节为单位分配内存的函数有kmalloc()，注意的是，kmalloc()函数返回的是物理地址，而malloc()等返回的是线性虚拟地址，因此在驱动程序中不能使用malloc()函数。与malloc()不同，kmalloc()申请空间有大小限制。长度是2的整次方，并且不会对所获取的内存空间清零。<br>以页为单位分配内存的函数如下所示：</p>
 <pre><code>get_zeroed_page()：获得一个已清零页面。
 get_free_page()：获得一个或几个连续页面。
 get_dma_pages()：获得用于DMA传输的页面。
@@ -377,7 +377,7 @@ get_dma_pages()：获得用于DMA传输的页面。
   <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
     <div class="widget">
       <h3 class="title">目录</h3>
-      <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#malloc"><span class="post-toc-text">malloc</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#kernel-malloc"><span class="post-toc-text">kernel malloc</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#malloc-%E5%92%8C-slab-%E7%9A%84%E5%85%B3%E8%81%94"><span class="post-toc-text">malloc 和 slab 的关联</span></a></li></ol></li></ol> 
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#kernel-malloc"><span class="post-toc-text">kernel malloc</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#malloc-%E5%92%8C-slab-%E7%9A%84%E5%85%B3%E8%81%94"><span class="post-toc-text">malloc 和 slab 的关联</span></a></li></ol> 
     </div>
   </aside> -->
 </div>
