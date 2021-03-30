@@ -79,7 +79,7 @@
     <article>
         <div class="article-title">
     <h2>
-        <a href="/2021/03/30/Sched/" class="shake shake-little" title="">
+        <a href="/2021/03/30/docs/09-timer/" class="shake shake-little" title="">
             
             
         </a>
@@ -117,8 +117,50 @@
             
             
             
-            <h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><h2 id="nice"><a href="#nice" class="headerlink" title="nice"></a>nice</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babybabyup/article/details/79839734">添加一个系统调用，实现对指定进程的nice值的修改或读取功能，并返回系统最新的nice值即优先级prio</a></p>
+            <h1 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h1><h2 id="内核时间"><a href="#内核时间" class="headerlink" title="内核时间"></a>内核时间</h2><p>HZ 是一个和平台相关的全局变量。</p>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5">https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5</a></p>
+<pre><code>#ifndef HZ
+#define HZ 100
+#endif
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4">https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4</a></p>
+<pre><code>#define HZ        1024
+</code></pre>
+<p>一般情况</p>
+<pre><code>#define HZ 1000
+</code></pre>
+<p>表示1秒时钟中断产生1000次。</p>
+<p>jiffies记录了自系统启动后产生的节拍的总数。jiffies一秒内增加的数量等于HZ</p>
+<p>短时间延时用ndekay、udelay、mdelay<br>长时间延时，用当前jiffies和目标jiffies值比较</p>
+<pre><code>unsigned long timeout = jiffies +2 * HZ;
+while(time_before(jiffies,timeout));
+</code></pre>
+<h2 id="time-list"><a href="#time-list" class="headerlink" title="time_list"></a>time_list</h2><pre><code>struct timer_list &#123;
+    /*
+     * All fields that change during normal runtime grouped to the same cacheline
+     */
+    struct list_head entry;
+    unsigned long expires;        //超时的Jiffies
+    struct tvec_base *base;
 
+    void (*function)(unsigned long); //超时的时候处理的函数
+    unsigned long data;
+
+    int slack;
+
+#ifdef CONFIG_TIMER_STATS
+    int start_pid;
+    void *start_site;
+    char start_comm[16];
+#endif
+#ifdef CONFIG_LOCKDEP
+    struct lockdep_map lockdep_map;
+#endif
+&#125;;
+</code></pre>
+<p>操作函数</p>
+<p>init_timer<br>add_timer<br>mod_timer<br>del_timer</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2>
         </div>
         <div class="article-copyright">
             
@@ -134,7 +176,7 @@
     
 
     <section id="toc-div" >
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="toc-text">进程调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#nice"><span class="toc-text">nice</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Timer"><span class="toc-text">Timer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E6%97%B6%E9%97%B4"><span class="toc-text">内核时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#time-list"><span class="toc-text">time_list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li></ol></li></ol>
     </section>
     <section id="gohome" style="display: none;"><a>顶</a></section>
 

@@ -79,7 +79,7 @@
     <article>
         <div class="article-title">
     <h2>
-        <a href="/2021/03/30/Timer/" class="shake shake-little" title="">
+        <a href="/2021/03/30/docs/07-ftrace/" class="shake shake-little" title="">
             
             
         </a>
@@ -117,50 +117,30 @@
             
             
             
-            <h1 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h1><h2 id="内核时间"><a href="#内核时间" class="headerlink" title="内核时间"></a>内核时间</h2><p>HZ 是一个和平台相关的全局变量。</p>
-<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5">https://elixir.bootlin.coam/linux/v4.9.241/source/include/uapi/asm-generic/param.h#L5</a></p>
-<pre><code>#ifndef HZ
-#define HZ 100
-#endif
-</code></pre>
-<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4">https://elixir.bootlin.com/linux/v4.9.241/source/arch/alpha/include/uapi/asm/param.h#L4</a></p>
-<pre><code>#define HZ        1024
-</code></pre>
-<p>一般情况</p>
-<pre><code>#define HZ 1000
-</code></pre>
-<p>表示1秒时钟中断产生1000次。</p>
-<p>jiffies记录了自系统启动后产生的节拍的总数。jiffies一秒内增加的数量等于HZ</p>
-<p>短时间延时用ndekay、udelay、mdelay<br>长时间延时，用当前jiffies和目标jiffies值比较</p>
-<pre><code>unsigned long timeout = jiffies +2 * HZ;
-while(time_before(jiffies,timeout));
-</code></pre>
-<h2 id="time-list"><a href="#time-list" class="headerlink" title="time_list"></a>time_list</h2><pre><code>struct timer_list &#123;
-    /*
-     * All fields that change during normal runtime grouped to the same cacheline
-     */
-    struct list_head entry;
-    unsigned long expires;        //超时的Jiffies
-    struct tvec_base *base;
+            <h1 id="Ftrace"><a href="#Ftrace" class="headerlink" title="Ftrace"></a>Ftrace</h1><p>内核源码位置 src/kernel/trace:</p>
+<p>/sys/kernel/debug/tracing</p>
+<pre><code>root@v:/sys/kernel/debug/tracing# ls
+available_events            events                    per_cpu              set_ftrace_notrace  trace                tracing_on
+available_filter_functions  free_buffer               printk_formats       set_ftrace_pid      trace_clock          tracing_thresh
+available_tracers           function_profile_enabled  README               set_graph_function  trace_marker         uprobe_events
+buffer_size_kb              instances                 saved_cmdlines       set_graph_notrace   trace_options        uprobe_profile
+buffer_total_size_kb        kprobe_events             saved_cmdlines_size  snapshot            trace_pipe
+current_tracer              kprobe_profile            set_event            stack_max_size      trace_stat
+dyn_ftrace_total_info       max_graph_depth           set_event_pid        stack_trace         tracing_cpumask
+enabled_functions           options                   set_ftrace_filter    stack_trace_filter  tracing_max_latency
 
-    void (*function)(unsigned long); //超时的时候处理的函数
-    unsigned long data;
 
-    int slack;
 
-#ifdef CONFIG_TIMER_STATS
-    int start_pid;
-    void *start_site;
-    char start_comm[16];
-#endif
-#ifdef CONFIG_LOCKDEP
-    struct lockdep_map lockdep_map;
-#endif
-&#125;;
+buffer_size_kb：这个属性比較重要，也是使用中须要注意的，这是设置启动的CPU的缓存大小。取决于追踪log的大小，超出会反复利用覆盖，可是一次性分配又须要考虑内存。
+buffer_total_size_kb：这个就是总和buffer size 了，启用了多少个cpu去trace就乘以buffer_size_kb.
+current_tracer: 当前的追踪器。有哪几种能够查看available_tracers ,用echo * &gt; 重定向 设置改变，详细tracer的不同需另行參考 ，默觉得nop
+events：文件夹下就是加入在kernel源代码中已经存在的各个event集合。
+free_buffer：顾名思义，可是这个使用方法比較特殊，有仅仅要open之后。等处理完buffer之后 close这个文件就可以释放buffer，有兴趣能够去trace.c里面看看这个节点的file_operation，不手动去close这个节点的话，上面设置的buffer是不会free的。
+trace:用于追踪操作的文件节点，就是读取该节点获取trace log
+tracing_cpumask：用到的cpu标记。以数值bit位表示多少个cpu，这个尤为注意。比方四核 cat显示就是 f 也就是1111。
+tracing_on：开关
 </code></pre>
-<p>操作函数</p>
-<p>init_timer<br>add_timer<br>mod_timer<br>del_timer</p>
-<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2>
+
         </div>
         <div class="article-copyright">
             
@@ -176,7 +156,7 @@ while(time_before(jiffies,timeout));
     
 
     <section id="toc-div" >
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Timer"><span class="toc-text">Timer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%A0%B8%E6%97%B6%E9%97%B4"><span class="toc-text">内核时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#time-list"><span class="toc-text">time_list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ftrace"><span class="toc-text">Ftrace</span></a></li></ol>
     </section>
     <section id="gohome" style="display: none;"><a>顶</a></section>
 
