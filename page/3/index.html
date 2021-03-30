@@ -71,55 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-LinuxRelease/licheezero" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/licheezero/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="LicheePiZero"><a href="#LicheePiZero" class="headerlink" title="LicheePiZero"></a>LicheePiZero</h1><table>
-<thead>
-<tr>
-<th>Referrence</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="http://zero.lichee.pro/">http://zero.lichee.pro/</a></td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://github.com/Lichee-Pi">https://github.com/Lichee-Pi</a></td>
-</tr>
-</tbody></table>
-<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><pre><code>sudo groupadd docker
-sudo gpasswd -a $&#123;your_user_name&#125; docker
-sudo service docker restart
-newgrp - docker
-docker pull zepan/licheepi
-docker run -d -p 6666:22 zepan/licheepi /usr/sbin/sshd -D
-</code></pre>
-<h2 id="Uboot"><a href="#Uboot" class="headerlink" title="Uboot"></a>Uboot</h2><p>:)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/licheezero/" data-id="ckmw3sqnm000wjm5b0sf61m45" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-LinuxRelease/Vexpress" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/30/LinuxRelease/Vexpress/" class="article-date">
@@ -301,7 +252,69 @@ fi
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Vexpress/" data-id="ckmw3sqnj000rjm5b62u91nfs" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Vexpress/" data-id="ckmw3uz940011mm5bbluo8x71" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LinuxRelease/Vexpress_RT-Thread" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/LinuxRelease/Vexpress_RT-Thread/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:38.248Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Vexpress-A9-RT-Rthread-BSP"><a href="#Vexpress-A9-RT-Rthread-BSP" class="headerlink" title="Vexpress-A9 RT-Rthread BSP"></a>Vexpress-A9 RT-Rthread BSP</h1><p><a target="_blank" rel="noopener" href="https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/">https://www.rt-thread.org/document/site/application-note/setup/qemu/ubuntu/an0005-qemu-ubuntu/</a></p>
+<h2 id="Ready"><a href="#Ready" class="headerlink" title="Ready"></a>Ready</h2><p>git clone <a target="_blank" rel="noopener" href="https://github.com/RT-Thread/rt-thread.git">https://github.com/RT-Thread/rt-thread.git</a></p>
+<p>sudo apt-get install scons qemu cross_compile</p>
+<p>tom@laptop:~$ cd /tmp/<br>tom@laptop:/tmp$ wget <a target="_blank" rel="noopener" href="https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2">https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2</a><br>tom@laptop:/tmp$ tar xf ./gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2<br>tom@laptop:/tmp$ mv gcc-arm-none-eabi-6_2-2016q4/ /opt/<br>tom@laptop:/tmp$ /opt/gcc-arm-none-eabi-6_2-2016q4/bin/arm-none-eabi-gcc –version</p>
+<p>sudo apt-get install libncurses5-dev</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Vexpress_RT-Thread/" data-id="ckmw3uz950013mm5b7jut1sbl" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Android/AndroidTek" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/Android/AndroidTek/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p><br>Android 的启动流程<br><br>Android 的init进程<br><br>Android的Zygote进程<br><br>SystemServer进程<br><br>ActivityManagerService<br><br>Launcher<br><br>Binder</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidTek/" data-id="ckmw3uz7y0006mm5b5t7a810f" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -604,7 +617,7 @@ fastboot --disable-verity flash vbmeta vbmeta.img
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/IMX8_Android9_Bringup/" data-id="ckmw3sqn1000ijm5bda0e2mca" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/IMX8_Android9_Bringup/" data-id="ckmw3uz8o000smm5b7saqadnw" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -690,7 +703,144 @@ done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Khadas/" data-id="ckmw3sqn2000jjm5b05o78s6o" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Khadas/" data-id="ckmw3uz8p000tmm5be6zxc81u" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Android/Telephony" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/Android/Telephony/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Telephony"><a href="#Telephony" class="headerlink" title="Telephony"></a>Telephony</h1><h2 id="TelephonyManager"><a href="#TelephonyManager" class="headerlink" title="TelephonyManager"></a>TelephonyManager</h2><pre><code>java/android/telephony/TelephonyManager.java
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/Telephony/" data-id="ckmw3uz7z0008mm5bf5f3g66d" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-docs/07-ftrace" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/docs/07-ftrace/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Ftrace"><a href="#Ftrace" class="headerlink" title="Ftrace"></a>Ftrace</h1><p>内核源码位置 src/kernel/trace:</p>
+<p>/sys/kernel/debug/tracing</p>
+<pre><code>root@v:/sys/kernel/debug/tracing# ls
+available_events            events                    per_cpu              set_ftrace_notrace  trace                tracing_on
+available_filter_functions  free_buffer               printk_formats       set_ftrace_pid      trace_clock          tracing_thresh
+available_tracers           function_profile_enabled  README               set_graph_function  trace_marker         uprobe_events
+buffer_size_kb              instances                 saved_cmdlines       set_graph_notrace   trace_options        uprobe_profile
+buffer_total_size_kb        kprobe_events             saved_cmdlines_size  snapshot            trace_pipe
+current_tracer              kprobe_profile            set_event            stack_max_size      trace_stat
+dyn_ftrace_total_info       max_graph_depth           set_event_pid        stack_trace         tracing_cpumask
+enabled_functions           options                   set_ftrace_filter    stack_trace_filter  tracing_max_latency
+
+
+
+buffer_size_kb：这个属性比較重要，也是使用中须要注意的，这是设置启动的CPU的缓存大小。取决于追踪log的大小，超出会反复利用覆盖，可是一次性分配又须要考虑内存。
+buffer_total_size_kb：这个就是总和buffer size 了，启用了多少个cpu去trace就乘以buffer_size_kb.
+current_tracer: 当前的追踪器。有哪几种能够查看available_tracers ,用echo * &gt; 重定向 设置改变，详细tracer的不同需另行參考 ，默觉得nop
+events：文件夹下就是加入在kernel源代码中已经存在的各个event集合。
+free_buffer：顾名思义，可是这个使用方法比較特殊，有仅仅要open之后。等处理完buffer之后 close这个文件就可以释放buffer，有兴趣能够去trace.c里面看看这个节点的file_operation，不手动去close这个节点的话，上面设置的buffer是不会free的。
+trace:用于追踪操作的文件节点，就是读取该节点获取trace log
+tracing_cpumask：用到的cpu标记。以数值bit位表示多少个cpu，这个尤为注意。比方四核 cat显示就是 f 也就是1111。
+tracing_on：开关
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/docs/07-ftrace/" data-id="ckmw3uz8b000lmm5bh3z8axpz" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Android/AddAPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/Android/AddAPN/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AddAPN/" data-id="ckmw3uz7f0000mm5b7rkbass7" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-LinuxRelease/BuildRoot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/30/LinuxRelease/BuildRoot/" class="article-date">
+  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/BuildRoot/" data-id="ckmw3uz7m0002mm5bhdjgdkz4" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -722,216 +872,7 @@ done
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidStudio/" data-id="ckmw3sqmo0004jm5bdmu84ros" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Android/AndroidTek" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/Android/AndroidTek/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p><br>Android 的启动流程<br><br>Android 的init进程<br><br>Android的Zygote进程<br><br>SystemServer进程<br><br>ActivityManagerService<br><br>Launcher<br><br>Binder</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidTek/" data-id="ckmw3sqmq0006jm5bflv5d4yh" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Android/Telephony" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/Android/Telephony/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Telephony"><a href="#Telephony" class="headerlink" title="Telephony"></a>Telephony</h1><h2 id="TelephonyManager"><a href="#TelephonyManager" class="headerlink" title="TelephonyManager"></a>TelephonyManager</h2><pre><code>java/android/telephony/TelephonyManager.java
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/Android/Telephony/" data-id="ckmw3sqmr0008jm5bfooa308y" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/210" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/210/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="210开发板"><a href="#210开发板" class="headerlink" title="210开发板"></a>210开发板</h1><p>手上有两块210开发板，15年和16年分别购买的，一块是友善之臂Smart210，一块是九鼎X210V3s.<br>很早以前玩的时候，还能从NoOS的裸机程序，到完整的BootUp，Linux和Android都能编译安装运行。<br>现在Android由于版本（JDK、make等）的问题，Android版本只有2.3和4.0，需要重新搭建环境，意义不大。暂且搁置。<br>Linux，当初提供的是Kernel 2.6，并且已经找不到源码了，网上有3.10的别人移植好的内核源码，一切从头开始！<br>几乎所有资料都要从网络上重新找。</p>
-<h2 id="Smart210-Linux-BSP"><a href="#Smart210-Linux-BSP" class="headerlink" title="Smart210_Linux_BSP"></a>Smart210_Linux_BSP</h2><p>安装Uboot通过tftp加载kernel，再挂载NFS的方式。</p>
-<p>准备跑kernel 2.6，装个老的</p>
-<p>对友善之臂的,提供了一个Supperboot的bootloader，将<br>整个images目录拷贝到SD卡中</p>
-<pre><code>Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       2020/11/11     10:06                Android
-d-----       2020/11/11     10:06                Android2.3.1
-d-----       2020/11/11     10:06                Linux
-d-----       2020/11/11     10:06                WindowsCE6
--a----        2013/6/18     11:37           1442 FriendlyARM-电容触摸.ini
--a----       2020/11/11     18:21           1393 FriendlyARM.ini
--a----        2013/7/30     10:00            559 readme.txt
--a----         2015/7/7     11:31         540672 Superboot210.bin
-</code></pre>
-<p>FriendlyARM.ini 是Superboot启动会从中读取的配置文件。包括是Android还是Linux、WinCE</p>
-<pre><code>Booting from SD
-Bad or missing configure file &#39;/images/FriendlyARM.ini&#39;
-Booting from SD
-
-Superboot-210
-Ver: 1.27a(20150707a)
-// 烧录ing
-...
-</code></pre>
-<div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-<a href="Khadas.md" class="btn btn-neutral float-right" title="Khadas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-<a href="vexpress.md" class="btn btn-neutral" title="Vexpress" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-</div>
-
-<p>:)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/210/" data-id="ckmw3sqmz000fjm5b8itvci0j" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/BuildRoot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/BuildRoot/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/BuildRoot/" data-id="ckmw3sqmc0001jm5bdgy0hler" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-LinuxRelease/Android" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/30/LinuxRelease/Android/" class="article-date">
-  <time class="dt-published" datetime="2021-03-29T22:48:37.348Z" itemprop="datePublished">2021-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="AndroidBsp"><a href="#AndroidBsp" class="headerlink" title="AndroidBsp"></a>AndroidBsp</h1><h2 id="RIL"><a href="#RIL" class="headerlink" title="RIL"></a>RIL</h2><p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzIxNjU5MzAxMw==&mid=2247484836&idx=2&sn=88eecc283690db180f7f5646d6a6831c&chksm=9787e2bea0f06ba8f78999080a81942984f75b8db86e4845a6671044e613b41433d10bda71f3&mpshare=1&scene=24&srcid=1111nKtRvQyiG8zwkUUr68Aa&sharer_sharetime=1605052874338&sharer_shareid=ecace1467fd81ffbadc2260cf4ccea17#rd">Android RIL的Java 框架</a></p>
-<p>java部分<br>    RIL模<br>    Phone模块</p>
-<h2 id="Lineage-OS-on-RP3B"><a href="#Lineage-OS-on-RP3B" class="headerlink" title="Lineage OS on RP3B"></a>Lineage OS on RP3B</h2><p>参考</p>
-<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi3/LineageOS17.1/">LineageOS 17.1 (Android 10) for Raspberry Pi 3</a></p>
-<p><a target="_blank" rel="noopener" href="https://konstakang.com/devices/rpi4/LineageOS17.1/">LineageOS 17.1 (Android 10) for for Raspberry Pi 4</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/babyshan1/article/details/78894600">Ubuntu下为树莓派3B编译Android（Lineage OS）7.1.2系统</a></p>
-<pre><code>repo init -u git://github.com/LineageOS/android.git -b cm-14.1
-
-curl --create-dirs -L -o .repo/local_manifests/manifest_brcm_rpi3.xml -O -L https://raw.githubusercontent.com/lineage-rpi/android_local_manifest/cm-14.1/manifest_brcm_rpi3.xml
-
-repo sync
-</code></pre>
-<p>编译kernel</p>
-<pre><code>source build/envsetup.sh
-lunch lineage_rpi3-userdebug
-make ramdisk systemimage
-</code></pre>
-<p>分区1 128MB 分配给 BOOT : 用 fdisk : W95 FAT32(LBA) &amp; Bootable, mkfs.vfat<br>分区2 1024MB 分配给 /system : 用 fdisk, 新建主分区<br>分区3 分配给  /data : 用 fdisk, mkfs.ex4</p>
-<p>七、写入编译好的文件<br>1.写入系统分区</p>
-<p>假设system分区挂载在/dev/sdb2下：</p>
-<pre><code>$ cd out/target/product/rpi3
-$ sudo dd if=system.img of=/dev/sdb2 bs=1M
-</code></pre>
-<p>2.复制内核文件到boot分区</p>
-<ul>
-<li> 复制device/brcm/rpi3/boot/* 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/zImage 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/dts/bcm2710-rpi-3-b.dtb 到 分区1:/</li>
-<li> 复制kernel/rpi/arch/arm/boot/dts/overlays/vc4-kms-v3d.dtbo 到 分区1:/overlays/vc4-kms-v3d.dtbo</li>
-<li> 复制out/target/product/rpi3/ramdisk.img 到 分区1:/</li>
-</ul>
-<p>还没尝试！！！</p>
-<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>:)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://quectelwb.github.io/2021/03/30/LinuxRelease/Android/" data-id="ckmw3sqn0000gjm5bbfwt0xl1" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://quectelwb.github.io/2021/03/30/Android/AndroidStudio/" data-id="ckmw3uz7w0004mm5bgdbihks3" data-title="" class="article-share-link">Share</a>
       
       
       
