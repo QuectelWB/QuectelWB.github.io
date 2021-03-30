@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
+    
+
+    <title>如何使用LTE模块 - Hexo</title>
+
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="如何使用LTE模块 - Hexo | Hexo">
+    
+    
+
+    
+
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!--mdui-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+          integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+          crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous">
+    </script>
+    <!--jquery-->
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <!--theme-->
+    
+<link rel="stylesheet" href="/css/mdm.css">
+
+    
+<link rel="stylesheet" href="/css/mdm_theme_dark.css">
+
+    
+<script src="/js/mdm.js"></script>
+
+    
+    <!--高亮-->
+    
+<link rel="stylesheet" href="/css/solarized-light.css">
+
+    <!--全局变灰-->
+    
+
+    
+    
+<script src="/js/click-effect.js"></script>
+
+    
+
+    <!--本地搜索-->
+    <!-- <script src="js/search.js"></script> -->
+    <!--自动提交给百度-->
+    
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+    <!---google ad config-->
+    
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--header_bar-->
+<div class="mdui-appbar mdui-shadow-0" id="bar">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <ul class="mdui-menu" id="example-2">
+        
+            <li class="mdui-menu-item">
+            <a href="/" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>
+                首页
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/tags" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">local_offer</i>
+                标签
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/archives" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">library_books</i>
+                归档
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/collection" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">videocam</i>
+                作品集
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">error_outline</i>
+                关于
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+        </ul>
+        <!--大屏-->
+        
+        <a href="/"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            首页
+        </a>
+        
+        <a href="/tags"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            标签
+        </a>
+        
+        <a href="/archives"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            归档
+        </a>
+        
+        <a href="/collection"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            作品集
+        </a>
+        
+        <a href="/about"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            关于
+        </a>
+        
+        <div class="mdui-toolbar-spacer"></div>
+        <!--
+        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+        </div>-->
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        <!--分享-->
+        
+        <ul class="mdui-menu" id="share_menu">
+            
+                <li class="mdui-menu-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
+                </li>
+            
+            
+            
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              
+        
+              
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              
+
+            </ul>
+        
+    </div>
+</div>
+<!--Header-->
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        
+        <img src="" class="header-box blur mdui-img-fluid" onerror="{this.src='https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg'}" draggable="false">
+        
+            <div class="header-content">
+                
+                <span class="header_title">如何使用LTE模块</span></br>
+                
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>
+<body>
+  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
+    <!--博文详细内容-->
+
+<link rel="stylesheet" href="/css/post.css">
+
+<div>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
+      <h1 id="查看所在地区支持的运营商和频段"><a href="#查看所在地区支持的运营商和频段" class="headerlink" title="查看所在地区支持的运营商和频段"></a>查看所在地区支持的运营商和频段</h1><p>可以在以下两个网站进行查看:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.frequencycheck.com/carriers">frequencycheck</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.spectrummonitoring.com/frequencies/">spectrumonitoring</a></li>
+</ol>
+<h1 id="LTE模块工作模式设置"><a href="#LTE模块工作模式设置" class="headerlink" title="LTE模块工作模式设置"></a>LTE模块工作模式设置</h1><h2 id="VIMs上安装monicom"><a href="#VIMs上安装monicom" class="headerlink" title="VIMs上安装monicom"></a>VIMs上安装monicom</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt update</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install minicom</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="设置成USBNet模式"><a href="#设置成USBNet模式" class="headerlink" title="设置成USBNet模式"></a>设置成USBNet模式</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> minicom -D /dev/ttyUSB2</span></span><br></pre></td></tr></table></figure>
+
+<p>打开minicom以后,输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AT+QCFG=&quot;usbnet&quot;,2</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<h2 id="掉电重启"><a href="#掉电重启" class="headerlink" title="掉电重启"></a>掉电重启</h2><p>LITE模块需要掉电重启才能切换模式,拔出VIMs的电源,重新插上.LTE模块现在就工作在USBNet模式了</p>
+<h2 id="恢复LTE模块"><a href="#恢复LTE模块" class="headerlink" title="恢复LTE模块"></a>恢复LTE模块</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> minicom -D /dev/ttyUSB2</span></span><br></pre></td></tr></table></figure>
+
+<p>默认的工作方式是<code>0</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT+QCFG=&quot;usbnet&quot;,0</span><br></pre></td></tr></table></figure>
+
+<p>同样掉电重启切换回默认模式</p>
+<h1 id="在ubuntu桌面版本使用LTE模块"><a href="#在ubuntu桌面版本使用LTE模块" class="headerlink" title="在ubuntu桌面版本使用LTE模块"></a>在ubuntu桌面版本使用LTE模块</h1><h2 id="xface桌面环境"><a href="#xface桌面环境" class="headerlink" title="xface桌面环境"></a>xface桌面环境</h2><h3 id="Step1-打开-edit-connections"><a href="#Step1-打开-edit-connections" class="headerlink" title="Step1: 打开 edit connections"></a>Step1: 打开 <code>edit connections</code></h3><p>在右上角的网络菜单最下面选中<code>edit connections</code>选项。</p>
+<p><img src="/images/vim3/LTE_edit_connect.png" alt="LTE_edit_connect"></p>
+<h3 id="Step2-新建一个连接"><a href="#Step2-新建一个连接" class="headerlink" title="Step2: 新建一个连接"></a>Step2: 新建一个连接</h3><p><img src="/images/vim3/LTE_add_connect.png" alt="LTE_add_connect"></p>
+<p>在左下角的<code>+</code>选项可以新建一个连接。</p>
+<h3 id="Step3-选择新建的连接类型"><a href="#Step3-选择新建的连接类型" class="headerlink" title="Step3: 选择新建的连接类型"></a>Step3: 选择新建的连接类型</h3><p><img src="/images/vim3/LTE_choose_connect_tpye.png" alt="LTE_choose_connect_tpye"></p>
+<p><code>Mobile Broadband</code>可用于LTE模块，这里选用这个选项。</p>
+<h3 id="Step4-选择你的运营商所在国家"><a href="#Step4-选择你的运营商所在国家" class="headerlink" title="Step4: 选择你的运营商所在国家"></a>Step4: 选择你的运营商所在国家</h3><p><img src="/images/vim3/LTE_choose_country.png" alt="LTE_choose_country"></p>
+<p>选择你的运营商所在国家，这个应与sim卡相同。</p>
+<h3 id="Step5-选择运营商"><a href="#Step5-选择运营商" class="headerlink" title="Step5: 选择运营商"></a>Step5: 选择运营商</h3><p><img src="/images/vim3/LTE_choose_provider.png" alt="LTE_choose_provider"></p>
+<p>选择运营商，这个同样应该与sim卡相同。</p>
+<p>选择完运营商以后，后面的两部使用默认的就可以，直接<code>next</code>。</p>
+<h3 id="Step6-设置连接密码"><a href="#Step6-设置连接密码" class="headerlink" title="Step6: 设置连接密码"></a>Step6: 设置连接密码</h3><p><img src="/images/vim3/LTE_set_psk.png" alt="LTE_set_psk"></p>
+<p>设置连接密码，这步设置的密码，下一步连接时会用到，请记住设置的密码。<br>同时你可以设置你的节点名字，不设置将使用默认的。</p>
+<h3 id="Step7-连接"><a href="#Step7-连接" class="headerlink" title="Step7: 连接"></a>Step7: 连接</h3><p><img src="/images/vim3/LTE_connect.png" alt="LTE_connect"></p>
+<p>在右上角的网络菜单选中上一步设置的网络节点。输入上一步设置的密码。</p>
+<p><img src="/images/vim3/LTE_use_psk.png" alt="LTE_use_psk"></p>
+<p>输入密码以后，就可以成功连接到网络了。</p>
+<h2 id="gnome桌面环境"><a href="#gnome桌面环境" class="headerlink" title="gnome桌面环境"></a>gnome桌面环境</h2><h3 id="Step1-打开-Mobile-Board-Settings"><a href="#Step1-打开-Mobile-Board-Settings" class="headerlink" title="Step1: 打开 Mobile Board Settings"></a>Step1: 打开 <code>Mobile Board Settings</code></h3><p><img src="/images/vim3/LTE_gnome_open.png" alt="LTE_gnome_open"></p>
+<p>在右上角菜单栏选中以后,就会看到<code>Mobile Board Settings</code>选项</p>
+<h3 id="Step2-新建一个连接-1"><a href="#Step2-新建一个连接-1" class="headerlink" title="Step2: 新建一个连接"></a>Step2: 新建一个连接</h3><p>点击Network,选择<code>Add new connection</code>,点击以后<code>Next</code></p>
+<p><img src="/images/vim3/LTE_gnome_new.png" alt="LTE_gnome_new"><br><img src="/images/vim3/LTE_gnome_next.png" alt="LTE_gnome_next"></p>
+<h3 id="Step3-选择运营商所在国家"><a href="#Step3-选择运营商所在国家" class="headerlink" title="Step3: 选择运营商所在国家"></a>Step3: 选择运营商所在国家</h3><p>选择运营商所在国家,这个应该与sim卡相同.</p>
+<p><img src="/images/vim3/LTE_gnome_country.png" alt="LTE_gnome_country"></p>
+<h3 id="Step4-选择运营商"><a href="#Step4-选择运营商" class="headerlink" title="Step4: 选择运营商"></a>Step4: 选择运营商</h3><p>选择呢运营商,这里应与你的sim卡相同.</p>
+<p><img src="/images/vim3/LTE_gnome_provider.png" alt="LTE_gnome_provider"></p>
+<h3 id="Step5-输入密码连接"><a href="#Step5-输入密码连接" class="headerlink" title="Step5: 输入密码连接"></a>Step5: 输入密码连接</h3><p>选择完运营商以后,一路<code>Next</code>,最后<code>apply</code>.此时需要输入密码,默认是<code>000</code></p>
+<p><img src="/images/vim3/LTE_gnome_apply.png" alt="LTE_gnome_apply"><br><img src="/images/vim3/LTE_gnome_psk.png" alt="LTE_gnome_psk"><br>输入以后以后就能正常连接了.<br><img src="/images/vim3/LTE_gnome_success.png" alt="LTE_gnome_success"></p>
+<h3 id="修改连接密码"><a href="#修改连接密码" class="headerlink" title="修改连接密码"></a>修改连接密码</h3><p>打开相应的设置,在<code>Mobile Broadband</code>里面可以更新密码.</p>
+<p><img src="/images/vim3/LTE_gnome_change_psk.png" alt="LTE_gnome_change_psk"></p>
+<h1 id="在ubuntu服务器版本上使用LTE模块"><a href="#在ubuntu服务器版本上使用LTE模块" class="headerlink" title="在ubuntu服务器版本上使用LTE模块"></a>在ubuntu服务器版本上使用LTE模块</h1><p>在服务器版本上，只要使用一个命令就可以连接LTE模块的网络。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nmcli connection add type gsm apn 3gnet user 0000 password 0000 con-name &quot;EM06 4G&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="如何确认连接是否成功"><a href="#如何确认连接是否成功" class="headerlink" title="如何确认连接是否成功"></a>如何确认连接是否成功</h1><p>使用ping命令就可以而是网络了，加上<code>-I</code>选项就可以选中LTE模块的网络。</p>
+<h2 id="确认LTE模块的网络节点"><a href="#确认LTE模块的网络节点" class="headerlink" title="确认LTE模块的网络节点"></a>确认LTE模块的网络节点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ifconfig -a</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">wwan0: flags&#x3D;4098&lt;BROADCAST,MULTICAST&gt;  mtu 1500</span><br><span class="line">        ether 1a:68:e0:a7:94:88  txqueuelen 1000  (Ethernet)</span><br><span class="line">        RX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        RX errors 0  dropped 0  overruns 0  frame 0</span><br><span class="line">        TX packets 0  bytes 0 (0.0 B)</span><br><span class="line">        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>ifconfig -a</code> 命令就可以看到找到wwan0的节点</p>
+<h2 id="使用ping命令测试"><a href="#使用ping命令测试" class="headerlink" title="使用ping命令测试"></a>使用<code>ping</code>命令测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping www.baidu.com -I wwan0</span><br></pre></td></tr></table></figure>
+<p>如果网络正常，就可以ping通。</p>
+
+      
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title">写博客不易，请我喝杯咖啡？ </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+
+
+    </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      
+
+
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'ecbf6316c9aa7a6bfd7a',
+			clientSecret: '5c875e5986ed75f4509d97acd16628b97f7506f1',
+			repo: 'tonychenn.github.io',
+			owner: 'tonychenn',
+			admin: ['tonychenn'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E5%9C%A8%E5%9C%B0%E5%8C%BA%E6%94%AF%E6%8C%81%E7%9A%84%E8%BF%90%E8%90%A5%E5%95%86%E5%92%8C%E9%A2%91%E6%AE%B5"><span class="post-toc-text">查看所在地区支持的运营商和频段</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LTE%E6%A8%A1%E5%9D%97%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F%E8%AE%BE%E7%BD%AE"><span class="post-toc-text">LTE模块工作模式设置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VIMs%E4%B8%8A%E5%AE%89%E8%A3%85monicom"><span class="post-toc-text">VIMs上安装monicom</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%88%90USBNet%E6%A8%A1%E5%BC%8F"><span class="post-toc-text">设置成USBNet模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%8E%89%E7%94%B5%E9%87%8D%E5%90%AF"><span class="post-toc-text">掉电重启</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%81%A2%E5%A4%8DLTE%E6%A8%A1%E5%9D%97"><span class="post-toc-text">恢复LTE模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9C%A8ubuntu%E6%A1%8C%E9%9D%A2%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8LTE%E6%A8%A1%E5%9D%97"><span class="post-toc-text">在ubuntu桌面版本使用LTE模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xface%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="post-toc-text">xface桌面环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step1-%E6%89%93%E5%BC%80-edit-connections"><span class="post-toc-text">Step1: 打开 edit connections</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step2-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">Step2: 新建一个连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step3-%E9%80%89%E6%8B%A9%E6%96%B0%E5%BB%BA%E7%9A%84%E8%BF%9E%E6%8E%A5%E7%B1%BB%E5%9E%8B"><span class="post-toc-text">Step3: 选择新建的连接类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step4-%E9%80%89%E6%8B%A9%E4%BD%A0%E7%9A%84%E8%BF%90%E8%90%A5%E5%95%86%E6%89%80%E5%9C%A8%E5%9B%BD%E5%AE%B6"><span class="post-toc-text">Step4: 选择你的运营商所在国家</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step5-%E9%80%89%E6%8B%A9%E8%BF%90%E8%90%A5%E5%95%86"><span class="post-toc-text">Step5: 选择运营商</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step6-%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E5%AF%86%E7%A0%81"><span class="post-toc-text">Step6: 设置连接密码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step7-%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">Step7: 连接</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gnome%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="post-toc-text">gnome桌面环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step1-%E6%89%93%E5%BC%80-Mobile-Board-Settings"><span class="post-toc-text">Step1: 打开 Mobile Board Settings</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step2-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%BF%9E%E6%8E%A5-1"><span class="post-toc-text">Step2: 新建一个连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step3-%E9%80%89%E6%8B%A9%E8%BF%90%E8%90%A5%E5%95%86%E6%89%80%E5%9C%A8%E5%9B%BD%E5%AE%B6"><span class="post-toc-text">Step3: 选择运营商所在国家</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step4-%E9%80%89%E6%8B%A9%E8%BF%90%E8%90%A5%E5%95%86"><span class="post-toc-text">Step4: 选择运营商</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Step5-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">Step5: 输入密码连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BF%AE%E6%94%B9%E8%BF%9E%E6%8E%A5%E5%AF%86%E7%A0%81"><span class="post-toc-text">修改连接密码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%9C%A8ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%89%88%E6%9C%AC%E4%B8%8A%E4%BD%BF%E7%94%A8LTE%E6%A8%A1%E5%9D%97"><span class="post-toc-text">在ubuntu服务器版本上使用LTE模块</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%A6%82%E4%BD%95%E7%A1%AE%E8%AE%A4%E8%BF%9E%E6%8E%A5%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="post-toc-text">如何确认连接是否成功</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%A1%AE%E8%AE%A4LTE%E6%A8%A1%E5%9D%97%E7%9A%84%E7%BD%91%E7%BB%9C%E8%8A%82%E7%82%B9"><span class="post-toc-text">确认LTE模块的网络节点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8ping%E5%91%BD%E4%BB%A4%E6%B5%8B%E8%AF%95"><span class="post-toc-text">使用ping命令测试</span></a></li></ol></li></ol> 
+    </div>
+  </aside> -->
+</div>
+  </div>
+  <!--footer-->
+  <footer class="mdui-color-indigo">
+    <div class="mdui-container">
+        <div style="text-align: center; padding: 20px;">
+            <div >
+                Copyright &copy;
+                John Doe&nbsp&nbsp2021
+                &nbspTheme By
+                <a target="_blank" rel="noopener" href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+                        frameborder="0" scrolling="0" width="91px" height="20px">
+                </iframe>
+            </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp总访客<span id="busuanzi_value_site_uv"></span>人
+        </div>
+    </div>
+</footer>
+</body>
+<!--goTop-->
+<div class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-pink">
+    <i class="mdui-icon material-icons">arrow_upward</i>
+</div>
+</html>

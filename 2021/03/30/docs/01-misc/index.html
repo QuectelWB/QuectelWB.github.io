@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
+    
+
+    <title>MISC - Hexo</title>
+
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="MISC - Hexo | Hexo">
+    
+    
+
+    
+
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!--mdui-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+          integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+          crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous">
+    </script>
+    <!--jquery-->
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <!--theme-->
+    
+<link rel="stylesheet" href="/css/mdm.css">
+
+    
+<link rel="stylesheet" href="/css/mdm_theme_dark.css">
+
+    
+<script src="/js/mdm.js"></script>
+
+    
+    <!--高亮-->
+    
+<link rel="stylesheet" href="/css/solarized-light.css">
+
+    <!--全局变灰-->
+    
+
+    
+    
+<script src="/js/click-effect.js"></script>
+
+    
+
+    <!--本地搜索-->
+    <!-- <script src="js/search.js"></script> -->
+    <!--自动提交给百度-->
+    
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+    <!---google ad config-->
+    
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--header_bar-->
+<div class="mdui-appbar mdui-shadow-0" id="bar">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <ul class="mdui-menu" id="example-2">
+        
+            <li class="mdui-menu-item">
+            <a href="/" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>
+                首页
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/tags" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">local_offer</i>
+                标签
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/archives" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">library_books</i>
+                归档
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/collection" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">videocam</i>
+                作品集
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">error_outline</i>
+                关于
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+        </ul>
+        <!--大屏-->
+        
+        <a href="/"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            首页
+        </a>
+        
+        <a href="/tags"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            标签
+        </a>
+        
+        <a href="/archives"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            归档
+        </a>
+        
+        <a href="/collection"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            作品集
+        </a>
+        
+        <a href="/about"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            关于
+        </a>
+        
+        <div class="mdui-toolbar-spacer"></div>
+        <!--
+        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+        </div>-->
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        <!--分享-->
+        
+        <ul class="mdui-menu" id="share_menu">
+            
+                <li class="mdui-menu-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
+                </li>
+            
+            
+            
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              
+        
+              
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              
+
+            </ul>
+        
+    </div>
+</div>
+<!--Header-->
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        
+        <img src="" class="header-box blur mdui-img-fluid" onerror="{this.src='https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg'}" draggable="false">
+        
+            <div class="header-content">
+                
+                <span class="header_title">MISC</span></br>
+                
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>
+<body>
+  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
+    <!--博文详细内容-->
+
+<link rel="stylesheet" href="/css/post.css">
+
+<div>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
+      <p>Hard to clarify…</p>
+<h2 id="locales"><a href="#locales" class="headerlink" title="locales"></a>locales</h2><p>locale 是Ubuntu/Centos 用于语言环境本地化。</p>
+<p>远程SSH 连了自己平板电脑上的WSL环境，Ubuntu环境的工作OK，但是Debian的WSL环境却出现了输入中文字符，VIM里出现无法识别的情况，出现了各种方块。<br>和locale有关。</p>
+<p>之前在EC25E上移植TMUX，没成功，最后也是这个问题需要配置。</p>
+<p>实际上Debian上支持locale，执行dpkg-reconfigure locales 也能配置，但是返回有报错，并且最终没有生效。<br>直接修改/etc/default/locale ，重启后也不行。</p>
+<pre><code>apt-get remove --purge locales -y
+apt-get install locales -y
+</code></pre>
+<p>卸载重装解决问题。</p>
+<p>后来重启后，一切恢复了，中文又再次无法</p>
+<p>export LC_ALL=zh_CN.UTF-8</p>
+<p>世界宁静</p>
+<h2 id="alais"><a href="#alais" class="headerlink" title="alais"></a>alais</h2><p>给命令起别名</p>
+<pre><code>alias ls=&quot;ls --color&quot;
+</code></pre>
+<h2 id="UsbIp"><a href="#UsbIp" class="headerlink" title="UsbIp"></a>UsbIp</h2><p>USB over IP</p>
+<p><img src="/images/Usbip.png"></p>
+<p><a target="_blank" rel="noopener" href="https://developer.ridgerun.com/wiki/index.php?title=How_to_setup_and_use_USB/IP">How_to_setup_and_use_USB/IP</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">q@q-OptiPlex-7070:~$ &#x2F;usr&#x2F;lib&#x2F;linux-tools&#x2F;5.4.0-52-generic&#x2F;usbip list -l</span><br><span class="line">usbip: error: failed to open &#x2F;usr&#x2F;share&#x2F;hwdata&#x2F;&#x2F;usb.ids</span><br><span class="line"> - busid 1-12 (413c:2113)</span><br><span class="line">   unknown vendor : unknown product (413c:2113)</span><br><span class="line"></span><br><span class="line"> - busid 1-5.4 (1976:4082)</span><br><span class="line">   unknown vendor : unknown product (1976:4082)</span><br><span class="line"></span><br><span class="line">q@q-OptiPlex-7070:~$ &#x2F;usr&#x2F;lib&#x2F;linux-tools&#x2F;5.4.0-52-generic&#x2F;usbip list -r 10.66.125.234</span><br><span class="line">usbip: error: failed to open &#x2F;usr&#x2F;share&#x2F;hwdata&#x2F;&#x2F;usb.ids</span><br><span class="line">Exportable USB devices</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"> - 10.66.125.234</span><br><span class="line">        1-4: unknown vendor : unknown product (2c7c:0125)</span><br><span class="line">           : &#x2F;sys&#x2F;devices&#x2F;pci0000:00&#x2F;0000:00:14.0&#x2F;usb1&#x2F;1-4</span><br><span class="line">           : unknown class &#x2F; unknown subclass &#x2F; unknown protocol (ef&#x2F;02&#x2F;01)</span><br><span class="line"></span><br><span class="line">q@q-OptiPlex-7070:~$ sudo &#x2F;usr&#x2F;lib&#x2F;linux-tools&#x2F;5.4.0-52-generic&#x2F;usbip attach -r 10.66.125.234 -b 1-4</span><br><span class="line"></span><br><span class="line">q@q-OptiPlex-7070:~$ lsusb</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 002: ID 2c7c:0125 Quectel Wireless Solutions Co., Ltd. EC25 LTE modem</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 001 Device 004: ID 1976:4082 Chipsbrand Microelectronics (HK) Co., Ltd.</span><br><span class="line">Bus 001 Device 002: ID 1a40:0101 Terminus Technology Inc. Hub</span><br><span class="line">Bus 001 Device 005: ID 413c:2113 Dell Computer Corp. Dell KB216 Wired Keyboard</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[711228.658191] vhci_hcd vhci_hcd.0: USB&#x2F;IP Virtual Host Controller</span><br><span class="line">[711228.658193] vhci_hcd vhci_hcd.0: new USB bus registered, assigned bus number 3</span><br><span class="line">[711228.658197] vhci_hcd: created sysfs vhci_hcd.0</span><br><span class="line">[711228.658219] usb usb3: New USB device found, idVendor&#x3D;1d6b, idProduct&#x3D;0002, bcdDevice&#x3D; 5.04</span><br><span class="line">[711228.658220] usb usb3: New USB device strings: Mfr&#x3D;3, Product&#x3D;2, SerialNumber&#x3D;1</span><br><span class="line">[711228.658220] usb usb3: Product: USB&#x2F;IP Virtual Host Controller</span><br><span class="line">[711228.658221] usb usb3: Manufacturer: Linux 5.4.0-48-generic vhci_hcd</span><br><span class="line">[711228.658222] usb usb3: SerialNumber: vhci_hcd.0</span><br><span class="line">[711228.658359] hub 3-0:1.0: USB hub found</span><br><span class="line">[711228.658363] hub 3-0:1.0: 8 ports detected</span><br><span class="line">[711228.658459] vhci_hcd vhci_hcd.0: USB&#x2F;IP Virtual Host Controller</span><br><span class="line">[711228.658460] vhci_hcd vhci_hcd.0: new USB bus registered, assigned bus number 4</span><br><span class="line">[711228.658477] usb usb4: We don&#39;t know the algorithms for LPM for this host, disabling LPM.</span><br><span class="line">[711228.658491] usb usb4: New USB device found, idVendor&#x3D;1d6b, idProduct&#x3D;0003, bcdDevice&#x3D; 5.04</span><br><span class="line">[711228.658491] usb usb4: New USB device strings: Mfr&#x3D;3, Product&#x3D;2, SerialNumber&#x3D;1</span><br><span class="line">[711228.658492] usb usb4: Product: USB&#x2F;IP Virtual Host Controller</span><br><span class="line">[711228.658493] usb usb4: Manufacturer: Linux 5.4.0-48-generic vhci_hcd</span><br><span class="line">[711228.658493] usb usb4: SerialNumber: vhci_hcd.0</span><br><span class="line">[711228.658595] hub 4-0:1.0: USB hub found</span><br><span class="line">[711228.658599] hub 4-0:1.0: 8 ports detected</span><br><span class="line">[711574.023109] usbcore: registered new device driver usbip-host</span><br><span class="line">[711696.394509] vhci_hcd vhci_hcd.0: pdev(0) rhport(0) sockfd(3)</span><br><span class="line">[711696.394510] vhci_hcd vhci_hcd.0: devid(65602) speed(3) speed_str(high-speed)</span><br><span class="line">[711696.629478] usb 3-1: new high-speed USB device number 2 using vhci_hcd</span><br><span class="line">[711696.769483] usb 3-1: SetAddress Request (2) to port 0</span><br><span class="line">[711696.837940] usb 3-1: New USB device found, idVendor&#x3D;2c7c, idProduct&#x3D;0125, bcdDevice&#x3D; 3.18</span><br><span class="line">[711696.837947] usb 3-1: New USB device strings: Mfr&#x3D;1, Product&#x3D;2, SerialNumber&#x3D;0</span><br><span class="line">[711696.837950] usb 3-1: Product: Android</span><br><span class="line">[711696.837953] usb 3-1: Manufacturer: Android</span><br><span class="line">[711696.962058] usbcore: registered new interface driver usbserial_generic</span><br><span class="line">[711696.962063] usbserial: USB Serial support registered for generic</span><br><span class="line">[711697.126640] usbcore: registered new interface driver option</span><br><span class="line">[711697.126647] usbserial: USB Serial support registered for GSM modem (1-port)</span><br><span class="line">[711697.126694] option 3-1:1.0: GSM modem (1-port) converter detected</span><br><span class="line">[711697.126788] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB0</span><br><span class="line">[711697.126810] option 3-1:1.1: GSM modem (1-port) converter detected</span><br><span class="line">[711697.126869] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB1</span><br><span class="line">[711697.126889] option 3-1:1.2: GSM modem (1-port) converter detected</span><br><span class="line">[711697.126917] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB2</span><br><span class="line">[711697.126935] option 3-1:1.3: GSM modem (1-port) converter detected</span><br><span class="line">[711697.126961] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB3</span><br><span class="line">[711697.126990] option 3-1:1.5: GSM modem (1-port) converter detected</span><br><span class="line">[711697.127014] option 3-1:1.6: GSM modem (1-port) converter detected</span><br><span class="line">[711697.127035] option 3-1:1.7: GSM modem (1-port) converter detected</span><br><span class="line">[711697.135638] usbcore: registered new interface driver cdc_wdm</span><br><span class="line">[711697.169606] qmi_wwan 3-1:1.4: cdc-wdm1: USB WDM device</span><br><span class="line">[711697.174201] qmi_wwan 3-1:1.4 wwan0: register &#39;qmi_wwan&#39; at usb-vhci_hcd.0-1, WWAN&#x2F;QMI device, 2e:07:fd:3d:7e:a5</span><br><span class="line">[711697.174241] usbcore: registered new interface driver qmi_wwan</span><br><span class="line">[711697.351729] mc: Linux media interface: v0.10</span><br><span class="line">[711697.413620] usbcore: registered new interface driver snd-usb-audio</span><br><span class="line">[711699.152259] vhci_hcd: unlink-&gt;seqnum 51</span><br><span class="line">[711699.152260] vhci_hcd: urb-&gt;status -104</span><br><span class="line">[711699.264750] vhci_hcd: unlink-&gt;seqnum 62</span><br><span class="line">[711699.264752] vhci_hcd: urb-&gt;status -104</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="进程绑定CPU"><a href="#进程绑定CPU" class="headerlink" title="进程绑定CPU"></a>进程绑定CPU</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/guotianqing/article/details/80958281">linux下把进程/线程绑定到特定cpu核上运行</a></p>
+<p>CPU Core</p>
+<pre><code>cat /proc/cpuinfo | grep &quot;physical id&quot; | sort | uniq | wc -l
+</code></pre>
+<p>查看进程绑定在哪个CPU</p>
+<pre><code>taskset -cp 进程PID
+</code></pre>
+<p>绑定进程到CPU</p>
+<pre><code>taskset -cp cpu核序号 进程PID
+</code></pre>
+<h2 id="swap-分区"><a href="#swap-分区" class="headerlink" title="swap 分区"></a>swap 分区</h2><p>swap 在windows PC上也有这个功能，就是把硬盘的一部分空间当作内存使用，用来应付内存不足的情况。</p>
+<p>该区域也不宜设置过大，否则OS就不会节约使用内存。</p>
+<p>/etc/fstab</p>
+<p>磁盘被手动挂载之后都必须把挂载信息写入/etc/fstab这个文件中，否则下次开机启动时仍然需要重新挂载。<br>系统开机时会主动读取/etc/fstab这个文件中的内容，根据文件里面的配置挂载磁盘。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/kepa520/article/details/81315430">https://blog.csdn.net/kepa520/article/details/81315430</a></p>
+<h2 id="strace"><a href="#strace" class="headerlink" title="strace"></a>strace</h2><p>原理是跟踪进程和信号的系统调用</p>
+<pre><code>strace cat /dev/null
+
+execve(&quot;/usr/bin/cat&quot;, [&quot;cat&quot;, &quot;/dev/null&quot;], 0x7ffe960fe6b8 /* 26 vars */) = 0
+brk(NULL)                               = 0x55f11ab99000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffebb813ff0) = -1 EINVAL (无效的参数)
+access(&quot;/etc/ld.so.preload&quot;, R_OK)      = -1 ENOENT (没有那个文件或目录)
+...
+
+
+strace -tt -T -v -f -e trace=file -o /data/log/strace.log -s 1024 -p 23489
+</code></pre>
+<ul>
+<li>-tt 在每行输出的前面，显示毫秒级别的时间</li>
+<li>-T 显示每次系统调用所花费的时间</li>
+<li>-v 对于某些相关调用，把完整的环境变量，文件stat结构等打出来。</li>
+<li>-f 跟踪目标进程，以及目标进程创建的所有子进程</li>
+<li>-e 控制要跟踪的事件和跟踪行为,比如指定要跟踪的系统调用名称</li>
+<li>-o 把strace的输出单独写到指定的文件</li>
+<li>-s 当系统调用的某个参数是字符串时，最多输出指定长度的内容，默认是32个字节</li>
+<li>-p 指定要跟踪的进程pid, 要同时跟踪多个pid, 重复多次-p选项即可。</li>
+</ul>
+<p>跟踪nginx, 看其启动时都访问了哪些文件</p>
+<pre><code>strace -tt -T -f -e trace=file -o /data/log/strace.log -s 1024 ./nginx
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cs729298/article/details/81906375">strace命令用法</a></p>
+<p>strace也不是真正的万能。当目标进程卡死在用户态时，strace就没有输出了。</p>
+<p>这个时候我们需要其他的跟踪手段，比如gdb/perf/SystemTap等。</p>
+<p>备注：</p>
+<pre><code>1、perf原因kernel支持
+
+2、ftrace  kernel支持可编程
+
+3、systemtap 功能强大，RedHat系统支持，对用户态，内核态逻辑都能探查，使用范围更广
+</code></pre>
+<h2 id="dmesg-的ring-buffer"><a href="#dmesg-的ring-buffer" class="headerlink" title="dmesg 的ring buffer"></a>dmesg 的ring buffer</h2><p>dmesg -s 指定唤醒缓冲器大小</p>
+<h2 id="ps-top-查看进程运行在哪个cpu上"><a href="#ps-top-查看进程运行在哪个cpu上" class="headerlink" title="ps top 查看进程运行在哪个cpu上"></a>ps top 查看进程运行在哪个cpu上</h2><pre><code>ps -eo pid,args,psr
+
+psr 
+
+ps -o pid,psr,comm -p &lt;pid&gt;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/snooker/p/10942566.html">判断Linux进程在哪个CPU核运行的方法</a></p>
+<h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><p>TTL<br></p>
+<p>当我们在使用 ping 命令时，返回结果里会带一个 TTL 值。这个东西的含义其实就是Time To Live，指的是报文在网络中能够存活的限制。以前这个限制方式是设定一个时间（Time To Live中的Time就是这样来的），当报文在网络中转发时，时间超过这个限制，最后一个收到报文的路由点就会把它扔掉，而不继续转发。后来把时间限制改为了跳数限制，就是当报文在网络中转发时，每经过一个路由点，就把预先设定的这个TTL数值减 1，直到最后 TTL=1 时报文就被扔掉，不向下转发。</p>
+<p>路由点：我这里是指完成路由功能的机器，因为并不是只有路由器才可以完成路由转发功能，比如主机可以配置路由转发。</p>
+<p>所以，回包中的 TTL 表示目标主机返回的报文到达本机后，从它预设的 TTL 值减小到现在的值。<br><br></p>
+<p>临时开启 ping。</p>
+<pre><code>echo 0 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all
+</code></pre>
+<p>临时禁用 ping。</p>
+<pre><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all 
+</code></pre>
+<h2 id="epoll和-proc"><a href="#epoll和-proc" class="headerlink" title="epoll和/proc"></a>epoll和/proc</h2><p>当创建好epoll句柄后，它就是会占用一个fd值，在linux下如果查看/proc/进程id/fd/，是能够看到这个fd的，所以在使用完epoll后，必须调用close()关闭，否则可能导致fd被耗尽。</p>
+<p>epoll创建的fd是：</p>
+<pre><code>lrwx------ 1 root root 64 Aug 20 11:04 3 -&gt; anon_inode:[eventpoll]
+</code></pre>
+<p>这种类型的inode，是epoll创建的。</p>
+<pre><code>lrwx------ 1 root root 64 Aug 20 11:04 4 -&gt; socket:[1126425]
+</code></pre>
+<br>
+在相应进程的/proc/$pid/fd 目录下存放了此进程所有打开的fd
+<br>
+
+<pre><code>lrwx------ 1 root root 64 Nov 21 09:44 133 -&gt; /dev/sda1
+lrwx------ 1 root root 64 Nov 21 09:44 134 -&gt; /dev/sdb1
+lrwx------ 1 root root 64 Nov 21 09:44 136 -&gt; /dev/sdb1
+lrwx------ 1 root root 64 Nov 21 09:44 137 -&gt; socket:[22460]
+lrwx------ 1 root root 64 Nov 21 09:44 138 -&gt; socket:[7326842]
+lrwx------ 1 root root 64 Nov 21 09:44 139 -&gt; socket:[7341066]
+</code></pre>
+<p>socket:后面的一串数字是什么呢？<br><br>其实是该socket的inode号<br><br></p>
+<h2 id="设备树"><a href="#设备树" class="headerlink" title="设备树"></a>设备树</h2><p>alias 别名</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_16777851/article/details/87291146">dts学习</a></p>
+<h2 id="vfork"><a href="#vfork" class="headerlink" title="vfork"></a>vfork</h2><p>vfork 创建的子进程执行的时候，父进程睡眠，子进程退出后，父进程才继续执行。并且父子进程使用的资源是同一块。</p>
+<h2 id="git-同时传到两个仓库"><a href="#git-同时传到两个仓库" class="headerlink" title="git 同时传到两个仓库"></a>git 同时传到两个仓库</h2><p>git remote set-url –add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;&#46;&#103;&#x69;&#116;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;&#46;&#103;&#x69;&#116;</a></p>
+<h2 id="使用qemu搭建arm嵌入式linux开发环境"><a href="#使用qemu搭建arm嵌入式linux开发环境" class="headerlink" title="使用qemu搭建arm嵌入式linux开发环境"></a>使用qemu搭建arm嵌入式linux开发环境</h2><p>在arm开发板上成功运行Linux系统，我们有如下三个方面的任务：</p>
+<pre><code>制作bootloader；
+编译linux内核、linux内核模块、linux设备树；
+制作根文件系统。
+</code></pre>
+<p>我们使用qemu虚拟机来上手嵌入式linux的开发。</p>
+<p>###安装qemu与arm交叉编译工具</p>
+<p>略</p>
+<p>###Linux内核与设备树编译</p>
+<p>下载Linux内核：<a target="_blank" rel="noopener" href="https://www.kernel.org/">https://www.kernel.org/</a></p>
+<p>git clone <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/git/linux.git">https://mirrors.tuna.tsinghua.edu.cn/git/linux.git</a></p>
+<p><a target="_blank" rel="noopener" href="https://mirror.bjtu.edu.cn/kernel/linux/kernel/">https://mirror.bjtu.edu.cn/kernel/linux/kernel/</a></p>
+<p>make vexpress_defconfig</p>
+<p>make zImage </p>
+<p>make modules</p>
+<p>make dtbs</p>
+<p>得到zImage、dtb</p>
+<p>尝试启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-arm -M vexpress-a9 -m 512M -kernel arch&#x2F;arm&#x2F;boot&#x2F;zImage -dtb arch&#x2F;arm&#x2F;boot&#x2F;dts&#x2F;vexpress-v2p-ca9.dtb -nographic -append &quot;console&#x3D;ttyAMA0&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>看到</p>
+<figure class="highlight plain"><figcaption><span>log</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rtc-pl031 10017000.rtc: setting system clock to 2020-11-02 09:39:39 UTC (1604309979)</span><br><span class="line">ALSA device list:</span><br><span class="line">  #0: ARM AC&#39;97 Interface PL041 rev0 at 0x10004000, irq 33</span><br><span class="line">input: ImExPS&#x2F;2 Generic Explorer Mouse as &#x2F;devices&#x2F;platform&#x2F;smb&#x2F;smb:motherboard&#x2F;smb:motherboard:iofpga@7,00000000&#x2F;10007000.kmi&#x2F;serio1&#x2F;input&#x2F;input2</span><br><span class="line">VFS: Cannot open root device &quot;(null)&quot; or unknown-block(0,0): error -6</span><br><span class="line">Please append a correct &quot;root&#x3D;&quot; boot option; here are the available partitions:</span><br><span class="line">1f00          131072 mtdblock0  (driver?)</span><br><span class="line">1f01           32768 mtdblock1  (driver?)</span><br><span class="line">Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)</span><br><span class="line">CPU: 0 PID: 1 Comm: swapper&#x2F;0 Not tainted 4.4.99 #1</span><br><span class="line">Hardware name: ARM-Versatile Express</span><br><span class="line">[&lt;80016454&gt;] (unwind_backtrace) from [&lt;80012ee0&gt;] (show_stack+0x10&#x2F;0x14)</span><br><span class="line">[&lt;80012ee0&gt;] (show_stack) from [&lt;80243aac&gt;] (dump_stack+0x94&#x2F;0xa8)</span><br><span class="line">[&lt;80243aac&gt;] (dump_stack) from [&lt;800a5638&gt;] (panic+0x9c&#x2F;0x200)</span><br><span class="line">[&lt;800a5638&gt;] (panic) from [&lt;8062f250&gt;] (mount_block_root+0x1c0&#x2F;0x25c)</span><br><span class="line">[&lt;8062f250&gt;] (mount_block_root) from [&lt;8062f408&gt;] (mount_root+0x11c&#x2F;0x124)</span><br><span class="line">[&lt;8062f408&gt;] (mount_root) from [&lt;8062f568&gt;] (prepare_namespace+0x158&#x2F;0x1a0)</span><br><span class="line">[&lt;8062f568&gt;] (prepare_namespace) from [&lt;8062eeec&gt;] (kernel_init_freeable+0x268&#x2F;0x278)</span><br><span class="line">[&lt;8062eeec&gt;] (kernel_init_freeable) from [&lt;804a440c&gt;] (kernel_init+0x8&#x2F;0xe8)</span><br><span class="line">[&lt;804a440c&gt;] (kernel_init) from [&lt;8000f4f8&gt;] (ret_from_fork+0x14&#x2F;0x3c)</span><br><span class="line">---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)</span><br></pre></td></tr></table></figure>
+
+<p>###busybox</p>
+<pre><code>https://busybox.net/downloads/
+
+编译生成一个 __install 文件夹
+</code></pre>
+<p>###制作根文件系统</p>
+<p>mkdir rootfs</p>
+<p>将_install 目录里的内容拷贝到rootfs目录中</p>
+<p>新建目录 mkdir lib</p>
+<p>将arm交叉编译器的库复制过来：cp -r /usr/arm-linux-gnueabi/lib/* lib/</p>
+<p>在rootfs目录下新建目录mkdir dev/，进入该目录cd dev/，创建节点sudo mknod -m 666 tty1 c 4 1（串口字符设备，主设备号为4，从设备号为1）</p>
+<p>重复创建多个串口设备，注意分配好从设备号：</p>
+<p>创建一个控制台节点：mknod -m 666 console c 5 1</p>
+<p>创建一个空节点：mknod -m 666 null c 1 3</p>
+<p>回到home目录，输入命令dd if=/dev/zero of=rootfs.ext3 bs=1M count=32生成虚拟SD卡系统镜像，可以得到一个rootfs.ext3文件。<br>格式化该镜像：mkfs.ext3 rootfs.ext3<br>挂载该镜像到本地：mount -t ext3 rootfs.ext3 /mnt -o loop</p>
+<p>将之前准备的rootfs目录下的所有文件都拷贝到该镜像挂载点：cp -r /home/zvcv/rootfs/* /mnt/</p>
+<p>卸载：umount /mnt/<br>进入linux源码目录： cd linux/</p>
+<p>使用qemu启动内核：qemu-system-arm -M vexpress-a9 -m 512M -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append “root=/dev/mmcblk0 rw console=ttyAMA0” -sd /home/zvcv/rootfs.ext3，这里比之前多指定了一个sd镜像。</p>
+<p>点击回车，进入命令行，linux启动完毕。</p>
+<p><strong>我遇到了无法启动，原因是内核编译选项选的是ext4 ，所以格式化的时候选mkfs.ext4</strong></p>
+<p>###uboot</p>
+<p><a target="_blank" rel="noopener" href="https://ftp.denx.de/pub/u-boot/">https://ftp.denx.de/pub/u-boot/</a></p>
+<p>不要用最新版本</p>
+<p>scripts/kconfig/conf  –syncconfig Kconfig<br>  UPD     include/config.h<br>  GEN     include/autoconf.mk.dep<br>  CFG     u-boot.cfg<br>  GEN     include/autoconf.mk<br>  UPD     include/generated/dt.h<br>  UPD     include/generated/timestamp_autogenerated.h<br>  UPD     include/config/uboot.release<br>*** Your GCC is older than 6.0 and is not supported<br>arch/arm/config.mk:66: recipe for target ‘checkgcc6’ failed<br>make: *** [checkgcc6] Error 1</p>
+<p>我的arm-linux-gnuebi-gcc 是5.5</p>
+<p>换2015年的uboot才能build pass</p>
+<p>###NFS</p>
+<blockquote>
+<p>   sudo apt-get install uml-utilities bridge-utils</p>
+</blockquote>
+<blockquote>
+<p>cd linux-4.4.232/</p>
+</blockquote>
+<blockquote>
+<p>make LOADADDR=0x60003000 uImage -j4</p>
+</blockquote>
+<p>mkimage command not found  U-Boot images will not be built —&gt;</p>
+<p><strong>sudo apt-get install u-boot-tools</strong> </p>
+<blockquote>
+<p>sudo apt-get install tftp-hpa tftpd-hpa xinetd</p>
+</blockquote>
+<p>u-boot 要能加载uImage，需要修改</p>
+<p>默认的bootcmd，变成tftp加载tftp server上的uImage</p>
+<p>vim include/configs/vexpress_common.h</p>
+<p>注释默认的 CONFIG_BOOTCOMMAND</p>
+<p>添加 </p>
+<p>#define CONFIG_BOOTCOMMAND  “tftp 0x60003000 uImage; setenv bootargs’root=/dev/mmcblk0 console=ttyAMA0’; bootm 0x60003000”</p>
+<p>另外一个说法是</p>
+<p>#define CONFIG_BOOTCOMMAND  “tftp 0x60003000 uImage; tftp 0x60500000 vexpress-v2p-ca9.dtb; setenv bootargs ‘root=/dev/mmcblk0 console=ttyAMA0’; bootm 0x60003000 - 0x60500000”</p>
+<p>可以配置IP和netmask</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#define CONFIG_IPADDR   192.168.1.49</span><br><span class="line">#define CONFIG_NETMASK  255.255.255.0</span><br><span class="line">#define CONFIG_SERVERIP 192.168.1.88</span><br></pre></td></tr></table></figure>
+
+<p>在Quectel的台式机虚拟机里的桥接网卡，实际配置成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#define CONFIG_IPADDR   192.168.1.49</span><br><span class="line">#define CONFIG_NETMASK  255.255.254.0</span><br><span class="line">#define CONFIG_SERVERIP 10.66.83.84</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="How-to-Create-a-Deamon-Service"><a href="#How-to-Create-a-Deamon-Service" class="headerlink" title="How to Create a Deamon Service"></a>How to Create a Deamon Service</h2><h2 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h2><p>From</p>
+<p><a target="_blank" rel="noopener" href="https://linoxide.com/linux-how-to/linux-signals-part-1/">https://linoxide.com/linux-how-to/linux-signals-part-1</a></p>
+<p><a target="_blank" rel="noopener" href="https://linoxide.com/linux-how-to/linux-kill-command-examples/">https://linoxide.com/linux-how-to/linux-kill-command-examples/</a></p>
+<p>Signals in Linux is a very important concept to understand. This is because signals are used in some of the common activities that you do through Linux command line. For example, whenever you press <code>Ctrl+c</code> to terminate an executing command from command line, you use signals.</p>
+<p>Whenever you use ‘kill -9 [pid]’ to kill a process, you use signals. So, it is very useful to know at least the basics of signals and that is exactly what we will discuss in this tutorial.</p>
+<p>A signal is nothing but a way of communicating a message from one process to another. These messages are popularly known as notifications which the receiving process is free to process, ignore or leave it up to the OS to take default action (more on these options later). A notification sent by the sender process to the receiving process can be of various types. For example, a notification can be to kill the receiving process or let it know that it has accessed an invalid memory area or it can be a notification of the availability of a resource (that was busy earlier) etc. So, you can see that signals are nothing but just another way of IPC (inter Process Communication).</p>
+<p>Signals are important, in-fact very important because they drive some of the most popular programming and system administration activities. </p>
+<p>For example, let’s take the example of a debugger. Most of the programmers use a debugger to debug their program code while it is executing. If you would have ever used a debugger, you would know that breakpoints are used to halt the execution of a program at specified lines of code.</p>
+<p>What makes a program aware that a breakpoint has been hit and it needs to halt the execution? </p>
+<p>Yes, it is a signal (SIGSTOP) that is sent to the program in this case. And when the user is done with debugging, a signal (SIGCONT) is sent to the program – after which the program continues the execution.</p>
+<p>###Different Types Of Signals</p>
+<pre><code>root@m:/# kill -l
+
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+</code></pre>
+<p>###Difference between SIGTERM, SIGKILL, SIGINT, SIGQUIT</p>
+<p>SIGQUIT</p>
+<p>On POSIX-compliant platforms, SIGQUIT is the signal sent to a process by its controlling terminal when the user requests that the process perform a core dump. SIGQUIT can usually be induced with Control-. On Linux, one may also use Ctrl-4 or, on the virtual console, the SysRq key.</p>
+<p>SIGTERM<br>SIGTERM is the default signal sent to a process by the kill or killall commands. It causes the termination of a process, but unlike the SIGKILL signal, it can be caught and interpreted (or ignored) by the process. Therefore, SIGTERM is akin to asking a process to terminate nicely, allowing cleanup and closure of files. For this reason, on many Unix systems during shutdown, init issues SIGTERM to all processes that are not essential to powering off, waits a few seconds, and then issues SIGKILL to forcibly terminate any such processes that remain.</p>
+<p>SIGINT</p>
+<p>On POSIX-compliant platforms, SIGINT is the signal sent to a process by its controlling terminal when a user wishes to interrupt the process. SIGINT is sent when the user on the process’ controlling terminal presses the interrupt the running process key  typically Control-C, but on some systems, the “delete” character or “break” key.</p>
+<p>SIGKILL</p>
+<p>On POSIX-compliant platforms, SIGKILL is the signal sent to a process to cause it to terminate immediately. When sent to a program, SIGKILL causes it to terminate immediately. In contrast to SIGTERM and SIGINT, this signal cannot be caught or ignored, and the receiving process cannot perform any clean-up upon receiving this signal.</p>
+<p>How a Program Handles Signals?<br>A program can handle signals in the following three ways:</p>
+<p>A program may provide its own signal handler for handling a particular signal - This is especially important in those cases where a program has to perform some tasks (for example - memory clean-up activities) in response to the received signal. A signal handler is nothing but a function defined in the program code that gets executed automatically (actually it gets triggered by the OS kernel) when a signal is received by the program.<br>A Program may do nothing on receipt of a signal - Every signal has a default action associated with it. In a scenario where a program just doesn’t care for a signal, the default action corresponding to that particular signal is taken by the OS kernel.<br>A program may choose to ignore a signal - In this situation, the signal (or set of signals) are blocked and are hence not delivered to the program. A program may choose to ignore signals which – the programmer thinks – are irrelevant to it.</p>
+<p>###Examples</p>
+<p><a target="_blank" rel="noopener" href="http://www.yolinux.com/TUTORIALS/C++Signals.html">http://www.yolinux.com/TUTORIALS/C++Signals.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;signal.h&gt;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F; Define the function to be called when ctrl-c (SIGINT) signal is sent to process</span><br><span class="line"></span><br><span class="line">void signal_callback_handler(int signum)</span><br><span class="line">&#123;</span><br><span class="line">   printf(&quot;Caught signal %d\n&quot;,signum);</span><br><span class="line">   &#x2F;&#x2F; Cleanup and close up stuff here</span><br><span class="line">   &#x2F;&#x2F; Terminate program</span><br><span class="line">   exit(signum);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   &#x2F;&#x2F; Register signal and signal handler</span><br><span class="line">   signal(SIGINT, signal_callback_handler);</span><br><span class="line">   while(1)</span><br><span class="line">   &#123;</span><br><span class="line">      printf(&quot;Program processing stuff here.\n&quot;);</span><br><span class="line">      sleep(1);</span><br><span class="line">   &#125;</span><br><span class="line">   return EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Wifi-adb"><a href="#Wifi-adb" class="headerlink" title="Wifi adb"></a>Wifi adb</h2><p>./adb connect 192.168.1.180:5555</p>
+<p>setprop service.adb.tcp.port 5555</p>
+<p>stop adbd<br>start adbd</p>
+<h2 id="pstree"><a href="#pstree" class="headerlink" title="pstree"></a>pstree</h2><p><img src="/images/pstree.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">pstree: unrecognized option &#39;--help&#39;</span><br><span class="line">用法：pstree [-acglpsStTuZ] [ -h | -H 进程号 ] [ -n | -N 类型 ]</span><br><span class="line">              [ -A | -G | -U ] [ 进程号 | 用户 ]</span><br><span class="line">  或：pstree -V</span><br><span class="line"></span><br><span class="line">显示进程树。</span><br><span class="line"></span><br><span class="line">  -a, --arguments     显示命令行参数</span><br><span class="line">  -A, --ascii         使用 ASCII 行绘制字符</span><br><span class="line">  -c, --compact-not   不要对完全相同的子树进行压缩</span><br><span class="line">  -C, --color&#x3D;类型    按照指定属性对进程上色</span><br><span class="line">                      (age)</span><br><span class="line">  -g, --show-pgids    显示进程组 ID；隐含启用 -c 选项</span><br><span class="line">  -G, --vt100         使用 VT100 行绘制字符</span><br><span class="line">  -h, --highlight-all 高亮显示当前进程和其所有祖先</span><br><span class="line">  -H PID, --highlight-pid&#x3D;PID</span><br><span class="line">                      高亮显示指定 PID 对应的进程和其所有祖先</span><br><span class="line">  -l, --long          不要截断长行</span><br><span class="line">  -n, --numeric-sort  按照 PID 对输出进行排序</span><br><span class="line">  -N 类型, --ns-sort&#x3D;类型</span><br><span class="line">                      按照指定命名空间类型对输出进行排序</span><br><span class="line">                              (cgroup, ipc, mnt, net, pid, user, uts)</span><br><span class="line">  -p, --show-pids     显示 PID；隐含启用 -c 选项</span><br><span class="line">  -s, --show-parents  显示所选进程的父进程</span><br><span class="line">  -S, --ns-changes    显示命名空间的变化</span><br><span class="line">  -t, --thread-names  显示完整线程名称</span><br><span class="line">  -T, --hide-threads  隐藏线程，只显示进程</span><br><span class="line">  -u, --uid-changes   显示用户 ID（UID）的变化</span><br><span class="line">  -U, --unicode       使用 UTF-8（Unicode）的行绘制字符</span><br><span class="line">  -V, --version       显示版本信息</span><br><span class="line">  -Z, --security-context</span><br><span class="line">                      显示 SELinux 安全上下文</span><br><span class="line"></span><br><span class="line">  进程号 从指定进程号开始；默认为 1（init）</span><br><span class="line">  用户   仅显示从指定用户的进程开始的进程树</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="pidof"><a href="#pidof" class="headerlink" title="pidof"></a>pidof</h2><p>root@m:/usr/src/linux-headers-5.4.0-26-generic/include# ps -a<br>    PID TTY          TIME CMD<br>   2097 pts/0    00:00:00 sudo<br>   2948 pts/1    00:00:00 bash<br>   2969 pts/0    00:00:00 tmux: client<br>  45805 pts/9    00:00:00 ps<br>root@m:/usr/src/linux-headers-5.4.0-26-generic/include# pidof tmux<br>2971 2969</p>
+<h2 id="chroot"><a href="#chroot" class="headerlink" title="chroot"></a>chroot</h2><p>命令用于改变根目录</p>
+<h2 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h2><p>xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。</p>
+<p>somecommand |xargs -item  command</p>
+<p>-a file 从文件中读入作为sdtin<br>-e flag ，注意有的时候可能会是-E，flag必须是一个以空格分隔的标志，当xargs分析到含有flag这个标志的时候就停止。<br>-p 当每次执行一个argument的时候询问一次用户。<br>-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的。<br>-t 表示先打印命令，然后再执行。<br>-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给 {}，可以用 {} 代替。<br>-r no-run-if-empty 当xargs的输入为空的时候则停止xargs，不用再去执行了。<br>-s num 命令行的最大字符数，指的是 xargs 后面那个命令的最大命令行字符数。<br>-L num 从标准输入一次读取 num 行送给 command 命令。<br>-l 同 -L。<br>-d delim 分隔符，默认的xargs分隔符是回车，argument的分隔符是空格，这里修改的是xargs的分隔符。<br>-x exit的意思，主要是配合-s使用。。<br>-P 修改最大的进程数，默认是1，为0时候为as many as it can ，这个例子我没有想到，应该平时都用不到的吧。</p>
+<h2 id="VIM-r"><a href="#VIM-r" class="headerlink" title="VIM r"></a>VIM r</h2><p>:r<br>可以把其他文本文件内容插入到当前文件中</p>
+<h2 id="列出ubuntu上所有的服务"><a href="#列出ubuntu上所有的服务" class="headerlink" title="列出ubuntu上所有的服务"></a>列出ubuntu上所有的服务</h2><p>systemctl list-units –all –type=service</p>
+<h2 id="将当前文件中除了src目录全部移动到src目录"><a href="#将当前文件中除了src目录全部移动到src目录" class="headerlink" title="将当前文件中除了src目录全部移动到src目录"></a>将当前文件中除了src目录全部移动到src目录</h2><pre><code>mv `ls | grep -v src | xargs` src
+</code></pre>
+<p>xargs 将ls 的结果作为一行</p>
+<p>grep -v 反向</p>
+<pre><code>mv `(ls | grep -v &#39;example[12]&#39; | xargs)` example1
+
+将除了 example1和example2剩下的所有文件全部移动到example1中去
+</code></pre>
+<h2 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h2><p>不挂断地运行命令</p>
+<p>nohup cmd &amp;</p>
+<p>当前shell关闭后，会将该进程的父进程指向init（PID 1）</p>
+<h2 id="TC"><a href="#TC" class="headerlink" title="TC"></a>TC</h2><p>show / manipulate traffic control settings</p>
+<pre><code>Usage:  tc [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;
+        tc [-force] -batch filename
+where  OBJECT := &#123; qdisc | class | filter | chain |
+                    action | monitor | exec &#125;
+       OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[aw] |
+                    -o[neline] | -j[son] | -p[retty] | -c[olor]
+                    -b[atch] [filename] | -n[etns] name | -N[umeric] |
+                     -nm | -nam[es] | &#123; -cf | -conf &#125; path &#125;
+</code></pre>
+<p>详细参考 man tc</p>
+<p>将 eth0 网卡的传输设置为延迟100毫秒发送。</p>
+<pre><code>$ tc  qdisc  add  dev  eth0  root  netem  delay  100ms  
+</code></pre>
+<p>延迟值不会这么精确，会有一定的波动，下面命令模拟带有波动性的延迟值：</p>
+<pre><code>$ tc  qdisc  add  dev  eth0  root  netem  delay  100ms  10ms
+
+root@m:/home/m/Smart210# tc  qdisc
+qdisc noqueue 0: dev lo root refcnt 2
+qdisc fq_codel 0: dev eth0 root refcnt 2 limit 10240p flows 1024 quantum 1514 target 5.0ms interval 100.0ms memory_limit 32Mb ecn
+qdisc netem 8001: dev wlan0 root refcnt 2 limit 1000 delay 100.0ms
+qdisc noqueue 0: dev docker0 root refcnt 2
+</code></pre>
+<p>模拟网络丢包</p>
+<p>将 eth0 网卡的传输设置为随机丢掉 1% 的数据包。</p>
+<pre><code> $ tc  qdisc  add  dev  eth0  root  netem  loss  1%  
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Hh20161314/article/details/81408037">linux下的tc工具使用</a></p>
+<p>模拟数据包损坏\模拟数据包乱序\</p>
+<p>设置延时</p>
+<pre><code>$ sudo tc qdisc add dev eth0 root netem delay 4s
+</code></pre>
+<p>取消延时</p>
+<pre><code>$ sudo tc qdisc del dev eth0 root netem delay 4s
+</code></pre>
+<p>配合iptables 使用</p>
+<h2 id="根据commit-id生成patch"><a href="#根据commit-id生成patch" class="headerlink" title="根据commit id生成patch"></a>根据commit id生成patch</h2><p>git format-patch -1 d9a64c74ff0244b96a44fa27abcdc411d29f487</p>
+<h2 id="vim-批量tab"><a href="#vim-批量tab" class="headerlink" title="vim 批量tab"></a>vim 批量tab</h2><p>shift+V 选中</p>
+<p>shift+&gt; </p>
+<h2 id="openwrt安装ipk"><a href="#openwrt安装ipk" class="headerlink" title="openwrt安装ipk"></a>openwrt安装ipk</h2><p>ssh连接路由命令安装<br>或者用ssh软件PuTTY连接路由器</p>
+<pre><code>opkg update
+opkg install 软件包网址
+</code></pre>
+<p>或者用winscp连接路由 然后上传包到/tmp/下</p>
+<pre><code>opkg update
+opkg install /tmp/xxx.ipk
+</code></pre>
+<h2 id="du和df"><a href="#du和df" class="headerlink" title="du和df"></a>du和df</h2><pre><code>q@q-K501LB:~/Khadas$ du -d 1 -h Android_P/
+6.5G    Android_P/external
+350M    Android_P/toolchain
+1.6G    Android_P/tools
+22G     Android_P/prebuilts
+144G    Android_P/.repo
+84M     Android_P/libcore
+912K    Android_P/pdk
+329M    Android_P/bootloader
+31M     Android_P/sdk
+811M    Android_P/common
+3.3M    Android_P/compatibility
+5.8M    Android_P/platform_testing
+124M    Android_P/test
+14M     Android_P/build
+22M     Android_P/bootable
+34M     Android_P/bionic
+436M    Android_P/developers
+876K    Android_P/kernel
+1.7G    Android_P/vendor
+1.7G    Android_P/frameworks
+404K    Android_P/libnativehelper
+131M    Android_P/development
+167M    Android_P/device
+90M     Android_P/art
+553M    Android_P/hardware
+691M    Android_P/packages
+470M    Android_P/system
+779M    Android_P/cts
+80G     Android_P/out
+27M     Android_P/dalvik
+261G    Android_P/
+</code></pre>
+<p>-h 结尾以B K M G为单位，方便阅读。df 命令也一样，也有-h选项</p>
+<h2 id="bash-dash"><a href="#bash-dash" class="headerlink" title="bash dash"></a>bash dash</h2><pre><code>for i in &#123;1..7&#125;
+do
+        echo $i
+done
+</code></pre>
+<p>用bash 执行可以，但是dash 不行</p>
+<h2 id="git-删除分支"><a href="#git-删除分支" class="headerlink" title="git 删除分支"></a>git 删除分支</h2><p>现在在zh分支上，想删除zh分支</p>
+<pre><code>　　1 先切换到别的分支: git checkout master
+
+　　2 删除本地分支： git branch -d zh
+
+　　3 如果删除不了可以强制删除，git branch -D zh
+
+　　4 有必要的情况下，删除远程分支(慎用)：git push origin --delete zh
+</code></pre>
+<h2 id="git-如何merge-分支"><a href="#git-如何merge-分支" class="headerlink" title="git 如何merge 分支"></a>git 如何merge 分支</h2><p>xxx</p>
+<h2 id="expect-的用法"><a href="#expect-的用法" class="headerlink" title="expect 的用法"></a>expect 的用法</h2><p>当出现 username 的时候，自动输入 QuectelWB.</p>
+<p>自动ssh登录输入密码</p>
+<p>Shell 脚本如下</p>
+<pre><code>#!/usr/bin/expect
+
+spawn ssh m@10.66.125.234
+expect &quot;*password:&quot;
+send &quot;m\r&quot;
+expect &quot;*$&quot;
+interact
+</code></pre>
+<h2 id="find-的用法"><a href="#find-的用法" class="headerlink" title="find 的用法"></a>find 的用法</h2><p>查找/etc下的链接属性的文件，大小小于1kb的</p>
+<pre><code>find /etc -type l -o -size -1k
+</code></pre>
+<h2 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h2><p>修改文件所属组群chgrp</p>
+<p>修改文件所属组群很简单-chgrp命令，就是change group的缩写（我们可以利用这些来记忆命令）</p>
+<p>语法：</p>
+<pre><code>chgrp  组群  文件名/目录 
+</code></pre>
+<p>相比于chwon 更不常用</p>
+<h2 id="nslookup"><a href="#nslookup" class="headerlink" title="nslookup"></a>nslookup</h2><pre><code>android@q-OptiPlex-7070:~/IMX8_Android9$ nslookup www.baidu.com 8.8.8.8
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+Non-authoritative answer:
+www.baidu.com   canonical name = www.a.shifen.com.
+Name:   www.a.shifen.com
+Address: 14.215.177.39
+Name:   www.a.shifen.com
+Address: 14.215.177.38
+</code></pre>
+<p>:)</p>
+<h2 id="孤儿进程和僵尸进程"><a href="#孤儿进程和僵尸进程" class="headerlink" title="孤儿进程和僵尸进程"></a>孤儿进程和僵尸进程</h2><p><img src="/images/processes.png"></p>
+<p>TASK_UNINTERRUPTIBLE 的进程 在ps 的时候能看到标注为 D ，而TASK_INTERRUPTIBLE的进程处于 S状态。<br>D 状态的程序，譬如 vfork创建子进程后，父进程就是D状态。<br>D状态的进程，只能 重启操作系统或者等其资源满足后才能关闭。无法用信号操作kill掉。</p>
+<p>正常情况，子进程退出，会有SIGCHLD信号通知父进程。一个进程使用fork创建子进程，如果子进程退出，而父进程并没有调用wait或waitpid获取子进程的状态信息，那么子进程的进程描述符仍然保存在系统中。这种进程称之为僵死进程。</p>
+<p>孤儿进程：一个父进程退出，而它的一个或多个子进程还在运行，那么那些子进程将成为孤儿进程。孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作。</p>
+<p>pid_t wait(int *status);<br>pid_t waitpid(pid_t pid, int *status, int options);</p>
+<p>status</p>
+<pre><code>WIFEXITED(status)
+returns true if the child terminated normally, that is, by calling exit(3) or _exit(2), or by returning from main().
+WEXITSTATUS(status)
+returns the exit status of the child. This consists of the least significant 8 bits of the status argument that the child specified in a call to exit(3) or _exit(2) or as the argument for a return statement in main(). This macro should only be employed if WIFEXITED returned true.
+WIFSIGNALED(status)
+returns true if the child process was terminated by a signal.
+WTERMSIG(status)
+returns the number of the signal that caused the child process to terminate. This macro should only be employed if WIFSIGNALED returned true.
+WCOREDUMP(status)
+returns true if the child produced a core dump. This macro should only be employed if WIFSIGNALED returned true. This macro is not specified in POSIX.1-2001 and is not available on some UNIX implementations (e.g., AIX, SunOS). Only use this enclosed in #ifdef WCOREDUMP ... #endif.
+WIFSTOPPED(status)
+returns true if the child process was stopped by delivery of a signal; this is only possible if the call was done using WUNTRACED or when the child is being traced (see ptrace(2)).
+WSTOPSIG(status)
+returns the number of the signal which caused the child to stop. This macro should only be employed if WIFSTOPPED returned true.
+WIFCONTINUED(status)
+(since Linux 2.6.10) returns true if the child process was resumed by delivery of SIGCONT.
+</code></pre>
+<h2 id="WSL-服务自动启动的正确方法"><a href="#WSL-服务自动启动的正确方法" class="headerlink" title="WSL 服务自动启动的正确方法"></a>WSL 服务自动启动的正确方法</h2><p>wsl 支持后台运行</p>
+<p>在WSL中创建 /etc/init.wsl</p>
+<pre><code>#! /bin/sh
+/etc/init.d/cron $1
+/etc/init.d/ssh $1
+/etc/init.d/supervisor $1
+</code></pre>
+<p>WIN+R <br><br>shell:startup<br>创建Windows系统的启动脚本 debian.vbs</p>
+<pre><code>Set ws = CreateObject(&quot;Wscript.Shell&quot;)
+ws.run &quot;wsl -d debian -u root /etc/init.wsl start&quot;, vbhide
+</code></pre>
+<h2 id="WindowsTerminal"><a href="#WindowsTerminal" class="headerlink" title="WindowsTerminal"></a>WindowsTerminal</h2><p>支持多选项卡、窗格、Unicode、UTF-8和自定义标题、主题、自动补全，支持WSL、PowerShell。</p>
+<p><a target="_blank" rel="noopener" href="http://www.github.com/microsoft/terminal">www.github.com/microsoft/terminal</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/terminal/">https://docs.microsoft.com/zh-cn/windows/terminal/</a></p>
+<p>###默认快捷键</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Shift + Alt + +</td>
+<td>横向分屏</td>
+</tr>
+<tr>
+<td>Shift + Alt + -</td>
+<td>竖向分屏</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + w</td>
+<td>取消分屏/关闭当前标签页</td>
+</tr>
+<tr>
+<td>Alt + 方向键</td>
+<td>分屏间移动光标</td>
+</tr>
+<tr>
+<td>Alt + Shift + 方向键</td>
+<td>调整当前分屏区大小</td>
+</tr>
+</tbody></table>
+<p>###settings.json</p>
+<pre><code>// 全局设置
+&#123;
+    &quot;$schema&quot;: &quot;https://aka.ms/terminal-profiles-schema&quot;,
+
+    &quot;defaultProfile&quot;: &quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;, // 默认配置文件
+
+    &quot;disabledProfileSources&quot;: &quot;[]&quot;, // 禁用动态配置文件
+
+    &quot;theme&quot;: &quot;system&quot;, // 深色/浅色主题
+
+    &quot;alwaysShowTabs&quot;: true, // 始终显示选项卡
+
+    &quot;tabWidthMode&quot;: &quot;equal&quot;, // 选项卡宽度模式
+
+    &quot;confirmCloseAllTabs&quot;: true, // 隐藏关闭所有选项卡弹出窗口
+
+    &quot;startOnUserLogin&quot;: false, // 在计算机启动时启动
+
+    &quot;launchMode&quot;: &quot;default&quot;, // 启动大小（窗口）
+
+    &quot;initialPosition&quot;: &quot;,&quot;, // 启动位置（窗口）
+
+    &quot;initialCols&quot;: 120, // 首次启动时的列
+
+    &quot;initialRows&quot;: 30, // 首次启动时的行
+
+    &quot;showTabsInTitlebar&quot;: true, // 显示/隐藏标题栏
+
+    &quot;showTerminalTitleInTitlebar&quot;: true, // 设置标题栏中的文本
+
+    &quot;copyOnSelect&quot;: true, // 选择内容后复制
+
+    &quot;copyFormatting&quot;: true, // 复制格式
+
+    //&quot;wordDelimiters&quot;: &quot;/\()&quot;&#39;-:,.;&lt;&gt;~!@#$%^&amp;*|+=[]&#123;&#125;~?&quot;, // 字分隔符
+
+    &quot;rowsToScroll&quot;: &quot;system&quot;, // 滚动速度
+
+    &quot;snapToGridOnResize&quot;: true, // 窗口大小调整行为
+
+    &quot;experimental.rendering.forceFullRepaint&quot;: true, // 屏幕重绘
+
+    &quot;experimental.rendering.software&quot;: true, // 软件渲染
+
+    // 配置文件
+    &quot;profiles&quot;:
+    &#123;
+        // 适用所有配置文件的设置
+    &quot;defaults&quot;:
+    &#123;
+            &quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;, // 起始目录
+
+            &quot;icon&quot;: &quot;D:\\QuectelLogo.png&quot;, // 图标
+
+            &quot;tabTitle&quot;: &quot;BiaoNeverSurrender&quot;, // 自定义选项卡标题
+
+            &quot;suppressApplicationTitle&quot;: true, // 禁止shell更改标题
+
+            &quot;fontFace&quot;: &quot;Fira Code Retina&quot;, // 字体
+
+            &quot;fontSize&quot;: 12, // 字体大小
+
+            &quot;fontWeight&quot;: &quot;normal&quot;, // 字体粗细
+
+            &quot;padding&quot;: &quot;8, 8, 8, 8&quot;, // 填充（内容距离界面的内部距离）
+
+            &quot;antialiasingMode&quot;: &quot;cleartype&quot;, // 消除文本锯齿
+
+            &quot;cursorShape&quot;: &quot;bar&quot;, // 光标形状
+
+            &quot;cursorColor&quot;: &quot;#E6FF00&quot;, // 光标颜色
+
+            //&quot;cursorHeight&quot;: 25, // 光标高度（&quot;cursorShape&quot;设置为&quot;vintage&quot;时可用）
+
+            &quot;altGrAliasing&quot;: true, // AltGr别名
+
+            &quot;colorScheme&quot;: &quot;Ubuntu&quot;, // 配色方案
+
+            //&quot;selectionBackground&quot;: &quot;#0000e6&quot;, // 所选内容的背景色（选用&quot;colorScheme&quot;内的）
+
+            &quot;useAcrylic&quot;: true, // 启用 acrylic（毛玻璃特效）
+
+            &quot;acrylicOpacity&quot;: 0.9, // Acrylic 不透明度
+
+            &quot;backgroundImage&quot;: &quot;C:\\Users\\DustinWinFiles\\Pictures\\colorful.jpg&quot;, // 背景图像设置
+
+            &quot;backgroundImageStretchMode&quot;: &quot;uniformToFill&quot;, // 背景图像拉伸模式
+
+            &quot;backgroundImageAlignment&quot;: &quot;center&quot;, // 背景图像对齐
+
+            &quot;backgroundImageOpacity&quot;: 0.5, // 背景图像不透明度
+
+            &quot;scrollbarState&quot;: &quot;visible&quot;, // 滚动条可见性
+
+            &quot;snapOnInput&quot;: true, // 键入时滚动到输入行
+
+            &quot;historySize&quot;: 9001, // 历史记录大小
+
+            &quot;closeOnExit&quot;: &quot;graceful&quot;, // 退出时配置文件的关闭方式（输入exit退出命令窗口）
+
+            //&quot;experimental.retroTerminalEffect&quot;: false // 怀旧式终端效果
+
+            &quot;alwaysOnTop&quot;: true // 始终处于顶部模式
+    &#125;,
+
+        // 配置文件列表
+    &quot;list&quot;:
+    [
+        &#123;
+        &quot;guid&quot;: &quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;, // PowerShell唯一标识符
+
+        &quot;name&quot;: &quot;Windows PowerShell&quot;, // 名称
+
+        &quot;commandline&quot;: &quot;powershell.exe&quot;, // 命令行
+
+        &quot;hidden&quot;: false // 隐藏下拉列表中的某个配置文件
+        &#125;,
+        &#123;
+        &quot;guid&quot;: &quot;&#123;0caa0dad-35be-5f56-a8ff-afceeeaa6101&#125;&quot;, // CMD唯一标识符
+
+        &quot;name&quot;: &quot;命令提示符&quot;, // 名称
+
+        &quot;commandline&quot;: &quot;cmd.exe&quot;, // 命令行
+
+        &quot;hidden&quot;: false // 隐藏下拉列表中的某个配置文件
+        &#125;,
+        &#123;
+        &quot;guid&quot;: &quot;&#123;b453ae62-4e3d-5e58-b989-0a998ec441b8&#125;&quot;, // Azure Cloud Shell唯一标识符
+
+        &quot;hidden&quot;: true, // 隐藏下拉列表中的某个配置文件
+
+        &quot;name&quot;: &quot;Azure Cloud Shell&quot;, // 名称
+
+        &quot;source&quot;: &quot;Windows.Terminal.Azure&quot; // 源
+        &#125;,
+        &#123;
+        &quot;guid&quot;: &quot;&#123;07b52e3e-de2c-5db4-bd2d-ba144ed6c273&#125;&quot;,
+        &quot;hidden&quot;: false,
+        &quot;name&quot;: &quot;Ubuntu-20.04&quot;,
+        &quot;source&quot;: &quot;Windows.Terminal.Wsl&quot;
+        &#125;,
+        &#123;
+        &quot;guid&quot;: &quot;&#123;6f9994f0-4403-5e85-9cce-98e5da3839bb&#125;&quot;,
+        &quot;hidden&quot;: false,
+        &quot;name&quot;: &quot;Ubuntu-16.04&quot;,
+        &quot;source&quot;: &quot;Windows.Terminal.Wsl&quot;
+        &#125;
+    ]
+    &#125;,
+
+    // 主题（配色方案）
+    &quot;schemes&quot;: [
+        &#123;
+          &quot;name&quot;: &quot;Ubuntu&quot;,
+
+          &quot;black&quot;: &quot;#2e3436&quot;,
+
+          &quot;red&quot;: &quot;#cc0000&quot;,
+
+          &quot;green&quot;: &quot;#4e9a06&quot;,
+
+          &quot;yellow&quot;: &quot;#c4a000&quot;,
+
+          &quot;blue&quot;: &quot;#3465a4&quot;,
+
+          &quot;purple&quot;: &quot;#75507b&quot;,
+
+          &quot;cyan&quot;: &quot;#06989a&quot;,
+
+          &quot;white&quot;: &quot;#d3d7cf&quot;,
+
+          &quot;brightBlack&quot;: &quot;#555753&quot;,
+
+          &quot;brightRed&quot;: &quot;#ef2929&quot;,
+
+          &quot;brightGreen&quot;: &quot;#8ae234&quot;,
+
+          &quot;brightYellow&quot;: &quot;#fce94f&quot;,
+
+          &quot;brightBlue&quot;: &quot;#729fcf&quot;,
+
+          &quot;brightPurple&quot;: &quot;#ad7fa8&quot;,
+
+          &quot;brightCyan&quot;: &quot;#34e2e2&quot;,
+
+          &quot;brightWhite&quot;: &quot;#eeeeec&quot;,
+
+          &quot;background&quot;: &quot;#300a24&quot;, // 背景色
+
+          &quot;foreground&quot;: &quot;#eeeeec&quot; // 前景色
+        &#125;
+    ],
+
+    // 按键绑定
+    &quot;keybindings&quot;:
+    [
+        &#123; &quot;command&quot;: &quot;closeWindow&quot;, &quot;keys&quot;: &quot;alt+f4&quot; &#125;, // 关闭窗口
+
+        &#123; &quot;command&quot;: &quot;find&quot;, &quot;keys&quot;: &quot;ctrl+shift+f&quot; &#125;, // 查找
+
+        &#123; &quot;command&quot;: &quot;openSettings&quot;, &quot;keys&quot;: &quot;ctrl+,&quot; &#125;, // 打开设置文件
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;openSettings&quot;, &quot;target&quot;: &quot;defaultsFile&quot; &#125;, &quot;keys&quot;: &quot;ctrl+alt+,&quot; &#125;, // 打开设置文件
+
+        &#123; &quot;command&quot;: &quot;toggleFullscreen&quot;, &quot;keys&quot;: &quot;alt+enter&quot; &#125;, // 切换全屏
+
+        &#123; &quot;command&quot;: &quot;toggleFullscreen&quot;, &quot;keys&quot;: &quot;f11&quot; &#125;, // 切换全屏
+
+        &#123; &quot;command&quot;: &quot;closeTab&quot;, &quot;keys&quot;: &quot;ctrl+alt+f4&quot; &#125;, // 关闭选项卡
+
+        &#123; &quot;command&quot;: &quot;duplicateTab&quot;, &quot;keys&quot;: &quot;ctrl+shift+d&quot; &#125;, // 复制选项卡
+
+        &#123; &quot;command&quot;: &quot;newTab&quot;, &quot;keys&quot;: &quot;ctrl+shift+t&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 0 &#125;, &quot;keys&quot;: &quot;ctrl+shift+1&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 1 &#125;, &quot;keys&quot;: &quot;ctrl+shift+2&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 2 &#125;, &quot;keys&quot;: &quot;ctrl+shift+3&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 3 &#125;, &quot;keys&quot;: &quot;ctrl+shift+4&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 4 &#125;, &quot;keys&quot;: &quot;ctrl+shift+5&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 5 &#125;, &quot;keys&quot;: &quot;ctrl+shift+6&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 6 &#125;, &quot;keys&quot;: &quot;ctrl+shift+7&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 7 &#125;, &quot;keys&quot;: &quot;ctrl+shift+8&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;newTab&quot;, &quot;index&quot;: 8 &#125;, &quot;keys&quot;: &quot;ctrl+shift+9&quot; &#125;, // 新建选项卡
+
+        &#123; &quot;command&quot;: &quot;nextTab&quot;, &quot;keys&quot;: &quot;ctrl+tab&quot; &#125;, // 打开下一个选项卡
+
+        &#123; &quot;command&quot;: &quot;prevTab&quot;, &quot;keys&quot;: &quot;ctrl+shift+tab&quot; &#125;, // 打开上一个选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 0 &#125;, &quot;keys&quot;: &quot;ctrl+alt+1&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 1 &#125;, &quot;keys&quot;: &quot;ctrl+alt+2&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 2 &#125;, &quot;keys&quot;: &quot;ctrl+alt+3&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 3 &#125;, &quot;keys&quot;: &quot;ctrl+alt+4&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 4 &#125;, &quot;keys&quot;: &quot;ctrl+alt+5&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 5 &#125;, &quot;keys&quot;: &quot;ctrl+alt+6&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 6 &#125;, &quot;keys&quot;: &quot;ctrl+alt+7&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 7 &#125;, &quot;keys&quot;: &quot;ctrl+alt+8&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;switchToTab&quot;, &quot;index&quot;: 8 &#125;, &quot;keys&quot;: &quot;ctrl+alt+9&quot; &#125;, // 打开特定的选项卡
+
+        &#123; &quot;command&quot;: &quot;closePane&quot;, &quot;keys&quot;: &quot;ctrl+shift+w&quot; &#125;, // 关闭窗格
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;moveFocus&quot;, &quot;direction&quot;: &quot;down&quot; &#125;, &quot;keys&quot;: &quot;alt+down&quot; &#125;, // 移动窗格焦点
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;moveFocus&quot;, &quot;direction&quot;: &quot;left&quot; &#125;, &quot;keys&quot;: &quot;alt+left&quot; &#125;, // 移动窗格焦点
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;moveFocus&quot;, &quot;direction&quot;: &quot;right&quot; &#125;, &quot;keys&quot;: &quot;alt+right&quot; &#125;, // 移动窗格焦点
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;moveFocus&quot;, &quot;direction&quot;: &quot;up&quot; &#125;, &quot;keys&quot;: &quot;alt+up&quot; &#125;, // 移动窗格焦点
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;resizePane&quot;, &quot;direction&quot;: &quot;down&quot; &#125;, &quot;keys&quot;: &quot;alt+shift+down&quot; &#125;, // 调整窗格大小
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;resizePane&quot;, &quot;direction&quot;: &quot;left&quot; &#125;, &quot;keys&quot;: &quot;alt+shift+left&quot; &#125;, // 调整窗格大小
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;resizePane&quot;, &quot;direction&quot;: &quot;right&quot; &#125;, &quot;keys&quot;: &quot;alt+shift+right&quot; &#125;, // 调整窗格大小
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;resizePane&quot;, &quot;direction&quot;: &quot;up&quot; &#125;, &quot;keys&quot;: &quot;alt+shift+up&quot; &#125;, // 调整窗格大小
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;splitPane&quot;, &quot;split&quot;: &quot;auto&quot;, &quot;splitMode&quot;: &quot;duplicate&quot; &#125;, &quot;keys&quot;: &quot;alt+shift+d&quot; &#125;, // 拆分窗格
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;splitPane&quot;, &quot;split&quot;: &quot;horizontal&quot;&#125;, &quot;keys&quot;: &quot;alt+shift+-&quot; &#125;, // 拆分窗格
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;splitPane&quot;, &quot;split&quot;: &quot;vertical&quot;&#125;, &quot;keys&quot;: &quot;alt+shift+plus&quot; &#125;, // 拆分窗格
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;copy&quot;, &quot;singleLine&quot;: false &#125;, &quot;keys&quot;: &quot;ctrl+c&quot; &#125;, // 复制
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;copy&quot;, &quot;singleLine&quot;: false &#125;, &quot;keys&quot;: &quot;ctrl+shift+c&quot; &#125;, // 复制
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;copy&quot;, &quot;singleLine&quot;: false &#125;, &quot;keys&quot;: &quot;ctrl+insert&quot; &#125;, // 复制
+
+        &#123; &quot;command&quot;: &quot;paste&quot;, &quot;keys&quot;: &quot;ctrl+v&quot; &#125;, // 粘贴
+
+        &#123; &quot;command&quot;: &quot;paste&quot;, &quot;keys&quot;: &quot;ctrl+shift+v&quot; &#125;, // 粘贴
+
+        &#123; &quot;command&quot;: &quot;paste&quot;, &quot;keys&quot;: &quot;shift+insert&quot; &#125;, // 粘贴
+
+        &#123; &quot;command&quot;: &quot;scrollUp&quot;, &quot;keys&quot;: &quot;ctrl+shift+up&quot; &#125;, // 向上滚动
+
+        &#123; &quot;command&quot;: &quot;scrollDown&quot;, &quot;keys&quot;: &quot;ctrl+shift+down&quot; &#125;, // 向下滚动
+
+        &#123; &quot;command&quot;: &quot;scrollUpPage&quot;, &quot;keys&quot;: &quot;ctrl+shift+pgup&quot; &#125;, // 向上滚动一整页
+
+        &#123; &quot;command&quot;: &quot;scrollDownPage&quot;, &quot;keys&quot;: &quot;ctrl+shift+pgdn&quot; &#125;, // 向下滚动一整页
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;adjustFontSize&quot;, &quot;delta&quot;: 1 &#125;, &quot;keys&quot;: &quot;ctrl+=&quot; &#125;, // 调整字号
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;adjustFontSize&quot;, &quot;delta&quot;: -1 &#125;, &quot;keys&quot;: &quot;ctrl+-&quot; &#125;, // 调整字号
+
+        &#123; &quot;command&quot;: &quot;resetFontSize&quot;, &quot;keys&quot;: &quot;ctrl+0&quot; &#125;, // 重置字号
+
+        //&#123; &quot;command&quot;: &quot;unbound&quot;, &quot;keys&quot;: &quot;ctrl+q&quot; &#125; // 取消绑定键
+
+        &#123; &quot;command&quot;: &quot;toggleFocusMode&quot;, &quot;keys&quot;: &quot;shift+f11&quot; &#125;, // 对焦模式
+
+        &#123; &quot;command&quot;: &quot;toggleAlwaysOnTop&quot;, &quot;keys&quot;: &quot;alt+shift+tab&quot; &#125;, // 始终处于顶部模式
+
+        &#123; &quot;command&quot;: &#123; &quot;action&quot;: &quot;setTabColor&quot;, &quot;color&quot;: &quot;#ffffff&quot; &#125;, &quot;keys&quot;: &quot;ctrl+a&quot; &#125;, // 设置选项卡颜色
+
+        &#123; &quot;command&quot;: &quot;openTabColorPicker&quot;, &quot;keys&quot;: &quot;ctrl+b&quot; &#125;, // 打开选项卡颜色选取器
+
+        &#123; &quot;command&quot;: &quot;renameTab&quot;, &quot;keys&quot;: &quot;ctrl+c&quot; &#125;, // 重命名选项卡
+
+        &#123; &quot;command&quot;: &quot;toggleRetroEffect&quot;, &quot;keys&quot;: &quot;ctrl+d&quot; &#125;, // 切换复古终端效果
+
+        &#123; &quot;command&quot;: &quot;commandPalette&quot;, &quot;keys&quot;: &quot;ctrl+shift+p&quot; &#125; // 命令调色板
+    ]
+&#125;
+</code></pre>
+<h2 id="ctags"><a href="#ctags" class="headerlink" title="ctags"></a>ctags</h2><p>ctags的功能：扫描指定的源文件，找出其中所包含的语法元素，并将找到的相关内容记录下来。</p>
+<p>####1 查看ctags支持的语言<br>ctags –list-languages</p>
+<p>####2 查看语言和扩展名的对应关系<br>ctags –list-maps</p>
+<p>####3 查看ctags可以识别和记录的语法元素<br>ctags –list-kinds</p>
+<p>单独查看可以识别的C++的语法元素：</p>
+<pre><code>[chuxing@hostname ~]$ ctags --list-kinds=c++
+c  classes
+d  macro definitions
+e  enumerators (values inside an enumeration)
+f  function definitions
+g  enumeration names
+l  local variables [off]
+m  class, struct, and union members
+n  namespaces
+p  function prototypes [off]
+s  structure names
+t  typedefs
+u  union names
+v  variable definitions
+x  external and forward variable declarations [off]
+</code></pre>
+<h5 id="对当前目录下所有ctags支持的语言格式文件生成tags"><a href="#对当前目录下所有ctags支持的语言格式文件生成tags" class="headerlink" title="对当前目录下所有ctags支持的语言格式文件生成tags"></a>对当前目录下所有ctags支持的语言格式文件生成tags</h5><p>ctags -R *</p>
+<p>缺点很明显，tags会非常大，tags生成会非常慢，而且代码跳转会卡顿。</p>
+<h4 id="只对特定文件生成tags"><a href="#只对特定文件生成tags" class="headerlink" title="只对特定文件生成tags"></a>只对特定文件生成tags</h4><p>ctags <code>find -name &quot;*.h&quot;</code></p>
+<h4 id="使用tags"><a href="#使用tags" class="headerlink" title="使用tags"></a>使用tags</h4><p>tag命令<br>用于跳转到指定的tag。例如：</p>
+<pre><code>tag tagname
+</code></pre>
+<p>使用这个命令可以跳转到tagname的定义处，即使它在另一个文件中。</p>
+<p>快捷键Ctrl+]<br>取出当前光标下的word作为tag的名字并进行跳转。</p>
+<p>tags命令<br>列出曾经访问过的tag的列表</p>
+<p>快捷键Ctrl+T<br>跳转到前一次的tag处。</p>
+<p>stag命令<br>stag tagname</p>
+<p>分割当前窗口，并且跳转到指定的tag。</p>
+<p>快捷键Ctrl+W+]<br>分割当前窗口，并且跳转到光标下的tag。</p>
+<p>同名tag<br>如果存在多个同名的tag，tag命令会给出一个tag的列表，可以通过键入tag的序号来选择tag；也可以通过tselect来过滤tag，如：:tselect tagname</p>
+<p>如果要在多个tag间移动，可以使用如下命令：</p>
+<pre><code>:tfirst             go to first match
+:[count]tprevious   go to [count] previous match
+:[count]tnext       go to [count] next match
+:tlast              go to last match
+</code></pre>
+<p>如果没有指定[count]，默认是1。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>如果是多个tags文件，可以通过设置tags选项来引入更多的tags文件。例如: :set tags=./tags, ./../tags, ./*/tags<br>使用tag命令时，可以输入部分tag名，然后使用Tab键进行补全。</p>
+<h4 id="打开文件时启动分屏"><a href="#打开文件时启动分屏" class="headerlink" title="打开文件时启动分屏"></a>打开文件时启动分屏</h4><p>使用Vim打开文件时，可以通过参数-On 或 -on来启动分屏。</p>
+<p>n 代表整数，表示将整个屏幕分成n部分</p>
+<p>大写 O 表示进行垂直方向分屏，小写 o 表示水平方向进行分屏</p>
+<h4 id="Vim内部启动分屏"><a href="#Vim内部启动分屏" class="headerlink" title="Vim内部启动分屏"></a>Vim内部启动分屏</h4><p>使用Vim打开文件后，仍然可以在尾行模式通过以下命令进行屏幕分割</p>
+<p><strong>垂直分屏并打开一个新文件</strong></p>
+<pre><code>:vsplit filename 或缩写形式 :vsp filename
+</code></pre>
+<p>v 表示单词 vertical，是中文垂直的意思</p>
+<p><strong>水平分屏并打开一个新文件</strong></p>
+<pre><code>Vim尾行模式下执行命令 :split filename 或缩写形式 :sp filename 
+</code></pre>
+<p><strong>垂直分隔当前打开的文件</strong></p>
+<pre><code>Vim命令行模式下执行命令 Ctrl+w v 可将当前打开的文件进行垂直分割
+</code></pre>
+<p>上述命令 Ctrl+w v 的意思是：先同时按键 Ctrl 和 w，再按键 v</p>
+<p><strong>水平分隔当前打开的文件</strong></p>
+<pre><code>ctrl+w s 可将当前打开的文件进行水平方向分割
+</code></pre>
+<p>上述命令 Ctrl+w s 表示先同时按键 Ctrl 和 w，再按键 s</p>
+<h4 id="分屏大小"><a href="#分屏大小" class="headerlink" title="分屏大小"></a>分屏大小</h4><pre><code>命令 Ctrl+w = 表示设置所有的分屏幕都有相同的高度
+
+命令 Ctrl+w + 用于增加当前屏幕的高度
+
+命令 Ctrl+w - 用于减少当前屏幕的高度
+</code></pre>
+<h4 id="关闭Vim分屏"><a href="#关闭Vim分屏" class="headerlink" title="关闭Vim分屏"></a>关闭Vim分屏</h4><p>ctrl +w c</p>
+<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><p>vim 中执行命令</p>
+<pre><code>:!ls
+</code></pre>
+<h1 id="WSL-X11-RemoteLogin"><a href="#WSL-X11-RemoteLogin" class="headerlink" title="WSL_X11_RemoteLogin"></a>WSL_X11_RemoteLogin</h1><pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get upgrade -y &amp;&amp; sudo apt-get dist-upgrade -y &amp;&amp; sudo apt-get autoremove -y
+
+sudo apt-get install xorg
+
+sudo apt-get install xfce4
+
+sudo apt-get install xrdp
+
+sudo sed -i s/port=3365/port=3365/g /etc/xrdp/xrdp.ini
+
+sudo echo xfce4-session &gt;~/.xsession
+
+sudo service xrdp restart
+
+
+[....]Restarting Remote Desktop Protocol server: xrdp-sesman xrdp
+[20201124-19:34:09] [DEBUG] Testing if xrdp can listen on 0.0.0.0 port 3389.
+[20201124-19:34:09] [DEBUG] Closed socket 6 (AF_INET6 :: port 3389)
+. ok
+
+
+远程登录 $(IP):3389
+</code></pre>
+<p>It works.</p>
+<p><img src="/images/remoteShell.png"></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/344185d97476?tdsourcetag=s_pcqq_aiomsg">window10 玩转unbuntu 子系统安装WSL 图形界面，远程桌面</a></p>
+<p>:)</p>
+
+      
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title">写博客不易，请我喝杯咖啡？ </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+
+
+    </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      
+
+
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'ecbf6316c9aa7a6bfd7a',
+			clientSecret: '5c875e5986ed75f4509d97acd16628b97f7506f1',
+			repo: 'tonychenn.github.io',
+			owner: 'tonychenn',
+			admin: ['tonychenn'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#locales"><span class="post-toc-text">locales</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#alais"><span class="post-toc-text">alais</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UsbIp"><span class="post-toc-text">UsbIp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%BB%91%E5%AE%9ACPU"><span class="post-toc-text">进程绑定CPU</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#swap-%E5%88%86%E5%8C%BA"><span class="post-toc-text">swap 分区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strace"><span class="post-toc-text">strace</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#dmesg-%E7%9A%84ring-buffer"><span class="post-toc-text">dmesg 的ring buffer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ps-top-%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E8%BF%90%E8%A1%8C%E5%9C%A8%E5%93%AA%E4%B8%AAcpu%E4%B8%8A"><span class="post-toc-text">ps top 查看进程运行在哪个cpu上</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ping"><span class="post-toc-text">ping</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#epoll%E5%92%8C-proc"><span class="post-toc-text">epoll和&#x2F;proc</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AE%BE%E5%A4%87%E6%A0%91"><span class="post-toc-text">设备树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vfork"><span class="post-toc-text">vfork</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-%E5%90%8C%E6%97%B6%E4%BC%A0%E5%88%B0%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="post-toc-text">git 同时传到两个仓库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8qemu%E6%90%AD%E5%BB%BAarm%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="post-toc-text">使用qemu搭建arm嵌入式linux开发环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How-to-Create-a-Deamon-Service"><span class="post-toc-text">How to Create a Deamon Service</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="post-toc-text">信号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Wifi-adb"><span class="post-toc-text">Wifi adb</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pstree"><span class="post-toc-text">pstree</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#pidof"><span class="post-toc-text">pidof</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#chroot"><span class="post-toc-text">chroot</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xargs"><span class="post-toc-text">xargs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VIM-r"><span class="post-toc-text">VIM r</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%88%97%E5%87%BAubuntu%E4%B8%8A%E6%89%80%E6%9C%89%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="post-toc-text">列出ubuntu上所有的服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%86%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E4%B8%AD%E9%99%A4%E4%BA%86src%E7%9B%AE%E5%BD%95%E5%85%A8%E9%83%A8%E7%A7%BB%E5%8A%A8%E5%88%B0src%E7%9B%AE%E5%BD%95"><span class="post-toc-text">将当前文件中除了src目录全部移动到src目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nohup"><span class="post-toc-text">nohup</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TC"><span class="post-toc-text">TC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A0%B9%E6%8D%AEcommit-id%E7%94%9F%E6%88%90patch"><span class="post-toc-text">根据commit id生成patch</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vim-%E6%89%B9%E9%87%8Ftab"><span class="post-toc-text">vim 批量tab</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#openwrt%E5%AE%89%E8%A3%85ipk"><span class="post-toc-text">openwrt安装ipk</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#du%E5%92%8Cdf"><span class="post-toc-text">du和df</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bash-dash"><span class="post-toc-text">bash dash</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="post-toc-text">git 删除分支</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-%E5%A6%82%E4%BD%95merge-%E5%88%86%E6%94%AF"><span class="post-toc-text">git 如何merge 分支</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#expect-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="post-toc-text">expect 的用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#find-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="post-toc-text">find 的用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#chgrp"><span class="post-toc-text">chgrp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nslookup"><span class="post-toc-text">nslookup</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="post-toc-text">孤儿进程和僵尸进程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WSL-%E6%9C%8D%E5%8A%A1%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E6%B3%95"><span class="post-toc-text">WSL 服务自动启动的正确方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WindowsTerminal"><span class="post-toc-text">WindowsTerminal</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ctags"><span class="post-toc-text">ctags</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AF%B9%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89ctags%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90tags"><span class="post-toc-text">对当前目录下所有ctags支持的语言格式文件生成tags</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8F%AA%E5%AF%B9%E7%89%B9%E5%AE%9A%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90tags"><span class="post-toc-text">只对特定文件生成tags</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8tags"><span class="post-toc-text">使用tags</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B6%E4%BB%96"><span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E6%97%B6%E5%90%AF%E5%8A%A8%E5%88%86%E5%B1%8F"><span class="post-toc-text">打开文件时启动分屏</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vim%E5%86%85%E9%83%A8%E5%90%AF%E5%8A%A8%E5%88%86%E5%B1%8F"><span class="post-toc-text">Vim内部启动分屏</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%88%86%E5%B1%8F%E5%A4%A7%E5%B0%8F"><span class="post-toc-text">分屏大小</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%85%B3%E9%97%ADVim%E5%88%86%E5%B1%8F"><span class="post-toc-text">关闭Vim分屏</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="post-toc-text">执行命令</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#WSL-X11-RemoteLogin"><span class="post-toc-text">WSL_X11_RemoteLogin</span></a> 
+    </div>
+  </aside> -->
+</div>
+  </div>
+  <!--footer-->
+  <footer class="mdui-color-indigo">
+    <div class="mdui-container">
+        <div style="text-align: center; padding: 20px;">
+            <div >
+                Copyright &copy;
+                John Doe&nbsp&nbsp2021
+                &nbspTheme By
+                <a target="_blank" rel="noopener" href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+                        frameborder="0" scrolling="0" width="91px" height="20px">
+                </iframe>
+            </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp总访客<span id="busuanzi_value_site_uv"></span>人
+        </div>
+    </div>
+</footer>
+</body>
+<!--goTop-->
+<div class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-pink">
+    <i class="mdui-icon material-icons">arrow_upward</i>
+</div>
+</html>

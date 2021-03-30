@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
+    
+
+    <title>SDK使用说明 - Hexo</title>
+
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="SDK使用说明 - Hexo | Hexo">
+    
+    
+
+    
+
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!--mdui-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+          integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+          crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous">
+    </script>
+    <!--jquery-->
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <!--theme-->
+    
+<link rel="stylesheet" href="/css/mdm.css">
+
+    
+<link rel="stylesheet" href="/css/mdm_theme_dark.css">
+
+    
+<script src="/js/mdm.js"></script>
+
+    
+    <!--高亮-->
+    
+<link rel="stylesheet" href="/css/solarized-light.css">
+
+    <!--全局变灰-->
+    
+
+    
+    
+<script src="/js/click-effect.js"></script>
+
+    
+
+    <!--本地搜索-->
+    <!-- <script src="js/search.js"></script> -->
+    <!--自动提交给百度-->
+    
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+    <!---google ad config-->
+    
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--header_bar-->
+<div class="mdui-appbar mdui-shadow-0" id="bar">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <ul class="mdui-menu" id="example-2">
+        
+            <li class="mdui-menu-item">
+            <a href="/" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>
+                首页
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/tags" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">local_offer</i>
+                标签
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/archives" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">library_books</i>
+                归档
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/collection" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">videocam</i>
+                作品集
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">error_outline</i>
+                关于
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+        </ul>
+        <!--大屏-->
+        
+        <a href="/"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            首页
+        </a>
+        
+        <a href="/tags"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            标签
+        </a>
+        
+        <a href="/archives"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            归档
+        </a>
+        
+        <a href="/collection"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            作品集
+        </a>
+        
+        <a href="/about"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            关于
+        </a>
+        
+        <div class="mdui-toolbar-spacer"></div>
+        <!--
+        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+        </div>-->
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        <!--分享-->
+        
+        <ul class="mdui-menu" id="share_menu">
+            
+                <li class="mdui-menu-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
+                </li>
+            
+            
+            
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              
+        
+              
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              
+
+            </ul>
+        
+    </div>
+</div>
+<!--Header-->
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        
+        <img src="" class="header-box blur mdui-img-fluid" onerror="{this.src='https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg'}" draggable="false">
+        
+            <div class="header-content">
+                
+                <span class="header_title">SDK使用说明</span></br>
+                
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>
+<body>
+  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
+    <!--博文详细内容-->
+
+<link rel="stylesheet" href="/css/post.css">
+
+<div>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
+      <p>NPU SDK 是转换AI模型和编译<code>aml_npu_sdk</code>的工具合集</p>
+<h1 id="获取SDK"><a href="#获取SDK" class="headerlink" title="获取SDK"></a>获取SDK</h1><p>SDK需要通过邮件申请,申请以后会通过一封邮件发到你的邮箱.<a target="_blank" rel="noopener" href="https://www.khadas.com/npu-toolkit-vim3">申请地址</a></p>
+<h1 id="SDK目录结构说明"><a href="#SDK目录结构说明" class="headerlink" title="SDK目录结构说明"></a>SDK目录结构说明</h1><p>进入SDK目录,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">acuity-toolkit  android_sdk  Dockerfile  docs  LICENSE  linux_sdk  README.md  toolchains</span><br></pre></td></tr></table></figure>
+
+<p>SDK主要分成几个sdk,转换工具和编译工具以及docs几个部分.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">acuity-toolkit    #转换工具目录,用于转换AI模型</span><br><span class="line">android_sdk       #Android SDK 目录</span><br><span class="line">linux_sdk         #linux SDK 目录,主要用于编译&#96;aml_npu_app&#96;</span><br><span class="line">docs              #转换相关的文档合集</span><br><span class="line">toolchains        #编译工具链目录</span><br></pre></td></tr></table></figure>
+
+<h1 id="Docs说明"><a href="#Docs说明" class="headerlink" title="Docs说明"></a>Docs说明</h1><p>进入Docs目录,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/docs/zh-cn</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">&#x27;Android&amp;Linux编译集成指导(0.2).pdf&#x27;  &#x27;NN工具FAQ (0.1).pdf&#x27;  &#x27;模型转换运行用户指南(0.6).pdf&#x27;</span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../en</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">&#x27;AMLNN Convolution Acceleration Tips.pdf&#x27;                  &#x27;Model_Transcoding and Running User Guide_V0.6.pdf&#x27;                              &#x27;NN Tool FAQ (0.1).pdf&#x27;</span><br><span class="line">&#x27;Android&amp;Linux_Compilation and Integration Guide_0.2.pdf&#x27;  &#x27;Neural Network Layer and Operation Support Guide (01)(ref.v1.13-20200323).pdf&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>文档记录了从转换到集成的一系列过程,以及一些常见的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. &#39;Android&amp;Linux编译集成指导(0.2).pdf&#39;                                              #Android&amp;&amp;linux编译集成指导,主要说明如何使用转换后的code</span><br><span class="line">2. &#39;NN工具FAQ (0.1).pdf&#39;                                                             #转换工具FAQ文档,记录了常见的转换的问题</span><br><span class="line">3. &#39;模型转换运行用户指南(0.6).pdf&#39;                                                   #模型转换文档,详细的介绍了如何转换</span><br><span class="line">4. &#39;AMLNN Convolution Acceleration Tips.pdf                                          #AMLNN卷积加速文档</span><br><span class="line">5. &#39;Neural Network Layer and Operation Support Guide (01)(ref.v1.13-20200323).pdf&#39;   #支持的网络层和算子文档</span><br></pre></td></tr></table></figure>
+
+<h1 id="转换工具说明"><a href="#转换工具说明" class="headerlink" title="转换工具说明"></a>转换工具说明</h1><p><code>acuity-toolkit</code>就是转换工具目录,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/acuity-toolkit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">bin  conversion_scripts  ReadMe.txt  requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>主要关注的目录是<code>conversion_scripts</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. bin                   #转换的使用的各种工具的合集,大部分都是不开源的.</span><br><span class="line">2. conversion_scripts    #转换脚本目录,转换AI模型的位置</span><br><span class="line">3. ReadMe.txt            #ReadMe.txt文件说明了如何转换和使用</span><br><span class="line">4. requirements.txt      #转换工具依赖的环境</span><br></pre></td></tr></table></figure>
+
+<h2 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h2><p>转换工具需要的环境依赖包可以直接安装在PC上,或者通过虚拟环境<code>virtualenv</code>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/acuity-toolkit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat requirements.txt</span></span><br><span class="line">tensorflow==2.0.0</span><br><span class="line">astor==0.8.0</span><br><span class="line">numpy==1.18.0</span><br><span class="line">scipy==1.1.0</span><br><span class="line">Pillow==5.3.0</span><br><span class="line">protobuf==3.11.2</span><br><span class="line"><span class="meta">networkx&gt;</span><span class="bash">=1.11</span></span><br><span class="line">image==1.5.5</span><br><span class="line">lmdb==0.93</span><br><span class="line">onnx==1.6.0</span><br><span class="line">h5py==2.10.0</span><br><span class="line">flatbuffers==1.10</span><br><span class="line">matplotlib==2.1.0</span><br><span class="line">dill==0.2.8.2</span><br><span class="line">ruamel.yaml==0.15.81</span><br><span class="line">ply==3.11</span><br><span class="line">torch==1.2.0</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>tensorflow==2.0.0</code>可用<code>tensorflow==2.0.0a0</code>替代</p>
+<h2 id="转换脚本使用"><a href="#转换脚本使用" class="headerlink" title="转换脚本使用"></a>转换脚本使用</h2><p>转换脚本在<code>conversion_scripts</code>目录下,</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/acuity-toolkit/conversion_scripts</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">0_import_model.sh  1_quantize_model.sh  2_export_case_code.sh  data  dataset.txt  extractoutput.py  inference.sh  mobilenet_tf.data  mobilenet_tf.json  mobilenet_tf.quantize  model  normal_case_demo</span><br></pre></td></tr></table></figure>
+
+<p>使用脚本转换AI模型</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/acuity-toolkit/conversion_scripts</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> bash 0_import_model.sh &amp;&amp; bash 1_quantize_model.sh &amp;&amp; bash 2_export_case_code.sh</span> </span><br></pre></td></tr></table></figure>
+
+<p>转换完成以后在<code>nbg_unify_xxxx</code>目录下就能看到转换出来的代码,这里以自带的模型为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/acuity-toolkit/conversion_scripts/nbg_unify_mobilenet_tf</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">BUILD   makefile.linux   mobilenettf.vcxproj  vnn_global.h       vnn_mobilenettf.h   vnn_post_process.h  vnn_pre_process.h</span><br><span class="line">main.c  mobilenet_tf.nb  nbg_meta.json        vnn_mobilenettf.c  vnn_post_process.c  vnn_pre_process.c</span><br></pre></td></tr></table></figure>
+
+<p>转换参数的设置,请参考<code>Docs</code>里面的’模型转换运行用户指南(0.6).pdf’</p>
+<h1 id="linux-SDK-说明"><a href="#linux-SDK-说明" class="headerlink" title="linux SDK 说明"></a>linux SDK 说明</h1><p>进入linux SDK目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/linux_sdk</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">demo  linux_sdk  linux_sdk_6.4.0.10  linux_sdk_6.4.2.1  linux_sdk_6.4.3</span><br></pre></td></tr></table></figure>
+
+<p>这里可以看到简单的已经转换完成的demo,以及各版本的linux SDK.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. demo                     #已经转换完成的inception模型的可执行文件和源码</span><br><span class="line">2. linux_sdk                #指向最新的SDK</span><br><span class="line">3. linux_sdk_x.x.x.x        #不同版本的linux SDK</span><br></pre></td></tr></table></figure>
+
+
+<p>进入<code>linux_sdk</code>,可以看到sdk的主要组成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &#123;workspace&#125;/aml_npu_sdk/linux_sdk/linux_sdk</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span> </span><br><span class="line">acuity-ovxlib-dev  build  common.target  linux_build_sample.log  makefile.linux.def</span><br></pre></td></tr></table></figure>
+
+<p>主要使用的几个部分:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. &#96;acuity-ovxlib-dev&#96;          #主要放置了编译需要的使用的&#96;ovxlib&#96;库</span><br><span class="line">2. &#96;build&#x2F;sdk&#x2F;drivers_xx&#96;       #主要放置了编译需要使用的系统库</span><br><span class="line">3. &#96;build&#x2F;sdk&#x2F;opencvX&#96;          #主要是编译时使用的opencv库</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+      
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title">写博客不易，请我喝杯咖啡？ </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+
+
+    </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      
+
+
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'ecbf6316c9aa7a6bfd7a',
+			clientSecret: '5c875e5986ed75f4509d97acd16628b97f7506f1',
+			repo: 'tonychenn.github.io',
+			owner: 'tonychenn',
+			admin: ['tonychenn'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%8E%B7%E5%8F%96SDK"><span class="post-toc-text">获取SDK</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SDK%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="post-toc-text">SDK目录结构说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Docs%E8%AF%B4%E6%98%8E"><span class="post-toc-text">Docs说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E8%AF%B4%E6%98%8E"><span class="post-toc-text">转换工具说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BE%9D%E8%B5%96%E5%AE%89%E8%A3%85"><span class="post-toc-text">依赖安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BD%AC%E6%8D%A2%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="post-toc-text">转换脚本使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#linux-SDK-%E8%AF%B4%E6%98%8E"><span class="post-toc-text">linux SDK 说明</span></a></li></ol> 
+    </div>
+  </aside> -->
+</div>
+  </div>
+  <!--footer-->
+  <footer class="mdui-color-indigo">
+    <div class="mdui-container">
+        <div style="text-align: center; padding: 20px;">
+            <div >
+                Copyright &copy;
+                John Doe&nbsp&nbsp2021
+                &nbspTheme By
+                <a target="_blank" rel="noopener" href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+                        frameborder="0" scrolling="0" width="91px" height="20px">
+                </iframe>
+            </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp总访客<span id="busuanzi_value_site_uv"></span>人
+        </div>
+    </div>
+</footer>
+</body>
+<!--goTop-->
+<div class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-pink">
+    <i class="mdui-icon material-icons">arrow_upward</i>
+</div>
+</html>

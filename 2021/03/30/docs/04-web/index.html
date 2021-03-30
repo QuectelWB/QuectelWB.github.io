@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
+    
+
+    <title>Web - Hexo</title>
+
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Web - Hexo | Hexo">
+    
+    
+
+    
+
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!--mdui-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+          integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+          crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous">
+    </script>
+    <!--jquery-->
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <!--theme-->
+    
+<link rel="stylesheet" href="/css/mdm.css">
+
+    
+<link rel="stylesheet" href="/css/mdm_theme_dark.css">
+
+    
+<script src="/js/mdm.js"></script>
+
+    
+    <!--高亮-->
+    
+<link rel="stylesheet" href="/css/solarized-light.css">
+
+    <!--全局变灰-->
+    
+
+    
+    
+<script src="/js/click-effect.js"></script>
+
+    
+
+    <!--本地搜索-->
+    <!-- <script src="js/search.js"></script> -->
+    <!--自动提交给百度-->
+    
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+    <!---google ad config-->
+    
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--header_bar-->
+<div class="mdui-appbar mdui-shadow-0" id="bar">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <ul class="mdui-menu" id="example-2">
+        
+            <li class="mdui-menu-item">
+            <a href="/" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>
+                首页
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/tags" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">local_offer</i>
+                标签
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/archives" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">library_books</i>
+                归档
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/collection" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">videocam</i>
+                作品集
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">error_outline</i>
+                关于
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+        </ul>
+        <!--大屏-->
+        
+        <a href="/"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            首页
+        </a>
+        
+        <a href="/tags"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            标签
+        </a>
+        
+        <a href="/archives"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            归档
+        </a>
+        
+        <a href="/collection"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            作品集
+        </a>
+        
+        <a href="/about"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            关于
+        </a>
+        
+        <div class="mdui-toolbar-spacer"></div>
+        <!--
+        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+        </div>-->
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        <!--分享-->
+        
+        <ul class="mdui-menu" id="share_menu">
+            
+                <li class="mdui-menu-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
+                </li>
+            
+            
+            
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              
+        
+              
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              
+
+            </ul>
+        
+    </div>
+</div>
+<!--Header-->
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        
+        <img src="" class="header-box blur mdui-img-fluid" onerror="{this.src='https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg'}" draggable="false">
+        
+            <div class="header-content">
+                
+                <span class="header_title">Web</span></br>
+                
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>
+<body>
+  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
+    <!--博文详细内容-->
+
+<link rel="stylesheet" href="/css/post.css">
+
+<div>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
+      <h1 id="OverView"><a href="#OverView" class="headerlink" title="OverView"></a>OverView</h1><p> <a target="_blank" rel="noopener" href="https://www.w3school.com.cn/%E3%80%81https://www.runoob.com/">https://www.w3school.com.cn/、https://www.runoob.com/</a> 、<a target="_blank" rel="noopener" href="https://www.sololearn.com/">https://www.sololearn.com/</a> 用来学习入门级的编程基础，是非常不错的。最推荐sololearn，尤其是英语一般的又希望英语也不落下的。</p>
+<p>可惜的是 国内访问不了sololearn</p>
+<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p>Markdown 支持许多HTML 5标签。—&gt; 这和Markdown的解释器有关</p>
+<article>
+    <p> Vincent 长庚 </p>
+    <aside>
+        <p>tangential content in sidebar </p>
+    </aside>
+</article>
+
+<p>测试了下，支持article 和 aside 标签</p>
+<h2 id="博客系统"><a href="#博客系统" class="headerlink" title="博客系统"></a>博客系统</h2><h2 id="Apache-（Web服务器）"><a href="#Apache-（Web服务器）" class="headerlink" title="Apache （Web服务器）"></a>Apache （Web服务器）</h2><p>apache和httpd是一个，到apache2后就叫httpd了。</p>
+<h2 id="NginX"><a href="#NginX" class="headerlink" title="NginX"></a>NginX</h2><p>Nginx(“engine x”)是一款开发高性能的Web和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/htmldom/dom_events.asp">DOM</a></p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><p>DOM </p>
+<p>定义了访问 HTML 和 XML 文档的标准</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p id&#x3D;&quot;intro&quot;&gt;Helweelo World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;me&quot;&gt;本例演示 &lt;b&gt;getElementById&lt;&#x2F;b&gt; 方法！&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementById(&quot;me&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;来自 intro 段落的文本：&quot; + x.innerHTML + &quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getElementById()</td>
+<td>返回带有指定 ID 的元素。</td>
+</tr>
+<tr>
+<td>getElementsByTagName()</td>
+<td>返回包含带有指定标签名称的所有元素的节点列表（集合/节点数组）。</td>
+</tr>
+<tr>
+<td>getElementsByClassName()</td>
+<td>返回包含带有指定类名的所有元素的节点列表。</td>
+</tr>
+<tr>
+<td>appendChild()</td>
+<td>把新的子节点添加到指定节点。</td>
+</tr>
+<tr>
+<td>removeChild()</td>
+<td>删除子节点。</td>
+</tr>
+<tr>
+<td>replaceChild()</td>
+<td>替换子节点。</td>
+</tr>
+<tr>
+<td>insertBefore()</td>
+<td>在指定的子节点前面插入新的子节点。</td>
+</tr>
+<tr>
+<td>createAttribute()</td>
+<td>创建属性节点。</td>
+</tr>
+<tr>
+<td>createElement()</td>
+<td>创建元素节点。</td>
+</tr>
+<tr>
+<td>createTextNode()</td>
+<td>创建文本节点。</td>
+</tr>
+<tr>
+<td>getAttribute()</td>
+<td>返回指定的属性值。</td>
+</tr>
+<tr>
+<td>setAttribute()</td>
+<td>把指定属性设置或修改为指定的值。</td>
+</tr>
+</tbody></table>
+<p>innerHTML 属性</p>
+<p>innerHTML 属性可用于获取或改变任意 HTML 元素，包括 <html> 和 <body>。</body></html></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;DOM 很有用！&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;本例演示 &lt;b&gt;getElementsByTagName&lt;&#x2F;b&gt; 方法。&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[0].innerHTML);</span><br><span class="line"></span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[1].innerHTML);</span><br><span class="line"></span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[2].innerHTML);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;main&quot;&gt;</span><br><span class="line">&lt;p&gt;DOM 很有用！&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;本例演示 &lt;b&gt;getElementsByTagName&lt;&#x2F;b&gt; 方法。&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementById(&quot;main&quot;).getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&quot;div 中的第一段的文本: &quot; + x[0].innerHTML);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p id&#x3D;&quot;p1&quot;&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;p2&quot;&gt;Hello world!&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;p1&quot;).innerHTML&#x3D;&quot;New text!&quot;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;p2&quot;).style.color&#x3D;&quot;blue&quot;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var para&#x3D;document.createElement(&quot;p&quot;);</span><br><span class="line">var node&#x3D;document.createTextNode(&quot;This is new.&quot;);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"></span><br><span class="line">var element&#x3D;document.getElementById(&quot;d1&quot;);</span><br><span class="line">element.appendChild(para);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>导航</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><p><img src="/images/structs_of_HTML5.jpeg"></p>
+<ul>
+<li><strong>HTML5 的&lt;header&gt;和html4的&lt;head&gt;标签是完全不一样的</strong></li>
+<li>article可以取代 div</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;demo&quot;&gt;点击这个按钮，获得您的坐标：&lt;&#x2F;p&gt;</span><br><span class="line">&lt;button onclick&#x3D;&quot;getLocation()&quot;&gt;试一下&lt;&#x2F;button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var x&#x3D;document.getElementById(&quot;demo&quot;);</span><br><span class="line">function getLocation()</span><br><span class="line">  &#123;</span><br><span class="line">  if (navigator.geolocation)</span><br><span class="line">    &#123;</span><br><span class="line">    navigator.geolocation.getCurrentPosition(showPosition);</span><br><span class="line">    &#125;</span><br><span class="line">  else&#123;x.innerHTML&#x3D;&quot;Geolocation is not supported by this browser.&quot;;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">function showPosition(position)</span><br><span class="line">  &#123;</span><br><span class="line">  x.innerHTML&#x3D;&quot;Latitude: &quot; + position.coords.latitude + </span><br><span class="line">  &quot;&lt;br &#x2F;&gt;Longitude: &quot; + position.coords.longitude;	</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>JavaScript</p>
+<p>BootStrap</p>
+<p>CSS</p>
+<h1 id="GitBook"><a href="#GitBook" class="headerlink" title="GitBook"></a>GitBook</h1><p>GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书</p>
+<p><a target="_blank" rel="noopener" href="http://gitbookio.github.io/javascript/">Learn JavaScript</a><br><a target="_blank" rel="noopener" href="http://samypesse.github.io/How-to-Make-a-Computer-Operating-System/">How to Make an Operating System</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lu_embedded/article/details/81100704">GitBook入门</a></p>
+<p>GitBook支持输出多种文档格式：</p>
+<p>静态站点：GitBook默认输出该种格式，生成的静态站点可直接托管搭载Github Pages服务上；</p>
+<p>PDF：需要安装gitbook-pdf依赖；</p>
+<p>eBook：需要安装ebook-convert；</p>
+<p>单HTML网页：支持将内容输出为单页的HTML，不过一般用在将电子书格式转换为PDF或eBook的中间过程；</p>
+<p>JSON：一般用于电子书的调试或元数据提取。</p>
+<p>使用GitBook制作电子书，必备两个文件：README.md和SUMMARY.md。</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/htmldom/dom_events.asp">DOM</a></p>
+<h2 id="DOM-1"><a href="#DOM-1" class="headerlink" title="DOM"></a>DOM</h2><p>DOM </p>
+<p>定义了访问 HTML 和 XML 文档的标准</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p id&#x3D;&quot;intro&quot;&gt;Helweelo World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;me&quot;&gt;本例演示 &lt;b&gt;getElementById&lt;&#x2F;b&gt; 方法！&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementById(&quot;me&quot;);</span><br><span class="line">document.write(&quot;&lt;p&gt;来自 intro 段落的文本：&quot; + x.innerHTML + &quot;&lt;&#x2F;p&gt;&quot;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getElementById()</td>
+<td>返回带有指定 ID 的元素。</td>
+</tr>
+<tr>
+<td>getElementsByTagName()</td>
+<td>返回包含带有指定标签名称的所有元素的节点列表（集合/节点数组）。</td>
+</tr>
+<tr>
+<td>getElementsByClassName()</td>
+<td>返回包含带有指定类名的所有元素的节点列表。</td>
+</tr>
+<tr>
+<td>appendChild()</td>
+<td>把新的子节点添加到指定节点。</td>
+</tr>
+<tr>
+<td>removeChild()</td>
+<td>删除子节点。</td>
+</tr>
+<tr>
+<td>replaceChild()</td>
+<td>替换子节点。</td>
+</tr>
+<tr>
+<td>insertBefore()</td>
+<td>在指定的子节点前面插入新的子节点。</td>
+</tr>
+<tr>
+<td>createAttribute()</td>
+<td>创建属性节点。</td>
+</tr>
+<tr>
+<td>createElement()</td>
+<td>创建元素节点。</td>
+</tr>
+<tr>
+<td>createTextNode()</td>
+<td>创建文本节点。</td>
+</tr>
+<tr>
+<td>getAttribute()</td>
+<td>返回指定的属性值。</td>
+</tr>
+<tr>
+<td>setAttribute()</td>
+<td>把指定属性设置或修改为指定的值。</td>
+</tr>
+</tbody></table>
+<p>innerHTML 属性</p>
+<p>innerHTML 属性可用于获取或改变任意 HTML 元素，包括 <html> 和 <body>。</body></html></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;DOM 很有用！&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;本例演示 &lt;b&gt;getElementsByTagName&lt;&#x2F;b&gt; 方法。&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[0].innerHTML);</span><br><span class="line"></span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[1].innerHTML);</span><br><span class="line"></span><br><span class="line">document.write(&quot;第一段的文本: &quot; + x[2].innerHTML);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;main&quot;&gt;</span><br><span class="line">&lt;p&gt;DOM 很有用！&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;本例演示 &lt;b&gt;getElementsByTagName&lt;&#x2F;b&gt; 方法。&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">x&#x3D;document.getElementById(&quot;main&quot;).getElementsByTagName(&quot;p&quot;);</span><br><span class="line">document.write(&quot;div 中的第一段的文本: &quot; + x[0].innerHTML);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;p id&#x3D;&quot;p1&quot;&gt;Hello World!&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;p2&quot;&gt;Hello world!&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;p1&quot;).innerHTML&#x3D;&quot;New text!&quot;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(&quot;p2&quot;).style.color&#x3D;&quot;blue&quot;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var para&#x3D;document.createElement(&quot;p&quot;);</span><br><span class="line">var node&#x3D;document.createTextNode(&quot;This is new.&quot;);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"></span><br><span class="line">var element&#x3D;document.getElementById(&quot;d1&quot;);</span><br><span class="line">element.appendChild(para);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="wiki-blog"><a href="#wiki-blog" class="headerlink" title="wiki blog"></a>wiki blog</h1><p>整理wiki blog的方法</p>
+<pre><code>jekyll
+hexo
+docsify
+mdwiki
+gitbook
+</code></pre>
+<h2 id="gitbook"><a href="#gitbook" class="headerlink" title="gitbook"></a>gitbook</h2><p>gitbook </p>
+<p>npm install -g cnpm</p>
+<p>cnpm install -g  gitbook-cli</p>
+<h2 id="docker-start-gitbook"><a href="#docker-start-gitbook" class="headerlink" title="docker start gitbook"></a>docker start gitbook</h2><p>docker search -s 3 gitbook<br>docker pull fellah/gitbook</p>
+<p>docker run -v /home/m/gitbook/my:/srv/gitbook -v /home/m/gitbook/my/html:/srv/html fellah/gitbook gitbook build . /srv/html</p>
+<p>docker search -s 3 nginx<br>docker pull nginx</p>
+<p>docker run –name my-nginx -v /home/m/gitbook/my/html:/usr/share/nginx/html -d -p 8080:80 nginx</p>
+<p>So open IP:8080 to start a Web page .</p>
+<p>How to make pdf </p>
+<p><a href>make pdf</a></p>
+<h1 id="p-python-m-SimpleHTTPServer"><a href="#p-python-m-SimpleHTTPServer" class="headerlink" title="p python -m SimpleHTTPServer"></a>p python -m SimpleHTTPServer</h1><p>nohup python -m SimpleHTTPServer [port] &amp;</p>
+<p>SimpleHTTPServer is a module of Python.<br>The index.html will should be set as the homepage.</p>
+<p>This is also a good idea to share your files.</p>
+<p>If there isn’t an index.html page, there will shows all the files in the browser page.</p>
+<p>:)</p>
+
+      
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title">写博客不易，请我喝杯咖啡？ </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+
+
+    </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      
+
+
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'ecbf6316c9aa7a6bfd7a',
+			clientSecret: '5c875e5986ed75f4509d97acd16628b97f7506f1',
+			repo: 'tonychenn.github.io',
+			owner: 'tonychenn',
+			admin: ['tonychenn'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OverView"><span class="post-toc-text">OverView</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Markdown"><span class="post-toc-text">Markdown</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F"><span class="post-toc-text">博客系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Apache-%EF%BC%88Web%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89"><span class="post-toc-text">Apache （Web服务器）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NginX"><span class="post-toc-text">NginX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM"><span class="post-toc-text">DOM</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML5"><span class="post-toc-text">HTML5</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS"><span class="post-toc-text">CSS</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GitBook"><span class="post-toc-text">GitBook</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HTML"><span class="post-toc-text">HTML</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-1"><span class="post-toc-text">DOM</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#wiki-blog"><span class="post-toc-text">wiki blog</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gitbook"><span class="post-toc-text">gitbook</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker-start-gitbook"><span class="post-toc-text">docker start gitbook</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#p-python-m-SimpleHTTPServer"><span class="post-toc-text">p python -m SimpleHTTPServer</span></a></li></ol> 
+    </div>
+  </aside> -->
+</div>
+  </div>
+  <!--footer-->
+  <footer class="mdui-color-indigo">
+    <div class="mdui-container">
+        <div style="text-align: center; padding: 20px;">
+            <div >
+                Copyright &copy;
+                John Doe&nbsp&nbsp2021
+                &nbspTheme By
+                <a target="_blank" rel="noopener" href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+                        frameborder="0" scrolling="0" width="91px" height="20px">
+                </iframe>
+            </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp总访客<span id="busuanzi_value_site_uv"></span>人
+        </div>
+    </div>
+</footer>
+</body>
+<!--goTop-->
+<div class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-pink">
+    <i class="mdui-icon material-icons">arrow_upward</i>
+</div>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="GZh2jRE6IgVXx8SYpoRZYwcs4_Wy7vWEAeSIHCs3UE8"/>
+    <meta name="baidu-site-verification" content="5EmnBCPDrY" />
+    
+
+    <title> - Hexo</title>
+
+    <meta property="og:url" content="http://example.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content=" - Hexo | Hexo">
+    
+    
+
+    
+
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    <!--mdui-->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+          integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+          crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous">
+    </script>
+    <!--jquery-->
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <!--theme-->
+    
+<link rel="stylesheet" href="/css/mdm.css">
+
+    
+<link rel="stylesheet" href="/css/mdm_theme_dark.css">
+
+    
+<script src="/js/mdm.js"></script>
+
+    
+    <!--高亮-->
+    
+<link rel="stylesheet" href="/css/solarized-light.css">
+
+    <!--全局变灰-->
+    
+
+    
+    
+<script src="/js/click-effect.js"></script>
+
+    
+
+    <!--本地搜索-->
+    <!-- <script src="js/search.js"></script> -->
+    <!--自动提交给百度-->
+    
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    
+
+    <!---google ad config-->
+    
+        <script data-ad-client="ca-pub-8181303774570877" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--header_bar-->
+<div class="mdui-appbar mdui-shadow-0" id="bar">
+    <div class="mdui-toolbar mdui-text-color-white">
+        <a class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#example-2'}">
+            <i class="mdui-icon material-icons">menu</i>
+        </a>
+        <ul class="mdui-menu" id="example-2">
+        
+            <li class="mdui-menu-item">
+            <a href="/" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>
+                首页
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/tags" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">local_offer</i>
+                标签
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/archives" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">library_books</i>
+                归档
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/collection" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">videocam</i>
+                作品集
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+            <li class="mdui-menu-item">
+            <a href="/about" class="mdui-ripple">
+                <i class="mdui-menu-item-icon mdui-icon material-icons">error_outline</i>
+                关于
+            </a>
+            </li>
+            <li class="mdui-divider"></li>
+        
+        </ul>
+        <!--大屏-->
+        
+        <a href="/"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            首页
+        </a>
+        
+        <a href="/tags"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            标签
+        </a>
+        
+        <a href="/archives"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            归档
+        </a>
+        
+        <a href="/collection"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            作品集
+        </a>
+        
+        <a href="/about"
+            class="mdui-typo-title mdui-ripple mdui-ripple-white mdui-hidden-xs">
+            关于
+        </a>
+        
+        <div class="mdui-toolbar-spacer"></div>
+        <!--
+        <div class="mdui-textfield mdui-textfield-expandable" style="max-width:500px;margin-right: -10px;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input mdui-text-color-white" id="local-search-input" type="text" placeholder="输入搜索内容..."/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+        </div>-->
+
+        <button onclick="themeChange()"
+                class="mdui-btn mdui-btn-icon mdui-ripple mdui-text-color-white" 
+                mdui-tooltip="{content: '切换亮/暗色模式'}">
+            <i class="mdui-icon material-icons" id="themeIcon">brightness_7</i>
+        </button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#share_menu'}">
+            <i class="mdui-icon material-icons">share</i>
+        </button>
+        <!--分享-->
+        
+        <ul class="mdui-menu" id="share_menu">
+            
+                <li class="mdui-menu-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        facebook
+                    </a>
+                </li>
+            
+            
+            
+                <li class="mdui-menu-item">
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=&summary=&pics=http://example.com/favicon.ico&url=http://example.com/gitbook/README.html" target="_blank" class="mdui-ripple">
+                        QQ
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://twitter.com/intent/tweet?text=&url=http://example.com//gitbook/README.html&via=John Doe" target="_blank" class="mdui-ripple">
+                        twitter
+                    </a>
+                </li>
+            
+        
+            
+                <li class="mdui-menu-item">
+                    <a href="http://service.weibo.com/share.php?appkey=&title=&url=http://example.com//gitbook/README.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                        weibo
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://telegram.me/share/url?url=http://example.com//gitbook/README.html&text=" target="_blank" class="mdui-ripple">
+                        telegram
+                    </a>
+                </li>
+            
+
+            
+                <li class="mdui-menu-item">
+                    <a href="https://plus.google.com/share?url=http://example.com//gitbook/README.html" target="_blank" class="mdui-ripple">
+                        googleplus
+                    </a>
+                </li>
+              
+        
+              
+                <li class="mdui-menu-item">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com//gitbook/README.html&title=" target="_blank" class="mdui-ripple">
+                        linkedin
+                    </a>
+                </li>
+              
+
+            </ul>
+        
+    </div>
+</div>
+<!--Header-->
+<header>
+    <div class="mdui-card-media" style="overflow: hidden;">
+        
+        <img src="" class="header-box blur mdui-img-fluid" onerror="{this.src='https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/img1.jpg'}" draggable="false">
+        
+            <div class="header-content">
+                
+                <span class="header_title"></span></br>
+                
+                <p id="hitokoto">一言加载中...</p>
+            </div>
+        </img>
+    </div>
+</header>
+<body>
+  <div class="mdui-center" id="content-inner" style="width:95%; max-width:700pt;">
+    <!--博文详细内容-->
+
+<link rel="stylesheet" href="/css/post.css">
+
+<div>
+  <div class="">
+    <article class="article-content mdui-container mdui-center mdui-shadow-12">
+      <h1 id="Android-10-On-IMX8"><a href="#Android-10-On-IMX8" class="headerlink" title="Android 10 On IMX8"></a>Android 10 On IMX8</h1><p>Source Code from</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ldI06aZYT1E2BrBoba7Dqg">https://pan.baidu.com/s/1ldI06aZYT1E2BrBoba7Dqg</a> 提取码 </p>
+<h2 id="编译环境-2021-1-14"><a href="#编译环境-2021-1-14" class="headerlink" title="编译环境 2021.1.14"></a>编译环境 2021.1.14</h2><p>参考<br><br><strong>OKMX8MM-C（Android）用户资料-20200302\原厂资料\Android_User’s_Guide.pdf</strong><br><br><strong>OKMX8MM-C（Android）用户资料-20200302\原厂资料\Android_Quick_Start_Guide.pdf</strong><br><br><strong>OKMX8MM-C（Android）用户资料-20200302\手册\OKMX8MM-C_Android_用户手册_V1.1_2020.03.02.pdf</strong></p>
+<h3 id="Ubuntu-环境"><a href="#Ubuntu-环境" class="headerlink" title="Ubuntu 环境"></a>Ubuntu 环境</h3><p>官方文档要求 Ubuntu 16.04 X64</p>
+<pre><code>$ sudo add-apt-repository ppa:openjdk-r/ppa 
+$ sudo apt-get update 
+$ sudo apt-get install uuid \ 
+uuid-dev \ 
+zlib1g-dev \ 
+liblz-dev \ 
+liblzo2-2 \ 
+liblzo2-dev \ 
+lzop \ 
+git-core curl \ 
+u-boot-tools \ 
+mtd-utils \ 
+android-tools-fsutils \ 
+openjdk-8-jdk \ 
+device-tree-compiler \ 
+gdisk \ 
+m4 \ 
+libz-dev
+</code></pre>
+<p>jdk 要求是1.8版本</p>
+<p>解压源码</p>
+<pre><code>$ cd /home/forlinx/imx8mm/ 
+$cat OK8MM-android-source.tar.bz2_a* &gt; OK8MM-android-source.tar.bz2 
+$ tar -xvf OK8MM-android-source.tar.bz2 
+</code></pre>
+<h3 id="自定义docker环境"><a href="#自定义docker环境" class="headerlink" title="自定义docker环境"></a>自定义docker环境</h3><p>按照Ubuntu 环境，自定义docker环境，并且支持ssh 登录docker 容器中的ubuntu</p>
+<p>已经上传到docker.io</p>
+<p>下载</p>
+<pre><code>docker pull quectel/imx8_android9:latest
+</code></pre>
+<p>用户名 imx8 密码 quectel123</p>
+<h2 id="编译Android"><a href="#编译Android" class="headerlink" title="编译Android"></a>编译Android</h2><p>运行docker 环境</p>
+<pre><code>android@q-OptiPlex-7070:~$ docker run -d --name imx8 -v /home/android/IMX8_Android9:/home/imx8/imx8_Android -v /etc/localtime:/etc/localtime:ro   -v
+ /etc/timezone:/etc/timezone:ro --device=/dev/loop-control:/dev/loop-control --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN -p 6666:22  --privil
+eged  ubuntu:16_jdk1.8  /usr/sbin/sshd -D
+57c2bf9c7ccefaa4701f006c420d3d5ededfdf3f0ea0b0655772d42c21b566e7
+android@q-OptiPlex-7070:~$
+android@q-OptiPlex-7070:~$
+android@q-OptiPlex-7070:~$ docker ps
+CONTAINER ID   IMAGE              COMMAND               CREATED         STATUS         PORTS                  NAMES
+57c2bf9c7cce   ubuntu:16_jdk1.8   &quot;/usr/sbin/sshd -D&quot;   6 seconds ago   Up 3 seconds   0.0.0.0:6666-&gt;22/tcp   imx8
+android@q-OptiPlex-7070:~$ ls
+模板  camdroid  IMX8_Android9  Khadas  Tiny4412_android5.1  v3s_camdroid.zip
+</code></pre>
+<p>SSH远程连接到</p>
+<pre><code>ssh -P 6666 $&#123;HOST_IP&#125;
+
+PS D:\BaiduNetdiskDownload\imx8-android&gt; ssh -p 6666 imx8@10.66.83.84
+The authenticity of host &#39;[10.66.83.84]:6666 ([10.66.83.84]:6666)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:vhkbWtZEDaEjXzh6phneA4VSDB3hLSZdvOr8ZD/zYvw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;[10.66.83.84]:6666&#39; (ECDSA) to the list of known hosts.
+imx8@10.66.83.84&#39;s password:
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.4.0-58-generic x86_64)
+</code></pre>
+<p>在docker容器中编译        </p>
+<pre><code>$ cd /home/imx8/imx8_Android/OK8MM-android-source 
+$ source build/envsetup.sh 
+$ lunch evk_8mm-userdebug
+$ make -j8
+</code></pre>
+<p><strong>Notes</strong><br><br></p>
+<pre><code>export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+</code></pre>
+<h2 id="内核驱动移植"><a href="#内核驱动移植" class="headerlink" title="内核驱动移植"></a>内核驱动移植</h2><p>vi  out/target/product/evk_8mm/obj/KERNEL_OBJ/.config  vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig  -O</p>
+<p>(或者vimdiff)</p>
+<p>判断得知内核的配置文件是</p>
+<pre><code>OK8MM-android-source/vendor/nxp-opensource/kernel_imx/arch/arm64/configs/android_defconfig
+</code></pre>
+<p>从结果看，已经将Quectel模组的VID、PID加到option.c中，并且移植了GobiNet驱动和qmi_wwan驱动。使用 EC2X 模组没有问题。</p>
+<p>qmi_wwan 已经 build-in 编译</p>
+<h2 id="RIL库移植"><a href="#RIL库移植" class="headerlink" title="RIL库移植"></a>RIL库移植</h2><pre><code>/vendor/lib/libreference-ril.so
+/vendor/lib64/libreference-ril.so
+
+
+device/fsl/imx8m/evk_8mm/evk_8mm.mk:52:    device/fsl/imx8m/evk_8mm/lib/libreference-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libreference-ril.so 
+</code></pre>
+<h2 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h2><p>在Linux上烧录,用root账户，否则/tmp/目录没法写。</p>
+<pre><code>uuu_imx_android_flash.bat -f imx8mm -e -c 7
+</code></pre>
+<p>uuu.exe 放到环境变量路径中；管理员权限执行</p>
+<blockquote>
+<p>分区表</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>分区索引</th>
+<th>名称</th>
+<th>偏移</th>
+<th>大小</th>
+<th>文件系统</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NA</td>
+<td>Bootloader</td>
+<td>33KB</td>
+<td>4MB</td>
+<td>NA</td>
+<td>bootloader</td>
+</tr>
+<tr>
+<td>1</td>
+<td>dtbo_a</td>
+<td>8MB</td>
+<td>4MB</td>
+<td>NA</td>
+<td>dtbo.img</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dtbo_b</td>
+<td>Follow dtbo_a</td>
+<td>4MB</td>
+<td>NA</td>
+<td>dtbo.img</td>
+</tr>
+<tr>
+<td>3</td>
+<td>boot_a</td>
+<td>Follow dtbo_b</td>
+<td>48MB</td>
+<td>boot.img(kernel+ramdisk)</td>
+<td>boot.img</td>
+</tr>
+<tr>
+<td>4</td>
+<td>boot_b</td>
+<td>Follow boot_a</td>
+<td>48MB</td>
+<td>boot.img(kernel+ramdisk)</td>
+<td>boot.img</td>
+</tr>
+<tr>
+<td>5</td>
+<td>system_a</td>
+<td>Follow boot_b</td>
+<td>1536MB</td>
+<td>ext4 挂载在     /system</td>
+<td>Android系统文件/system目录</td>
+</tr>
+<tr>
+<td>6</td>
+<td>system_b</td>
+<td>Follow system_a</td>
+<td>1536MB</td>
+<td>ext4 挂载在   /system</td>
+<td>Android系统文件/system目录</td>
+</tr>
+<tr>
+<td>7</td>
+<td>misc</td>
+<td>Follow system_b</td>
+<td>4MB</td>
+<td>NA</td>
+<td>为了恢复保存bootloader信息</td>
+</tr>
+<tr>
+<td>8</td>
+<td>metadata</td>
+<td>Follow misc</td>
+<td>2MB</td>
+<td>NA</td>
+<td>For system slide show</td>
+</tr>
+<tr>
+<td>9</td>
+<td>presistdata</td>
+<td>Follow metadata</td>
+<td>1MB</td>
+<td>NA</td>
+<td>Option to operate unlock metadata</td>
+</tr>
+<tr>
+<td>10</td>
+<td>vendor_a</td>
+<td>Follow presistdata</td>
+<td>256MB</td>
+<td>ext4.挂载在/vendor</td>
+<td>vendor.img</td>
+</tr>
+<tr>
+<td>11</td>
+<td>vendor_b</td>
+<td>Follow vendor_a</td>
+<td>256MB</td>
+<td>ext4.挂载在/vendor</td>
+<td>vendor.img</td>
+</tr>
+<tr>
+<td>12</td>
+<td>userdata</td>
+<td>Follow vendor_b</td>
+<td>剩余全部</td>
+<td>ext4.挂载在/data</td>
+<td>应用程序数据</td>
+</tr>
+<tr>
+<td>13</td>
+<td>fbmisc</td>
+<td>Follow userdata</td>
+<td>1MB</td>
+<td>NA</td>
+<td>保存lock/unlock状态</td>
+</tr>
+<tr>
+<td>14</td>
+<td>vbmeta_a</td>
+<td>Follow fbmisc</td>
+<td>1MB</td>
+<td>NA</td>
+<td>保存verify boot’s metadata</td>
+</tr>
+<tr>
+<td>15</td>
+<td>vbmeta_b</td>
+<td>Follow vbmeta_a</td>
+<td>1MB</td>
+<td>NA</td>
+<td>保存verify boot’s metadata</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>fastboot</p>
+</blockquote>
+<p>关闭 DM 验证</p>
+<pre><code>设置-》系统-》开发者选项-》OEM 解锁 
+</code></pre>
+<p>在uboot阶段</p>
+<pre><code>fastboot 0
+</code></pre>
+<p>烧录vbmeta.img </p>
+<pre><code>fastboot oem unlock
+fastboot --disable-verity flash vbmeta vbmeta.img
+</code></pre>
+<p>然后就可以直接用fastboot烧录了</p>
+<pre><code>fastboot flash system_a system.img
+</code></pre>
+<h2 id="OTA"><a href="#OTA" class="headerlink" title="OTA"></a>OTA</h2><h2 id="编译遇到的问题"><a href="#编译遇到的问题" class="headerlink" title="编译遇到的问题"></a>编译遇到的问题</h2><p><strong>[Q]</strong> error: unmappable character for encoding ASCII （java编译过程中出现的错误）<br><br><strong>[A]</strong></p>
+<pre><code>export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+</code></pre>
+<p>[Q]Device is locked. Please unlock the device first</p>
+<p>[A]开发者模式解锁</p>
+<p>[Q]</p>
+<p>[A]</p>
+<h2 id="Android-FAQs"><a href="#Android-FAQs" class="headerlink" title="Android FAQs"></a>Android FAQs</h2><p>**[Q]<strong>客户移植RIL驱动，发现有两个rild<br><br></strong>[A]**kill掉其中一个</p>
+<p><strong>[Q]<strong>hidl<br><br></strong>[A]</strong></p>
+<p>[Q]Android 怎么改router，修改默认DNS<br>[A]</p>
+<p>**[Q]**Android 怎么修改网卡的优先顺序<br><br><br><strong>[A]</strong></p>
+<p><strong>[Q]</strong> 海外的板子寄回国发现图标显示不对<br><br><br><strong>[A]</strong> frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java</p>
+<pre><code>    // Default configuration values for captive portal detection probes.
+    // TODO: append a random length parameter to the default HTTPS url.
+    // TODO: randomize browser version ids in the default User-Agent String.
+    private static final String DEFAULT_HTTPS_URL     = &quot;https://www.google.com/generate_204&quot;;
+    private static final String DEFAULT_HTTP_URL      =
+        &quot;http://connectivitycheck.gstatic.com/generate_204&quot;;
+    private static final String DEFAULT_FALLBACK_URL  = &quot;http://www.google.com/gen_204&quot;;
+    private static final String DEFAULT_OTHER_FALLBACK_URLS =
+        &quot;http://play.googleapis.com/generate_204&quot;;
+    private static final String DEFAULT_USER_AGENT    = &quot;Mozilla/5.0 (X11; Linux x86_64) &quot;
+                              + &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot;
+                              + &quot;Chrome/52.0.2743.82 Safari/537.36&quot;;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://androidos.net.cn/android/8.0.0_r4/xref/frameworks/base/services/core/java/com/android/server/connectivity/NetworkMonitor.java">NetworkMonitor.java</a></p>
+<p><strong>[Q]</strong> 以太网和4G网卡共存<br><br><br><strong>[A]</strong><br>    — a/services/core/java/com/android/server/ConnectivityService.java<br>    +++ b/services/core/java/com/android/server/ConnectivityService.java<br>    @@ -4247,7 +4248,8 @@ public class ConnectivityService extends IConnectivityManager.Stub<br>             loge(“Dead network still had at least “ + nr);<br>             break;<br>         }<br>    -        nai.asyncChannel.disconnect();<br>    +        log(“don’t teardownUnneededNetwork “ + nai);<br>    +        //nai.asyncChannel.disconnect();<br>         }</p>
+<pre><code>     private void handleLingerComplete(NetworkAgentInfo oldNetwork) &#123;
+</code></pre>
+<p><strong>[Q]</strong><br><br><br><strong>[A]</strong></p>
+<p><strong>[Q]</strong><br><br><br><strong>[A]</strong></p>
+
+      
+    <div class="mdui-container">
+        <button class="mdui-center mdui-color-pink mdui-btn-icon mdui-btn mdui-btn-raised mdui-ripple"
+            mdui-dialog="{target: '#reward-dialog'}">赏</button>
+        <div class="mdui-dialog" id="reward-dialog">
+            <div class="reward-title">写博客不易，请我喝杯咖啡？ </div>
+            <div class="mdui-divider"></div>
+            <div class="mdui-tab mdui-tab-full-width" id="reward-tab">
+                <a href="#reward-alipay" class="mdui-ripple">支付宝</a>
+                <a href="#reward-wechat" class="mdui-ripple">微信</a>
+            </div>
+            <div id="reward-alipay">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/alipay.jpg" class="mdui-center noclick">
+            </div>
+            <div id="reward-wechat">
+                <img src="https://cdn.jsdelivr.net/gh/TonyChenn/BlogPicture/main/wechat.jpg" class="mdui-center noclick">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var tab = new mdui.Tab('#reward-tab');
+        mdui.JQ('#reward-dialog').on('open.mdui.dialog', function () {
+        tab.handleUpdate();
+        });
+    </script>
+
+
+    </article>
+    <div class="article-content mdui-container mdui-center mdui-shadow-12">
+      
+
+
+	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+	<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+
+    <div class="mdui-center">
+        <div class="mdui-center">
+            <article class="mdui-typo">
+                <h2>评论</h2>
+                <div id="gitalk-container"></div>
+            </article>
+        </div>
+    </div>
+
+  	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'ecbf6316c9aa7a6bfd7a',
+			clientSecret: '5c875e5986ed75f4509d97acd16628b97f7506f1',
+			repo: 'tonychenn.github.io',
+			owner: 'tonychenn',
+			admin: ['tonychenn'],
+			id: md5(window.location.pathname),      // Ensure uniqueness and length less than 50 ，so use md5
+			distractionFreeMode: true  // Facebook-like distraction free mode
+		})
+		gitalk.render('gitalk-container')
+	</script>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- <aside id="sidebar" class="mdui-shadow-2 mdui-hoverable">
+    <div class="widget">
+      <h3 class="title">目录</h3>
+      <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android-10-On-IMX8"><span class="post-toc-text">Android 10 On IMX8</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83-2021-1-14"><span class="post-toc-text">编译环境 2021.1.14</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ubuntu-%E7%8E%AF%E5%A2%83"><span class="post-toc-text">Ubuntu 环境</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89docker%E7%8E%AF%E5%A2%83"><span class="post-toc-text">自定义docker环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91Android"><span class="post-toc-text">编译Android</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%86%85%E6%A0%B8%E9%A9%B1%E5%8A%A8%E7%A7%BB%E6%A4%8D"><span class="post-toc-text">内核驱动移植</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RIL%E5%BA%93%E7%A7%BB%E6%A4%8D"><span class="post-toc-text">RIL库移植</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%83%A7%E5%BD%95"><span class="post-toc-text">烧录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OTA"><span class="post-toc-text">OTA</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-text">编译遇到的问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Android-FAQs"><span class="post-toc-text">Android FAQs</span></a></li></ol></li></ol> 
+    </div>
+  </aside> -->
+</div>
+  </div>
+  <!--footer-->
+  <footer class="mdui-color-indigo">
+    <div class="mdui-container">
+        <div style="text-align: center; padding: 20px;">
+            <div >
+                Copyright &copy;
+                John Doe&nbsp&nbsp2021
+                &nbspTheme By
+                <a target="_blank" rel="noopener" href="https://github.com/TonyChenn/hexo-theme-mdm">mdm</a>
+                <iframe style="margin-left: 2px; margin-bottom:-5px;" 
+                        src="https://ghbtns.com/github-btn.html?user=TonyChenn&repo=hexo-theme-mdm&type=star&count=true" 
+                        frameborder="0" scrolling="0" width="91px" height="20px">
+                </iframe>
+            </div>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp总访客<span id="busuanzi_value_site_uv"></span>人
+        </div>
+    </div>
+</footer>
+</body>
+<!--goTop-->
+<div class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-pink">
+    <i class="mdui-icon material-icons">arrow_upward</i>
+</div>
+</html>
