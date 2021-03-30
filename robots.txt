@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /resume/
-Disallow: /collection/
-Disallow: /*.css
-Disallow: /*.js
